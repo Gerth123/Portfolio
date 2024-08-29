@@ -1,0 +1,153 @@
+section {
+    display: flex;
+    background-color: rgb(29,39,60);
+    width: 100%;
+    justify-content: space-between;
+    height: 75svh;
+    color: white;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+
+    &:hover {
+        animation: moveUpAndDown 1s ease-in-out;
+    }
+
+    @keyframes moveUpAndDown {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px); // Bewege das Bild um 10px nach oben
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+}
+
+.skillsContainer {
+    display: flex;
+    flex-direction: column;
+    height: 50svh;
+    width: 40vw;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-left: 100px;
+    z-index: 9;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 60px;
+        height: 80px;
+
+        >p {
+            text-align: center;
+        }
+    }
+}
+
+.imageContainerLast {
+    display: flex;
+    justify-content: space-between;
+    width: 57%;
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 60px;
+        height: 80px;
+
+        >p {
+            text-align: center;
+        }
+    }
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    gap: 5px;
+    height: 50svh;
+}
+
+h2 {
+    font-size: 80px;
+    margin-block-start: 0;
+    margin-block-end: 0em;
+}
+
+h4 {
+    font-size: 40px;
+
+    >span {
+        color: #9747FF;
+    }
+}
+
+a {
+    background-color: #70E61C;
+    color: white;
+    width: 165px;
+    height: 58px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    transform-origin: top;
+    box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+        background-color: #9747FF;
+        transform: scale(1.2);
+    }
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 12svh;
+}
+
+.line {
+    width: 100px;
+    height: 5px;
+    background-color: #9747FF;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 38svh;
+    padding-right: 100px;
+}
+
+.greenShadow {
+    position: absolute;
+    width: 100vw;
+    height: 100svh;
+    top: 232svh;
+    left: -57%;
+}
