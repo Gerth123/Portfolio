@@ -1,0 +1,39 @@
+footer {
+  border-top: 4px solid #70e61c;
+  background-color: rgb(20, 29, 47);
+  color: white;
+  height: 20svh;
+  min-height: 291px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 50px;
+  margin-block: 0;
+  text-align: start;
+}
+
+p {
+  font-size: 23px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 23px;
+}
+
+.icons {
+  display: flex;
+  gap: 50px;
+  padding-right: 50px;
+
+  > a :hover {
+    transform: scale(1.5);
+    transform-origin: left top; /* Icons wachsen nach rechts */
+    transition: transform 0.2s ease;
+  }
+}
