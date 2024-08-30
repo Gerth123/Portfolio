@@ -79,8 +79,8 @@ h2 {
     flex-direction: row-reverse;
 
     >img {
-        width: 500px;
-        height: 350px;
+        max-width: 500px;
+        max-height: 300px;
     }
 }
 
@@ -171,4 +171,8 @@ h5 {
     &:hover {
         background-color: #70E61C;
     }
+}
+
+.pokedex {
+    padding-left: 15%;
 }
