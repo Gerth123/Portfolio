@@ -1,12 +1,13 @@
 section {
     display: flex;
     height: 100svh;
-    background-color: rgb(29,39,60);
+    background-color: rgb(20,29,47);
     color: white;
     align-items: center;
     width: 100%;
     justify-content: space-between;
     overflow-x: hidden !important;
+    margin-top: -10svh;
 }
 
 .purpleShadow {
@@ -25,6 +26,7 @@ section {
     align-items: center;
     gap: 10px;
     padding-left: 200px;
+    z-index: 5;
 
     >div {
         display: flex;

@@ -3,53 +3,50 @@ section {
   flex-direction: column;
   height: 100svh;
   position: relative;
-  z-index: 3;
-  background-color: rgb(29, 39, 60);
+  background-color: rgb(20,29,47);
   overflow: hidden; 
   color: white;
   padding-top: 12svh;
-  
 }
 
 a {
   color: white;
 }
 
-.circle {
-    position: absolute;
-    width: 170vw;
-    height: 170svh; 
-    background-color: rgb(20, 29, 47); 
-    border-radius: 50%;   
-    top: -70%; 
-    right: -10%; 
-    z-index: 2; 
+.background {
+  position: absolute;
+  width: 100%;
+  top: 40svh;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0;
 }
 
 .imgAndTextContainer {
     display: flex;
     justify-content: center;
     width: 100vw;
+    padding-top: 10svh;
 }
 
 .imgContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85svh;
+    height: 70svh;
     width: 35vw;
     z-index: 2;
     position: relative;
 }
 
 .lilaAndGreen {
-    z-index: 1; /* Hintergrundbild auf der unteren Ebene */
+    z-index: 1; 
 }
 
 .profilePicture {
     position: absolute;
-    z-index: 2; /* Profilbild auf der oberen Ebene */
-    border-radius: 0 0 50% 50%; /* Optional: Rundet das Profilbild ab */
+    z-index: 2; 
 }
 
 .textContainer {
@@ -57,7 +54,7 @@ a {
     flex-direction: column;
     align-items: center;
     margin-top: 20svh;
-    z-index: 2;
+    z-index: 10;
 }
 
 .rotateAndStatsContainer {
@@ -129,9 +126,9 @@ a {
 }
 
 .contactStats {
-    margin-top: 7svh;
+    margin-top: 12svh;
     display: flex;
-    z-index: 3;
+    z-index: 7 !important;
     justify-content: space-between;
 }
 

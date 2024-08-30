@@ -1,14 +1,39 @@
+<img
+  src="../../assets/img/green_shadow_3.svg"
+  alt="Green shadow"
+  class="greenShadow"
+/>
 <section id="contact">
-    <div>
-        <h3>Got a problem to solve?</h3>
-        <span>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.</span>
-        <span>Need a Frontend developer?<b>Contact me!</b></span>
-        </div>
+  <div class="headline">
+    <div class="line"></div>
+    <h2>Contact</h2>
+  </div>
+  <div class="textAndFormContainer">
+    <div class="text">
+      <h3>Got a problem to solve?</h3>
+      <span>
+        Contact me through this form, I am interested in hearing from you,
+        knowing your ideas and contributing to your projects with my work.
+      </span>
+      <span>Need a Frontend developer?<b>Contact me!</b></span>
+    </div>
     <form action="">
-        <input type="text" placeholder="Your name">
-        <input type="email" placeholder="Your email">
-        <textarea placeholder="Your message"></textarea>
-        <input type="checkbox">
-        <button type="submit">Send</button>
+      <input type="text" placeholder="Your name" />
+      <input type="email" placeholder="Your email" />
+      <textarea placeholder="Your message"></textarea>
+      <div class="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox1"></label>
+        <span
+          >I've read the <a href="#">privacy policy</a> and agree to the
+          processing of my data as outlined.
+        </span>
+      </div>
+      <div class="buttonContainer">
+        <button type="submit" id="sendMessageButton" class="sendMessageButton">
+          <span>Send message :)</span>
+        </button>
+      </div>
     </form>
+  </div>
 </section>
