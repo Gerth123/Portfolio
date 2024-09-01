@@ -17,12 +17,15 @@
       </span>
       <span>Need a Frontend developer? <b>Contact me!</b></span>
     </div>
-    <form action="">
-      <input type="text" placeholder="Your name" />
-      <input type="email" placeholder="Your email" />
-      <textarea placeholder="Your message"></textarea>
+    <form action="" (submit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <input [(ngModel)]="contactData.name" [ngModelOptions]="{standalone: true}" type="text" placeholder="Your name" required id="name"/>
+      <input [(ngModel)]="contactData.email" [ngModelOptions]="{standalone: true}" type="email" placeholder="Your email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email"/>
+      <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" [ngModelOptions]="{standalone: true}" placeholder="Your message" required id="message"></textarea>
+      @if (!message.valid && message.touched && !message.disabled) {
+        <span class="error">Please enter a message</span>
+      }
       <div class="checkbox">
-        <input type="checkbox" id="checkbox" />
+        <input type="checkbox" id="checkbox" required />
         <label for="checkbox1"></label>
         <span
           >I've read the <a href="#">privacy policy</a> and agree to the

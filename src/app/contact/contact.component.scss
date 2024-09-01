@@ -95,6 +95,11 @@ form {
     &:focus {
       cursor: pointer;
     }
+
+    &:not(:placeholder-shown) {
+      color: white;
+      background-color: rgb(20,29,47);      
+    }
   }
 
   > input {

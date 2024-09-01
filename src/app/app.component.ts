@@ -9,11 +9,12 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MySkillsComponent } from './my-skills/my-skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ReferencesComponent } from './references/references.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, AppComponent, HeaderComponent, FooterComponent, ContactComponent, AboutMeComponent, LandingPageComponent, MySkillsComponent, ProjectsComponent, ReferencesComponent],
+  imports: [CommonModule, RouterOutlet, AppComponent, HeaderComponent, FooterComponent, ContactComponent, AboutMeComponent, LandingPageComponent, MySkillsComponent, ProjectsComponent, ReferencesComponent, PrivacyPolicyComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
