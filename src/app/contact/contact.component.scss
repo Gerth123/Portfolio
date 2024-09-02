@@ -1,20 +1,18 @@
-.greenShadow {
-  position: absolute;
-  width: 100vw;
-  height: 100svh;
-  right: -55%;
-  top: 430svh;
-  rotate: 100deg;
-  z-index: 4;
-}
-
 section {
   background-color: rgb(20, 29, 47);
-  height: 85svh;
+  height: 100svh;
   padding-top: 15svh;
   display: flex;
   color: white;
   flex-direction: column;
+}
+
+a {
+  color: #9747ff;
+
+  &:hover {
+    text-decoration: underline #9747ff;
+  }
 }
 
 .headline {
@@ -44,7 +42,7 @@ h2 {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  height: 60svh;
+  height: 65svh;
 }
 
 .text {
@@ -54,7 +52,7 @@ h2 {
   align-items: flex-start;
   width: 500px;
   height: 20svh;
-  margin-top: -27svh;
+  margin-top: -37svh;
 }
 
 h3 {
@@ -220,5 +218,20 @@ form {
   }
   100% {
     margin-top: 0;
+  }
+}
+
+.arrowUp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 5svh;
+}
+
+.arrowUpImg {
+  transition: filter 0.5s forwards;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(72%) sepia(45%) saturate(680%) hue-rotate(42deg) brightness(96%) contrast(102%);
   }
 }

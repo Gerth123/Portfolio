@@ -1,0 +1,44 @@
+.purpleShadowAboutMe {
+  position: absolute;
+  width: 100vw;
+  height: 100svh;
+  right: -55%;
+  top: 89svh;
+  z-index: 4;
+}
+
+.greenShadowMySkills {
+    position: absolute;
+    width: 100vw;
+    height: 100svh;
+    top: 230svh;
+    left: -57%;
+}
+
+.purpleShadowPortfolio {
+    position: absolute;
+    width: 100vw;
+    height: 180svh;
+    left: -60%;
+    top: 300svh;
+    z-index: 1;
+}
+
+.greenShadow {
+  position: absolute;
+  width: 100vw;
+  height: 100svh;
+  right: -55%;
+  top: 415svh;
+  rotate: 100deg;
+  z-index: 4;
+}
+
+.purpleShadow {
+  position: absolute;
+  width: 100vw;
+  height: 85svh;
+  left: -42%;
+  top: 540svh;
+  z-index: 1;
+}

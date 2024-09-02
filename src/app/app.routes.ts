@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { AboutMeComponent } from './about-me/about-me.component'; 
-import { MySkillsComponent } from './my-skills/my-skills.component';
-import { ProjectsComponent } from './projects/projects.component';
+import { MainContentComponent } from './main-content/main-content.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 
 export const routes: Routes = [
-  { path: 'contact', component: ContactComponent },
-  { path: 'about-me', component: AboutMeComponent },
-  { path: 'my-skills', component: MySkillsComponent },
-  { path: 'projects', component: ProjectsComponent },
+  { path: '', component: MainContentComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'legal-notice', component: LegalNoticeComponent }
 ];
 
 @NgModule({

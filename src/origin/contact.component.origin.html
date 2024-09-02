@@ -1,0 +1,69 @@
+<section id="contact">
+  <div class="headline">
+    <div class="line"></div>
+    <h2>Contact</h2>
+  </div>
+  <div class="textAndFormContainer">
+    <div class="text">
+      <h3>Got a problem to solve?</h3>
+      <span>
+        Contact me through this form, I am interested in hearing from you,
+        knowing your ideas and contributing to your projects with my work.
+      </span>
+      <span>Need a Frontend developer? <b>Contact me!</b></span>
+    </div>
+    <div>
+      <form action="" (submit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <input
+          [(ngModel)]="contactData.name"
+          [ngModelOptions]="{ standalone: true }"
+          type="text"
+          placeholder="Your name"
+          required
+          id="name"
+        />
+        <input
+          [(ngModel)]="contactData.email"
+          [ngModelOptions]="{ standalone: true }"
+          type="email"
+          placeholder="Your email"
+          required
+          pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          id="email"
+        />
+        <textarea
+          #message="ngModel"
+          minlength="4"
+          [(ngModel)]="contactData.message"
+          [ngModelOptions]="{ standalone: true }"
+          placeholder="Your message"
+          required
+          id="message"
+        ></textarea>
+        @if (!message.valid && message.touched && !message.disabled) {
+        <span class="error">Please enter a message</span>
+        }
+        <div class="checkbox">
+          <input type="checkbox" id="checkbox" required />
+          <label for="checkbox1"></label>
+          <span
+            >I've read the <a href="/privacy-policy">privacy policy</a> and
+            agree to the processing of my data as outlined.
+          </span>
+        </div>
+        <div class="buttonContainer">
+          <button
+            type="submit"
+            id="sendMessageButton"
+            class="sendMessageButton"
+          >
+            <span>Send message :)</span>
+          </button>
+        </div>
+      </form>
+      <div class="arrowUp">
+        <a href="#landingPage"><img src="../../assets/icons/arrow_up_contact.svg" alt="Arrow up" class="arrowUpImg" /></a>
+      </div>
+    </div>
+  </div>
+</section>
