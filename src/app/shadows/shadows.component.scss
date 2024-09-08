@@ -4,7 +4,7 @@
   height: 100svh;
   right: -55%;
   top: 89svh;
-  z-index: 4;
+  z-index: 8;
 }
 
 .greenShadowMySkills {
@@ -31,7 +31,7 @@
   right: -55%;
   top: 415svh;
   rotate: 100deg;
-  z-index: 4;
+  // z-index: 4;
 }
 
 .purpleShadow {
@@ -39,6 +39,31 @@
   width: 100vw;
   height: 85svh;
   left: -42%;
-  top: 540svh;
+  top: 475svh;
   z-index: 1;
 }
+
+@media (max-width: 1550px) {
+  .purpleShadowAboutMe {
+    right: -65%;
+  }
+} 
+
+@media (max-width: 1100px) {
+  .greenShadowMySkills {
+    top: 210svh;
+  }
+}
+
+@media (max-width: 950px) {
+  .greenShadowMySkills {
+  left: -65%;
+  }
+}
+
+@media (max-width: 780px) {
+  .greenShadowMySkills {
+    left: -72%;    
+  }
+}
+

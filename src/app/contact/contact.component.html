@@ -1,38 +1,86 @@
 <section id="contact">
-    <div class="headline">
-      <div class="line"></div>
-      <h2>Contact</h2>
+  <div class="headline">
+    <div class="line"></div>
+    <h2>Contact</h2>
+  </div>
+  <div class="textAndFormContainer">
+    <div class="text">
+      <h3>Got a problem to solve?</h3>
+      <span>
+        Contact me through this form, I am interested in hearing from you,
+        knowing your ideas and contributing to your projects with my work.
+      </span>
+      <span>Need a Frontend developer? <b>Contact me!</b></span>
     </div>
-    <div class="textAndFormContainer">
-      <div class="text">
-        <h3>Got a problem to solve?</h3>
-        <span>
-          Contact me through this form, I am interested in hearing from you,
-          knowing your ideas and contributing to your projects with my work.
-        </span>
-        <span>Need a Frontend developer? <b>Contact me!</b></span>
-      </div>
-      <div>
-        <form #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" [(ngModel)]="contactData.name" required />
-        
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" [(ngModel)]="contactData.email" required />
-        
-          <label for="message">Nachricht</label>
-          <textarea id="message" name="message" [(ngModel)]="contactData.message" required></textarea>
-        
-          <button type="submit">Senden</button>
-        
-          <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
-          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-        </form>
-        
-        <div class="arrowUp">
-          <a href="#landingPage"><img src="../../assets/icons/arrow_up_contact.svg" alt="Arrow up" class="arrowUpImg" /></a>
+    <div>
+      <form #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          pattern="^.{3,}$"
+          [(ngModel)]="contactData.name"
+          required
+          placeholder="Your name"
+          (click)="changePlaceholder('name')"
+          (blur)="resetPlaceholder('name')"
+        />
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="contactData.email"
+          pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          required
+          placeholder="Your email"
+          (click)="changePlaceholder('email')"
+          (blur)="resetPlaceholder('email')"
+        />
+
+        <textarea
+          id="message"
+          name="message"
+          [(ngModel)]="contactData.message"
+          pattern="^.{4}$"
+          required
+          placeholder="Your message"
+          (click)="changePlaceholder('message')"
+          (blur)="resetPlaceholder('message')"
+        ></textarea>
+
+        <div class="checkbox">
+          <input type="checkbox" id="checkbox" required />
+          <label for="checkbox1"></label>
+          <span
+            >I've read the <a href="/privacy-policy">privacy policy</a> and
+            agree to the processing of my data as outlined.
+          </span>
         </div>
+        <div class="buttonContainer">
+          <button
+            type="submit"
+            id="sendMessageButton"
+            class="sendMessageButton"
+          >
+            <span>Send message :)</span>
+          </button>
+        </div>
+
+        <div *ngIf="successMessage" class="success-message">
+          {{ successMessage }}
+        </div>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      </form>
+
+      <div class="arrowUp">
+        <a href="#landingPage"
+          ><img
+            src="../../assets/icons/arrow_up_contact.svg"
+            alt="Arrow up"
+            class="arrowUpImg"
+        /></a>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>

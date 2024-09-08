@@ -8,16 +8,15 @@ import { FormsModule, NgForm } from '@angular/forms';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
-
   http = inject(HttpClient);
 
   contactData = {
     name: '',
     email: '',
-    message: ''
+    message: '',
   };
 
   successMessage = '';
@@ -35,7 +34,12 @@ export class ContactComponent {
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
+      this.http
+        .post(
+          this.post.endPoint,
+          this.post.body(this.contactData),
+          this.post.options
+        )
         .subscribe({
           next: (response) => {
             this.successMessage = 'Deine Nachricht wurde erfolgreich gesendet!';
@@ -43,7 +47,8 @@ export class ContactComponent {
             ngForm.resetForm();
           },
           error: (error) => {
-            this.errorMessage = 'Beim Senden deiner Nachricht ist ein Fehler aufgetreten.';
+            this.errorMessage =
+              'Beim Senden deiner Nachricht ist ein Fehler aufgetreten.';
             this.successMessage = '';
             console.error(error);
           },
@@ -51,5 +56,22 @@ export class ContactComponent {
         });
     }
   }
-}
 
+  changePlaceholder(id: string) {
+    let inputfield = document.getElementById(id) as HTMLInputElement;
+        if (inputfield) {
+      if (inputfield.value.length === 0) {
+        inputfield.placeholder = '';        
+      } else {
+        inputfield.placeholder = 'Your ' + id;
+      }
+    }
+  }
+
+  resetPlaceholder(id: string) {
+    let inputfield = document.getElementById(id) as HTMLInputElement;
+    if (inputfield) {
+      inputfield.placeholder = 'Your ' + id;
+    }
+  }
+}
