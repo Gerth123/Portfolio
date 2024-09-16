@@ -64,7 +64,8 @@ h3 {
 }
 
 form {
-  z-index: 1 !important;	
+  z-index: 1;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

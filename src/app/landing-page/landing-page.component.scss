@@ -1,13 +1,14 @@
 section {
   display: flex;
   flex-direction: column;
-  height: 120svh;
+  height: 110svh;
+  padding-top: 10svh;
   position: relative;
   background-color: rgb(20, 29, 47);
+  align-items: center;
+  justify-content: flex-start;
   overflow: hidden;
   color: white;
-  padding-top: 12svh;
-  margin-bottom: -10svh;
   width: 100%;
 }
 
@@ -21,7 +22,7 @@ a {
   position: relative;
   display: flex;
   width: 100%;
-  margin-top: -102svh;
+  margin-top: -600px;
   z-index: 6;
 }
 
@@ -29,57 +30,54 @@ a {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding-top: 10svh;
-  height: 120svh;
+  margin-top: -70px;
 }
 
 .imgContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 70svh;
-  width: 35vw;
+  align-items: flex-start;
+  height: 705px;
+  width: 646px;
   z-index: 2;
   position: relative;
-  margin-top: 5svh;
 }
 
 .lilaAndGreen {
   z-index: 1;
-  width: 45vw;
+  margin-top: 100px;
 }
 
 .profilePicture {
   position: absolute;
   z-index: 2;
-  height: 100svh;
 }
 
 .textContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20svh;
+  width: 650px;
+  margin-top: 170px;
   z-index: 10;
+  margin-left: -150px;
 }
 
 .rotateAndStatsContainer {
   display: flex;
-  height: 20svh;
   justify-content: center;
-  width: 60vw;
-  max-width: 650px;
   align-items: center;
 }
 
 .rotate {
   display: inline-block;
   transform: rotate(270deg);
-  font-size: 60px;
-  margin-top: -2px;
+  font-size: 55.5px;
+  margin-top: -4.4px;
+  margin-right: -25px;
   display: flex;
   align-items: center;
-  margin-right: -40px;
+  height: 50px;
 }
 
 .stats {
@@ -87,9 +85,6 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 80%;
-  max-width: 550px;
 }
 
 .name {
@@ -130,10 +125,11 @@ a {
 }
 
 .contactStats {
-  margin-top: -72svh;
   display: flex;
   z-index: 7 !important;
   justify-content: space-between;
+  width: 100%;
+  padding-top: 120px;
 }
 
 .iconsAndEmailContainer {
@@ -193,98 +189,31 @@ a {
   filter: invert(1);
 }
 
-@media (max-width: 1550px) {
+@media (min-height: 1100px) {
   .background {
-    margin-top: -95svh;
+    margin-top: -800px;
   }
+}
 
-  .contactStats {
-    margin-top: -60svh;
+@media (min-height: 1300px) {
+  .background {
+    margin-top: -880px;
   }
 }
 
 @media (max-width: 1450px) {
-  .contactStats {
-    margin-top: -58svh;
+  .background {
+    margin-top: -550px;
   }
 }
 
-@media (max-width: 1400px) {
-  .contactStats {
-    margin-top: -55svh;
-  }
-}
-
-@media (max-width: 1350px) {
-  .contactStats {
-    margin-top: -52svh;
-  }
-}
-
-@media (max-width: 1320px) {
-  .imgContainer {
-    > img {
-      height: 80vh;
-    }
-    height: 60svh;
-  }
-
-  .textContainer {
-    margin-top: 15svh; 
-  }
-
-  .rotateAndStatsContainer {
-    max-width: 580px;
-  }
-
-  .rotate {
-    font-size: 49px;
-  }
-
-  .name {
-    font-size: 70px;
-    height: 8svh;
-  }
-
-  .role {
-    font-size: 40px;
-    height: 6svh;
+@media (max-width: 1300px) and (max-height: 850px) {
+  .background {
+    margin-top: -550px;
   }
 
   .contactStats {
-    margin-top: -50svh;
-  }
-}
-
-@media (max-width: 1280px) {
-  .contactStats {
-    margin-top: -46svh;
-  }
-}
-
-@media (max-width: 1240px) {
-  .imgContainer {
-
-    > img {
-      height: 70vh;
-    }
-    
-  }
-
-  .contactStats {
-    margin-top: -43svh;
-  }
-}
-
-@media (max-width: 1200px) {
-  .contactStats {
-    margin-top: -38svh;
-  }
-}
-
-@media (max-width: 1150px) {
-  .contactStats {
-    margin-top: -35svh;
+    padding-top: 50px;
   }
 }
 
@@ -292,52 +221,190 @@ a {
   .imgAndTextContainer {
     flex-direction: column;
     align-items: center;
-    margin-top: -33svh;
-  }
-
-  .imgContainer {
-    margin-top: 0;
-  }
-
-  .profilePicture {
-    height: 80vh;
-  }
-
-  .textContainer {
-    z-index: 9;
-    margin-top: -2svh;
-  }
-
-
-  .rotateAndStatsContainer {
-    height: 15svh;
   }
 
   .background {
-    margin-top: -76svh;
+    margin-top: -600px;
   }
 
-
-  .contactStats {
-    margin-top: -30svh;
+  .textContainer {
+    margin-top: -100px;
+    margin-left: 0;
+    gap: 10px;
   }
 
-  .iconsAndEmailContainer {
-    width: 100%;
-  }
-
-  .icons {
-    margin-left: 30vw;
-    width: 40vw;
-    justify-content: space-evenly;
-    z-index: 9;
+  .scroll {
+    display: none;
   }
 
   .email {
     display: none;
   }
 
-  .scroll {
-    display: none;
+  .iconsAndEmailContainer {
+    width: 100%;
+  } 
+
+  .line {
+    width: 300px;
+  }
+
+  .icons {
+    margin-left: 35vw;
+    width: 30vw;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 1100px) and (max-height: 1400px) {
+  .textContainer {
+    margin-top: -50px;
+  }
+
+  .name {
+    height: 80px;
+  }
+
+  .role {
+    height: 60px;
+  }
+
+  .background {
+    margin-top: -750px;
+  }
+}
+
+@media (max-width: 950px) {
+  .imgContainer {
+    > img:nth-child(1) {
+      width: 600px;
+      height: auto;
+    }
+
+    > img:nth-child(2) {
+      width: 450px;
+      height: auto;
+      margin-top: 100px;
+    }
+  }
+
+  .background {
+    margin-top: -560px;
+  }
+
+  .textContainer {
+    margin-top: -190px;
+  }
+
+  .rotate {
+    font-size: 42px;
+    margin-top: 2px;
+    margin-right: -20px;
+  }
+
+  .stats {
+    gap: 10px;
+  }
+
+  .name {
+    font-size: 60px;
+    height: 60px;
+  }
+
+  .role {
+    font-size: 33px;
+    height: 33px;
+  }
+
+  .contact {
+    font-size: 18px;
+    width: 140px;
+    height: 55px;
+  }
+
+  .line {
+    width: 200px;
+  }
+}
+
+@media (max-width: 500px) and (max-height: 1000px) {
+  section {
+    padding-top: 0;
+  }
+  
+  .background {
+    margin-top: -450px;
+  }
+
+  .textContainer {
+    margin-top: -150px;
+  }
+
+  .name {
+    font-size: 50px;
+    height: 50px;
+  }
+
+  .role {
+    font-size: 28px;
+    height: 28px;
+  }
+
+  .rotate {
+    font-size: 36px;
+    margin-top: 2px;
+    margin-right: -18px;
+  }
+
+  .line {
+    width: 80px;
+  }
+}
+
+@media (max-width: 500px) and (max-height: 900px) {
+  .background {
+    margin-top: -450px;
+  }
+}
+
+@media (max-width: 400px) and (max-height: 900px) {
+  .background {
+    margin-top: -400px;
+  }
+}
+
+@media (max-width: 400px) and (max-height: 800px) {
+  section {
+    height: 130svh;
+  }
+
+  .background {
+    margin-top: -330px;
+  }
+
+  .textContainer {
+    margin-left: -30px;
+  }
+  
+  .name {
+    font-size: 40px;
+    height: 40px;
+  }
+
+  .role {
+    font-size: 22px;
+    height: 22px;
+  }
+
+  .rotate {
+    font-size: 30px;
+    margin-top: 2px;
+    margin-right: -14px;
+  }
+
+  .contact {
+    font-size: 14px;
+    width: 120px;
+    height: 45px;
   }
 }

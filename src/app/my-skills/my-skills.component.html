@@ -1,10 +1,19 @@
 <section id="mySkills">
   <div class="skillsContainer">
     <div class="imageContainer">
-      <div *ngFor="let skill of skills">
+      <div *ngFor="let skill of skills" class="skill">
         <img src="{{ skill.src }}" alt="{{ skill.alt }}" />
         <p>{{ skill.name }}</p>
       </div>
+      <div class="continuallyLearning"   (mouseover)="showSpecialInterest()"
+      (mouseout)="hideSpecialInterest()">
+        <img *ngIf="isHovered" src="../../assets/icons/special_interest.svg" alt="special_interest" id="special_interest">
+        <img src="../../assets/icons/continually_learning.svg" alt="continually learning" 
+          [src]="isHovered ? '../../assets/icons/continually_learning_white.svg' : '../../assets/icons/continually_learning.svg'"/>
+        <p id="continually" [style.color]="isHovered ? 'white' : '#9747FF'">Continually Learning</p>
+      </div>
+      
+      
     </div>
   </div>
   <div class="textContainer">

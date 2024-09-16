@@ -9,12 +9,14 @@ section {
   padding-top: 10svh;
 }
 
-img {
-  width: 60px;
-  height: 60px;
+.skill:not(:last-child) {
+  > img {
+    width: 60px;
+    height: 60px;
 
-  &:hover {
-    animation: moveUpAndDown 1s ease-in-out;
+    &:hover {
+      animation: moveUpAndDown 1s ease-in-out;
+    }
   }
 
   @keyframes moveUpAndDown {
@@ -22,12 +24,70 @@ img {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-15px); // Bewege das Bild um 10px nach oben
+      transform: translateY(-15px); /* Bewege das Bild um 15px nach oben */
     }
     100% {
       transform: translateY(0);
     }
   }
+}
+
+.continuallyLearning {
+
+
+  > img {
+    width: 60px;
+    height: 60px;
+    transition: opacity 0.5s ease;
+  }
+
+  &:hover {
+    > img {
+      animation: changeImage 0.5s forwards;
+    }
+
+    > p {
+      animation: changeColor 0.5s forwards;
+      color: #9747ff;
+    }
+  }
+
+  > p {
+    color: #9747ff;
+    transition: color 0.5s ease;
+  }
+}
+
+@keyframes changeImage {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5; 
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes changeColor {
+  0% {
+    color: #9747ff;
+  }
+  100% {
+    color: white;
+  }
+}
+
+
+#special_interest {
+  width: 188px;
+  height: 129px;
+  margin-top: -109px;
+  margin-right: -100px;
+  margin-bottom: -30px;
+  z-index: 1;
 }
 
 p {
@@ -66,9 +126,9 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
     width: 60px;
     height: 70px;
+    gap: 10px;
 
     > p {
       display: flex;
@@ -288,15 +348,15 @@ a {
 }
 
 @media (max-width: 560px) {
-    section {
-      height: 150svh;
-    }
+  section {
+    height: 150svh;
+  }
 
   .text {
     height: 110svh;
   }
-  
-    h4 {
+
+  h4 {
     margin-top: 60svh;
   }
 
