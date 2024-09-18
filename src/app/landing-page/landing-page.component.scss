@@ -330,6 +330,7 @@ a {
 @media (max-width: 500px) and (max-height: 1000px) {
   section {
     padding-top: 0;
+    height: 92svh;
   }
   
   .background {
@@ -362,6 +363,10 @@ a {
 }
 
 @media (max-width: 500px) and (max-height: 900px) {
+  .section {
+    height: 95svh;
+  }
+
   .background {
     margin-top: -450px;
   }
@@ -375,7 +380,7 @@ a {
 
 @media (max-width: 400px) and (max-height: 800px) {
   section {
-    height: 130svh;
+    height: 110svh;
   }
 
   .background {
