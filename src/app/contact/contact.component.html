@@ -42,7 +42,7 @@
           id="message"
           name="message"
           [(ngModel)]="contactData.message"
-          pattern="^.{4}$"
+          pattern="^.{10,}$"
           required
           placeholder="Your message"
           (click)="changePlaceholder('message')"
@@ -51,7 +51,7 @@
 
         <div class="checkbox">
           <input type="checkbox" id="checkbox" required />
-          <label for="checkbox1"></label>
+          <label for="checkbox"></label>
           <span
             >I've read the <a href="/privacy-policy">privacy policy</a> and
             agree to the processing of my data as outlined.

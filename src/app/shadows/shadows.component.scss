@@ -1,8 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .purpleShadowAboutMe {
   position: absolute;
   width: 100vw;
   height: 100svh;
   right: -55%;
+  // transform: translateX(1%);
   top: 89svh;
   z-index: 8;
 }
