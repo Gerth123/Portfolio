@@ -13,7 +13,7 @@
       <span>Need a Frontend developer? <b>Contact me!</b></span>
     </div>
     <div>
-      <form #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)">
+      <!-- <form #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)" novalidate>
         <input
           type="text"
           id="name"
@@ -71,6 +71,152 @@
           {{ successMessage }}
         </div>
         <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      </form> -->
+
+      <form #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)" novalidate>
+        <div class="inputContainer">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            pattern="^[A-Z].{1,}$"
+            [(ngModel)]="contactData.name"
+            required
+            placeholder="Your name"
+            autocomplete="name"
+            (click)="changePlaceholder('name')"
+            (blur)="resetPlaceholder('name')"
+            #nameInput="ngModel"
+            [ngClass]="{ inputError: nameInput.invalid && nameInput.touched,
+            'checkboxChecked': nameInput.valid, 
+           }"
+          />
+          <img
+            *ngIf="nameInput.valid && nameInput.touched"
+            src="../../assets/icons/input_icon_right.svg"
+            class="inputIcon"
+          />
+          <img
+            *ngIf="nameInput.invalid && nameInput.touched"
+            src="../../assets/icons/input_icon_wrong.svg"
+            class="inputIcon"
+          />
+        </div>
+        <div *ngIf="nameInput.invalid && nameInput.touched" class="error">
+          <span class="errorMessage">Correct name required.</span>
+        </div>
+
+        <div class="inputContainer">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            [(ngModel)]="contactData.email"
+            required
+            placeholder="Your email"
+            autocomplete="email"
+            (click)="changePlaceholder('email')"
+            (blur)="resetPlaceholder('email')"
+            #emailInput="ngModel"
+            [ngClass]="{ 'inputError': emailInput.invalid && emailInput.touched,
+            'checkboxChecked': emailInput.valid, 
+           }"
+          />
+          <img
+            *ngIf="emailInput.valid && emailInput.touched"
+            src="../../assets/icons/input_icon_right.svg"
+            class="inputIcon"
+          />
+          <img
+            *ngIf="emailInput.invalid && emailInput.touched"
+            src="../../assets/icons/input_icon_wrong.svg"
+            class="inputIcon"
+          />
+        </div>
+
+        <div *ngIf="emailInput.invalid && emailInput.touched" class="error">
+          <span class="errorMessage">Please enter a valid email.</span>
+        </div>
+
+        <div class="textareaContainer">
+          <textarea
+            id="message"
+            name="message"
+            pattern="^.{10,}$"
+            [(ngModel)]="contactData.message"
+            required
+            lang="en"
+            spellcheck="true"
+            placeholder="Your message"
+            (click)="changePlaceholder('message')"
+            (blur)="resetPlaceholder('message')"
+            #messageInput="ngModel"
+            [ngClass]="{
+              inputError: messageInput.invalid && messageInput.touched,
+              checkboxChecked: messageInput.valid
+            }"
+          ></textarea>
+          <img 
+            *ngIf="messageInput.valid && messageInput.touched"
+            src="../../assets/icons/input_icon_right.svg"
+            class="inputIcon"
+          />
+          <img 
+            *ngIf="messageInput.invalid && messageInput.touched"
+            src="../../assets/icons/input_icon_wrong.svg"
+            class="inputIcon"
+          />
+        </div>
+        <div *ngIf="messageInput.invalid && messageInput.touched" class="error">
+          <span class="errorMessage">Message must be at least 10 characters long.</span>
+        </div>
+        <div class="checkbox">
+          <input
+            type="checkbox"
+            id="checkbox"
+            required
+            [(ngModel)]="contactData.privacyChecked"
+            name="privacyChecked"
+            #checkboxInput="ngModel"
+          />
+          <label
+            for="checkbox"
+            [ngClass]="{ 'inputError': checkboxInput.invalid && checkboxInput.touched,
+                       'checkboxChecked': contactData.privacyChecked,
+           }"
+          ></label>
+
+          <span>
+            I've read the <a href="/privacy-policy">privacy policy</a> and agree
+            to the processing of my data as outlined.
+          </span>
+        </div>
+        <div
+          *ngIf="checkboxInput.invalid && checkboxInput.touched"
+          class="errorCheckbox"
+        >
+          <span class="errorMessage">Please accept the privacy policy.</span>
+        </div>
+
+        <div class="buttonContainer">
+          <button
+            type="submit"
+            id="sendMessageButton"
+            [disabled]="ngForm.invalid"
+            [ngClass]="{
+              sendMessageButton: ngForm.valid,
+              sendMessageButtonFalse: ngForm.invalid
+            }"
+          >
+            <span>Send message :)</span>
+          </button>
+        </div>
+
+        <div *ngIf="successMessage" class="successMessage">
+          {{ successMessage }}
+        </div>
+        <div *ngIf="errorMessage" class="errorMessage">{{ errorMessage }}</div>
       </form>
 
       <div class="arrowUp">

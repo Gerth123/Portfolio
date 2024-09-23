@@ -1,10 +1,31 @@
 <header>
-    <a href="#landingPage" class="logo"><img src="../../../assets/logo/robin_curly_bracket.png" alt="Logo"></a>
-    <nav class="">
-        <div class="container-fluid">
-            <a href="#aboutMe">About me</a>
-            <a href="#mySkills">Skills</a>
-            <a href="#projects">Portfolio</a>
-        </div>
-    </nav>
+  <a href="#landingPage" class="logo"
+    ><img src="../../../assets/logo/robin_curly_bracket.png" alt="Logo"
+  /></a>
+  <div class="responsiveMenuOpen" (click)="openMenu()">
+    <img src="../../../assets/icons/closed_menu.svg" alt="Open menu" />
+  </div>
+  <nav class="">
+    <div class="container-fluid">
+      <a href="#aboutMe">About me</a>
+      <a href="#mySkills">Skills</a>
+      <a href="#projects">Portfolio</a>
+    </div>
+  </nav>
 </header>
+<div class="responsiveMenu d-none" id="responsiveMenu">
+  <div class="responsiveMenuLogo">
+    <a href="#landingPage" (click)="closeMenu()"
+      ><img
+        src="../../../assets/logo/robin_curly_bracket.png"
+        alt="Logo"
+        class="logoResponsive"
+    /></a>
+  </div>
+  <div class="responsiveMenuLinks">
+    <a href="#aboutMe" (click)="closeMenu()">About me</a>
+    <a href="#mySkills" (click)="closeMenu()">My skills</a>
+    <a href="#projects" (click)="closeMenu()">Portfolio</a>
+    <a href="#contact" (click)="closeMenu()">Contact</a>
+  </div>
+</div>

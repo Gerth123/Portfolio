@@ -44,6 +44,7 @@ h2 {
   justify-content: space-evenly;
   width: 100%;
   height: 65svh;
+  z-index: 20;
 }
 
 .text {
@@ -69,15 +70,15 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
-  width: 600px;
+  
+  width: 650px;
   height: 60svh;
   margin-top: 10svh;
 
-  > input,
-  > textarea {
-    width: 100%;
-    border-radius: 5px;
+   input,
+   textarea {
+    width: 600px;
+    border-radius: 10px;
     border: none;
     padding-left: 20px;
     background-color: rgb(20, 29, 47);
@@ -104,15 +105,69 @@ form {
     }
   }
 
-  > input {
+   input {
     height: 42px;
   }
 
-  > textarea {
+   textarea {
     height: 150px;
     padding-top: 10px;
     resize: none;
   }
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  > img {
+    width: 25px;
+    height: 25px;
+    margin-left: -40px;
+    z-index: 50;
+  }
+}
+
+.textareaContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  > img {
+    width: 25px;
+    height: 25px;
+    margin-left: -40px;
+    margin-top: 10px;
+    z-index: 50;
+  }
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  border: 1px solid #70e61c;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(20, 29, 47) inset;
+}
+
+.inputError {
+  border: 1.5px solid red !important;
+}
+
+.checkboxChecked {
+  border: 1.5px solid #70e61c !important;
+}
+
+.errorCheckbox {
+  padding-left: 9px;
+  margin-top: -10px;
 }
 
 .checkbox {
@@ -149,7 +204,7 @@ form {
   justify-content: center;
   width: 20px;
   height: 20px;
-  border: 1.5px solid #70e61c;
+  border: 1.5px solid #9747ff;	
   background-color: rgb(20, 29, 47);
   border-radius: 3px; /* Ecken abrunden */
   position: relative;
@@ -207,6 +262,20 @@ form {
   }
 }
 
+.sendMessageButtonFalse {
+  background-color: grey;
+  color: white;
+  width: 250px;
+  height: 58px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
 @keyframes margin-top {
   0% {
     margin-top: 0;
@@ -223,6 +292,43 @@ form {
   100% {
     margin-top: 0;
   }
+}
+
+.error {
+  width: 100%;
+  margin-top: -12px;
+
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.errorInput {
+  border: 1.5px solid red !important;
+}
+
+.successMessage {
+  color: #70e61c;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .arrowUp {

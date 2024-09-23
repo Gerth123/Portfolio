@@ -17,6 +17,7 @@ export class ContactComponent {
     name: '',
     email: '',
     message: '',
+    privacyChecked: false,
   };
 
   successMessage = '';
@@ -45,12 +46,19 @@ export class ContactComponent {
             this.successMessage = 'Deine Nachricht wurde erfolgreich gesendet!';
             this.errorMessage = '';
             ngForm.resetForm();
+            this.contactData.privacyChecked = false;
+            setTimeout(() => {
+              this.successMessage = '';
+            }, 5000);
           },
           error: (error) => {
             this.errorMessage =
               'Beim Senden deiner Nachricht ist ein Fehler aufgetreten.';
             this.successMessage = '';
             console.error(error);
+            setTimeout(() => {
+              this.errorMessage = '';
+            }, 5000);
           },
           complete: () => console.info('Sendevorgang abgeschlossen'),
         });

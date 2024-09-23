@@ -338,14 +338,14 @@ a {
   }
 
   .skillsContainer {
-    margin-top: -25svh;
+    margin-top: 21svh;
     width: 70%;
   }
 }
 
 @media (max-width: 560px) {
   section {
-    height: 150svh;
+    height: 110svh;
   }
 
   .text {
@@ -378,11 +378,12 @@ a {
 @media (max-width: 400px) {
   .skillsContainer {
     width: 80%;
-    margin-top: -22svh;
+    margin-top: 0svh;
   }
 
   .imageContainer {
     gap: 50px;
+    margin-top: -20svh;
   }
 
   h4 {
@@ -395,10 +396,10 @@ a {
   }
 }
 
-@media (max-width: 400px) and (max-height: 700px) {
+@media (max-width: 400px) and (max-height: 700px) {  
   section {
-    margin-top: -10svh;
-    height: 240svh;
+    height: 120svh;
+    padding-top: 40svh;
   }
 
   .imageContainer {
