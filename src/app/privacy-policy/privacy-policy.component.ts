@@ -13,6 +13,14 @@ import { NgIf } from '@angular/common';
 })
 export class PrivacyPolicyComponent {
   language: string = 'en';
+
+  /**
+   * @description
+   * The constructor for the privacy policy component.
+   * It observes the current language of the language service and updates the
+   * language variable of the component every second.
+   * @param languageService The language service.
+   */
   constructor(private languageService: LanguageService) {
     setInterval(() => {
       this.language = this.languageService.currentLanguage;

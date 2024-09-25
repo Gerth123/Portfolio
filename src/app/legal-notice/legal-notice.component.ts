@@ -13,6 +13,7 @@ import { CommonModule, NgIf } from '@angular/common';
 })
 export class LegalNoticeComponent {
   language: string = 'en';
+
   constructor(private languageService: LanguageService) {
     setInterval(() => {
       this.language = this.languageService.currentLanguage;
