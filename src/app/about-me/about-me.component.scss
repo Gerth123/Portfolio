@@ -8,7 +8,7 @@ section {
   justify-content: space-between;
   overflow-x: hidden !important;
   margin-bottom: -20svh;
-  margin-top: -30svh;
+  margin-top: -25svh;
 }
 
 .textContainer {
@@ -44,8 +44,8 @@ section {
 
 h2 {
   font-size: 100px;
-  margin-block-start: 0;
-  margin-block-end: 0.5em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0em;
   width: 600px;
   display: flex;
   align-items: center;
@@ -80,6 +80,13 @@ h2 {
   width: 350px;
   background-color: rgb(112, 230, 28);
   z-index: 5;
+}
+
+@media (max-width: 1600px) and (max-height: 800px) {
+  section {
+    padding-top: 10svh;
+    padding-bottom: 3svh;
+  }
 }
 
 @media (max-width: 1550px) {
@@ -191,13 +198,35 @@ h2 {
   }
 }
 
+@media (max-width: 450px) and (max-height: 900px) {
+  section {
+    height: 80svh;
+  }
+}
+
+@media (max-width: 400px) and (max-height: 1000px) {
+  section {
+    padding-top: 14svh;
+    height: 65svh;
+    padding-bottom: 0;
+  }
+}
+
 @media (max-width: 400px) and (max-height: 700px) {
   section {
+    padding-top: 12svh;
     width: 100%;
-    height: 90svh;
+    height: 120svh;
+    margin-bottom: -10svh;
+    display: flex;
+    align-items: flex-start;
   }
 
   .textContainer {
     width: 87.5%;
+  }
+
+  h2 {
+    margin-block-start: 0;
   }
 }

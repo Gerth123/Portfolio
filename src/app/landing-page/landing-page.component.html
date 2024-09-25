@@ -15,14 +15,14 @@
     </div>
     <div class="textContainer">
       <div class="rotateAndStatsContainer">
-        <span class="rotate">I am</span>
+        <span class="rotate" [ngClass]="{'rotateDe': getCurrentLanguage() === 'de'}">{{getCurrentText('rotateText')}}</span>
         <div class="stats">
           <span class="name">Robin Gerth</span>
-          <span class="role">FRONTEND DEVELOPER</span>
+          <span class="role">{{getCurrentText('subtitle')}}</span>
         </div>
       </div>
       <a href="#contact" class="contact"
-        >Let's talk!</a
+        >{{getCurrentText('buttonText')}}</a
       >
     </div>
   </div>

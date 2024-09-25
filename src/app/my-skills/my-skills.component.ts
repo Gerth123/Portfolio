@@ -1,5 +1,6 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-my-skills',
@@ -14,13 +15,13 @@ export class MySkillsComponent {
     { src: '../../assets/icons/css.svg', alt: 'CSS', name: 'CSS' },
     {
       src: '../../assets/icons/javascript.svg',
-      alt: 'Javascript',
-      name: 'Javascript',
+      alt: 'JavaScript',
+      name: 'JavaScript',
     },
     {
       src: '../../assets/icons/typescript.svg',
-      alt: 'Typescript',
-      name: 'Typescript',
+      alt: 'TypeScript',
+      name: 'TypeScript',
     },
     { src: '../../assets/icons/angular.svg', alt: 'Angular', name: 'Angular' },
     {
@@ -42,15 +43,62 @@ export class MySkillsComponent {
     },
   ];
 
+  public translations: any = {
+    en: {
+      headline: 'My skills',
+      shortDescription:
+        'I have gained experience in building projects with different frontend technologies and concepts.',
+      secondHeadline: 'Looking for',
+      secondHeadlineSpan: 'another skill',
+      secondText:
+        'Feel free to contact me. I look forward to expanding on my previous knowledge.',
+      getInTouch: 'Get in touch',
+      continuallyLearning: 'Continually learning',
+      materialDesign: 'Material Design',
+    },
+    de: {
+      headline: 'Fähigkeiten',
+      shortDescription:
+        'Ich habe Erfahrung in der Erstellung von Projekten mit verschiedenen Frontend-Technologien und Konzepten gesammelt.',
+      secondHeadline: 'Suchen Sie nach',
+      secondHeadlineSpan: 'einer anderen Fähigkeit',
+      secondText:
+        'Nehmen Sie Kontakt mit mir auf. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.',
+      getInTouch: 'Kontakt aufnehmen',
+      continuallyLearning: 'Kontinuierliche Weiterbildung',
+    },
+  };
+
+  public currentLanguage: 'en' | 'de' = 'en';
+
+  constructor(private languageService: LanguageService) {}
+  /**
+   * Retrieves the translation for the given field based on the current language.
+   *
+   * @param {string} field - The key of the translation to retrieve.
+   * @returns {string} The translation for the given field.
+   */
+  getCurrentText(field: string): string {
+    return this.translations[this.languageService.currentLanguage][field];
+  }
+
   isHovered: boolean = false;
 
-  constructor() {}
-
+  /**
+   * Sets the isHovered flag to true, in order to show the text
+   * "I'm continually learning" and change the image of the
+   * "continually learning" skill to a different one.
+   */
   showSpecialInterest() {
     this.isHovered = true;
   }
 
+  /**
+   * Sets the isHovered flag to false, in order to hide the text
+   * "I'm continually learning" and change the image of the
+   * "continually learning" skill to the default one.
+   */
   hideSpecialInterest() {
-    this.isHovered = false;  
+    this.isHovered = false;
   }
 }

@@ -2,14 +2,14 @@ section {
   display: flex;
   flex-direction: column;
   height: 110svh;
-  padding-top: 10svh;
+  padding-top: 20svh;
   position: relative;
   background-color: rgb(20, 29, 47);
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
   color: white;
-  width: 100%;
+  width: 100vw;
 }
 
 a {
@@ -80,6 +80,11 @@ a {
   height: 50px;
 }
 
+.rotateDe {
+  font-size: 36px;
+  margin-right: -30px;
+}
+
 .stats {
   display: flex;
   flex-direction: column;
@@ -97,7 +102,7 @@ a {
 }
 
 .role {
-  font-size: 44px;
+  font-size: 48px;
   display: flex;
   align-items: center;
   position: relative;
@@ -107,9 +112,12 @@ a {
 
 .contact {
   background-color: #70e61c;
-  width: 165px;
+  width: auto;
+  min-width: 150px;
   height: 58px;
+  margin-top: 10px;
   border-radius: 10px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,6 +209,24 @@ a {
   }
 }
 
+@media (max-width: 1600px) and (max-height: 800px) {
+  section {
+    height: 120svh;
+  }
+
+  .imgAndTextContainer {
+    margin-top: -120px;
+  }
+
+  .background {
+    margin-top: -600px;
+  }
+
+  .contactStats {
+    padding-top: 30px;
+  }
+}
+
 @media (max-width: 1450px) {
   .background {
     margin-top: -550px;
@@ -257,8 +283,12 @@ a {
 }
 
 @media (max-width: 1100px) and (max-height: 1400px) {
+  .imgAndTextContainer {
+    margin-top: -150px;
+  }
+
   .textContainer {
-    margin-top: -50px;
+    margin-top: -60px;
   }
 
   .name {
@@ -270,7 +300,7 @@ a {
   }
 
   .background {
-    margin-top: -750px;
+    margin-top: -700px;
   }
 }
 
@@ -289,11 +319,12 @@ a {
   }
 
   .background {
-    margin-top: -560px;
+    margin-top: -600px;
   }
 
   .textContainer {
-    margin-top: -190px;
+    margin-top: -100px;
+    margin-left: -30px;
   }
 
   .rotate {
@@ -302,8 +333,12 @@ a {
     margin-right: -20px;
   }
 
+  .rotateDe {
+    font-size: 28px;
+  }
+
   .stats {
-    gap: 10px;
+    gap: 8px;
   }
 
   .name {
@@ -312,8 +347,8 @@ a {
   }
 
   .role {
-    font-size: 33px;
-    height: 33px;
+    font-size: 36px;
+    height: 36px;
   }
 
   .contact {
@@ -327,10 +362,55 @@ a {
   }
 }
 
+@media (max-width: 700px) and (min-height: 900px) {
+  .background {
+    margin-top: -530px;
+  }
+}
+
+@media (max-width: 500px) and (min-height: 900px) { 
+  section{
+    padding-top: 5svh;
+  }
+
+  .imgAndTextContainer {
+    margin-top: 0px;
+  }
+
+  .line {
+    width: 100px;
+  }
+}
+
 @media (max-width: 500px) and (max-height: 1000px) {
+  .name {
+    font-size: 50px;
+    height: 50px;
+  }
+  
+  .role {
+    font-size: 30px;
+    height: 30px;
+  }
+
+  .rotate {
+    font-size: 36px;
+    margin-top: 2px;
+    margin-right: -18px;
+  }
+
+  .rotateDe {
+    font-size: 24px;
+    margin-right: -20px;
+  }
+}
+
+
+@media (max-width: 500px) and (max-height: 1000px) and (pointer:coarse) {
   section {
     padding-top: 0;
-    height: 92svh;
+    height: 95svh;
+    margin-bottom: -10svh;
   }
   
   .background {
@@ -347,14 +427,18 @@ a {
   }
 
   .role {
-    font-size: 28px;
-    height: 28px;
+    font-size: 30px;
+    height: 30px;
   }
 
   .rotate {
     font-size: 36px;
     margin-top: 2px;
     margin-right: -18px;
+  } 
+  
+  .rotateDe {
+    font-size: 24px;
   }
 
   .line {
@@ -372,9 +456,29 @@ a {
   }
 }
 
-@media (max-width: 400px) and (max-height: 900px) {
+@media (max-width: 450px) and (max-height: 900px) {
+  section {
+    height: 100svh;
+  }
+
+   .imgAndTextContainer {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 400px) {
   .background {
-    margin-top: -400px;
+    margin-top: -450px;
+  }
+}
+
+@media (max-width: 400px) and (max-height: 850px) {
+  section {
+    height: 100svh;
+  }
+    
+  .background {
+    margin-top: -370px;
   }
 }
 
@@ -411,5 +515,57 @@ a {
     font-size: 14px;
     width: 120px;
     height: 45px;
+  }
+}
+
+@media (max-width: 400px) and (max-height: 700px) {
+  section {
+    margin-bottom: -10svh;
+  }
+
+  .imgContainer {
+    width: auto;
+    height: auto;
+    padding-top: 30px;
+
+    > img:nth-child(1) {
+      width: 300px;
+      height: auto;
+    }
+
+    > img:nth-child(2) {
+      width: 300px;
+      height: auto;
+      margin-top: 80px;
+    }
+  }
+
+  .textContainer {
+    margin-top: 20px;
+  }
+
+  .background {
+    margin-top: -350px;
+  }
+
+  .contactStats {
+    margin-top: 20px;
+  }
+
+  .rotateDe {
+    font-size: 18px;
+  }
+
+  .role {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 350px) {
+  .imgContainer {
+    > img:nth-child(2) {
+      width: 400px;
+      margin-top: 150px;
+    }
   }
 }

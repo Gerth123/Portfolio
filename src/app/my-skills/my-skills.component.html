@@ -10,7 +10,7 @@
         <img *ngIf="isHovered" src="../../assets/icons/special_interest.svg" alt="special_interest" id="special_interest">
         <img src="../../assets/icons/continually_learning.svg" alt="continually learning" 
           [src]="isHovered ? '../../assets/icons/continually_learning_white.svg' : '../../assets/icons/continually_learning.svg'"/>
-        <p id="continually" [style.color]="isHovered ? 'white' : '#9747FF'">Continually Learning</p>
+        <p id="continually" [style.color]="isHovered ? 'white' : '#9747FF'">{{getCurrentText('continuallyLearning')}}</p>
       </div>
       
       
@@ -18,20 +18,18 @@
   </div>
   <div class="textContainer">
     <div class="heading">
-      <h2>My skills</h2>
+      <h2>{{getCurrentText('headline')}}</h2>
       <div class="line"></div>
     </div>
     <div class="text">
       <p>
-        I have gained experience in building projects with different frontend
-        technologies and concepts.
+        {{getCurrentText('shortDescription')}}
       </p>
-      <h4>Looking for <span>another skill</span>?</h4>
+      <h4>{{getCurrentText('secondHeadline')}} <span>{{getCurrentText('secondHeadlineSpan')}}</span>?</h4>
       <p class="lastP">
-        Feel free to contact me. I look forward to expanding on my previous
-        knowledge.
+        {{getCurrentText('secondText')}}
       </p>
-      <a href="#contact">Get in touch</a>
+      <a href="#contact">{{getCurrentText('getInTouch')}}</a>
     </div>
   </div>
 </section>

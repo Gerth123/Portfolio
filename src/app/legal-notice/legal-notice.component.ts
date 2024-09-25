@@ -9,5 +9,5 @@ import { ShadowsComponent } from '../shadows/shadows.component';
   styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent {
-
+  
 }

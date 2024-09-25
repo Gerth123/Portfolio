@@ -1,14 +1,23 @@
 <header>
-  <a href="#landingPage" class="logo"
+  <a
+    href="#landingPage"
+    class="logo"
+    (click)="responsiveMenuOpen ? closeMenu() : null"
     ><img src="../../../assets/logo/robin_curly_bracket.png" alt="Logo"
   /></a>
-  <div class="responsiveMenuOpen" (click)="openMenu()">
-    <img src="../../../assets/icons/closed_menu.svg" alt="Open menu" />
+  <div class="language"><span id="languageEn" (click)="changeLanguage('en')" class="active">en</span>|<span id="languageDe" (click)="changeLanguage('de')">de</span></div>
+  <div class="responsiveMenuOpen" (click)="toggleMenu()">
+    <img
+      id="closeIcon"
+      src="../../../assets/icons/closed_menu.svg"
+      alt="Open menu"
+    />
   </div>
+
   <nav class="">
     <div class="container-fluid">
-      <a href="#aboutMe">About me</a>
-      <a href="#mySkills">Skills</a>
+      <a href="#aboutMe">{{getCurrentText('aboutMe')}}</a>
+      <a href="#mySkills">{{getCurrentText('skills')}}</a>
       <a href="#projects">Portfolio</a>
     </div>
   </nav>
@@ -20,6 +29,7 @@
         src="../../../assets/logo/robin_curly_bracket.png"
         alt="Logo"
         class="logoResponsive"
+        id="logoResponsive"
     /></a>
   </div>
   <div class="responsiveMenuLinks">
