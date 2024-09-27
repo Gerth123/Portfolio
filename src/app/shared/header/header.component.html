@@ -1,4 +1,5 @@
 <header>
+  <div>
   <a
     href="#landingPage"
     class="logo"
@@ -21,6 +22,7 @@
       <a href="#projects">Portfolio</a>
     </div>
   </nav>
+  </div>
 </header>
 <div class="responsiveMenu d-none" id="responsiveMenu">
   <div class="responsiveMenuLogo">
@@ -33,9 +35,9 @@
     /></a>
   </div>
   <div class="responsiveMenuLinks">
-    <a href="#aboutMe" (click)="closeMenu()">About me</a>
-    <a href="#mySkills" (click)="closeMenu()">My skills</a>
+    <a href="#aboutMe" (click)="closeMenu()">{{getCurrentText('aboutMe')}}</a>
+    <a href="#mySkills" (click)="closeMenu()">{{getCurrentText('skills')}}</a>
     <a href="#projects" (click)="closeMenu()">Portfolio</a>
-    <a href="#contact" (click)="closeMenu()">Contact</a>
+    <a href="#contact" (click)="closeMenu()">{{getCurrentText('contact')}}</a>
   </div>
 </div>

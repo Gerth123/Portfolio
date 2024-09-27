@@ -1,172 +1,185 @@
 <section id="contact">
-  <div class="headline">
-    <div class="line"></div>
-    <h2>{{getCurrentText('headline')}}</h2>
-  </div>
-  <div class="textAndFormContainer">
-    <div class="text">
-      <h3>{{getCurrentText('secondHeadline')}}</h3>
-      <span>
-        {{getCurrentText('firstText')}}
-      </span>
-      <span>{{getCurrentText('secondText')}} <b>{{getCurrentText('thirdText')}}</b></span>
+  <div class="container">
+    <div class="headline">
+      <div class="line"></div>
+      <h2>{{ getCurrentText("headline") }}</h2>
     </div>
-    <div>
-      <form #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)" novalidate>
-        <div class="inputContainer">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            pattern="^([a-zA-Z]{1}[a-zA-Z]*)(\s+[a-zA-Z]{1}[a-zA-Z]*)*$"
-            [(ngModel)]="contactData.name"
-            required
-            placeholder="{{getCurrentText('inputPlaceholderName')}}"
-            autocomplete="name"
-            (click)="changePlaceholder('name')"
-            (blur)="resetPlaceholder('name')"
-            #nameInput="ngModel"
-            [ngClass]="{ inputError: nameInput.invalid && nameInput.touched,
+    <div class="textAndFormContainer">
+      <div class="text" data-aos="fade-right">
+        <h3>{{ getCurrentText("secondHeadline") }}</h3>
+        <span>
+          {{ getCurrentText("firstText") }}
+        </span>
+        <span
+          >{{ getCurrentText("secondText") }}
+          <b>{{ getCurrentText("thirdText") }}</b></span
+        >
+      </div>
+      <div class="form" data-aos="fade-left">
+        <form #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)" novalidate>
+          <div class="inputContainer">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              pattern="^([a-zA-ZäöüÄÖÜß]{1}[a-zA-ZäöüÄÖÜß]*)(\s+[a-zA-ZäöüÄÖÜß]{1}[a-zA-ZäöüÄÖÜß]*)*$"
+              [(ngModel)]="contactData.name"
+              required
+              placeholder="{{ getCurrentText('inputPlaceholderName') }}"
+              autocomplete="name"
+              (click)="changePlaceholder('name')"
+              (blur)="resetPlaceholder('name')"
+              #nameInput="ngModel"
+              [ngClass]="{ inputError: nameInput.invalid && nameInput.touched,
             'checkboxChecked': nameInput.valid, 
            }"
-          />
-          <img
-            *ngIf="nameInput.valid && nameInput.touched"
-            src="../../assets/icons/input_icon_right.svg"
-            class="inputIcon"
-          />
-          <img
-            *ngIf="nameInput.invalid && nameInput.touched"
-            src="../../assets/icons/input_icon_wrong.svg"
-            class="inputIcon"
-          />
-        </div>
-        <div *ngIf="nameInput.invalid && nameInput.touched" class="error">
-          <span class="errorMessage">{{getCurrentText('errorName')}}</span>
-        </div>
+            />
+            <img
+              *ngIf="nameInput.valid && nameInput.touched"
+              src="../../assets/icons/input_icon_right.svg"
+              class="inputIcon"
+            />
+            <img
+              *ngIf="nameInput.invalid && nameInput.touched"
+              src="../../assets/icons/input_icon_wrong.svg"
+              class="inputIcon"
+            />
+          </div>
+          <div *ngIf="nameInput.invalid && nameInput.touched" class="error">
+            <span class="errorMessage">{{ getCurrentText("errorName") }}</span>
+          </div>
 
-        <div class="inputContainer">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-            [(ngModel)]="contactData.email"
-            required
-            placeholder="{{getCurrentText('inputPlaceholderEmail')}}"
-            autocomplete="email"
-            (click)="changePlaceholder('email')"
-            (blur)="resetPlaceholder('email')"
-            #emailInput="ngModel"
-            [ngClass]="{ 'inputError': emailInput.invalid && emailInput.touched,
+          <div class="inputContainer">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              pattern="^[a-z0-9._%+-]+@[a-z0-9öäüÖÄÜß.-]+\.[a-zöäüÖÄÜß]{2,4}$"
+              [(ngModel)]="contactData.email"
+              required
+              placeholder="{{ getCurrentText('inputPlaceholderEmail') }}"
+              autocomplete="email"
+              (click)="changePlaceholder('email')"
+              (blur)="resetPlaceholder('email')"
+              #emailInput="ngModel"
+              [ngClass]="{ 'inputError': emailInput.invalid && emailInput.touched,
             'checkboxChecked': emailInput.valid, 
            }"
-          />
-          <img
-            *ngIf="emailInput.valid && emailInput.touched"
-            src="../../assets/icons/input_icon_right.svg"
-            class="inputIcon"
-          />
-          <img
-            *ngIf="emailInput.invalid && emailInput.touched"
-            src="../../assets/icons/input_icon_wrong.svg"
-            class="inputIcon"
-          />
-        </div>
+            />
+            <img
+              *ngIf="emailInput.valid && emailInput.touched"
+              src="../../assets/icons/input_icon_right.svg"
+              class="inputIcon"
+            />
+            <img
+              *ngIf="emailInput.invalid && emailInput.touched"
+              src="../../assets/icons/input_icon_wrong.svg"
+              class="inputIcon"
+            />
+          </div>
 
-        <div *ngIf="emailInput.invalid && emailInput.touched" class="error">
-          <span class="errorMessage">{{getCurrentText('errorEmail')}}</span>
-        </div>
+          <div *ngIf="emailInput.invalid && emailInput.touched" class="error">
+            <span class="errorMessage">{{ getCurrentText("errorEmail") }}</span>
+          </div>
 
-        <div class="textareaContainer">
-          <textarea
-            id="message"
-            name="message"
-            pattern="^.{10,}$"
-            [(ngModel)]="contactData.message"
-            required
-            lang="en"
-            spellcheck="true"
-            placeholder="{{getCurrentText('inputPlaceholderMessage')}}"
-            (click)="changePlaceholder('message')"
-            (blur)="resetPlaceholder('message')"
-            #messageInput="ngModel"
-            [ngClass]="{
-              inputError: messageInput.invalid && messageInput.touched,
-              checkboxChecked: messageInput.valid
-            }"
-          ></textarea>
-          <img
-            *ngIf="messageInput.valid && messageInput.touched"
-            src="../../assets/icons/input_icon_right.svg"
-            class="inputIcon"
-          />
-          <img
+          <div class="textareaContainer">
+            <textarea
+              id="message"
+              name="message"
+              pattern="^.{10,}$"
+              [(ngModel)]="contactData.message"
+              required
+              lang="en"
+              spellcheck="true"
+              placeholder="{{ getCurrentText('inputPlaceholderMessage') }}"
+              (click)="changePlaceholder('message')"
+              (blur)="resetPlaceholder('message')"
+              #messageInput="ngModel"
+              [ngClass]="{
+                inputError: messageInput.invalid && messageInput.touched,
+                checkboxChecked: messageInput.valid
+              }"
+            ></textarea>
+            <img
+              *ngIf="messageInput.valid && messageInput.touched"
+              src="../../assets/icons/input_icon_right.svg"
+              class="inputIcon"
+            />
+            <img
+              *ngIf="messageInput.invalid && messageInput.touched"
+              src="../../assets/icons/input_icon_wrong.svg"
+              class="inputIcon"
+            />
+          </div>
+          <div
             *ngIf="messageInput.invalid && messageInput.touched"
-            src="../../assets/icons/input_icon_wrong.svg"
-            class="inputIcon"
-          />
-        </div>
-        <div *ngIf="messageInput.invalid && messageInput.touched" class="error">
-          <span class="errorMessage"
-            >{{getCurrentText('errorMessage')}}</span
+            class="error"
           >
-        </div>
-        <div class="checkbox">
-          <input
-            type="checkbox"
-            id="checkbox"
-            required
-            [(ngModel)]="contactData.privacyChecked"
-            name="privacyChecked"
-            #checkboxInput="ngModel"
-          />
-          <label
-            for="checkbox"
-            [ngClass]="{ 'inputError': checkboxInput.invalid && checkboxInput.touched,
+            <span class="errorMessage">{{
+              getCurrentText("errorMessage")
+            }}</span>
+          </div>
+          <div class="checkbox">
+            <input
+              type="checkbox"
+              id="checkbox"
+              required
+              [(ngModel)]="contactData.privacyChecked"
+              name="privacyChecked"
+              #checkboxInput="ngModel"
+            />
+            <label
+              for="checkbox"
+              [ngClass]="{ 'inputError': checkboxInput.invalid && checkboxInput.touched,
                        'checkboxChecked': contactData.privacyChecked,
            }"
-          ></label>
+            ></label>
 
-          <span>
-            {{getCurrentText('privacyFirstText')}} <a href="/privacy-policy">{{getCurrentText('privacySecondText')}}</a>
-            {{getCurrentText('privacyThirdText')}}
-          </span>
-        </div>
-        <div
-          *ngIf="checkboxInput.invalid && checkboxInput.touched"
-          class="errorCheckbox"
-        >
-          <span class="errorMessagePrivacy"
-            >{{getCurrentText('errorPrivacy')}}</span
+            <span>
+              {{ getCurrentText("privacyFirstText") }}
+              <a href="/privacy-policy">{{
+                getCurrentText("privacySecondText")
+              }}</a>
+              {{ getCurrentText("privacyThirdText") }}
+            </span>
+          </div>
+          <div
+            *ngIf="checkboxInput.invalid && checkboxInput.touched"
+            class="errorCheckbox"
           >
-        </div>
-        <div *ngIf="successMessage" class="successMessage">
-          {{ successMessage }}
-        </div>
-        <div *ngIf="errorMessage" class="errorMessage">{{ errorMessage }}</div>
-        <div class="buttonContainer">
-          <button
-            type="submit"
-            id="sendMessageButton"
-            [disabled]="ngForm.invalid"
-            [ngClass]="{
-              sendMessageButton: ngForm.valid,
-              sendMessageButtonFalse: ngForm.invalid
-            }"
-          >
-            <span>{{getCurrentText('buttonText')}} :)</span>
-          </button>
-        </div>
-      </form>
+            <span class="errorMessagePrivacy">{{
+              getCurrentText("errorPrivacy")
+            }}</span>
+          </div>
+          <div *ngIf="successMessage" class="successMessage">
+            {{ successMessage }}
+          </div>
+          <div *ngIf="errorMessage" class="errorMessage">
+            {{ errorMessage }}
+          </div>
+          <div class="buttonContainer">
+            <button
+              type="submit"
+              id="sendMessageButton"
+              [disabled]="ngForm.invalid"
+              [ngClass]="{
+                sendMessageButton: ngForm.valid,
+                sendMessageButtonFalse: ngForm.invalid
+              }"
+            >
+              <span>{{ getCurrentText("buttonText") }} :)</span>
+            </button>
+          </div>
+        </form>
 
-      <div class="arrowUp">
-        <a href="#landingPage"
-          ><img
-            src="../../assets/icons/arrow_up_contact.svg"
-            alt="Arrow up"
-            class="arrowUpImg"
-        /></a>
+        <div class="arrowUp">
+          <a href="#landingPage"
+            ><img
+              src="../../assets/icons/arrow_up_contact.svg"
+              alt="Arrow up"
+              class="arrowUpImg"
+          /></a>
+        </div>
       </div>
     </div>
   </div>

@@ -1,61 +1,77 @@
-
-<section id="landingPage"> 
-  <div class="imgAndTextContainer">
-    <div class="imgContainer">
-      <img
-        src="../../assets/img/29. photo shadows.svg"
-        alt="Lila and green background"
-        class="lilaAndGreen"
-      />
-      <img
-        src="../../assets/img/lurdwig.png"
-        alt="Profilepicture"
-        class="profilePicture"
-      />
+<section id="landingPage">
+  <div class="container">
+    <div class="imgAndTextContainer">
+      <div class="imgContainer">
+        <img
+          src="../../assets/img/29. photo shadows.svg"
+          alt="Lila and green background"
+          class="lilaAndGreen"
+        />
+        <img
+          src="../../assets/img/lurdwig.png"
+          alt="Profilepicture"
+          class="profilePicture"
+        />
+      </div>
+      <div class="textContainer">
+        <div class="rotateAndStatsContainer">
+          <span
+            class="rotate"
+            [ngClass]="{ rotateDe: getCurrentLanguage() === 'de' }"
+            >{{ getCurrentText("rotateText") }}</span
+          >
+          <div class="stats">
+            <span class="name">Robin Gerth</span>
+            <span class="role">{{ getCurrentText("subtitle") }}</span>
+          </div>
+        </div>
+        <a href="#contact" class="contact">{{
+          getCurrentText("buttonText")
+        }}</a>
+      </div>
     </div>
-    <div class="textContainer">
-      <div class="rotateAndStatsContainer">
-        <span class="rotate" [ngClass]="{'rotateDe': getCurrentLanguage() === 'de'}">{{getCurrentText('rotateText')}}</span>
-        <div class="stats">
-          <span class="name">Robin Gerth</span>
-          <span class="role">{{getCurrentText('subtitle')}}</span>
+
+    <div class="contactStats">
+      <div class="iconsAndEmailContainer">
+        <div class="line"></div>
+        <div class="icons">
+          <a href="https://github.com/Gerth123" target="_blank">
+            <img
+              src="../../assets/icons/github_small_button.svg"
+              alt="Github"
+            />
+          </a>
+          <a href="mailto:robingerth21@gmail.com">
+            <img src="../../assets/icons/email_small_button.svg" alt="Email" />
+          </a>
+          <a
+            href="https:/linkedin.com/in/robin-gerth-47100031b/"
+            target="_blank"
+          >
+            <img
+              src="../../assets/icons/linkedin_small_button.svg"
+              alt="Linkedin"
+            />
+          </a>
+        </div>
+        <div class="email">
+          <a href="mailto:robingerth21@gmail.com">robingerth21&#64;gmail.com</a>
         </div>
       </div>
-      <a href="#contact" class="contact"
-        >{{getCurrentText('buttonText')}}</a
-      >
-    </div>
-  </div>
-  
-  <div class="contactStats">
-    <div class="iconsAndEmailContainer">
-      <div class="line"></div>
-      <div class="icons">
-        <a href="https://github.com/Gerth123" target="_blank">
-          <img src="../../assets/icons/github_small_button.svg" alt="Github" />
-        </a>
-        <a href="mailto:robingerth21@gmail.com">
-          <img src="../../assets/icons/email_small_button.svg" alt="Email" />
-        </a>
-        <a
-          href="https:/linkedin.com/in/robin-gerth-47100031b/?originalSubdomain=de"
-          target="_blank"
-        >
-          <img
-            src="../../assets/icons/linkedin_small_button.svg"
-            alt="Linkedin"
-          />
-        </a>
-      </div>
-      <div class="email">
-        <a href="mailto:robingerth21@gmail.com">robingerth21&#64;gmail.com</a>
+      <div class="scroll">
+        <span>Scroll down</span>
+        <img
+          src="../../assets/icons/right-arrow.png"
+          alt="Arrow down"
+          class="arrow"
+        />
+        <img src="" alt="" />
       </div>
     </div>
-    <div class="scroll">
-      <span>Scroll down</span>
-      <img src="../../assets/icons/right-arrow.png" alt="Arrow down" class="arrow"/>
-      <img src="" alt="">
-    </div>
+    <img
+      src="../../assets/img/background_under_profile_picture.svg"
+      alt="Background"
+      class="background"
+    />
   </div>
-  <img src="../../assets/img/background_under_profile_picture.svg" alt="Background" class="background">
 </section>

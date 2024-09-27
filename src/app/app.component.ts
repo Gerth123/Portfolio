@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+declare var AOS: any;
 
 @Component({
   selector: 'app-root',
@@ -29,5 +30,7 @@ export class AppComponent implements AfterViewInit {
         document.documentElement.style.overflow = '';
       }
     }, 400);
+
+    AOS.init();
   }
 }

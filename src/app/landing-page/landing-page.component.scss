@@ -1,7 +1,7 @@
 section {
   display: flex;
   flex-direction: column;
-  height: 110svh;
+  height: 90svh;
   padding-top: 20svh;
   position: relative;
   background-color: rgb(20, 29, 47);
@@ -10,6 +10,11 @@ section {
   overflow: hidden;
   color: white;
   width: 100vw;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
 }
 
 a {
@@ -22,7 +27,7 @@ a {
   position: relative;
   display: flex;
   width: 100%;
-  margin-top: -600px;
+  margin-top: -700px;
   z-index: 6;
 }
 
@@ -134,10 +139,11 @@ a {
 
 .contactStats {
   display: flex;
-  z-index: 7 !important;
+  z-index: 9;
   justify-content: space-between;
   width: 100%;
   padding-top: 120px;
+  position: relative;
 }
 
 .iconsAndEmailContainer {
@@ -197,15 +203,27 @@ a {
   filter: invert(1);
 }
 
-@media (min-height: 1100px) {
-  .background {
-    margin-top: -800px;
+@media (min-width: 1600px) and (min-height: 1100px) {
+  .imgAndTextContainer {
+    height: 60svh;
+    padding-top: 8svh;
   }
-}
 
-@media (min-height: 1300px) {
+  .name {
+    height: 80px;
+  }
+
+  .role {
+    height: 70px;
+  }
+
   .background {
-    margin-top: -880px;
+    margin-top: -75svh;
+  }
+
+  .contactStats {
+    height: 10svh;
+    padding-top: 15svh;
   }
 }
 
@@ -244,6 +262,11 @@ a {
 }
 
 @media (max-width: 1100px) {
+  section {
+    height: auto;
+    margin-bottom: -100px;
+  }
+
   .imgAndTextContainer {
     flex-direction: column;
     align-items: center;
@@ -269,7 +292,7 @@ a {
 
   .iconsAndEmailContainer {
     width: 100%;
-  } 
+  }
 
   .line {
     width: 300px;
@@ -362,14 +385,32 @@ a {
   }
 }
 
+@media (max-width: 850px) {
+  section {
+    padding-bottom: 15svh;
+  }
+}
+
 @media (max-width: 700px) and (min-height: 900px) {
   .background {
     margin-top: -530px;
   }
 }
 
-@media (max-width: 500px) and (min-height: 900px) { 
-  section{
+@media (max-width: 650px) {
+  .line {
+    width: 150px;
+  }
+}
+
+@media (max-width: 550px) {
+  section {
+    padding-bottom: 250px;
+  }
+}
+
+@media (max-width: 500px) and (min-height: 900px) {
+  section {
     padding-top: 5svh;
   }
 
@@ -387,7 +428,7 @@ a {
     font-size: 50px;
     height: 50px;
   }
-  
+
   .role {
     font-size: 30px;
     height: 30px;
@@ -405,14 +446,13 @@ a {
   }
 }
 
-
-@media (max-width: 500px) and (max-height: 1000px) and (pointer:coarse) {
+@media (max-width: 500px) and (max-height: 1000px) and (pointer: coarse) {
   section {
     padding-top: 0;
     height: 95svh;
     margin-bottom: -10svh;
   }
-  
+
   .background {
     margin-top: -450px;
   }
@@ -435,8 +475,8 @@ a {
     font-size: 36px;
     margin-top: 2px;
     margin-right: -18px;
-  } 
-  
+  }
+
   .rotateDe {
     font-size: 24px;
   }
@@ -461,7 +501,7 @@ a {
     height: 100svh;
   }
 
-   .imgAndTextContainer {
+  .imgAndTextContainer {
     margin-top: 0px;
   }
 }
@@ -476,25 +516,17 @@ a {
   section {
     height: 100svh;
   }
-    
+
   .background {
     margin-top: -370px;
   }
 }
 
-@media (max-width: 400px) and (max-height: 800px) {
-  section {
-    height: 110svh;
-  }
-
-  .background {
-    margin-top: -330px;
-  }
-
+@media (max-width: 400px) { 
   .textContainer {
     margin-left: -30px;
   }
-  
+
   .name {
     font-size: 40px;
     height: 40px;
@@ -515,6 +547,24 @@ a {
     font-size: 14px;
     width: 120px;
     height: 45px;
+  }
+
+  .contactStats {
+    margin-top: 20px;
+  }
+
+  .line {
+    width: 60px;
+  }
+}
+
+@media (max-width: 400px) and (max-height: 800px) {
+  section {
+    height: 110svh;
+  }
+
+  .background {
+    margin-top: -330px;
   }
 }
 

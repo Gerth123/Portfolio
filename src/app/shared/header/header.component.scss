@@ -2,7 +2,7 @@ header {
   background-color: rgb(20, 29, 47);
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 12svh;
   min-height: 110px;
@@ -11,6 +11,14 @@ header {
   left: 0;
   z-index: 100;
   width: 100%;
+
+  > div {
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    justify-content: space-between;
+  }
 
   nav {
     padding-right: 50px;
@@ -221,6 +229,15 @@ header {
   }
 }
 
+@media (max-width: 400px) {
+  .responsiveMenu {
+    img {
+      margin-top: -2px;
+      margin-left: -170px;
+    }
+  }
+}
+
 @media (max-width: 400px) and (max-height: 850px) {
   .responsiveMenu {
     img {
@@ -235,6 +252,14 @@ header {
     img {
       margin-top: -12px;
       margin-left: -165px;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .responsiveMenu {
+    img {
+      margin-left: -150px;
     }
   }
 }

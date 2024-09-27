@@ -47,8 +47,30 @@ section {
   width: 100%;
   height: 85svh;
   left: -42%;
-  top: 475svh;
+  top: 455svh;
   z-index: 1;
+}
+
+@media (min-width: 1600px) {
+  .purpleShadowAboutMe {
+    top: 40svh;
+  }
+
+  .greenShadowMySkills {
+    top: 170svh;
+  }
+
+  .purpleShadowPortfolio {
+    top: 230svh;
+  }
+
+  .greenShadow {
+    top: 350svh;
+  }
+
+  .purpleShadow {
+    top: 400svh;
+  }
 }
 
 @media (max-width: 1550px) {

@@ -1,35 +1,91 @@
 <section id="mySkills">
-  <div class="skillsContainer">
-    <div class="imageContainer">
-      <div *ngFor="let skill of skills" class="skill">
-        <img src="{{ skill.src }}" alt="{{ skill.alt }}" />
-        <p>{{ skill.name }}</p>
+  <div class="container">
+    <div class="skillsContainer" data-aos="zoom-in-right">
+      <div class="imageContainer">
+        <div *ngFor="let skill of skills" class="skill">
+          <img src="{{ skill.src }}" alt="{{ skill.alt }}" />
+          <p>{{ skill.name }}</p>
+        </div>
+        <div
+          class="continuallyLearning"
+          (mouseover)="showSpecialInterest()"
+          (mouseout)="hideSpecialInterest()"
+        >
+          <img
+            *ngIf="isHovered"
+            src="../../assets/icons/special_interest.svg"
+            alt="special_interest"
+            id="special_interest"
+          />
+          <img
+            src="../../assets/icons/continually_learning.svg"
+            alt="continually learning"
+            [src]="
+              isHovered
+                ? '../../assets/icons/continually_learning_white.svg'
+                : '../../assets/icons/continually_learning.svg'
+            "
+          />
+          <p id="continually" [style.color]="isHovered ? 'white' : '#9747FF'">
+            {{ getCurrentText("continuallyLearning") }}
+          </p>
+        </div>
       </div>
-      <div class="continuallyLearning"   (mouseover)="showSpecialInterest()"
-      (mouseout)="hideSpecialInterest()">
-        <img *ngIf="isHovered" src="../../assets/icons/special_interest.svg" alt="special_interest" id="special_interest">
-        <img src="../../assets/icons/continually_learning.svg" alt="continually learning" 
-          [src]="isHovered ? '../../assets/icons/continually_learning_white.svg' : '../../assets/icons/continually_learning.svg'"/>
-        <p id="continually" [style.color]="isHovered ? 'white' : '#9747FF'">{{getCurrentText('continuallyLearning')}}</p>
+    </div>
+    <div class="textContainer" data-aos="fade-left">
+      <div class="heading">
+        <h2>{{ getCurrentText("headline") }}</h2>
+        <div class="line"></div>
       </div>
-      
-      
-    </div>
-  </div>
-  <div class="textContainer">
-    <div class="heading">
-      <h2>{{getCurrentText('headline')}}</h2>
-      <div class="line"></div>
-    </div>
-    <div class="text">
-      <p>
-        {{getCurrentText('shortDescription')}}
-      </p>
-      <h4>{{getCurrentText('secondHeadline')}} <span>{{getCurrentText('secondHeadlineSpan')}}</span>?</h4>
-      <p class="lastP">
-        {{getCurrentText('secondText')}}
-      </p>
-      <a href="#contact">{{getCurrentText('getInTouch')}}</a>
+      <div class="text">
+        <p>
+          {{ getCurrentText("shortDescription") }}
+        </p>
+        <div class="skillsContainer2" data-aos="zoom-in-right">
+          <div class="imageContainer">
+            <div *ngFor="let skill of skills" class="skill">
+              <img src="{{ skill.src }}" alt="{{ skill.alt }}" />
+              <p>{{ skill.name }}</p>
+            </div>
+            <div
+              class="continuallyLearning"
+              (mouseover)="showSpecialInterest()"
+              (mouseout)="hideSpecialInterest()"
+            >
+              <img
+                *ngIf="isHovered"
+                src="../../assets/icons/special_interest.svg"
+                alt="special_interest"
+                id="special_interest"
+              />
+              <img
+                src="../../assets/icons/continually_learning.svg"
+                alt="continually learning"
+                [src]="
+                  isHovered
+                    ? '../../assets/icons/continually_learning_white.svg'
+                    : '../../assets/icons/continually_learning.svg'
+                "
+              />
+              <p
+                id="continually"
+                [style.color]="isHovered ? 'white' : '#9747FF'"
+              >
+                {{ getCurrentText("continuallyLearning") }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <h4>
+          {{ getCurrentText("secondHeadline") }}
+          <span>{{ getCurrentText("secondHeadlineSpan") }}</span
+          >?
+        </h4>
+        <p class="lastP">
+          {{ getCurrentText("secondText") }}
+        </p>
+        <a href="#contact">{{ getCurrentText("getInTouch") }}</a>
+      </div>
     </div>
   </div>
 </section>

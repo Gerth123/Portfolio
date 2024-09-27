@@ -2,11 +2,18 @@ section {
   display: flex;
   background-color: rgb(20, 29, 47);
   width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80svh;
-  color: white;
-  padding-top: 10svh;
 }
 
 .skill:not(:last-child) {
@@ -99,6 +106,17 @@ p {
 
 .skillsContainer {
   display: flex;
+  flex-direction: column;
+  height: 80svh;
+  width: 40vw;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 150px;
+  z-index: 9;
+}
+
+.skillsContainer2 {
+  display: none;
   flex-direction: column;
   height: 80svh;
   width: 40vw;
@@ -209,6 +227,32 @@ a {
   padding-right: 100px;
 }
 
+@media (min-width: 1600px) {
+  section {
+    min-height: 100svh;
+    padding-top: 0;
+  }
+
+  .skillsContainer {
+    padding-left: 0;
+    padding-right: 10vw;
+    height: 800px;
+  }
+
+  .textContainer {
+    height: 800px;
+  }
+
+  .heading {
+    height: 200px;
+  }
+
+  .text {
+    padding-right: 0;
+    height: 600px;
+  }
+}
+
 @media (max-width: 1500px) {
   .skillsContainer {
     width: 50vw;
@@ -244,27 +288,26 @@ a {
 @media (max-width: 1100px) {
   section {
     flex-direction: column-reverse;
-    height: 100svh;
+    padding-top: 10svh;
   }
 
   .textContainer {
     width: 100%;
+    height: auto;
+  }
+
+  .text {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    height: 700px;
   }
 
   .line {
     width: 140px;
   }
 
-  .text {
-    height: 80svh;
-    padding-right: 0;
-    width: 90%;
-    align-items: center;
-    padding-right: 5%;
-  }
-
   h4 {
-    margin-top: 52svh;
     width: 100%;
     text-align: center;
   }
@@ -272,6 +315,7 @@ a {
   p {
     margin-block: 0.3em;
     text-align: right;
+    max-width: 95%;
   }
 
   a {
@@ -289,77 +333,80 @@ a {
   }
 
   .skillsContainer {
-    width: 60%;
+    display: none;
+  }
+
+  .skillsContainer2 {
+    display: flex;
+    width: 70%;
     justify-content: flex-start;
     align-items: center;
     padding-left: 0;
-    margin-top: -29svh;
+    height: auto;
   }
 
   .imageContainer {
     justify-content: center;
-    height: 42svh;
+    height: auto;
+
+    > div {
+      width: 100px;
+    }
   }
 }
 
-@media (max-width: 850px) {
-  .imageContainer {
-    gap: 70px;
+@media (max-width: 890px) {
+  .skillsContainer2 {
+    width: 80%;
   }
 
-  h4 {
-    margin-top: 49svh;
+  .imageContainer {
+    gap: 50px;
   }
 }
 
 @media (max-width: 750px) {
-  .imageContainer {
-    gap: 50px;
-  }
-
   h2 {
     font-size: 70px;
+  }
+}
+
+@media (max-width: 700px) {
+  .text {
+    height: auto;
+    gap: 20px;
+  }
+
+  .skillsContainer2 {
+    width: 100%;
+  }
+
+  .imageContainer {
+    > div {
+      width: 80px;
+      > img {
+        width: 50px;
+        height: 50px;
+      }
+
+      > p {
+        font-size: 14px;
+      }
+    }
   }
 }
 
 @media (max-width: 650px) {
   h4 {
     font-size: 30px;
-    margin-top: 57svh;
   }
 
   .line {
     width: 50px;
   }
 
-  .text {
-    height: 90svh;
-    > p {
-      width: 70vw;
-    }
-  }
-
-  .skillsContainer {
-    margin-top: 21svh;
+  .skillsContainer2 {
     width: 70%;
-  }
-}
-
-@media (max-width: 560px) {
-  section {
-    height: 110svh;
-  }
-
-  .text {
-    height: 110svh;
-  }
-
-  h4 {
-    margin-top: 60svh;
-  }
-
-  .imageContainer {
-    margin-top: -43svh;
   }
 }
 
@@ -371,56 +418,11 @@ a {
   h2 {
     font-size: 50px;
   }
-
-  h4 {
-    margin-top: 65svh;
-  }
 }
 
-@media (max-width: 400px) {
-  .skillsContainer {
-    width: 80%;
-    margin-top: 0svh;
-  }
-
-  .imageContainer {
-    gap: 50px;
-    margin-top: -20svh;
-  }
-
-  h4 {
-    margin-top: 65svh;
-  }
-
-  img {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-@media (max-width: 400px) and (max-height: 700px) {  
-  section {
-    height: 120svh;
-    padding-top: 50svh;
-    margin-bottom: -15svh;
-  }
-
-  .imageContainer {
-    margin-top: -125svh;
-  }
-
-  .textContainer {
-    height: 160svh;
-
-  }
-
+@media (max-width: 400px) and (max-height: 700px) {
   .text {
-    height: 150svh;
     justify-content: flex-start;
-  }
-
-  h4 {
-    margin-top: 80svh;
   }
 }
 
@@ -429,20 +431,12 @@ a {
     font-size: 50px;
   }
 
-  .skillsContainer {
-    width: 90%;
-  }
-
   .imageContainer {
     gap: 40px;
     > div {
       > img {
         width: 40px;
         height: 40px;
-      }
-
-      > p {
-        font-size: 14px;
       }
     }
   }

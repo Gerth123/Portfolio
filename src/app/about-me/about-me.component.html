@@ -1,22 +1,26 @@
 <section id="aboutMe">
-    <div class="textContainer">
-        <h2>{{getCurrentText('headline')}}</h2>
-        <p>{{getCurrentText('shortDescription')}}</p>
-        <div>
-            <img src="../../assets/icons/location.svg" alt="Location">
-            <p>{{getCurrentText('location')}}</p>
-        </div>
-        <div>
-            <img src="../../assets/icons/light_bulb.svg" alt="Light bulb">
-            <p>{{getCurrentText('interest')}}</p>
-        </div>
-        <div>
-            <img src="../../assets/icons/puzzle.svg" alt="Puzzle">
-            <p>{{getCurrentText('puzzle')}}</p>
-        </div>
+  <div class="container">
+    <div class="textContainer" data-aos="fade-right">
+      <h2>{{ getCurrentText("headline") }}</h2>
+      <p>{{ getCurrentText("shortDescription") }}</p>
+      <div>
+        <img src="../../assets/icons/location.svg" alt="Location" />
+        <p>{{ getCurrentText("location") }}</p>
+      </div>
+      <div>
+        <img src="../../assets/icons/light_bulb.svg" alt="Light bulb" />
+        <p>{{ getCurrentText("interest") }}</p>
+      </div>
+      <div>
+        <img src="../../assets/icons/puzzle.svg" alt="Puzzle" />
+        <p>{{ getCurrentText("puzzle") }}</p>
+      </div>
     </div>
     <div class="profileImageContainer">
-        <div class="profileImage"><img src="../../assets/img/file_new.png" alt="Profile picture"></div>
-        <div class="line"></div>
+      <div class="profileImage" data-aos="flip-up">
+        <img src="../../assets/img/file_new.png" alt="Profile picture" />
+      </div>
+      <div class="line" data-aos="fade-left"></div>
     </div>
+  </div>
 </section>

@@ -1,66 +1,90 @@
 <section id="projects">
+  <div class="container">
     <div class="heading">
-    <div class="headline">
-      <div class="lineOne"></div>
-      <h2>Portfolio</h2>
-      <div class="lineTwo"></div>
-    </div>
-    <span>{{getCurrentText('firstSpan')}}</span>
-  </div>
-  <div class="projectsContainer">
-    <div class="project">
-      <div class="projectText">
-        <h4>Join</h4>
-        <h5>JavaScript | HTML | CSS | Firebase</h5>
-        <p>
-          {{getCurrentText('joinText')}}
-        </p>
-        <div class="buttonContainer">
-          <a
-            href="https://robin-gerth.de/Join/login.html"
-            class="liveTest" target="_blank"
-            >{{getCurrentText('liveTest')}}</a
-          >
-          <a href="https://github.com/Gerth123/Join" class="github" target="_blank">Github</a>
-        </div>
+      <div class="headline">
+        <div class="lineOne"></div>
+        <h2>Portfolio</h2>
+        <div class="lineTwo"></div>
       </div>
-      <img src="../../assets/img/imac_join.png" alt="" />
+      <span>{{ getCurrentText("firstSpan") }}</span>
     </div>
-    <div class="projectEven">
-      <div class="projectTextEven">
-        <h4>El pollo loco</h4>
-        <h5>JavaScript | HTML | CSS</h5>
-        <p>
-          {{getCurrentText('elPolloLocoText')}}
-        </p>
-        <div class="buttonContainer">
-          <a
-            href="https://robin-gerth.de/el_pollo_loco/index.html"
-            class="liveTest" target="_blank"
-            >{{getCurrentText('liveTest')}}</a
-          >
-          <a href="https://github.com/Gerth123/El-Pollo-Loco" class="github" target="_blank">Github</a>
+    <div class="projectsContainer">
+      <div class="project" data-aos="fade-left">
+        <div class="projectText">
+          <h4>Join</h4>
+          <h5>JavaScript | HTML | CSS | Firebase</h5>
+          <p>
+            {{ getCurrentText("joinText") }}
+          </p>
+          <div class="buttonContainer">
+            <a
+              href="https://robin-gerth.de/Join/login.html"
+              class="liveTest"
+              target="_blank"
+              >{{ getCurrentText("liveTest") }}</a
+            >
+            <a
+              href="https://github.com/Gerth123/Join"
+              class="github"
+              target="_blank"
+              >Github</a
+            >
+          </div>
         </div>
+        <img src="../../assets/img/imac_join.png" alt="" />
       </div>
-      <img src="../../assets/img/el_pollo_loco_laptop.svg" alt="" />
-    </div>
-    <div class="project">
-      <div class="projectText">
-        <h4>Pokedex</h4>
-        <h5>HTML | CSS | JavaScript | API</h5>
-        <p>
-          {{getCurrentText('pokedexText')}}
-        </p>
-        <div class="buttonContainer">
-          <a
-            href="https://robin-gerth.de/Pokedex/index.html"
-            class="liveTest" target="_blank"
-            >{{getCurrentText('liveTest')}}</a
-          >
-          <a href="https://github.com/Gerth123/Pokedex" class="github" target="_blank">Github</a>
+      <div class="projectEven" data-aos="fade-right">
+        <div class="projectTextEven">
+          <h4>El pollo loco</h4>
+          <h5>JavaScript | HTML | CSS</h5>
+          <p>
+            {{ getCurrentText("elPolloLocoText") }}
+          </p>
+          <div class="buttonContainer">
+            <a
+              href="https://robin-gerth.de/el_pollo_loco/index.html"
+              class="liveTest"
+              target="_blank"
+              >{{ getCurrentText("liveTest") }}</a
+            >
+            <a
+              href="https://github.com/Gerth123/El-Pollo-Loco"
+              class="github"
+              target="_blank"
+              >Github</a
+            >
+          </div>
         </div>
+        <img src="../../assets/img/el_pollo_loco_laptop.svg" alt="" />
       </div>
-      <img src="../../assets/img/iphone_6s_pokedex.png" alt="Pokedex image"  class="pokedex"/>
+      <div class="project" data-aos="fade-left">
+        <div class="projectText">
+          <h4>Pokedex</h4>
+          <h5>HTML | CSS | JavaScript | API</h5>
+          <p>
+            {{ getCurrentText("pokedexText") }}
+          </p>
+          <div class="buttonContainer">
+            <a
+              href="https://robin-gerth.de/Pokedex/index.html"
+              class="liveTest"
+              target="_blank"
+              >{{ getCurrentText("liveTest") }}</a
+            >
+            <a
+              href="https://github.com/Gerth123/Pokedex"
+              class="github"
+              target="_blank"
+              >Github</a
+            >
+          </div>
+        </div>
+        <img
+          src="../../assets/img/iphone_6s_pokedex.png"
+          alt="Pokedex image"
+          class="pokedex"
+        />
+      </div>
     </div>
   </div>
 </section>

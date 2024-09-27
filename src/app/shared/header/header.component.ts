@@ -19,10 +19,12 @@ export class HeaderComponent {
     en: {
       aboutMe: 'About me',
       skills: 'Skills',
+      contact: 'Contact',
     },
     de: {
       aboutMe: 'Über mich',
       skills: 'Fähigkeiten',
+      contact: 'Kontakt',
     },
   };
 
