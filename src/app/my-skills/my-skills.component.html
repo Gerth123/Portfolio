@@ -78,13 +78,12 @@
         </div>
         <h4>
           {{ getCurrentText("secondHeadline") }}
-          <span>{{ getCurrentText("secondHeadlineSpan") }}</span
-          >?
+          <span>{{ getCurrentText("secondHeadlineSpan") }}</span>?
         </h4>
         <p class="lastP">
           {{ getCurrentText("secondText") }}
         </p>
-        <a href="#contact">{{ getCurrentText("getInTouch") }}</a>
+        <a [routerLink]="['/']" [fragment]="'contact'" class="linkPage" (click)="handleScroll('contact')">{{ getCurrentText("getInTouch") }}</a>
       </div>
     </div>
   </div>

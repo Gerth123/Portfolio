@@ -2,19 +2,23 @@ section {
   display: flex;
   flex-direction: column;
   height: 90svh;
-  padding-top: 20svh;
+  padding-top: 10svh;
   position: relative;
   background-color: rgb(20, 29, 47);
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
   color: white;
-  width: 100vw;
+  width: 100%;
+  margin-bottom: -10svh;
 }
 
 .container {
   width: 100%;
   max-width: 1600px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
 }
 
 a {
@@ -23,12 +27,30 @@ a {
   align-items: center;
 }
 
+.backgroundContainer {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  align-self: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 200px;
+    background-color: rgb(20, 29, 47);
+    z-index: 6;
+  }
+}
+
 .background {
   position: relative;
   display: flex;
-  width: 100%;
-  margin-top: -700px;
-  z-index: 6;
+  align-self: center;
+  width: 100vw;
+  z-index: 7;
 }
 
 .imgAndTextContainer {
@@ -203,10 +225,14 @@ a {
   filter: invert(1);
 }
 
-@media (min-width: 1600px) and (min-height: 1100px) {
+@media (min-width: 1600px) {
+  section {
+    height: 90svh;
+  }
+
   .imgAndTextContainer {
     height: 60svh;
-    padding-top: 8svh;
+    padding-top: 5svh;
   }
 
   .name {
@@ -218,100 +244,103 @@ a {
   }
 
   .background {
-    margin-top: -75svh;
+    margin-top: -700px;
   }
 
   .contactStats {
     height: 10svh;
-    padding-top: 15svh;
+    padding-top: 20svh;
+  }
+
+  .line {
+    width: 100%;
+    margin-left: -95%;
   }
 }
 
-@media (max-width: 1600px) and (max-height: 800px) {
-  section {
-    height: 120svh;
+@media (min-width: 2000px) {
+  .background {
+    margin-top: -80svh;
   }
 
-  .imgAndTextContainer {
-    margin-top: -120px;
+  .imgContainer {
+    margin-top: 0svh;
+  }
+
+  .contactStats {
+    height: 10svh;
+    margin-top: -10svh;
+  }
+}
+
+@media (min-width: 3000px) {
+  section {
+    padding-top: 20svh;
+    height: 80svh;
   }
 
   .background {
+    margin-top: -82svh;
+  }
+
+  .contactStats {
+    height: 10svh;
+    margin-top: -20svh;
+  }
+}
+
+@media (max-width: 1600px) {
+  .backgroundContainer {
     margin-top: -600px;
   }
-
-  .contactStats {
-    padding-top: 30px;
-  }
 }
 
-@media (max-width: 1450px) {
-  .background {
+@media (max-width: 1300px) and (max-height: 800px) {
+  .contactStats {
+    margin-top: -10svh;
+  }
+
+  .backgroundContainer {
     margin-top: -550px;
   }
 }
 
-@media (max-width: 1300px) and (max-height: 850px) {
-  .background {
-    margin-top: -550px;
-  }
-
-  .contactStats {
-    padding-top: 50px;
+@media (max-width: 1200px) {
+  .backgroundContainer {
+    margin-top: -500px;
   }
 }
 
 @media (max-width: 1100px) {
-  section {
-    height: auto;
-    margin-bottom: -100px;
-  }
-
   .imgAndTextContainer {
     flex-direction: column;
     align-items: center;
   }
 
-  .background {
-    margin-top: -600px;
-  }
-
-  .textContainer {
-    margin-top: -100px;
-    margin-left: 0;
-    gap: 10px;
-  }
-
-  .scroll {
-    display: none;
-  }
-
-  .email {
-    display: none;
-  }
-
-  .iconsAndEmailContainer {
-    width: 100%;
-  }
-
-  .line {
-    width: 300px;
-  }
-
-  .icons {
-    margin-left: 35vw;
-    width: 30vw;
-    justify-content: space-evenly;
+  .rotateAndStatsContainer {
+    margin-left: -25px;
   }
 }
 
-@media (max-width: 1100px) and (max-height: 1400px) {
-  .imgAndTextContainer {
+@media (max-width: 1100px) and (min-height: 910px) {
+  .textContainer {
     margin-top: -150px;
+    margin-left: 0;
   }
 
+  .contactStats {
+    height: 10svh;
+    margin-top: -10svh;
+  }
+
+  .backgroundContainer {
+    margin-top: -650px;
+  }
+}
+
+@media (max-width: 1050px) and (min-height: 1300px) {
   .textContainer {
-    margin-top: -60px;
+    margin-top: -10px;
   }
 
   .name {
@@ -319,146 +348,255 @@ a {
   }
 
   .role {
-    height: 60px;
+    height: 70px;
   }
 
-  .background {
+  .rotate {
+    font-size: 55px;
+    margin-right: -25px;
+    margin-top: -7px;
+  }
+
+  .rotateDe {
+    font-size: 35px;
+    margin-right: -30px;
+    margin-top: -7px;
+  }
+
+  .contactStats {
+    margin-top: 10svh;
+  }
+
+  .backgroundContainer {
+    margin-top: -950px;
+  }
+}
+
+@media (max-width: 900px) and (min-height: 910px) {
+  .backgroundContainer {
+    margin-top: -600px;
+  }
+}
+
+@media (max-width: 850px) and (min-height: 1100px) {
+  .textContainer {
+    margin-top: -5svh;
+  }
+
+  .contactStats {
+    margin-top: -5svh;
+  }
+
+  .backgroundContainer {
     margin-top: -700px;
   }
 }
 
-@media (max-width: 950px) {
-  .imgContainer {
-    > img:nth-child(1) {
-      width: 600px;
-      height: auto;
-    }
-
-    > img:nth-child(2) {
-      width: 450px;
-      height: auto;
-      margin-top: 100px;
-    }
+@media (max-width: 800px) and (min-height: 910px) {
+  .lilaAndGreen {
+    margin-top: 20px;
   }
 
-  .background {
-    margin-top: -600px;
+  .imgAndTextContainer {
+    height: auto;
+    width: auto;
+    margin-top: 0;
+  }
+
+  .profilePicture {
+    width: 500px;
   }
 
   .textContainer {
-    margin-top: -100px;
-    margin-left: -30px;
+    margin-top: -200px;
+  }
+
+  .contactStats {
+    margin-top: 0;
+    display: flex;
+    height: 20svh;
+    padding-top: 0;
+  }
+
+  .backgroundContainer {
+    margin-top: -590px;
+  }
+}
+
+@media (max-width: 860px) and (min-height: 1250px) {
+  .textContainer {
+    margin-top: -10px;
+  }
+
+  .name {
+    height: 70px;
+  }
+
+  .role {
+    height: 60px;
   }
 
   .rotate {
-    font-size: 42px;
+    font-size: 55px;
+    margin-right: -25px;
+    margin-top: -7px;
+  }
+
+  .rotateDe {
+    font-size: 35px;
+    margin-right: -30px;
+    margin-top: -7px;
+  }
+
+  .contactStats {
+    margin-top: 7svh;
+  }
+
+  .backgroundContainer {  
+    margin-top: -800px;
+  }
+}
+
+@media (max-width: 800px) and (min-height: 1000px) {
+  .textContainer {
+    margin-top: -20svh;
+  }
+
+  .contactStats {
+    margin-top: 10svh;
+  }
+
+  .backgroundContainer {
+    margin-top: -720px;
+  }
+}
+
+@media (max-width: 800px) {
+  .rotate {
+    font-size: 39px;
     margin-top: 2px;
     margin-right: -20px;
   }
 
   .rotateDe {
-    font-size: 28px;
+    font-size: 25px;
+    margin-right: -25px;
   }
 
-  .stats {
-    gap: 8px;
+  .role {
+    font-size: 36.5px;
+    height: 36.5px;
   }
 
   .name {
     font-size: 60px;
     height: 60px;
   }
+}
 
-  .role {
-    font-size: 36px;
-    height: 36px;
-  }
-
-  .contact {
-    font-size: 18px;
-    width: 140px;
-    height: 55px;
+@media (max-width: 800px) {
+  .icons {
+    margin-left: 40vw;
   }
 
   .line {
-    width: 200px;
+    width: 35vw;
+  }
+
+  .email {
+    display: none;
+  }
+
+  .scroll {
+    display: none;
   }
 }
 
-@media (max-width: 850px) {
-  section {
-    padding-bottom: 15svh;
+@media (max-width: 650px) and (min-height: 910px) {
+  .backgroundContainer {
+    margin-top: -550px;
+    background-color: rgb(20, 29, 47);
   }
-}
 
-@media (max-width: 700px) and (min-height: 900px) {
-  .background {
-    margin-top: -530px;
+  .contactStats {
+    width: 100vw;
+    background-color: rgb(20, 29, 47);
   }
 }
 
 @media (max-width: 650px) {
   .line {
-    width: 150px;
+    width: 30vw;
+  }
+
+  .icons {
+    width: 100vw;
+    gap: 30px;
+    margin-left: 0;
+    justify-content: center;
   }
 }
 
-@media (max-width: 550px) {
-  section {
-    padding-bottom: 250px;
+@media (max-width: 500px) and (min-height: 910px) {
+  .backgroundContainer {
+    margin-top: -500px;
   }
 }
 
-@media (max-width: 500px) and (min-height: 900px) {
-  section {
-    padding-top: 5svh;
+@media (max-width: 450px) and (min-height: 910px) {
+  .profilePicture {
+    margin-top: 50px;
   }
 
+  .lilaAndGreen {
+    margin-top: 50px;
+  }
+
+  .contactStats {
+    margin-top: -2svh;
+  }
+
+  .backgroundContainer {
+    &::after {
+      height: 100px;
+    }
+  }
+}
+
+@media (max-width: 450px) and (max-height: 950px) {
   .imgAndTextContainer {
-    margin-top: 0px;
+    margin-top: 0;
   }
 
-  .line {
-    width: 100px;
-  }
-}
-
-@media (max-width: 500px) and (max-height: 1000px) {
-  .name {
-    font-size: 50px;
-    height: 50px;
-  }
-
-  .role {
-    font-size: 30px;
-    height: 30px;
-  }
-
-  .rotate {
-    font-size: 36px;
-    margin-top: 2px;
-    margin-right: -18px;
-  }
-
-  .rotateDe {
-    font-size: 24px;
-    margin-right: -20px;
-  }
-}
-
-@media (max-width: 500px) and (max-height: 1000px) and (pointer: coarse) {
-  section {
-    padding-top: 0;
-    height: 95svh;
-    margin-bottom: -10svh;
-  }
-
-  .background {
-    margin-top: -450px;
+  .lilaAndGreen {
+    margin-top: 0;
   }
 
   .textContainer {
-    margin-top: -150px;
+    margin-top: -300px;
+    margin-left: 0;
+    width: auto;
+  }
+
+  .backgroundContainer {
+    margin-top: -580px;
+    &::after {
+      height: 150px;
+    }
+  }
+
+  .contactStats {
+    margin-top: 80px;  
+  }
+}
+
+@media (max-width: 450px) {
+  .profilePicture {
+    width: 400px;
+  }
+
+  .lilaAndGreen {
+    width: 500px;
   }
 
   .name {
@@ -467,18 +605,25 @@ a {
   }
 
   .role {
-    font-size: 30px;
-    height: 30px;
+    font-size: 31px;
+    height: 31px;
   }
 
   .rotate {
-    font-size: 36px;
+    font-size: 32px;
     margin-top: 2px;
-    margin-right: -18px;
   }
 
   .rotateDe {
-    font-size: 24px;
+    font-size: 21px;
+    margin-right: -20px;
+  }
+
+  .contact {
+    height: 55px;
+    min-width: unset;
+    font-size: 20px;
+    padding: 0px 30px;
   }
 
   .line {
@@ -486,45 +631,103 @@ a {
   }
 }
 
-@media (max-width: 500px) and (max-height: 900px) {
-  .section {
-    height: 95svh;
+@media (max-width: 420px) and (min-height: 900px) {
+  .contactStats {
+    margin-top: 10svh;
   }
 
-  .background {
-    margin-top: -450px;
+  .backgroundContainer {
+    margin-top: -550px;
   }
 }
 
-@media (max-width: 450px) and (max-height: 900px) {
-  section {
-    height: 100svh;
-  }
-
-  .imgAndTextContainer {
+@media (max-width: 420px) and (max-height: 900px) {
+  .contactStats {
     margin-top: 0px;
   }
-}
 
-@media (max-width: 400px) {
-  .background {
-    margin-top: -450px;
+  .backgroundContainer {
+    margin-top: -480px;
   }
 }
+
+@media (max-width: 400px) and (max-height: 900px) {
+  .profilePicture {
+    width: 350px;
+  }
+
+  .lilaAndGreen {
+    width: 450px;
+  }
+
+  .textContainer {
+    margin-top: -380px;
+  }
+
+  .contactStats {
+    margin-top: -50px;
+  }
+
+  .backgroundContainer {
+    margin-top: -380px;
+  }
+} 
 
 @media (max-width: 400px) and (max-height: 850px) {
-  section {
-    height: 100svh;
+  .contactStats {
+    margin-top: -30px;
   }
 
-  .background {
-    margin-top: -370px;
+  .textContainer {
+    margin-top: -300px;
+  }
+
+  .backgroundContainer {
+    margin-top: -420px;
   }
 }
 
-@media (max-width: 400px) { 
+@media (max-width: 380px) and (min-height: 800px) {
   .textContainer {
-    margin-left: -30px;
+    margin-top: -300px;
+  }
+
+  .contactStats {
+    margin-top: -20px;
+  }
+
+  .backgroundContainer {
+    margin-top: -400px;
+  }
+}
+
+@media (max-width: 380px) and (max-height: 700px) {
+  .textContainer {
+    margin-top: -380px;
+  }
+
+  .contactStats {
+    margin-top: -80px;
+  }
+
+  .backgroundContainer {
+    margin-top: -350px;
+  }
+}
+
+@media (max-width: 360px) and (max-height: 750px) {
+  .textContainer {
+    margin-top: -350px;
+  }
+}
+
+@media (max-width: 350px) {
+  .profilePicture {
+    width: 300px;
+  }
+
+  .lilaAndGreen {
+    width: 400px;
   }
 
   .name {
@@ -533,24 +736,26 @@ a {
   }
 
   .role {
-    font-size: 22px;
-    height: 22px;
+    font-size: 24px;
+    height: 24px;
   }
 
   .rotate {
-    font-size: 30px;
+    font-size: 26px;
     margin-top: 2px;
-    margin-right: -14px;
+    margin-right: -15px;
+  }
+
+  .rotateDe {
+    font-size: 16px;
+    margin-right: -15px;
   }
 
   .contact {
-    font-size: 14px;
-    width: 120px;
     height: 45px;
-  }
-
-  .contactStats {
-    margin-top: 20px;
+    min-width: unset;
+    font-size: 16px;
+    padding: 0px 20px;
   }
 
   .line {
@@ -558,64 +763,31 @@ a {
   }
 }
 
-@media (max-width: 400px) and (max-height: 800px) {
-  section {
-    height: 110svh;
-  }
-
-  .background {
-    margin-top: -330px;
-  }
-}
-
-@media (max-width: 400px) and (max-height: 700px) {
-  section {
-    margin-bottom: -10svh;
-  }
-
-  .imgContainer {
-    width: auto;
-    height: auto;
-    padding-top: 30px;
-
-    > img:nth-child(1) {
-      width: 300px;
-      height: auto;
-    }
-
-    > img:nth-child(2) {
-      width: 300px;
-      height: auto;
-      margin-top: 80px;
-    }
+@media (max-width: 350px) and (min-height: 910px) {
+  .backgroundContainer {
+    margin-top: -700px;
   }
 
   .textContainer {
-    margin-top: 20px;
-  }
-
-  .background {
-    margin-top: -350px;
+    margin-top: -400px;
   }
 
   .contactStats {
-    margin-top: 20px;
-  }
-
-  .rotateDe {
-    font-size: 18px;
-  }
-
-  .role {
-    font-size: 24px;
+    margin-top: 20svh;
+    height: 30svh;
   }
 }
 
-@media (max-width: 350px) {
-  .imgContainer {
-    > img:nth-child(2) {
-      width: 400px;
-      margin-top: 150px;
+@media (max-width: 330px) and (max-height: 600px) {
+  .textContainer {
+    margin-top: -450px;
+  }
+
+  .backgroundContainer {
+    margin-top: -320px;
+
+    &::after {
+      height: 100px;
     }
   }
 }

@@ -182,9 +182,9 @@ h5 {
 }
 
 @media (min-width: 1600px) {
-  section {
-  min-height: 100svh;
-  padding-top: 10svh;
+  .lineTwo {
+    width: 1500px;
+    margin-right: -800px;
   }
 
   .projectsContainer {
@@ -194,62 +194,55 @@ h5 {
   }
 }
 
+@media (min-width: 3000px) {
+  .lineTwo {
+    width: 3000px;
+    margin-right: -1500px;
+  }
+}
+
 @media (max-width: 1100px) {
   section {
-    align-items: center;
+    padding-top: 12svh;
   }
 
-  .heading > span {
-    text-align: center;
-    width: 90%;
-    padding-right: 5%;
-  }
-
-  .projectsContainer {
-    padding-top: 50px;
-    gap: 50px;
-  }
-
-  .project,
-  .projectEven {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  .projectEven > img {
-    margin-bottom: -40px;
-  }
-
-  .projectText,
-  .projectTextEven,
-  .projectTextEven > p {
-    align-items: center;
-    text-align: center;
-    max-width: 500px;
-  }
-
-  .projectTextEven,
-  .projectText {
-    width: 95%;
-    padding-left: 2.5%;
-  }
-
-  .project > img {
-    max-height: 250px;
-    padding-bottom: 15px;
+  .heading {
+    gap: 20px;
+    > span {
+      margin-right: 5vw;
+      width: 75%;
+      height: auto;
+    }
   }
 
   h5 {
     text-align: center;
   }
 
-  p {
-    text-align: center;
+  .project, .projectEven {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 
-  img {
-    max-height: 300px;
-    max-width: 400px;
+  .projectText, .projectTextEven {
+    align-items: center;
+
+    > p {
+      text-align: center;
+      width: 90%;
+    }
+  }
+
+  .project {
+    > img {
+      margin-bottom: 20px;
+    }
+  }
+
+  .projectEven {  
+    > img {
+      margin-bottom: -50px;
+    }
   }
 
   .pokedex {
@@ -257,101 +250,56 @@ h5 {
   }
 }
 
-@media (max-width: 700px) {
-  .headline {
-    width: 85%;
-  }
-
+@media (max-width: 850px) {
   h2 {
     font-size: 70px;
-  }
-
-  .lineOne {
-    width: 15vw;
-    height: 4px;
-  }
-
-  .lineTwo {
-    height: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .headline > h2 {
-    font-size: 60px;
-  }
-
-  .heading {
-    gap: 10px;
   }
 }
 
 @media (max-width: 500px) {
-  .lineOne {
-    width: 50px;
-  }
-
   .headline {
     width: 90%;
-    gap: 8px;
-  }
-}
-
-@media (max-width: 400px) and (max-height: 700px) {
-  .headline > h2 {
-    font-size: 50px;
+    gap: 5px;
   }
 
-  .heading > span {
-    height: unset;
+  .projectText, .projectTextEven {
+    width: 95vw;
+    height: auto;
   }
 
-  h5 {
-    font-size: 25px;
-    width: 95%;
-  }
-
-  p {
-    font-size: 16px;
-    width: 90%;
+  .project, .projectEven {
+    > img {
+      max-width: 400px;
+      max-height: 250px;
+    }
   }
 
   .buttonContainer {
     gap: 20px;
-
-    > a {
-      width: 130px;
-      height: 55px;
-      font-size: 16px;
-    }
-  }
-
-  .projectEven {
-    padding-bottom: 40px;
   }
 }
 
 @media (max-width: 400px) {
-  .headline  {
-    gap: 5px;
-    width: 95%;
+  h2 {
+    font-size: 50px;
   }
 
-  .heading > span {
-    height: unset;
-  } 
-
-  .projectText, .projectTextEven {
-    height: auto;
-  }
-
-  .buttonContainer {
-    gap: 20px;
-
-    > a { 
-      width: 130px;
-      height: 55px;
-      font-size: 16px;
+  .project, .projectEven {
+    > img {
+      max-width: 350px;
+      max-height: 200px;
     }
   }
 }
+
+@media (max-width: 350px) {
+  .buttonContainer {
+    a {
+      font-size: 18px;
+      width: 130px;
+      height: 48px;
+    }
+  }
+}
+
+

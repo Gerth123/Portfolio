@@ -25,7 +25,7 @@
             <span class="role">{{ getCurrentText("subtitle") }}</span>
           </div>
         </div>
-        <a href="#contact" class="contact">{{
+        <a [routerLink]="['/']" [fragment]="'contact'" class="contact" (click)="handleScroll('contact')">{{
           getCurrentText("buttonText")
         }}</a>
       </div>
@@ -68,10 +68,13 @@
         <img src="" alt="" />
       </div>
     </div>
-    <img
-      src="../../assets/img/background_under_profile_picture.svg"
-      alt="Background"
-      class="background"
-    />
+    <div class="backgroundContainer">
+      <img
+        src="../../assets/img/background_under_profile_picture.svg"
+        alt="Background"
+        class="background"
+      />
+    </div>
+    
   </div>
 </section>

@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LanguageService } from '../services/language.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
@@ -74,7 +75,7 @@ export class ContactComponent {
     },
   };
 
-  constructor(private languageService: LanguageService) {}
+  constructor(private languageService: LanguageService, private router: Router) {}
 
   /**
    * Retrieves the translation for the given field based on the current language.
@@ -164,4 +165,32 @@ export class ContactComponent {
       inputfield.placeholder = 'Your ' + id;
     }
   }
+
+  async handleScroll(fragment: string) {
+    const element = document.getElementById(fragment);
+    const scrollHeightPixels = this.getElementHeightById(fragment);  // Das wird in Pixeln zurückgegeben
+    const currentUrl = this.router.url;
+  
+    // Prüfen, ob das Fragment bereits in der URL vorhanden ist
+    if (currentUrl.includes(`#${fragment}`) && scrollHeightPixels !== null) {
+      // Scrollen zu der berechneten Höhe
+      window.scrollTo({ top: scrollHeightPixels, behavior: 'smooth' });
+    } else if (element) {
+      // Wenn das Fragment nicht in der URL ist, scrolle zu dem Element
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  // Höhe eines Elements ermitteln
+  getElementHeightById(elementId: string): number | null {
+    const element = document.getElementById(elementId);
+    
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      return elementRect.top + window.pageYOffset; // Höhe des Elements relativ zum Dokument
+    }
+    
+    return null; // Wenn das Element nicht gefunden wird
+  }
+  
 }

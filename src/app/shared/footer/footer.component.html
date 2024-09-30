@@ -1,13 +1,16 @@
 <footer>
   <div class="container">
     <div class="logoAndLink">
-      <a href="#landingPage"
-        ><img
+      <a [routerLink]="['/']" [fragment]="'landingPage'">
+        <img
           src="../../../assets/logo/robin_semicolon.png"
           alt="Logo"
           class="logo"
       /></a>
-      <a href="/legal-notice" class="impressum">Impressum</a>
+      <a
+        [routerLink]="['/legal-notice']" (click)="scrollToTop()"     >
+        Impressum
+      </a>
     </div>
     <div class="copyright">
       <p>&copy; Robin Gerth 2024</p>
@@ -24,7 +27,7 @@
       </a>
     </div>
     <div class="impressumResponsive">
-      <a href="/legal-notice" target="_blank">Impressum</a>
+      <a [routerLink]="['/legal-notice']" (click)="scrollToTop()">Impressum</a>
     </div>
   </div>
 </footer>

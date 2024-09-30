@@ -3,9 +3,29 @@
 </ng-container>
 
 <ng-container *ngIf="language === 'en'">
-  <section>
-    <h2>Terms and Conditions</h2>
+  <section id="legalNotice">
     <div>
+      <h1>Imprint</h1>
+      <div class="contact">
+        <p>Robin Gerth</p>
+        <p>Hebelweg 63</p>
+        <p>79713 Bad Säckingen</p>
+      </div>
+      <h2>Contact</h2>
+      <div class="contactSecond">
+        <p>Phone: <a href="tel:+4915254989504">+49 1525 4989504</a></p>
+        <p>
+          Email:
+          <a href="mailto:robingerth21@gmail.com">robingerth21&#64;gmail.com</a>
+        </p>
+        <p>
+          Source:
+          <a href="https://www.e-recht24.de" target="_blank"
+            >https://www.e-recht24.de</a
+          >
+        </p>
+      </div>
+      <h2>Terms and Conditions</h2>
       <p>
         Please read these terms and conditions carefully before using Our
         Service.
@@ -268,33 +288,35 @@
       </p>
 
       <h3>14. Contact Us</h3>
-      <p>
-        If you have any questions about these Terms and Conditions, You can
-        contact us:
-      </p>
-      <p><strong>Last updated:</strong>September 01, 2024</p>
-      <p>
-        <strong>By email:</strong>
-        <a href="mailto:robingerth21@gmail.com">robingerth21&#64;gmail.com</a>
-      </p>
+      <div class="contactBottom">
+        <p>
+          If you have any questions about these Terms and Conditions, You can
+          contact us:
+        </p>
+        <p><strong>Last updated:</strong>September 01, 2024</p>
+        <p>
+          <strong>By email:</strong>
+          <a href="mailto:robingerth21@gmail.com">robingerth21&#64;gmail.com</a>
+        </p>
 
-      <p>
-        <span class="visitingPageContainer">
-          <span class="visitingPage">
-            <strong>By visiting this page </strong>
+        <p>
+          <span class="visitingPageContainer">
+            <span class="visitingPage">
+              <strong>By visiting this page </strong>
+            </span>
+            <strong>on our website:</strong>
           </span>
-          <strong>on our website:</strong>
-        </span>
-        <a href="https://robin-gerth.de/#contact" class="linkPage"
-          >robin-gerth.de/#contact</a
-        >
-      </p>
+          <a [routerLink]="['/']" [fragment]="'contact'" class="linkPage">
+            robin-gerth.de</a
+          >
+        </p>
 
-      <p>
-        <strong>By mail:</strong> Hebelweg 63, <br />
-        79713 Bad Säckingen, <br />
-        Germany
-      </p>
+        <p>
+          <strong>By mail:</strong> Hebelweg 63, <br />
+          79713 Bad Säckingen, <br />
+          Germany
+        </p>
+      </div>
     </div>
   </section>
 </ng-container>

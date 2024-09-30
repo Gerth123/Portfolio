@@ -45,7 +45,11 @@
               class="inputIcon"
             />
           </div>
-          <div *ngIf="nameInput.invalid && nameInput.touched" class="error">
+          <div
+            [ngClass]="
+              nameInput.invalid && nameInput.touched ? 'error' : 'error-hidden'
+            "
+          >
             <span class="errorMessage">{{ getCurrentText("errorName") }}</span>
           </div>
 
@@ -54,7 +58,7 @@
               type="email"
               id="email"
               name="email"
-              pattern="^[a-z0-9._%+-]+@[a-z0-9öäüÖÄÜß.-]+\.[a-zöäüÖÄÜß]{2,4}$"
+              pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               [(ngModel)]="contactData.email"
               required
               placeholder="{{ getCurrentText('inputPlaceholderEmail') }}"
@@ -78,7 +82,13 @@
             />
           </div>
 
-          <div *ngIf="emailInput.invalid && emailInput.touched" class="error">
+          <div
+            [ngClass]="
+              emailInput.invalid && emailInput.touched
+                ? 'error'
+                : 'error-hidden'
+            "
+          >
             <span class="errorMessage">{{ getCurrentText("errorEmail") }}</span>
           </div>
 
@@ -112,8 +122,11 @@
             />
           </div>
           <div
-            *ngIf="messageInput.invalid && messageInput.touched"
-            class="error"
+            [ngClass]="
+              messageInput.invalid && messageInput.touched
+                ? 'error'
+                : 'error-hidden'
+            "
           >
             <span class="errorMessage">{{
               getCurrentText("errorMessage")
@@ -137,26 +150,35 @@
 
             <span>
               {{ getCurrentText("privacyFirstText") }}
-              <a href="/privacy-policy">{{
-                getCurrentText("privacySecondText")
-              }}</a>
+              <a [routerLink]="['/privacy-policy']">
+                {{ getCurrentText("privacySecondText") }}</a
+              >
               {{ getCurrentText("privacyThirdText") }}
             </span>
           </div>
           <div
-            *ngIf="checkboxInput.invalid && checkboxInput.touched"
-            class="errorCheckbox"
+            [ngClass]="
+              checkboxInput.invalid && checkboxInput.touched
+                ? 'errorCheckbox'
+                : 'errorCheckbox-hidden'
+            "
           >
             <span class="errorMessagePrivacy">{{
               getCurrentText("errorPrivacy")
             }}</span>
           </div>
-          <div *ngIf="successMessage" class="successMessage">
+          <div
+            [ngClass]="
+              successMessage ? 'successMessage' : 'successMessage-hidden'
+            "
+          >
             {{ successMessage }}
           </div>
-          <div *ngIf="errorMessage" class="errorMessage">
+
+          <div [ngClass]="errorMessage ? 'errorMsg' : 'errorMsg-hidden'">
             {{ errorMessage }}
           </div>
+
           <div class="buttonContainer">
             <button
               type="submit"
@@ -173,7 +195,7 @@
         </form>
 
         <div class="arrowUp">
-          <a href="#landingPage"
+          <a [routerLink]="['/']" [fragment]="'landingPage'" (click)="handleScroll('landingPage')"
             ><img
               src="../../assets/icons/arrow_up_contact.svg"
               alt="Arrow up"

@@ -1,11 +1,12 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { LanguageService } from '../services/language.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass],
+  imports: [NgFor, NgIf, NgClass, RouterLink],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss',
 })
@@ -71,7 +72,7 @@ export class MySkillsComponent {
 
   public currentLanguage: 'en' | 'de' = 'en';
 
-  constructor(private languageService: LanguageService) {}
+  constructor(private languageService: LanguageService, private router: Router) {}
   /**
    * Retrieves the translation for the given field based on the current language.
    *
@@ -101,4 +102,32 @@ export class MySkillsComponent {
   hideSpecialInterest() {
     this.isHovered = false;
   }
+
+  async handleScroll(fragment: string) {
+    const element = document.getElementById(fragment);
+    const scrollHeightPixels = this.getElementHeightById(fragment);  // Das wird in Pixeln zurückgegeben
+    const currentUrl = this.router.url;
+  
+    // Prüfen, ob das Fragment bereits in der URL vorhanden ist
+    if (currentUrl.includes(`#${fragment}`) && scrollHeightPixels !== null) {
+      // Scrollen zu der berechneten Höhe
+      window.scrollTo({ top: scrollHeightPixels, behavior: 'smooth' });
+    } else if (element) {
+      // Wenn das Fragment nicht in der URL ist, scrolle zu dem Element
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  // Höhe eines Elements ermitteln
+  getElementHeightById(elementId: string): number | null {
+    const element = document.getElementById(elementId);
+    
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      return elementRect.top + window.pageYOffset; // Höhe des Elements relativ zum Dokument
+    }
+    
+    return null; // Wenn das Element nicht gefunden wird
+  }
+  
 }

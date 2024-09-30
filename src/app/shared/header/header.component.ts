@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterOutlet, RouterModule],
+  imports: [RouterOutlet, RouterModule, NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   public responsiveMenuOpen: boolean = false;
   languageService;
-  constructor(public languageServiceComponent: LanguageService) {
+  constructor(public languageServiceComponent: LanguageService, private router: Router) {
     this.languageService = languageServiceComponent;
   }
   public translations: any = {
@@ -159,15 +160,54 @@ export class HeaderComponent {
     }, 200);
   }
 
+  checkLanguage() {
+    const storedLanguage = localStorage.getItem('currentLanguage');
+    if (storedLanguage) {
+      return storedLanguage;
+    } else {
+      return 'en';
+    }
+  }
+
   changeLanguage(language: string) {
     if (language === 'de') {
       this.languageService.currentLanguage = 'de';
+      this.languageService.setLanguage('de');
       document.getElementById('languageEn')?.classList.remove('active');
       document.getElementById('languageDe')?.classList.add('active');
     } else {
       this.languageService.currentLanguage = 'en';
+      this.languageService.setLanguage('en');
       document.getElementById('languageEn')?.classList.add('active');
       document.getElementById('languageDe')?.classList.remove('active');
     }
   }
+
+  async handleScroll(fragment: string) {
+    const element = document.getElementById(fragment);
+    const scrollHeightPixels = this.getElementHeightById(fragment);  // Das wird in Pixeln zurückgegeben
+    const currentUrl = this.router.url;
+  
+    // Prüfen, ob das Fragment bereits in der URL vorhanden ist
+    if (currentUrl.includes(`#${fragment}`) && scrollHeightPixels !== null) {
+      // Scrollen zu der berechneten Höhe
+      window.scrollTo({ top: scrollHeightPixels, behavior: 'smooth' });
+    } else if (element) {
+      // Wenn das Fragment nicht in der URL ist, scrolle zu dem Element
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  // Höhe eines Elements ermitteln
+  getElementHeightById(elementId: string): number | null {
+    const element = document.getElementById(elementId);
+    
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      return elementRect.top + window.pageYOffset; // Höhe des Elements relativ zum Dokument
+    }
+    
+    return null; // Wenn das Element nicht gefunden wird
+  }
+  
 }

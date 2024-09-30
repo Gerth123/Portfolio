@@ -3,7 +3,7 @@
 </ng-container>
 
 <ng-container *ngIf="language === 'en'">
-  <section>
+  <section id="privacyPolicy">
     <div>
       <h1>Privacy Policy</h1>
       <p>Last updated: September 01, 2024</p>
@@ -469,7 +469,9 @@
         </li>
         <li>
           By visiting this page on our website:
-          <a href="https://robin-gerth.de/#contact">robin-gerth.de/#contact</a>
+          <a [routerLink]="['/']" [fragment]="'contact'" class="linkPage"
+            >robin-gerth.de</a
+          >
         </li>
       </ul>
     </div>

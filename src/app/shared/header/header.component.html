@@ -1,32 +1,61 @@
 <header>
   <div>
-  <a
-    href="#landingPage"
-    class="logo"
-    (click)="responsiveMenuOpen ? closeMenu() : null"
-    ><img src="../../../assets/logo/robin_curly_bracket.png" alt="Logo"
-  /></a>
-  <div class="language"><span id="languageEn" (click)="changeLanguage('en')" class="active">en</span>|<span id="languageDe" (click)="changeLanguage('de')">de</span></div>
-  <div class="responsiveMenuOpen" (click)="toggleMenu()">
-    <img
-      id="closeIcon"
-      src="../../../assets/icons/closed_menu.svg"
-      alt="Open menu"
-    />
-  </div>
-
-  <nav class="">
-    <div class="container-fluid">
-      <a href="#aboutMe">{{getCurrentText('aboutMe')}}</a>
-      <a href="#mySkills">{{getCurrentText('skills')}}</a>
-      <a href="#projects">Portfolio</a>
+    <a
+      [routerLink]="['/']"
+      [fragment]="'landingPage'"
+      class="logo"
+      (click)="handleScroll('landingPage')"
+      (click)="responsiveMenuOpen ? closeMenu() : null"
+      ><img src="../../../assets/logo/robin_curly_bracket.png" alt="Logo"
+    /></a>
+    <div class="language">
+      <span
+        id="languageEn"
+        (click)="changeLanguage('en')"
+        [ngClass]="{ active: checkLanguage() === 'en' }"
+        >en</span
+      >|<span
+        id="languageDe"
+        (click)="changeLanguage('de')"
+        [ngClass]="{ active: checkLanguage() === 'de' }"
+        >de</span
+      >
     </div>
-  </nav>
+    <div class="responsiveMenuOpen" (click)="toggleMenu()">
+      <img
+        id="closeIcon"
+        src="../../../assets/icons/closed_menu.svg"
+        alt="Open menu"
+      />
+    </div>
+
+    <nav class="">
+      <div class="container-fluid">
+        <a
+          [routerLink]="['/']"
+          [fragment]="'aboutMe'"
+          (click)="handleScroll('aboutMe')"
+          >{{ getCurrentText("aboutMe") }}</a
+        >
+        <a
+          [routerLink]="['/']"
+          [fragment]="'mySkills'"
+          (click)="handleScroll('mySkills')"
+          >{{ getCurrentText("skills") }}</a
+        >
+        <a
+          [routerLink]="['/']"
+          [fragment]="'projects'"
+          (click)="handleScroll('projects')"
+          >Portfolio</a
+        >
+      </div>
+    </nav>
   </div>
 </header>
 <div class="responsiveMenu d-none" id="responsiveMenu">
   <div class="responsiveMenuLogo">
-    <a href="#landingPage" (click)="closeMenu()"
+    <a [routerLink]="['/']" [fragment]="'landingPage'" (click)="closeMenu()"
       ><img
         src="../../../assets/logo/robin_curly_bracket.png"
         alt="Logo"
@@ -35,9 +64,32 @@
     /></a>
   </div>
   <div class="responsiveMenuLinks">
-    <a href="#aboutMe" (click)="closeMenu()">{{getCurrentText('aboutMe')}}</a>
-    <a href="#mySkills" (click)="closeMenu()">{{getCurrentText('skills')}}</a>
-    <a href="#projects" (click)="closeMenu()">Portfolio</a>
-    <a href="#contact" (click)="closeMenu()">{{getCurrentText('contact')}}</a>
+    <a
+      [routerLink]="['/']"
+      [fragment]="'aboutMe'"
+      (click)="closeMenu(); handleScroll('aboutMe')"
+      >{{ getCurrentText("aboutMe") }}</a
+    >
+
+    <a
+      [routerLink]="['/']"
+      [fragment]="'mySkills'"
+      (click)="closeMenu(); handleScroll('mySkills')"
+      >{{ getCurrentText("skills") }}</a
+    >
+
+    <a
+      [routerLink]="['/']"
+      [fragment]="'projects'"
+      (click)="closeMenu(); handleScroll('projects')"
+      >Portfolio</a
+    >
+
+    <a
+      [routerLink]="['/']"
+      [fragment]="'contact'"
+      (click)="closeMenu(); handleScroll('contact')"
+      >{{ getCurrentText("contact") }}</a
+    >
   </div>
 </div>

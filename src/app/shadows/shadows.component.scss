@@ -11,26 +11,25 @@ section {
   width: 100%;
   height: 100svh;
   right: -55%;
-  // transform: translateX(1%);
   top: 89svh;
   z-index: 8;
 }
 
 .greenShadowMySkills {
-    position: absolute;
-    width: 100%;
-    height: 100svh;
-    top: 230svh;
-    left: -57%;
+  position: absolute;
+  width: 100%;
+  height: 100svh;
+  top: 230svh;
+  left: -57%;
 }
 
 .purpleShadowPortfolio {
-    position: absolute;
-    width: 100%;
-    height: 180svh;
-    left: -60%;
-    top: 300svh;
-    z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 180svh;
+  left: -60%;
+  top: 300svh;
+  z-index: 1;
 }
 
 .greenShadow {
@@ -47,13 +46,23 @@ section {
   width: 100%;
   height: 85svh;
   left: -42%;
-  top: 455svh;
+  top: 465svh;
   z-index: 1;
 }
 
 @media (min-width: 1600px) {
+  .purpleShadow {
+    top: 470svh;
+  }
+
+  .greenShadow {
+    top: 400svh;
+  }
+}
+
+@media (min-width: 2400px) {
   .purpleShadowAboutMe {
-    top: 40svh;
+    top: 60svh;
   }
 
   .greenShadowMySkills {
@@ -61,43 +70,74 @@ section {
   }
 
   .purpleShadowPortfolio {
-    top: 230svh;
+    top: 200svh;
   }
 
   .greenShadow {
-    top: 350svh;
+    top: 280svh;
   }
 
   .purpleShadow {
-    top: 400svh;
+    top: 360svh;
   }
 }
 
-@media (max-width: 1550px) {
+@media (min-width: 3000px) {
   .purpleShadowAboutMe {
-    right: -65%;
+    top: 50svh;
   }
-} 
+
+  .greenShadowMySkills {
+    top: 110svh;
+  }
+
+  .purpleShadowPortfolio {
+    top: 135svh;
+  }
+
+  .greenShadow {
+    top: 200svh;
+  }
+
+  .purpleShadow {
+    top: 280svh;
+  }
+}
+
+@media (max-width: 1600px) {
+  .greenShadow {
+    top: 380svh;
+  }
+}
 
 @media (max-width: 1100px) {
+  .purpleShadowAboutMe {
+    top: 80svh;
+    right: -65%;
+  }
+
   .greenShadowMySkills {
-    top: 210svh;
+    top: 200svh;
+    left: -60%;
+  }
+
+  .purpleShadowPortfolio {
+    top: 250svh;
+    left: -65%;
+  }
+
+  .greenShadow {  
+    top: 400svh;
+    right: -65%;  
+  }
+
+  .purpleShadow {
+    top: 620svh;
+    left: -55%;
   }
 }
 
-@media (max-width: 950px) {
-  .greenShadowMySkills {
-  left: -65%;
-  }
-}
-
-@media (max-width: 780px) {
-  .greenShadowMySkills {
-    left: -72%;    
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .purpleShadowAboutMe {
     display: none;
   }
@@ -107,9 +147,20 @@ section {
   }
 }
 
-@media (max-width:400px) and (max-height: 700px) {
-  .purpleShadowPortfolio {
-    top: 285svh;
+@media (max-width: 500px) {
+  .purpleShadow {
+    top: 640svh;
   }
 }
 
+@media (max-width: 420px) {
+  .purpleShadow {
+    top: 690svh;
+  }
+}
+
+@media (max-width: 380px) {
+  .purpleShadow {
+    top: 730svh;
+  }
+}
