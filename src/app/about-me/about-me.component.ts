@@ -20,8 +20,8 @@ export class AboutMeComponent {
     },
     de: {
       headline: 'Über mich',
-      shortDescription: "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler aus der Nähe von Basel. Motiviert durch die grenzenlosen Möglichkeiten in der IT, begeistere ich mich für visuell die Entwicklung fesselnder und intuitiver Webseiten und Anwendungen.",
-      location: "Ich bin offen und kann sowohl vor Ort. als auch aus der Ferne effektiv arbeiten. Ebenso bin ich offen für einen Umzug an einen anderen Standort. ",
+      shortDescription: "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler aus der Nähe von Basel. Motiviert durch die grenzenlosen Möglichkeiten in der IT, begeistere ich mich für die Entwicklung visuell fesselnder und intuitiver Webseiten und Anwendungen.",
+      location: "Ich bin flexibel und kann sowohl vor Ort, sowie aus der Ferne effektiv arbeiten. Ebenso bin ich offen für einen Umzug an einen anderen Standort. ",
       interest: "Ich habe eine Leidenschaft für Technik und bin immer auf der Suche nach neuen Herausforderungen, um meine Kenntnisse und Fähigkeiten zu verbessern.",
       puzzle: "Beim Programmieren geht es nicht nur um das Schreiben von Code; es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen umzuwandeln. Auf diese Weise helfe ich Ihnen gerne, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken.",
     }

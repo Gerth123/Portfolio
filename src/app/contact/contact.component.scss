@@ -585,18 +585,31 @@ select:-webkit-autofill:focus {
 
   .buttonContainer {
     margin-top: 20px;
+    }
+
+  .arrowUp {
+    margin-top: 140px;
+  }
+
+  .sendMessageButton, .sendMessageButtonFalse {
+    width: 260px;
+    height: 60px;
+
+    > span {
+      width: 100%;
+    }
   }
 }
 
 @media (max-width: 380px) and (max-height: 700px) and (pointer:coarse){
   .arrowUp {
-    margin-top: 100px;
+    margin-top: 140px;
   }
 }
 
 @media (max-width: 360px) and (max-height: 750px) and (pointer:coarse){
   .arrowUp {
-    margin-top: 100px;
+    margin-top: 140px;
   }
 }
 

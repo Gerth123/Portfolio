@@ -295,6 +295,12 @@ a {
   }
 }
 
+@media (min-width: 1400px) and (max-height: 750px) {
+  .contactStats {
+    margin-top: -20svh;
+  }
+}
+
 @media (max-width: 1300px) and (max-height: 800px) {
   .contactStats {
     margin-top: -10svh;
