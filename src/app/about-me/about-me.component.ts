@@ -16,7 +16,7 @@ export class AboutMeComponent {
       shortDescription: "Hi, I'm a german speaking Frontend Developer based near Basel. Motivated by the limitless oportunities within IT, I am excited about crafting visually captivating and intuitive websites and applications.",
       location: "Flexible in terms of working environments, I can work effectively both on-site in Bad Säckingen and remotely. I am open to moving to another location also. ",
       interest: "I am passionate about technology and I am always looking for new challenges to improve my knowledge and skills.",
-      puzzle: "In my profession, programming isn't just about writing code; it's a creative form of problem solving. I take pride in my ability to distill complex technical challenges into simple, user-friendly solution. This way, I help you achieve your goals and bring your visions to life.",
+      puzzle: "In my profession, programming isn't just about writing code; it's a creative form of problem solving. I take pride in my ability to distill complex technical challenges into simple, user-friendly solutions. This way, I help you achieve your goals and bring your visions to life.",
     },
     de: {
       headline: 'Über mich',
