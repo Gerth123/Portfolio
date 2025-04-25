@@ -120,6 +120,12 @@ h5 {
     width: 500px;
     height: 350px;
   }
+
+  > img:last-of-type {
+    width: auto !important;
+    max-width: fit-content !important;
+    margin-bottom: -30px !important;
+  }
 }
 
 .projectTextEven {

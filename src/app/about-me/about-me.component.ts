@@ -6,37 +6,43 @@ import { LanguageService } from '../services/language.service';
   standalone: true,
   imports: [],
   templateUrl: './about-me.component.html',
-  styleUrl: './about-me.component.scss'
+  styleUrl: './about-me.component.scss',
 })
-
 export class AboutMeComponent {
   public translations: any = {
     en: {
       headline: 'About me',
-      shortDescription: "Hi, I'm a german speaking Frontend Developer based near Basel. Motivated by the limitless oportunities within IT, I am excited about crafting visually captivating and intuitive websites and applications.",
-      location: "Flexible in terms of working environments, I can work effectively both on-site in Bad Säckingen and remotely. I am open to moving to another location also. ",
-      interest: "I am passionate about technology and I am always looking for new challenges to improve my knowledge and skills.",
-      puzzle: "In my profession, programming isn't just about writing code; it's a creative form of problem solving. I take pride in my ability to distill complex technical challenges into simple, user-friendly solutions. This way, I help you achieve your goals and bring your visions to life.",
+      shortDescription:
+        "Hi, I'm a German-speaking Fullstack Developer based near Basel. Fascinated by the endless possibilities of the IT world, I enjoy designing and developing visually appealing and intuitive web applications from frontend to backend.",
+      location:
+        'I am flexible when it comes to work environments – I can work both on-site in Bad Säckingen and remotely. I am also open to relocating if required.',
+      interest:
+        "Technology is more than a profession for me – it's a passion. I'm always looking for opportunities to grow, learn new tools, and take on exciting challenges.",
+      puzzle:
+        "For me, programming is not just about code – it's about solving problems creatively. I take pride in turning complex technical requirements into elegant, user-friendly solutions. This way, I help you achieve your goals and bring your ideas to life.",
     },
     de: {
       headline: 'Über mich',
-      shortDescription: "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler aus der Nähe von Basel. Motiviert durch die grenzenlosen Möglichkeiten in der IT, begeistere ich mich für die Entwicklung visuell fesselnder und intuitiver Webseiten und Anwendungen.",
-      location: "Ich bin flexibel und kann sowohl vor Ort, sowie aus der Ferne effektiv arbeiten. Ebenso bin ich offen für einen Umzug an einen anderen Standort. ",
-      interest: "Ich habe eine Leidenschaft für Technik und bin immer auf der Suche nach neuen Herausforderungen, um meine Kenntnisse und Fähigkeiten zu verbessern.",
-      puzzle: "Beim Programmieren geht es nicht nur um das Schreiben von Code; es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen umzuwandeln. Auf diese Weise helfe ich Ihnen gerne, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken.",
-    }
+      shortDescription:
+        'Hallo, ich bin ein deutschsprachiger Fullstack-Entwickler aus der Nähe von Basel. Begeistert von den unendlichen Möglichkeiten der IT-Welt, entwickle ich gerne moderne und intuitive Webanwendungen – vom Frontend bis zum Backend.',
+      location:
+        'Ich bin flexibel in Bezug auf den Arbeitsort – sowohl vor Ort in Bad Säckingen als auch remote einsetzbar. Ein Umzug an einen anderen Standort ist für mich ebenfalls denkbar.',
+      interest:
+        'Technologie ist für mich mehr als nur ein Beruf – sie ist meine Leidenschaft. Ich suche ständig nach Möglichkeiten, mich weiterzuentwickeln, neue Werkzeuge zu erlernen und spannende Herausforderungen anzunehmen.',
+      puzzle:
+        'Programmieren bedeutet für mich nicht nur Code zu schreiben – es ist kreative Problemlösung. Ich bin stolz darauf, komplexe Anforderungen in benutzerfreundliche und effektive Lösungen umzusetzen. So helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Ideen Wirklichkeit werden zu lassen.',
+    },
   };
 
-  public currentLanguage: 'en' | 'de' = 'en'; 
+  public currentLanguage: 'en' | 'de' = 'en';
 
   constructor(private languageService: LanguageService) {}
-    /**
-     * Gets the translation for the given field based on the current language.
-     * @param field The field to get the translation for.
-     * @returns The translated text.
-     */
-    getCurrentText(field: string): string {
-      return this.translations[this.languageService.currentLanguage][field];
-    };
- 
+  /**
+   * Gets the translation for the given field based on the current language.
+   * @param field The field to get the translation for.
+   * @returns The translated text.
+   */
+  getCurrentText(field: string): string {
+    return this.translations[this.languageService.currentLanguage][field];
+  }
 }

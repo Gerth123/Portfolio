@@ -7,7 +7,7 @@ import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, HeaderComponent, NgClass],
+  imports: [RouterModule, NgClass],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
@@ -15,12 +15,12 @@ export class LandingPageComponent {
   public translations: any = {
     en: {
       rotateText: 'I am',
-      subtitle: 'Frontend Developer',
+      subtitle: 'Fullstack Developer',
       buttonText: "Let's talk!",
     },
     de: {
       rotateText: 'Ich bin',
-      subtitle: 'Frontend-Entwickler',
+      subtitle: 'Fullstack-Entwickler',
       buttonText: 'Reden wir!',
     },
   };
@@ -73,4 +73,12 @@ export class LandingPageComponent {
 
     return null; // Wenn das Element nicht gefunden wird
   }
+
+  /**
+   * Opens a link in a new tab.
+   * @param url - The URL to open.
+   */
+    openLink(url: string) {
+      window.open(url, '_blank');
+    }
 }

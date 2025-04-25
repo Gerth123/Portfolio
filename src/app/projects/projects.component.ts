@@ -5,7 +5,7 @@ import { LanguageService } from '../services/language.service';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [RouterOutlet, RouterModule],
+  imports: [RouterModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -15,15 +15,17 @@ export class ProjectsComponent {
      firstSpan: 'Explore a selection of my work here - Interact with projects to see my skills in action.',
      joinText: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
      elPolloLocoText: 'A simple Jump-and-Run game based on an object-oriented approach. Help pepe to collect bottles and coins, while defeating chickens and finally the endboss at the end.',
-     pokedexText: 'A simple library based on the PokeAPI. Search for pokemons and learn more about them.',
+     dabubbleText: 'A lightweight Slack/Discord clone with real-time communication, channels, and Firebase integration for secure authentication and reliable synchronization. Ideal for teams and communities.',
      liveTest: 'Live test',
+     videoflixText: 'A personal Netflix-style streaming platform. Users can register and log in to stream protected videos. Built with Angular and the Django REST Framework.'
     },
     de: {
       firstSpan: 'Entdecken Sie hier eine Auswahl meiner Projekte - Interagieren Sie mit diesen, um meine Fähigkeiten in Aktion zu sehen.',
       joinText: 'Ein Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.',
       elPolloLocoText: 'Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Flaschen und Münzen zu sammeln, während du Hühner und den Endboss am Ende besiegst.',
-      pokedexText: 'Eine einfache Bibliothek basierend auf der PokeAPI. Suchen Sie nach Pokemons und erfahren Sie mehr über sie.',
+      dabubbleText: 'Ein schlanker Slack-/Discord-Klon mit Echtzeitkommunikation, Kanälen und Firebase-Integration für sichere Authentifizierung und zuverlässige Synchronisation. Ideal für Teams und Communitys.',
       liveTest: 'Live-Test',
+      videoflixText: 'Eine eigene Streaming-Plattform im Netflix-Stil. Nutzer können sich registrieren und anmelden, um geschützte Videos zu streamen. Entwickelt mit Angular und dem Django REST Framework.'
     }
   };
 

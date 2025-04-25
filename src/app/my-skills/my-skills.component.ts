@@ -1,4 +1,4 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 import { Router, RouterLink } from '@angular/router';
@@ -6,7 +6,7 @@ import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, RouterLink],
+  imports: [NgFor, NgIf, RouterLink],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss',
 })
@@ -46,13 +46,13 @@ export class MySkillsComponent {
 
   public translations: any = {
     en: {
-      headline: 'My skills',
+      headline: 'My Skills',
       shortDescription:
-        'I have gained experience in building projects with different frontend technologies and concepts.',
+        'I have hands-on experience developing applications using a variety of frontend and backend technologies. My focus is on creating scalable, maintainable, and user-friendly solutions.',
       secondHeadline: 'Looking for',
       secondHeadlineSpan: 'another skill',
       secondText:
-        'Feel free to contact me. I look forward to expanding on my previous knowledge.',
+        'Feel free to reach out. I am always eager to expand my knowledge and take on new challenges in different tech stacks.',
       getInTouch: 'Get in touch',
       continuallyLearning: 'Continually learning',
       materialDesign: 'Material Design',
@@ -60,19 +60,23 @@ export class MySkillsComponent {
     de: {
       headline: 'Fähigkeiten',
       shortDescription:
-        'Ich habe Erfahrung in der Erstellung von Projekten mit verschiedenen Frontend-Technologien und Konzepten gesammelt.',
+        'Ich habe praktische Erfahrung in der Entwicklung von Anwendungen mit verschiedenen Frontend- und Backend-Technologien. Mein Fokus liegt auf skalierbaren, wartbaren und benutzerfreundlichen Lösungen.',
       secondHeadline: 'Suchen Sie nach',
       secondHeadlineSpan: 'einer anderen Fähigkeit',
       secondText:
-        'Nehmen Sie Kontakt mit mir auf. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.',
+        'Kontaktieren Sie mich gerne. Ich bin stets offen dafür, mein Wissen zu erweitern und neue Herausforderungen mit unterschiedlichen Technologien anzunehmen.',
       getInTouch: 'Kontakt aufnehmen',
       continuallyLearning: 'Kontinuierliche Weiterbildung',
+      materialDesign: 'Material Design',
     },
   };
 
   public currentLanguage: 'en' | 'de' = 'en';
 
-  constructor(private languageService: LanguageService, private router: Router) {}
+  constructor(
+    private languageService: LanguageService,
+    private router: Router
+  ) {}
   /**
    * Retrieves the translation for the given field based on the current language.
    *
@@ -105,9 +109,9 @@ export class MySkillsComponent {
 
   async handleScroll(fragment: string) {
     const element = document.getElementById(fragment);
-    const scrollHeightPixels = this.getElementHeightById(fragment);  // Das wird in Pixeln zurückgegeben
+    const scrollHeightPixels = this.getElementHeightById(fragment); // Das wird in Pixeln zurückgegeben
     const currentUrl = this.router.url;
-  
+
     // Prüfen, ob das Fragment bereits in der URL vorhanden ist
     if (currentUrl.includes(`#${fragment}`) && scrollHeightPixels !== null) {
       // Scrollen zu der berechneten Höhe
@@ -117,17 +121,16 @@ export class MySkillsComponent {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
-  
+
   // Höhe eines Elements ermitteln
   getElementHeightById(elementId: string): number | null {
     const element = document.getElementById(elementId);
-    
+
     if (element) {
       const elementRect = element.getBoundingClientRect();
       return elementRect.top + window.pageYOffset; // Höhe des Elements relativ zum Dokument
     }
-    
+
     return null; // Wenn das Element nicht gefunden wird
   }
-  
 }
