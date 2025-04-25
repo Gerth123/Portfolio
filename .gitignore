@@ -42,3 +42,6 @@ testem.log
 Thumbs.db
 
 .git/
+.el_pollo_loco/
+.Join/
+.Pokedex/
