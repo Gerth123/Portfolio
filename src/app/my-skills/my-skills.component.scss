@@ -110,17 +110,36 @@ p {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 10px;
-  width: 520px;
+  gap: 10px 12px;
+  width: min(560px, 100%);
 
   > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     border: 1px solid #70e61c;
     border-radius: 8px;
-    padding: 6px 10px;
+    min-height: 36px;
+    padding: 6px 11px;
     color: white;
     font-size: 14px;
     line-height: 1.2;
     background-color: rgba(112, 230, 28, 0.08);
+    transition: border-color 0.25s ease, background-color 0.25s ease,
+      transform 0.25s ease;
+
+    &:hover {
+      border-color: #9747ff;
+      background-color: rgba(151, 71, 255, 0.16);
+      transform: translateY(-2px);
+    }
+
+    > img {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      object-fit: contain;
+    }
   }
 }
 
@@ -362,6 +381,24 @@ a {
   .skillHighlights {
     justify-content: center;
     width: 80vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .skillHighlights {
+    gap: 8px;
+
+    > span {
+      min-height: 34px;
+      padding: 5px 9px;
+      font-size: 13px;
+
+      > img {
+        width: 20px;
+        height: 20px;
+        flex-basis: 20px;
+      }
+    }
   }
 }
 

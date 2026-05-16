@@ -43,7 +43,8 @@
         </p>
         <div class="skillHighlights">
           <span *ngFor="let highlight of getCurrentSkillHighlights()">
-            {{ highlight }}
+            <img src="{{ highlight.icon }}" alt="{{ highlight.alt }}" />
+            {{ getCurrentSkillLabel(highlight) }}
           </span>
         </div>
         <div class="skillsContainer2" data-aos="zoom-in-right">

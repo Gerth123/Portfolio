@@ -33,8 +33,8 @@ export class MySkillsComponent {
     { src: '../../assets/icons/git.svg', alt: 'Git', name: 'Git' },
     {
       src: '../../assets/icons/rest_api.svg',
-      alt: 'Rest Api',
-      name: 'Rest Api',
+      alt: 'REST API',
+      name: 'REST API',
     },
     { src: '../../assets/icons/scrum.svg', alt: 'Scrum', name: 'Scrum' },
     {
@@ -52,7 +52,7 @@ export class MySkillsComponent {
       secondHeadline: 'Need a developer with',
       secondHeadlineSpan: 'growth mindset',
       secondText:
-        'I am especially interested in teams that build modern web platforms, e-commerce solutions or AI-first products in the DACH region and Switzerland.',
+        'I am especially interested in teams that build modern web platforms, e-commerce solutions or AI-first products with clean processes and high technical standards.',
       getInTouch: 'Get in touch',
       continuallyLearning: 'Continually learning',
       materialDesign: 'Material Design',
@@ -64,38 +64,73 @@ export class MySkillsComponent {
       secondHeadline: 'Gesucht wird ein Entwickler mit',
       secondHeadlineSpan: 'Wachstumsdenken',
       secondText:
-        'Besonders spannend finde ich Teams, die moderne Webplattformen, E-Commerce-Lösungen oder AI-first Produkte im DACH-Raum und in der Schweiz entwickeln.',
+        'Besonders spannend finde ich Teams, die moderne Webplattformen, E-Commerce-Lösungen oder AI-first Produkte mit klaren Prozessen und hohem technischen Anspruch entwickeln.',
       getInTouch: 'Kontakt aufnehmen',
       continuallyLearning: 'Kontinuierliche Weiterbildung',
     },
   };
 
-  public skillHighlights: { en: string[]; de: string[] } = {
-    en: [
-      'Python',
-      'Django REST',
-      'Angular',
-      'Shopware 6',
-      'REST APIs',
-      'Linux',
-      'Redis & RQ',
-      'Kotlin basics',
-      'AI-assisted coding',
-      'Agentic coding',
-    ],
-    de: [
-      'Python',
-      'Django REST',
-      'Angular',
-      'Shopware 6',
-      'REST APIs',
-      'Linux',
-      'Redis & RQ',
-      'Kotlin-Grundlagen',
-      'KI-gestütztes Coding',
-      'Agentic Coding',
-    ],
-  };
+  public skillHighlights: {
+    icon: string;
+    alt: string;
+    label: { en: string; de: string };
+  }[] = [
+    {
+      icon: '../../assets/icons/ai_assisted_coding.svg',
+      alt: 'AI-assisted coding',
+      label: { en: 'AI-assisted coding', de: 'KI-gestütztes Coding' },
+    },
+    {
+      icon: '../../assets/icons/claude_code.svg',
+      alt: 'Claude Code',
+      label: { en: 'Claude Code', de: 'Claude Code' },
+    },
+    {
+      icon: '../../assets/icons/codex.svg',
+      alt: 'Codex',
+      label: { en: 'Codex', de: 'Codex' },
+    },
+    {
+      icon: '../../assets/icons/agentic_coding.svg',
+      alt: 'Agentic Coding',
+      label: { en: 'Agentic coding', de: 'Agentic Coding' },
+    },
+    {
+      icon: '../../assets/icons/ki_workflows.svg',
+      alt: 'AI workflows',
+      label: { en: 'AI workflows', de: 'KI-Workflows' },
+    },
+    {
+      icon: '../../assets/icons/prompt_engineering.svg',
+      alt: 'Prompt engineering',
+      label: { en: 'Prompt engineering', de: 'Prompt Engineering' },
+    },
+    {
+      icon: '../../assets/icons/automations.svg',
+      alt: 'Automations',
+      label: { en: 'Automations', de: 'Automatisierungen' },
+    },
+    {
+      icon: '../../assets/icons/shopware_6.svg',
+      alt: 'Shopware 6',
+      label: { en: 'Shopware 6', de: 'Shopware 6' },
+    },
+    {
+      icon: '../../assets/icons/kotlin.svg',
+      alt: 'Kotlin',
+      label: { en: 'Kotlin', de: 'Kotlin' },
+    },
+    {
+      icon: '../../assets/icons/redis.svg',
+      alt: 'Redis',
+      label: { en: 'Redis', de: 'Redis' },
+    },
+    {
+      icon: '../../assets/icons/linux.svg',
+      alt: 'Linux',
+      label: { en: 'Linux', de: 'Linux' },
+    },
+  ];
 
   public currentLanguage: 'en' | 'de' = 'en';
 
@@ -111,9 +146,15 @@ export class MySkillsComponent {
     return this.translations[this.languageService.currentLanguage][field];
   }
 
-  getCurrentSkillHighlights(): string[] {
+  getCurrentSkillHighlights() {
+    return this.skillHighlights;
+  }
+
+  getCurrentSkillLabel(skill: {
+    label: { en: string; de: string };
+  }): string {
     const language = this.languageService.currentLanguage as 'en' | 'de';
-    return this.skillHighlights[language];
+    return skill.label[language];
   }
 
   isHovered: boolean = false;

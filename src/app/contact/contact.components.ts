@@ -17,9 +17,9 @@ export class ContactComponent {
   public translations: any = {
     en: {
       headline: 'Contact',
-      secondHeadline: 'Let us talk about your tech team',
-      firstText: 'I am open to full-stack, e-commerce and AI-assisted development roles in Switzerland and the DACH region. If my profile fits your team, I look forward to a clear first conversation.',
-      secondText: 'Looking for a practical developer with Shopware, Angular, Python and AI workflow experience?',
+      secondHeadline: 'Let us talk about modern software',
+      firstText: 'I enjoy building practical, maintainable solutions for digital products, e-commerce platforms and AI-supported development workflows. If my profile fits your technical environment, I look forward to a focused conversation.',
+      secondText: 'Need a practical developer with Shopware, Angular, Python and AI workflow experience?',
       thirdText: 'Let us connect.',
       inputPlaceholderName: 'Your name',
       errorName: 'Correct name required.',
@@ -35,8 +35,8 @@ export class ContactComponent {
     },
     de: {
       headline: 'Kontakt',
-      secondHeadline: 'Sprechen wir über Ihr Tech-Team',
-      firstText: 'Ich bin offen für Full-Stack-, E-Commerce- und KI-gestützte Entwicklungsrollen in der Schweiz und im DACH-Raum. Wenn mein Profil zu Ihrem Team passt, freue ich mich über ein klares erstes Gespräch.',
+      secondHeadline: 'Sprechen wir über moderne Software',
+      firstText: 'Ich entwickle gerne praxisnahe, wartbare Lösungen für digitale Produkte, E-Commerce-Plattformen und KI-gestützte Entwicklungsworkflows. Wenn mein Profil zu Ihrem technischen Umfeld passt, freue ich mich über ein fokussiertes Gespräch.',
       secondText: 'Gesucht wird ein praxisnaher Entwickler mit Shopware-, Angular-, Python- und KI-Workflow-Erfahrung?',
       thirdText: 'Dann lassen Sie uns sprechen.',
       inputPlaceholderName: 'Ihr Name',
@@ -70,7 +70,7 @@ export class ContactComponent {
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        'Content-Type': 'application/json', // JSON als Content-Type
+        'Content-Type': 'application/json',
       },
     },
   };
@@ -168,29 +168,24 @@ export class ContactComponent {
 
   async handleScroll(fragment: string) {
     const element = document.getElementById(fragment);
-    const scrollHeightPixels = this.getElementHeightById(fragment);  // Das wird in Pixeln zurückgegeben
+    const scrollHeightPixels = this.getElementHeightById(fragment);
     const currentUrl = this.router.url;
-  
-    // Prüfen, ob das Fragment bereits in der URL vorhanden ist
+
     if (currentUrl.includes(`#${fragment}`) && scrollHeightPixels !== null) {
-      // Scrollen zu der berechneten Höhe
       window.scrollTo({ top: scrollHeightPixels, behavior: 'smooth' });
     } else if (element) {
-      // Wenn das Fragment nicht in der URL ist, scrolle zu dem Element
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
-  
-  // Höhe eines Elements ermitteln
+
   getElementHeightById(elementId: string): number | null {
     const element = document.getElementById(elementId);
-    
+
     if (element) {
       const elementRect = element.getBoundingClientRect();
-      return elementRect.top + window.pageYOffset; // Höhe des Elements relativ zum Dokument
+      return elementRect.top + window.pageYOffset;
     }
-    
-    return null; // Wenn das Element nicht gefunden wird
+
+    return null;
   }
-  
 }
