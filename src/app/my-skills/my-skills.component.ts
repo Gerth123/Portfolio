@@ -48,11 +48,11 @@ export class MySkillsComponent {
     en: {
       headline: 'My skills',
       shortDescription:
-        'I have gained experience in building projects with different frontend technologies and concepts.',
-      secondHeadline: 'Looking for',
-      secondHeadlineSpan: 'another skill',
+        'My current profile combines full-stack web development, e-commerce practice and AI-supported engineering workflows. I work with production requirements, APIs, maintainable code and a strong willingness to learn what the product needs next.',
+      secondHeadline: 'Need a developer with',
+      secondHeadlineSpan: 'growth mindset',
       secondText:
-        'Feel free to contact me. I look forward to expanding on my previous knowledge.',
+        'I am especially interested in teams that build modern web platforms, e-commerce solutions or AI-first products in the DACH region and Switzerland.',
       getInTouch: 'Get in touch',
       continuallyLearning: 'Continually learning',
       materialDesign: 'Material Design',
@@ -60,19 +60,47 @@ export class MySkillsComponent {
     de: {
       headline: 'Fähigkeiten',
       shortDescription:
-        'Ich habe Erfahrung in der Erstellung von Projekten mit verschiedenen Frontend-Technologien und Konzepten gesammelt.',
-      secondHeadline: 'Suchen Sie nach',
-      secondHeadlineSpan: 'einer anderen Fähigkeit',
+        'Mein Profil verbindet Full-Stack-Webentwicklung, E-Commerce-Praxis und KI-gestützte Entwicklungsworkflows. Ich arbeite mit realen Anforderungen, APIs, wartbarem Code und der Bereitschaft, schnell das zu lernen, was ein Produkt als Nächstes braucht.',
+      secondHeadline: 'Gesucht wird ein Entwickler mit',
+      secondHeadlineSpan: 'Wachstumsdenken',
       secondText:
-        'Nehmen Sie Kontakt mit mir auf. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.',
+        'Besonders spannend finde ich Teams, die moderne Webplattformen, E-Commerce-Lösungen oder AI-first Produkte im DACH-Raum und in der Schweiz entwickeln.',
       getInTouch: 'Kontakt aufnehmen',
       continuallyLearning: 'Kontinuierliche Weiterbildung',
     },
   };
 
+  public skillHighlights: { en: string[]; de: string[] } = {
+    en: [
+      'Python',
+      'Django REST',
+      'Angular',
+      'Shopware 6',
+      'REST APIs',
+      'Linux',
+      'Redis & RQ',
+      'Kotlin basics',
+      'AI-assisted coding',
+      'Agentic coding',
+    ],
+    de: [
+      'Python',
+      'Django REST',
+      'Angular',
+      'Shopware 6',
+      'REST APIs',
+      'Linux',
+      'Redis & RQ',
+      'Kotlin-Grundlagen',
+      'KI-gestütztes Coding',
+      'Agentic Coding',
+    ],
+  };
+
   public currentLanguage: 'en' | 'de' = 'en';
 
   constructor(private languageService: LanguageService, private router: Router) {}
+
   /**
    * Retrieves the translation for the given field based on the current language.
    *
@@ -81,6 +109,11 @@ export class MySkillsComponent {
    */
   getCurrentText(field: string): string {
     return this.translations[this.languageService.currentLanguage][field];
+  }
+
+  getCurrentSkillHighlights(): string[] {
+    const language = this.languageService.currentLanguage as 'en' | 'de';
+    return this.skillHighlights[language];
   }
 
   isHovered: boolean = false;
@@ -105,29 +138,24 @@ export class MySkillsComponent {
 
   async handleScroll(fragment: string) {
     const element = document.getElementById(fragment);
-    const scrollHeightPixels = this.getElementHeightById(fragment);  // Das wird in Pixeln zurückgegeben
+    const scrollHeightPixels = this.getElementHeightById(fragment);
     const currentUrl = this.router.url;
-  
-    // Prüfen, ob das Fragment bereits in der URL vorhanden ist
+
     if (currentUrl.includes(`#${fragment}`) && scrollHeightPixels !== null) {
-      // Scrollen zu der berechneten Höhe
       window.scrollTo({ top: scrollHeightPixels, behavior: 'smooth' });
     } else if (element) {
-      // Wenn das Fragment nicht in der URL ist, scrolle zu dem Element
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
-  
-  // Höhe eines Elements ermitteln
+
   getElementHeightById(elementId: string): number | null {
     const element = document.getElementById(elementId);
-    
+
     if (element) {
       const elementRect = element.getBoundingClientRect();
-      return elementRect.top + window.pageYOffset; // Höhe des Elements relativ zum Dokument
+      return elementRect.top + window.pageYOffset;
     }
-    
-    return null; // Wenn das Element nicht gefunden wird
+
+    return null;
   }
-  
 }

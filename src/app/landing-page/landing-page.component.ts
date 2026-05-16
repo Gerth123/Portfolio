@@ -15,13 +15,15 @@ export class LandingPageComponent {
   public translations: any = {
     en: {
       rotateText: 'I am',
-      subtitle: 'Frontend Developer',
-      buttonText: "Let's talk!",
+      subtitle: 'Full-Stack Developer',
+      heroClaim: 'Shopware 6, Django REST, Angular and AI-assisted workflows',
+      buttonText: "Let's talk",
     },
     de: {
       rotateText: 'Ich bin',
-      subtitle: 'Frontend-Entwickler',
-      buttonText: 'Reden wir!',
+      subtitle: 'Full-Stack-Entwickler',
+      heroClaim: 'Shopware 6, Django REST, Angular und KI-gestützte Workflows',
+      buttonText: 'Kontakt aufnehmen',
     },
   };
 

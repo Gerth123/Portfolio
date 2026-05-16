@@ -12,32 +12,32 @@ import { LanguageService } from '../services/language.service';
 export class ProjectsComponent {
   public translations: any = {
     en: {
-     firstSpan: 'Explore a selection of my work here - Interact with projects to see my skills in action.',
-     joinText: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-     elPolloLocoText: 'A simple Jump-and-Run game based on an object-oriented approach. Help pepe to collect bottles and coins, while defeating chickens and finally the endboss at the end.',
-     pokedexText: 'A simple library based on the PokeAPI. Search for pokemons and learn more about them.',
-     liveTest: 'Live test',
+      firstSpan: 'Selected projects that show how I structure interfaces, handle data and turn requirements into usable web applications.',
+      joinText: 'Kanban-style task manager with authentication, task states, drag and drop interactions, user assignment and Firebase-backed data handling. The project strengthened my work with application logic, state changes and reusable UI structures.',
+      elPolloLocoText: 'Browser game built with object-oriented JavaScript, collision handling, keyboard controls and canvas-based rendering. It sharpened my understanding of clean game loops, component responsibilities and interactive frontend logic.',
+      dabubbleText: 'Slack-inspired chat application focused on responsive UI, channel and direct-message flows, Firebase integration and structured component logic. The project reflects practical experience with real-time communication patterns and modern Angular development.',
+      liveTest: 'Live test',
     },
     de: {
-      firstSpan: 'Entdecken Sie hier eine Auswahl meiner Projekte - Interagieren Sie mit diesen, um meine Fähigkeiten in Aktion zu sehen.',
-      joinText: 'Ein Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.',
-      elPolloLocoText: 'Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Flaschen und Münzen zu sammeln, während du Hühner und den Endboss am Ende besiegst.',
-      pokedexText: 'Eine einfache Bibliothek basierend auf der PokeAPI. Suchen Sie nach Pokemons und erfahren Sie mehr über sie.',
+      firstSpan: 'Ausgewählte Projekte, die zeigen, wie ich Interfaces strukturiere, Daten verarbeite und Anforderungen in nutzbare Webanwendungen übersetze.',
+      joinText: 'Kanban-orientierter Task-Manager mit Authentifizierung, Aufgabenstatus, Drag-and-Drop-Interaktionen, Benutzerzuweisung und Firebase-gestützter Datenhaltung. Das Projekt hat meine Arbeit mit Applikationslogik, Zustandsänderungen und wiederverwendbaren UI-Strukturen vertieft.',
+      elPolloLocoText: 'Browsergame mit objektorientiertem JavaScript, Collision Detection, Tastatursteuerung und Canvas-Rendering. Das Projekt hat mein Verständnis für saubere Game-Loops, klare Komponentenverantwortung und interaktive Frontend-Logik geschärft.',
+      dabubbleText: 'Slack-inspirierte Chat-Anwendung mit Fokus auf responsive UI, Channel- und Direktnachrichten-Flows, Firebase-Integration und strukturierter Komponentenlogik. Das Projekt zeigt praktische Erfahrung mit Echtzeitkommunikation und moderner Angular-Entwicklung.',
       liveTest: 'Live-Test',
     }
   };
 
-  public currentLanguage: 'en' | 'de' = 'en'; 
+  public currentLanguage: 'en' | 'de' = 'en';
 
   constructor(private languageService: LanguageService) {}
+
   /**
    * Retrieves the translation for the given field based on the current language.
    *
    * @param {string} field - The key of the translation to retrieve.
    * @returns {string} The translation for the given field.
    */
-    getCurrentText(field: string): string {
-      return this.translations[this.languageService.currentLanguage][field];
-    };
- 
+  getCurrentText(field: string): string {
+    return this.translations[this.languageService.currentLanguage][field];
+  };
 }

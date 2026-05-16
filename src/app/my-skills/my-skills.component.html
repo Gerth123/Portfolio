@@ -41,6 +41,11 @@
         <p>
           {{ getCurrentText("shortDescription") }}
         </p>
+        <div class="skillHighlights">
+          <span *ngFor="let highlight of getCurrentSkillHighlights()">
+            {{ highlight }}
+          </span>
+        </div>
         <div class="skillsContainer2" data-aos="zoom-in-right">
           <div class="imageContainer">
             <div *ngFor="let skill of skills" class="skill">

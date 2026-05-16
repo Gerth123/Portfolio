@@ -106,6 +106,24 @@ p {
   width: 515px;
 }
 
+.skillHighlights {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 520px;
+
+  > span {
+    border: 1px solid #70e61c;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: white;
+    font-size: 14px;
+    line-height: 1.2;
+    background-color: rgba(112, 230, 28, 0.08);
+  }
+}
+
 .skillsContainer {
   display: flex;
   flex-direction: column;
@@ -221,8 +239,9 @@ a {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-end;
-  height: 50svh;
+  min-height: 50svh;
   padding-right: 100px;
+  gap: 18px;
 }
 
 @media (min-width: 1600px) {
@@ -337,6 +356,11 @@ a {
 
   .lastP {
     text-align: center;
+    width: 80vw;
+  }
+
+  .skillHighlights {
+    justify-content: center;
     width: 80vw;
   }
 }

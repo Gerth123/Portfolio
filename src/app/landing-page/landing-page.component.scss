@@ -137,6 +137,15 @@ a {
   color: #9747ff;
 }
 
+.heroClaim {
+  max-width: 620px;
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.86);
+}
+
 .contact {
   background-color: #70e61c;
   width: auto;
@@ -494,6 +503,11 @@ a {
     height: 36.5px;
   }
 
+  .heroClaim {
+    max-width: 460px;
+    font-size: 16px;
+  }
+
   .name {
     font-size: 60px;
     height: 60px;
@@ -613,6 +627,11 @@ a {
   .role {
     font-size: 31px;
     height: 31px;
+  }
+
+  .heroClaim {
+    max-width: 330px;
+    font-size: 14px;
   }
 
   .rotate {
@@ -744,6 +763,11 @@ a {
   .role {
     font-size: 24px;
     height: 24px;
+  }
+
+  .heroClaim {
+    max-width: 280px;
+    font-size: 13px;
   }
 
   .rotate {
