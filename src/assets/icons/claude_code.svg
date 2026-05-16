@@ -1,6 +1,4 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="10" y="12" width="44" height="40" rx="8" stroke="#70E61C" stroke-width="4"/>
-  <path d="M22 27 16 32l6 5M42 27l6 5-6 5" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="m37 22-10 20" stroke="#9747FF" stroke-width="4" stroke-linecap="round"/>
-  <path d="m32 6 2.2 5.3L40 14l-5.8 2.7L32 22l-2.2-5.3L24 14l5.8-2.7L32 6Z" fill="#9747FF"/>
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <title>Anthropic</title>
+  <path fill="#D97757" d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/>
 </svg>
