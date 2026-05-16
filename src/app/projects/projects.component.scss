@@ -184,6 +184,10 @@ h5 {
   padding-left: 15%;
 }
 
+.videoflix {
+  object-fit: contain;
+}
+
 @media (min-width: 1600px) {
   .lineTwo {
     width: 1500px;
@@ -250,6 +254,10 @@ h5 {
 
   .pokedex {
     padding-left: 0;
+  }
+
+  .videoflix {
+    margin-bottom: -20px;
   }
 }
 
