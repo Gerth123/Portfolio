@@ -185,11 +185,11 @@ h5 {
 }
 
 .videoflix {
-  width: clamp(430px, 34vw, 520px) !important;
-  max-width: 40vw;
-  height: auto !important;
-  max-height: none !important;
-  object-fit: contain;
+  width: 500px !important;
+  height: 350px !important;
+  max-width: 500px;
+  max-height: 350px;
+  object-fit: fill;
 }
 
 @media (min-width: 1600px) {
@@ -262,10 +262,11 @@ h5 {
 
   .projectEven {
     > img.videoflix {
-      width: min(82vw, 520px) !important;
-      max-width: 82vw;
-      height: auto !important;
-      margin-bottom: 20px;
+      width: 500px !important;
+      height: 350px !important;
+      max-width: 90vw;
+      max-height: 320px;
+      margin-bottom: -50px;
     }
   }
 }
@@ -294,9 +295,10 @@ h5 {
     }
 
     > img.videoflix {
-      width: 88vw !important;
-      max-width: 88vw;
-      max-height: none;
+      width: 400px !important;
+      height: 250px !important;
+      max-width: 400px;
+      max-height: 250px;
     }
   }
 
@@ -317,9 +319,10 @@ h5 {
     }
 
     > img.videoflix {
-      width: 88vw !important;
-      max-width: 88vw;
-      max-height: none;
+      width: 350px !important;
+      height: 200px !important;
+      max-width: 350px;
+      max-height: 200px;
     }
   }
 }
