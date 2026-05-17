@@ -1,7 +1,8 @@
 section {
   display: flex;
   padding-top: 12svh;
-  margin-bottom: -10svh;
+  padding-bottom: clamp(80px, 10svh, 140px);
+  margin-bottom: 0;
   background-color: rgb(20, 29, 47);
   width: 100%;
   justify-content: center;
@@ -16,6 +17,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 32px;
 }
 
 .skill:not(:last-child) {
@@ -146,10 +148,12 @@ p {
 .skillsContainer {
   display: flex;
   flex-direction: column;
-  width: 40vw;
+  flex: 0 0 48%;
+  width: 48%;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 150px;
+  box-sizing: border-box;
+  padding-left: clamp(110px, 9vw, 160px);
   z-index: 9;
 }
 
@@ -164,20 +168,21 @@ p {
 }
 
 .imageContainer {
-  padding-top: 200px;
-  display: flex;
-  justify-content: flex-start;
+  padding-top: clamp(70px, 9svh, 120px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(90px, 1fr));
+  justify-content: center;
   align-items: center;
-  gap: 100px;
-  width: 100%;
-  flex-wrap: wrap;
+  column-gap: clamp(48px, 5vw, 90px);
+  row-gap: 64px;
+  width: min(560px, 100%);
 
   > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60px;
+    width: 90px;
     height: 70px;
     gap: 10px;
 
@@ -198,6 +203,8 @@ p {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-evenly;
+  flex: 1 1 52%;
+  min-width: 0;
   gap: 5px;
 }
 
@@ -263,17 +270,18 @@ a {
   min-height: 50svh;
   padding-right: 100px;
   gap: 18px;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1600px) {
   .skillsContainer {
     padding-left: 0;
-    padding-right: 10vw;
+    padding-right: 7vw;
   }
 
   .text {
     padding-right: 0;
-    height: 600px;
+    min-height: 620px;
   }
 
   .line {
@@ -301,8 +309,9 @@ a {
   }
 
   .skillsContainer {
-    padding-left: clamp(80px, 7vw, 120px);
-    width: 50vw;
+    flex-basis: 50%;
+    width: 50%;
+    padding-left: clamp(88px, 8vw, 130px);
     padding-right: 0;
   }
 
@@ -321,7 +330,8 @@ a {
   }
 
   .imageContainer {
-    gap: 80px;
+    column-gap: clamp(42px, 4vw, 70px);
+    row-gap: 58px;
   }
 }
 
@@ -346,6 +356,7 @@ a {
 
   .imageContainer {
     justify-content: center;
+    width: 100%;
 
     > div {
       width: 100px;
@@ -359,7 +370,7 @@ a {
     height: auto;
     align-items: center;
     padding: 0;
-    width: 100vw;
+    width: min(100%, 100vw);
     gap: 20px;
 
     > p:nth-child(1) {
@@ -428,7 +439,9 @@ a {
   }
 
   .imageContainer {
-    gap: 60px;
+    grid-template-columns: repeat(2, minmax(90px, 1fr));
+    column-gap: 50px;
+    row-gap: 52px;
   }
 
   h4 {
