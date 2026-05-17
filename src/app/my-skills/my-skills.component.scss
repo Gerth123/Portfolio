@@ -223,21 +223,23 @@ a {
   background-color: #70e61c;
   color: white;
   width: auto;
-  height: 58px;
-  padding: 0 20px;
+  min-height: 58px;
+  padding: 0 30px;
   border-radius: 10px;
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 23px;
+  line-height: 1.1;
+  white-space: nowrap;
   transition: background-color 0.4s ease, transform 0.4s ease;
   transform-origin: top;
   box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.3);
 
   &:hover {
     background-color: #9747ff;
-    transform: scale(1.2);
+    transform: scale(1.08);
   }
 }
 
@@ -299,7 +301,7 @@ a {
   }
 
   .skillsContainer {
-    padding-left: 50px;
+    padding-left: clamp(80px, 7vw, 120px);
     width: 50vw;
     padding-right: 0;
   }
@@ -436,9 +438,9 @@ a {
   }
 
   .linkPage {
-    height: 50px;
+    min-height: 50px;
     font-size: 18px;
-    padding: 0 20px;
+    padding: 0 24px;
     margin-top: 20px;
   }
 }
