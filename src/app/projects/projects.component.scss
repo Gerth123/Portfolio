@@ -184,14 +184,6 @@ h5 {
   padding-left: 15%;
 }
 
-.videoflix {
-  width: 500px !important;
-  height: 350px !important;
-  max-width: 500px;
-  max-height: 350px;
-  object-fit: fill;
-}
-
 @media (min-width: 1600px) {
   .lineTwo {
     width: 1500px;
@@ -260,15 +252,6 @@ h5 {
     padding-left: 0;
   }
 
-  .projectEven {
-    > img.videoflix {
-      width: 500px !important;
-      height: 350px !important;
-      max-width: 90vw;
-      max-height: 320px;
-      margin-bottom: -50px;
-    }
-  }
 }
 
 @media (max-width: 850px) {
@@ -294,12 +277,6 @@ h5 {
       max-height: 250px;
     }
 
-    > img.videoflix {
-      width: 400px !important;
-      height: 250px !important;
-      max-width: 400px;
-      max-height: 250px;
-    }
   }
 
   .buttonContainer {
@@ -318,12 +295,6 @@ h5 {
       max-height: 200px;
     }
 
-    > img.videoflix {
-      width: 350px !important;
-      height: 200px !important;
-      max-width: 350px;
-      max-height: 200px;
-    }
   }
 }
 
