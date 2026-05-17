@@ -17,6 +17,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  box-sizing: border-box;
   gap: 32px;
 }
 
@@ -275,8 +276,8 @@ a {
 
 @media (min-width: 1600px) {
   .skillsContainer {
-    padding-left: 0;
-    padding-right: 7vw;
+    padding-left: clamp(70px, 6vw, 110px);
+    padding-right: clamp(40px, 4vw, 80px);
   }
 
   .text {

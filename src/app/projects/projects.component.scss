@@ -125,6 +125,11 @@ h5 {
   }
 }
 
+.projectEven > .el-pollo-loco-img {
+  object-fit: cover;
+  object-position: center;
+}
+
 .projectTextEven {
   display: flex;
   flex-direction: column;
