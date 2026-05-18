@@ -1,33 +1,49 @@
-<footer>
-  <div class="container">
-    <div class="logoAndLink">
-      <a [routerLink]="['/']" [fragment]="'landingPage'">
-        <img
-          src="../../../assets/logo/robin_semicolon.png"
-          alt="Logo"
-          class="logo"
-      /></a>
-      <a
-        [routerLink]="['/legal-notice']" (click)="scrollToTop()"     >
-        Impressum
-      </a>
-    </div>
-    <div class="copyright">
-      <p>&copy; Robin Gerth 2026</p>
-    </div>
-    <div class="icons">
-      <a href="https://github.com/Gerth123" target="_blank">
-        <img src="../../../assets/icons/github_button.svg" alt="Github" />
-      </a>
-      <a href="mailto:robingerth21@gmail.com">
-        <img src="../../../assets/icons/email_button.svg" alt="Email" />
-      </a>
-      <a href="https:/linkedin.com/in/robin-gerth-47100031b/" target="_blank">
-        <img src="../../../assets/icons/linkedin_button.svg" alt="Linkedin" />
-      </a>
-    </div>
-    <div class="impressumResponsive">
-      <a [routerLink]="['/legal-notice']" (click)="scrollToTop()">Impressum</a>
+<footer class="site-footer">
+  <div class="container-xxl">
+    <div class="row align-items-center gy-4">
+      <div class="col-md-4 text-center text-md-start">
+        <a [routerLink]="['/']" [fragment]="'landingPage'" aria-label="Robin Gerth home">
+          <img
+            src="../../../assets/logo/robin_semicolon.png"
+            alt="Robin Gerth"
+            class="logo"
+          />
+        </a>
+        <a
+          class="legal-link d-none d-md-inline-flex"
+          [routerLink]="['/legal-notice']"
+          (click)="scrollToTop()"
+        >
+          Impressum
+        </a>
+      </div>
+
+      <div class="col-md-4 text-center">
+        <p class="copyright mb-0">&copy; Robin Gerth 2026</p>
+      </div>
+
+      <div class="col-md-4">
+        <div class="icons d-flex justify-content-center justify-content-md-end gap-4">
+          <a href="https://github.com/Gerth123" target="_blank" rel="noreferrer" aria-label="Github">
+            <img src="../../../assets/icons/github_button.svg" alt="" />
+          </a>
+          <a href="mailto:robingerth21@gmail.com" aria-label="Email">
+            <img src="../../../assets/icons/email_button.svg" alt="" />
+          </a>
+          <a
+            href="https://linkedin.com/in/robin-gerth-47100031b/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <img src="../../../assets/icons/linkedin_button.svg" alt="" />
+          </a>
+        </div>
+      </div>
+
+      <div class="col-12 text-center d-md-none">
+        <a class="legal-link" [routerLink]="['/legal-notice']" (click)="scrollToTop()">Impressum</a>
+      </div>
     </div>
   </div>
 </footer>

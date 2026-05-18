@@ -118,7 +118,10 @@ export class ContactComponent {
    * @returns {void}
    */
   handleSuccess(ngForm: NgForm): void {
-    this.successMessage = 'Your message has been sent successfully!';
+    this.successMessage =
+      this.languageService.currentLanguage === 'de'
+        ? 'Ihre Nachricht wurde erfolgreich gesendet!'
+        : 'Your message has been sent successfully!';
     this.errorMessage = '';
     ngForm.resetForm();
     this.contactData.privacyChecked = false;
@@ -131,7 +134,10 @@ export class ContactComponent {
    * @returns {void}
    */
   handleError(error: any): void {
-    this.errorMessage = 'An error occurred while sending your message.';
+    this.errorMessage =
+      this.languageService.currentLanguage === 'de'
+        ? 'Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten.'
+        : 'An error occurred while sending your message.';
     this.successMessage = '';
     console.error(error);
     setTimeout(() => (this.errorMessage = ''), 5000);
@@ -147,8 +153,7 @@ export class ContactComponent {
     const inputfield = document.getElementById(id) as HTMLInputElement;
 
     if (inputfield) {
-      inputfield.placeholder =
-        inputfield.value.length === 0 ? '' : 'Your ' + id;
+      inputfield.placeholder = inputfield.value.length === 0 ? '' : this.getPlaceholder(id);
     }
   }
 
@@ -162,8 +167,18 @@ export class ContactComponent {
     const inputfield = document.getElementById(id) as HTMLInputElement;
 
     if (inputfield) {
-      inputfield.placeholder = 'Your ' + id;
+      inputfield.placeholder = this.getPlaceholder(id);
     }
+  }
+
+  getPlaceholder(id: string): string {
+    const fields: Record<string, string> = {
+      name: 'inputPlaceholderName',
+      email: 'inputPlaceholderEmail',
+      message: 'inputPlaceholderMessage',
+    };
+
+    return this.getCurrentText(fields[id] ?? 'inputPlaceholderMessage');
   }
 
   async handleScroll(fragment: string) {

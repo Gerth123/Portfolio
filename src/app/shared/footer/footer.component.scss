@@ -1,181 +1,41 @@
-footer {
-  width: 100%;
+.site-footer {
   position: relative;
-  z-index: 98;
-  border-top: 4px solid #70e61c;
-  background-color: rgb(20, 29, 47);
-  color: white;
-  height: 20svh;
-  min-height: 291px;
-  display: flex;
-  padding: 0 100px;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 1600px;
-  justify-content: space-between;
-}
-
-h2 {
-  font-size: 50px;
-  margin-block-start: 0;
-  margin-block-end: 0.15em;
-  text-align: start;
-}
-
-p {
-  font-size: 23px;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  font-size: 23px;
-}
-
-.icons {
-  display: flex;
-  gap: 50px;
-  width: 400px;
-  align-items: center;
-
-  > a :hover {
-    transform: scale(1.5);
-    transform-origin: left top; /* Icons wachsen nach rechts */
-    transition: transform 0.2s ease;
-  }
-}
-
-.logoAndLink {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
+  z-index: 3;
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  border-top: 0.25rem solid var(--portfolio-green);
+  background-color: var(--portfolio-bg);
+  color: #fff;
 }
 
 .logo {
-  height: 75px;
-  margin-left: -7px;
-  margin-bottom: -16px;
+  width: auto;
+  height: 4.5rem;
 }
 
-.impressum {
+.legal-link {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+  font-weight: 500;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--portfolio-green);
+    text-decoration: underline;
+  }
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+}
+
+.icons img {
+  width: 2.35rem;
+  height: 2.35rem;
+  transition: transform 0.2s ease;
+
   &:hover {
-    background-image: linear-gradient(to right, #70e61c 62%, transparent 38%);
-    background-position: 0 100%; /* Linie unten */
-    background-size: 100% 2px; /* Breite und Höhe der Linie */
-    background-repeat: no-repeat;
-  }
-}
-
-.impressumResponsive {
-  display: none;
-}
-
-@media (max-width: 1000px) {
-  footer {
-    padding: 0 50px;
-  }
-
-  .icons {
-    gap: 30px;
-    width: 300px;
-  }
-}
-
-@media (max-width: 800px) {
-  footer {
-    padding: 0 25px;
-  }
-
-  .icons {
-    gap: 20px;
-    width: 200px;
-
-    > a :hover {
-      transform: scale(1.35);
-    }
-  }
-}
-
-@media (max-width: 730px) {
-  footer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 0;
-    height: 35svh;
-  }
-
-  .logoAndLink {
-    a:nth-child(2) {
-      display: none;
-    }
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 100%;
-  }
-
-  .logoAndLink {
-    padding-bottom: 10px;
-  }
-
-  .logo {
-    margin-bottom: 0;
-    margin-left: 0;
-    height: 80px;
-  }
-
-  .impressum {
-    display: none;
-  }
-
-  .copyright {
-    > p {
-      margin-block: 0;
-      font-size: 25px;
-    }
-  }
-
-  .icons {
-    padding: 0;
-    gap: 40px;
-    width: 100%;
-    justify-content: center;
-
-    > a {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .impressumResponsive {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 500px) {
-  .logo {
-    height: 70px;
-  }
-
-  .copyright > p {
-    font-size: 20px;
-  }
-
-  .impressumResponsive  > a {
-    font-size: 18px;
+    transform: translateY(-2px) scale(1.1);
   }
 }

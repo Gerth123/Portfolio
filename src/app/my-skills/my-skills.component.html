@@ -1,95 +1,72 @@
-<section id="mySkills">
-  <div class="container">
-    <div class="skillsContainer" data-aos="zoom-in-right">
-      <div class="imageContainer">
-        <div *ngFor="let skill of skills" class="skill">
-          <img src="{{ skill.src }}" alt="{{ skill.alt }}" />
-          <p>{{ skill.name }}</p>
-        </div>
-        <div
-          class="continuallyLearning"
-          (mouseover)="showSpecialInterest()"
-          (mouseout)="hideSpecialInterest()"
-        >
-          <img
-            *ngIf="isHovered"
-            src="../../assets/icons/special_interest.svg"
-            alt="special_interest"
-            id="special_interest"
-          />
-          <img
-            src="../../assets/icons/continually_learning.svg"
-            alt="continually learning"
-            [src]="
-              isHovered
-                ? '../../assets/icons/continually_learning_white.svg'
-                : '../../assets/icons/continually_learning.svg'
-            "
-          />
-          <p id="continually" [style.color]="isHovered ? 'white' : '#9747FF'">
-            {{ getCurrentText("continuallyLearning") }}
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="textContainer" data-aos="fade-left">
-      <div class="heading">
-        <h2>{{ getCurrentText("headline") }}</h2>
-        <div class="line"></div>
-      </div>
-      <div class="text">
-        <p>
-          {{ getCurrentText("shortDescription") }}
-        </p>
-        <div class="skillHighlights">
-          <span *ngFor="let highlight of getCurrentSkillHighlights()">
-            <img src="{{ highlight.icon }}" alt="{{ highlight.alt }}" />
-            {{ getCurrentSkillLabel(highlight) }}
-          </span>
-        </div>
-        <div class="skillsContainer2" data-aos="zoom-in-right">
-          <div class="imageContainer">
-            <div *ngFor="let skill of skills" class="skill">
-              <img src="{{ skill.src }}" alt="{{ skill.alt }}" />
-              <p>{{ skill.name }}</p>
-            </div>
-            <div
-              class="continuallyLearning"
-              (mouseover)="showSpecialInterest()"
-              (mouseout)="hideSpecialInterest()"
-            >
-              <img
-                *ngIf="isHovered"
-                src="../../assets/icons/special_interest.svg"
-                alt="special_interest"
-                id="special_interest"
-              />
-              <img
-                src="../../assets/icons/continually_learning.svg"
-                alt="continually learning"
-                [src]="
-                  isHovered
-                    ? '../../assets/icons/continually_learning_white.svg'
-                    : '../../assets/icons/continually_learning.svg'
-                "
-              />
-              <p
-                id="continually"
-                [style.color]="isHovered ? 'white' : '#9747FF'"
-              >
-                {{ getCurrentText("continuallyLearning") }}
-              </p>
-            </div>
+<section id="mySkills" class="skills-section section-shell">
+  <div class="container-xxl">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-6 order-lg-1" data-aos="zoom-in-right">
+        <div class="skills-grid">
+          <div *ngFor="let skill of skills" class="skill portfolio-card">
+            <img src="{{ skill.src }}" alt="{{ skill.alt }}" />
+            <p>{{ skill.name }}</p>
+          </div>
+          <div
+            class="skill continuallyLearning portfolio-card"
+            (mouseover)="showSpecialInterest()"
+            (mouseout)="hideSpecialInterest()"
+          >
+            <img
+              *ngIf="isHovered"
+              src="../../assets/icons/special_interest.svg"
+              alt=""
+              id="special_interest"
+              aria-hidden="true"
+            />
+            <img
+              src="../../assets/icons/continually_learning.svg"
+              alt="continually learning"
+              [src]="
+                isHovered
+                  ? '../../assets/icons/continually_learning_white.svg'
+                  : '../../assets/icons/continually_learning.svg'
+              "
+            />
+            <p id="continually" [style.color]="isHovered ? 'white' : '#9747FF'">
+              {{ getCurrentText("continuallyLearning") }}
+            </p>
           </div>
         </div>
-        <h4>
-          {{ getCurrentText("secondHeadline") }}
-          <span>{{ getCurrentText("secondHeadlineSpan") }}</span>?
-        </h4>
-        <p class="lastP">
-          {{ getCurrentText("secondText") }}
-        </p>
-        <a [routerLink]="['/']" [fragment]="'contact'" class="linkPage" (click)="handleScroll('contact')">{{ getCurrentText("getInTouch") }}</a>
+      </div>
+
+      <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+        <div class="skills-copy ms-lg-auto">
+          <div class="d-flex align-items-center justify-content-lg-end gap-3 mb-4">
+            <h2 class="section-title">{{ getCurrentText("headline") }}</h2>
+            <span class="accent-line accent-line--to-right"></span>
+          </div>
+          <p class="section-copy text-lg-end">
+            {{ getCurrentText("shortDescription") }}
+          </p>
+
+          <div class="skillHighlights d-flex justify-content-lg-end flex-wrap gap-2 my-4">
+            <span *ngFor="let highlight of getCurrentSkillHighlights()">
+              <img src="{{ highlight.icon }}" alt="{{ highlight.alt }}" />
+              {{ getCurrentSkillLabel(highlight) }}
+            </span>
+          </div>
+
+          <h3 class="growth-heading">
+            {{ getCurrentText("secondHeadline") }}
+            <span>{{ getCurrentText("secondHeadlineSpan") }}</span>?
+          </h3>
+          <p class="section-copy text-lg-end">
+            {{ getCurrentText("secondText") }}
+          </p>
+          <a
+            [routerLink]="['/']"
+            [fragment]="'contact'"
+            class="btn btn-portfolio mt-3"
+            (click)="handleScroll('contact')"
+            >{{ getCurrentText("getInTouch") }}</a
+          >
+        </div>
       </div>
     </div>
   </div>

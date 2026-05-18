@@ -1,95 +1,127 @@
-<header>
-  <div>
+<header class="site-header navbar navbar-expand-md navbar-dark fixed-top">
+  <div class="container-xxl">
     <a
       [routerLink]="['/']"
       [fragment]="'landingPage'"
-      class="logo"
+      class="navbar-brand d-flex align-items-center"
       (click)="handleScroll('landingPage')"
       (click)="responsiveMenuOpen ? closeMenu() : null"
-      ><img src="../../../assets/logo/robin_curly_bracket.png" alt="Logo"
-    /></a>
-    <div class="language">
-      <span
+      aria-label="Robin Gerth home"
+    >
+      <img src="../../../assets/logo/robin_curly_bracket.png" alt="Robin Gerth" />
+    </a>
+
+    <div class="language-switch order-md-2" aria-label="Language switch">
+      <button
+        type="button"
         id="languageEn"
+        class="language-option"
         (click)="changeLanguage('en')"
         [ngClass]="{ active: checkLanguage() === 'en' }"
-        >en</span
-      >|<span
+      >
+        en
+      </button>
+      <span aria-hidden="true">|</span>
+      <button
+        type="button"
         id="languageDe"
+        class="language-option"
         (click)="changeLanguage('de')"
         [ngClass]="{ active: checkLanguage() === 'de' }"
-        >de</span
       >
-    </div>
-    <div class="responsiveMenuOpen" (click)="toggleMenu()">
-      <img
-        id="closeIcon"
-        src="../../../assets/icons/closed_menu.svg"
-        alt="Open menu"
-      />
+        de
+      </button>
     </div>
 
-    <nav class="">
-      <div class="container-fluid">
-        <a
-          [routerLink]="['/']"
-          [fragment]="'aboutMe'"
-          (click)="handleScroll('aboutMe')"
-          >{{ getCurrentText("aboutMe") }}</a
-        >
-        <a
-          [routerLink]="['/']"
-          [fragment]="'mySkills'"
-          (click)="handleScroll('mySkills')"
-          >{{ getCurrentText("skills") }}</a
-        >
-        <a
-          [routerLink]="['/']"
-          [fragment]="'projects'"
-          (click)="handleScroll('projects')"
-          >Portfolio</a
-        >
-      </div>
+    <button
+      class="navbar-toggler border-0 shadow-none"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="responsiveMenuOpen"
+      aria-controls="responsiveMenu"
+      aria-label="Toggle navigation"
+    >
+      <img id="closeIcon" src="../../../assets/icons/closed_menu.svg" alt="" />
+    </button>
+
+    <nav class="collapse navbar-collapse justify-content-end order-md-1">
+      <ul class="navbar-nav align-items-md-center gap-md-3">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/']"
+            [fragment]="'aboutMe'"
+            (click)="handleScroll('aboutMe')"
+            >{{ getCurrentText("aboutMe") }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/']"
+            [fragment]="'mySkills'"
+            (click)="handleScroll('mySkills')"
+            >{{ getCurrentText("skills") }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/']"
+            [fragment]="'projects'"
+            (click)="handleScroll('projects')"
+            >Portfolio</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/']"
+            [fragment]="'contact'"
+            (click)="handleScroll('contact')"
+            >{{ getCurrentText("contact") }}</a
+          >
+        </li>
+      </ul>
     </nav>
   </div>
 </header>
+
 <div class="responsiveMenu d-none" id="responsiveMenu">
-  <div class="responsiveMenuLogo">
-    <a [routerLink]="['/']" [fragment]="'landingPage'" (click)="closeMenu()"
-      ><img
+  <div class="container h-100 d-flex flex-column align-items-center justify-content-center gap-4">
+    <a [routerLink]="['/']" [fragment]="'landingPage'" (click)="closeMenu()" aria-label="Robin Gerth home">
+      <img
         src="../../../assets/logo/robin_curly_bracket.png"
-        alt="Logo"
+        alt="Robin Gerth"
         class="logoResponsive"
         id="logoResponsive"
-    /></a>
-  </div>
-  <div class="responsiveMenuLinks">
-    <a
-      [routerLink]="['/']"
-      [fragment]="'aboutMe'"
-      (click)="closeMenu(); handleScroll('aboutMe')"
-      >{{ getCurrentText("aboutMe") }}</a
-    >
-
-    <a
-      [routerLink]="['/']"
-      [fragment]="'mySkills'"
-      (click)="closeMenu(); handleScroll('mySkills')"
-      >{{ getCurrentText("skills") }}</a
-    >
-
-    <a
-      [routerLink]="['/']"
-      [fragment]="'projects'"
-      (click)="closeMenu(); handleScroll('projects')"
-      >Portfolio</a
-    >
-
-    <a
-      [routerLink]="['/']"
-      [fragment]="'contact'"
-      (click)="closeMenu(); handleScroll('contact')"
-      >{{ getCurrentText("contact") }}</a
-    >
+      />
+    </a>
+    <nav class="responsiveMenuLinks">
+      <a
+        [routerLink]="['/']"
+        [fragment]="'aboutMe'"
+        (click)="closeMenu(); handleScroll('aboutMe')"
+        >{{ getCurrentText("aboutMe") }}</a
+      >
+      <a
+        [routerLink]="['/']"
+        [fragment]="'mySkills'"
+        (click)="closeMenu(); handleScroll('mySkills')"
+        >{{ getCurrentText("skills") }}</a
+      >
+      <a
+        [routerLink]="['/']"
+        [fragment]="'projects'"
+        (click)="closeMenu(); handleScroll('projects')"
+        >Portfolio</a
+      >
+      <a
+        [routerLink]="['/']"
+        [fragment]="'contact'"
+        (click)="closeMenu(); handleScroll('contact')"
+        >{{ getCurrentText("contact") }}</a
+      >
+    </nav>
   </div>
 </div>

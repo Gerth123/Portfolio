@@ -1,118 +1,160 @@
-<section id="projects">
-  <div class="container">
-    <div class="heading">
-      <div class="headline">
-        <div class="lineOne"></div>
-        <h2>Portfolio</h2>
-        <div class="lineTwo"></div>
+<section id="projects" class="projects-section section-shell">
+  <div class="container-xxl">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-9">
+        <div class="d-flex align-items-center justify-content-center gap-3 mb-3">
+          <span class="accent-line accent-line--to-left"></span>
+          <h2 class="section-title">Portfolio</h2>
+          <span class="accent-line accent-line--to-right"></span>
+        </div>
+        <p class="section-copy lead">{{ getCurrentText("firstSpan") }}</p>
       </div>
-      <span>{{ getCurrentText("firstSpan") }}</span>
     </div>
-    <div class="projectsContainer">
-      <div class="project" data-aos="fade-left">
-        <div class="projectText">
-          <h4>Join</h4>
-          <h5>JavaScript | HTML | CSS | Firebase</h5>
-          <p>
-            {{ getCurrentText("joinText") }}
-          </p>
-          <div class="buttonContainer">
-            <a
-              href="https://robin-gerth.de/Join/login.html"
-              class="liveTest"
-              target="_blank"
-              >{{ getCurrentText("liveTest") }}</a
-            >
-            <a
-              href="https://github.com/Gerth123/Join"
-              class="github"
-              target="_blank"
-              >Github</a
-            >
+
+    <div class="projectsContainer d-grid gap-4 gap-lg-5 mt-5">
+      <article class="project-card portfolio-card card" data-aos="fade-left">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="project-media">
+              <img src="../../assets/img/imac_join.png" alt="Join task manager preview" />
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="projectText card-body">
+              <h3>Join</h3>
+              <p class="project-stack">JavaScript | HTML | CSS | Firebase</p>
+              <p class="section-copy">{{ getCurrentText("joinText") }}</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a
+                  href="https://robin-gerth.de/Join/login.html"
+                  class="btn btn-portfolio project-button"
+                  target="_blank"
+                  rel="noreferrer"
+                  >{{ getCurrentText("liveTest") }}</a
+                >
+                <a
+                  href="https://github.com/Gerth123/Join"
+                  class="btn btn-outline-portfolio project-button"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Github</a
+                >
+              </div>
+            </div>
           </div>
         </div>
-        <img src="../../assets/img/imac_join.png" alt="" />
-      </div>
-      <div class="projectEven" data-aos="fade-right">
-        <div class="projectTextEven">
-          <h4>El pollo loco</h4>
-          <h5>JavaScript | HTML | CSS</h5>
-          <p>
-            {{ getCurrentText("elPolloLocoText") }}
-          </p>
-          <div class="buttonContainer">
-            <a
-              href="https://robin-gerth.de/el_pollo_loco/index.html"
-              class="liveTest"
-              target="_blank"
-              >{{ getCurrentText("liveTest") }}</a
-            >
-            <a
-              href="https://github.com/Gerth123/El-Pollo-Loco"
-              class="github"
-              target="_blank"
-              >Github</a
-            >
+      </article>
+
+      <article class="project-card portfolio-card card" data-aos="fade-right">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6">
+            <div class="project-media">
+              <img
+                src="../../assets/img/el_pollo_loco_laptop.svg"
+                alt="El pollo loco browser game preview"
+                class="el-pollo-loco-img"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="projectText card-body text-lg-end align-items-lg-end">
+              <h3>El pollo loco</h3>
+              <p class="project-stack">JavaScript | HTML | CSS</p>
+              <p class="section-copy">{{ getCurrentText("elPolloLocoText") }}</p>
+              <div class="d-flex flex-wrap justify-content-lg-end gap-3">
+                <a
+                  href="https://robin-gerth.de/el_pollo_loco/index.html"
+                  class="btn btn-portfolio project-button"
+                  target="_blank"
+                  rel="noreferrer"
+                  >{{ getCurrentText("liveTest") }}</a
+                >
+                <a
+                  href="https://github.com/Gerth123/El-Pollo-Loco"
+                  class="btn btn-outline-portfolio project-button"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Github</a
+                >
+              </div>
+            </div>
           </div>
         </div>
-        <img
-          src="../../assets/img/el_pollo_loco_laptop.svg"
-          alt=""
-          class="el-pollo-loco-img"
-        />
-      </div>
-      <div class="project" data-aos="fade-left">
-        <div class="projectText">
-          <h4>DaBubble</h4>
-          <h5>Angular | TypeScript | Firebase</h5>
-          <p>
-            {{ getCurrentText("dabubbleText") }}
-          </p>
-          <div class="buttonContainer">
-            <a
-              href="https://robin-gerth.de/DaBubble/"
-              class="liveTest"
-              target="_blank"
-              >{{ getCurrentText("liveTest") }}</a
-            >
-            <a
-              href="https://github.com/Gerth123/DaBubble"
-              class="github"
-              target="_blank"
-              >Github</a
-            >
+      </article>
+
+      <article class="project-card portfolio-card card" data-aos="fade-left">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="project-media">
+              <img
+                src="../../assets/img/iphone_6s_dabubble.png"
+                alt="DaBubble chat app preview"
+                class="phone-preview"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="projectText card-body">
+              <h3>DaBubble</h3>
+              <p class="project-stack">Angular | TypeScript | Firebase</p>
+              <p class="section-copy">{{ getCurrentText("dabubbleText") }}</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a
+                  href="https://robin-gerth.de/DaBubble/"
+                  class="btn btn-portfolio project-button"
+                  target="_blank"
+                  rel="noreferrer"
+                  >{{ getCurrentText("liveTest") }}</a
+                >
+                <a
+                  href="https://github.com/Gerth123/DaBubble"
+                  class="btn btn-outline-portfolio project-button"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Github</a
+                >
+              </div>
+            </div>
           </div>
         </div>
-        <img
-          src="../../assets/img/iphone_6s_dabubble.png"
-          alt="DaBubble chat app preview"
-          class="pokedex"
-        />
-      </div>
-      <div class="projectEven" data-aos="fade-right">
-        <div class="projectTextEven">
-          <h4>Videoflix</h4>
-          <h5>Python | Django / DRF | Angular</h5>
-          <p>
-            {{ getCurrentText("videoflixText") }}
-          </p>
-          <div class="buttonContainer">
-            <a
-              href="https://robin-gerth.de/Videoflix/"
-              class="liveTest"
-              target="_blank"
-              >{{ getCurrentText("liveTest") }}</a
-            >
-            <a
-              href="https://gitlab.com/videoflix-49808/videoflix"
-              class="github"
-              target="_blank"
-              >GitLab</a
-            >
+      </article>
+
+      <article class="project-card portfolio-card card" data-aos="fade-right">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6">
+            <div class="project-media project-media--videoflix">
+              <img
+                src="../../assets/img/videoflix_laptop.png"
+                alt="Videoflix streaming platform preview"
+                class="videoflix-preview"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="projectText card-body text-lg-end align-items-lg-end">
+              <h3>Videoflix</h3>
+              <p class="project-stack">Python | Django / DRF | Angular</p>
+              <p class="section-copy">{{ getCurrentText("videoflixText") }}</p>
+              <div class="d-flex flex-wrap justify-content-lg-end gap-3">
+                <a
+                  href="https://robin-gerth.de/Videoflix/"
+                  class="btn btn-portfolio project-button"
+                  target="_blank"
+                  rel="noreferrer"
+                  >{{ getCurrentText("liveTest") }}</a
+                >
+                <a
+                  href="https://gitlab.com/videoflix-49808/videoflix"
+                  class="btn btn-outline-portfolio project-button"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitLab</a
+                >
+              </div>
+            </div>
           </div>
         </div>
-        <img src="../../assets/img/videoflix_laptop.png" alt="Videoflix streaming platform preview" />
-      </div>
+      </article>
     </div>
   </div>
 </section>

@@ -1,317 +1,89 @@
-section {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  padding-top: 10svh;
-  width: 100%;
-  background-color: rgb(20, 29, 47);
-  color: white;
-  justify-content: center;
-  align-items: center;
+.projects-section {
+  overflow: hidden;
 }
 
-.heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-  z-index: 9;
-  position: relative;
+.project-card {
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
 
-  > span {
-    font-size: 20px;
-    min-height: 50px;
-    display: flex;
-    justify-content: flex-start;
-    width: 80%;
-    line-height: 1.5;
-    align-items: center;
+.project-media {
+  display: grid;
+  min-height: 20rem;
+  place-items: center;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background:
+    linear-gradient(135deg, rgba(151, 71, 255, 0.14), rgba(112, 230, 28, 0.06)),
+    rgba(255, 255, 255, 0.025);
+
+  img {
+    width: min(100%, 32rem);
+    max-height: 21rem;
+    object-fit: contain;
+  }
+
+  .phone-preview {
+    max-height: 24rem;
+    width: auto;
   }
 }
 
-.container {
-  width: 100%;
-  max-width: 1600px;
-  z-index: 9;
-}
+.project-media--videoflix {
+  min-height: 21rem;
+  overflow: hidden;
+  padding: 0;
 
-.headline {
-  display: flex;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-h2 {
-  font-size: 80px;
-  margin-block: 0;
-  font-weight: bold;
-}
-
-.lineOne {
-  height: 5px;
-  width: 220px;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  background-color: #9747ff;
-}
-
-.lineTwo {
-  height: 5px;
-  width: 100%;
-  background-color: #9747ff;
-}
-
-.projectsContainer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  z-index: 2;
-  gap: 50px;
-  margin-top: 30px;
-}
-
-.project {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  flex-direction: row-reverse;
-
-  > img {
-    max-width: 500px;
-    max-height: 300px;
+  .videoflix-preview {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
   }
 }
 
 .projectText {
   display: flex;
+  min-height: 100%;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
-  gap: 5px;
-  width: 500px;
-  min-height: 300px;
-  height: auto;
-}
-
-h4 {
-  font-size: 40px;
-  margin-block: 0;
-  font-weight: bold;
-  color: #9747ff;
-}
-
-h5 {
-  font-size: 27px;
-  line-height: 1.25;
-  margin-block: 0;
-  color: #70e61c;
-}
-
-.projectEven {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-
-  > img {
-    width: 500px;
-    height: 350px;
-    object-fit: contain;
-  }
-}
-
-.projectEven > .el-pollo-loco-img {
-  object-fit: cover;
-  object-position: center;
-}
-
-.projectTextEven {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-evenly;
-  gap: 5px;
-  width: 500px;
-  min-height: 300px;
-  height: auto;
-
-  > p {
-    text-align: right;
-  }
-}
-
-.buttonContainer {
-  display: flex;
-  gap: 50px;
-}
-
-.liveTest {
-  background-color: #9747ff;
-  color: white;
-  width: 165px;
-  height: 58px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 23px;
-  box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.5s ease;
+  gap: 1rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
 
-  &:hover {
-    background-color: #70e61c;
-  }
-}
-
-.github {
-  color: white;
-  width: 150px;
-  height: 54px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 23px;
-  box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.3);
-  border: #70e61c 2px solid;
-  transition: background-color 0.5s ease;
-
-  &:hover {
-    background-color: #70e61c;
-  }
-}
-
-.pokedex {
-  padding-left: 15%;
-}
-
-@media (min-width: 1600px) {
-  .lineTwo {
-    width: 1500px;
-    margin-right: -800px;
-  }
-
-  .projectsContainer {
-    padding-top: 100px;
+  h3 {
     margin: 0;
-    gap: 100px;
+    color: var(--portfolio-purple);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
   }
 }
 
-@media (min-width: 3000px) {
-  .lineTwo {
-    width: 3000px;
-    margin-right: -1500px;
-  }
+.project-stack {
+  margin: 0;
+  color: var(--portfolio-green);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.35;
 }
 
-@media (max-width: 1100px) {
-  section {
-    padding-top: 12svh;
-  }
-
-  .heading {
-    gap: 20px;
-    > span {
-      margin-right: 5vw;
-      width: 75%;
-      height: auto;
-    }
-  }
-
-  h5 {
+@media (max-width: 991.98px) {
+  .projectText {
+    align-items: center;
     text-align: center;
   }
 
-  .project, .projectEven {
-    flex-direction: column-reverse;
-    align-items: center;
+  .project-media {
+    min-height: 15rem;
   }
 
-  .projectText, .projectTextEven {
-    align-items: center;
-
-    > p {
-      text-align: center;
-      width: 90%;
-    }
-  }
-
-  .project {
-    > img {
-      margin-bottom: 20px;
-    }
-  }
-
-  .projectEven {  
-    > img {
-      margin-bottom: -50px;
-    }
-  }
-
-  .pokedex {
-    padding-left: 0;
-  }
-
-}
-
-@media (max-width: 850px) {
-  h2 {
-    font-size: 70px;
+  .project-media--videoflix {
+    min-height: 14rem;
   }
 }
 
-@media (max-width: 500px) {
-  .headline {
-    width: 90%;
-    gap: 5px;
-  }
-
-  .projectText, .projectTextEven {
-    width: 95vw;
-    height: auto;
-  }
-
-  .project, .projectEven {
-    > img {
-      max-width: 400px;
-      max-height: 250px;
-    }
-
-  }
-
-  .buttonContainer {
-    gap: 20px;
+@media (max-width: 575.98px) {
+  .projects-section .accent-line {
+    width: 2.5rem;
   }
 }
-
-@media (max-width: 400px) {
-  h2 {
-    font-size: 50px;
-  }
-
-  .project, .projectEven {
-    > img {
-      max-width: 350px;
-      max-height: 200px;
-    }
-
-  }
-}
-
-@media (max-width: 350px) {
-  .buttonContainer {
-    a {
-      font-size: 18px;
-      width: 130px;
-      height: 48px;
-    }
-  }
-}
-
-

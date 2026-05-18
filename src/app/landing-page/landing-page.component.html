@@ -1,81 +1,83 @@
-<section id="landingPage">
-  <div class="container">
-    <div class="imgAndTextContainer">
-      <div class="imgContainer">
-        <img
-          src="../../assets/img/29. photo shadows.svg"
-          alt="Lila and green background"
-          class="lilaAndGreen"
-        />
-        <img
-          src="../../assets/img/lurdwig.png"
-          alt="Profilepicture"
-          class="profilePicture"
-        />
+<section id="landingPage" class="hero-section section-shell">
+  <div class="container-xxl">
+    <div class="row align-items-center g-5 hero-layout">
+      <div class="col-lg-5 order-lg-1">
+        <div class="hero-visual mx-auto">
+          <img
+            src="../../assets/img/29. photo shadows.svg"
+            alt=""
+            class="hero-shadow"
+            aria-hidden="true"
+          />
+          <img
+            src="../../assets/img/lurdwig.png"
+            alt="Robin Gerth"
+            class="hero-profile"
+          />
+        </div>
       </div>
-      <div class="textContainer">
-        <div class="rotateAndStatsContainer">
-          <span
-            class="rotate"
-            [ngClass]="{ rotateDe: getCurrentLanguage() === 'de' }"
-            >{{ getCurrentText("rotateText") }}</span
-          >
-          <div class="stats">
-            <span class="name">Robin Gerth</span>
-            <span class="role">{{ getCurrentText("subtitle") }}</span>
-            <span class="heroClaim">{{ getCurrentText("heroClaim") }}</span>
+
+      <div class="col-lg-7 order-lg-2">
+        <div class="hero-content">
+          <span class="section-kicker">{{ getCurrentText("rotateText") }}</span>
+          <h1>Robin Gerth</h1>
+          <p class="hero-role">{{ getCurrentText("subtitle") }}</p>
+          <p class="hero-claim">{{ getCurrentText("heroClaim") }}</p>
+
+          <div class="hero-tags d-flex flex-wrap gap-2 mt-4">
+            <span class="badge rounded-pill text-bg-dark">Shopware 6</span>
+            <span class="badge rounded-pill text-bg-dark">Django / DRF</span>
+            <span class="badge rounded-pill text-bg-dark">Angular</span>
+            <span class="badge rounded-pill text-bg-dark">AI-assisted Development</span>
+          </div>
+
+          <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3 mt-4">
+            <a
+              [routerLink]="['/']"
+              [fragment]="'contact'"
+              class="btn btn-portfolio"
+              (click)="handleScroll('contact')"
+              >{{ getCurrentText("buttonText") }}</a
+            >
+            <a href="mailto:robingerth21@gmail.com" class="hero-mail">
+              robingerth21&#64;gmail.com
+            </a>
           </div>
         </div>
-        <a [routerLink]="['/']" [fragment]="'contact'" class="contact" (click)="handleScroll('contact')">{{
-          getCurrentText("buttonText")
-        }}</a>
       </div>
     </div>
 
-    <div class="contactStats">
-      <div class="iconsAndEmailContainer">
-        <div class="line"></div>
-        <div class="icons">
-          <a href="https://github.com/Gerth123" target="_blank">
-            <img
-              src="../../assets/icons/github_small_button.svg"
-              alt="Github"
-            />
+    <div class="hero-footer d-flex align-items-center justify-content-between gap-4">
+      <div class="d-flex align-items-center gap-3">
+        <span class="accent-line accent-line--to-left"></span>
+        <div class="social-links d-flex align-items-center gap-3">
+          <a href="https://github.com/Gerth123" target="_blank" rel="noreferrer" aria-label="Github">
+            <img src="../../assets/icons/github_small_button.svg" alt="" />
           </a>
-          <a href="mailto:robingerth21@gmail.com">
-            <img src="../../assets/icons/email_small_button.svg" alt="Email" />
+          <a href="mailto:robingerth21@gmail.com" aria-label="Email">
+            <img src="../../assets/icons/email_small_button.svg" alt="" />
           </a>
           <a
-            href="https:/linkedin.com/in/robin-gerth-47100031b/"
+            href="https://linkedin.com/in/robin-gerth-47100031b/"
             target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
           >
-            <img
-              src="../../assets/icons/linkedin_small_button.svg"
-              alt="Linkedin"
-            />
+            <img src="../../assets/icons/linkedin_small_button.svg" alt="" />
           </a>
         </div>
-        <div class="email">
-          <a href="mailto:robingerth21@gmail.com">robingerth21&#64;gmail.com</a>
-        </div>
       </div>
-      <div class="scroll">
+      <div class="scroll-hint d-none d-lg-flex align-items-center gap-2">
         <span>Scroll down</span>
-        <img
-          src="../../assets/icons/right-arrow.png"
-          alt="Arrow down"
-          class="arrow"
-        />
-        <img src="" alt="" />
+        <img src="../../assets/icons/right-arrow.png" alt="" />
       </div>
     </div>
-    <div class="backgroundContainer">
-      <img
-        src="../../assets/img/background_under_profile_picture.svg"
-        alt="Background"
-        class="background"
-      />
-    </div>
-    
   </div>
+
+  <img
+    src="../../assets/img/background_under_profile_picture.svg"
+    alt=""
+    class="hero-wave"
+    aria-hidden="true"
+  />
 </section>

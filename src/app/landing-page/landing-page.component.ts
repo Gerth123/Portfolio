@@ -16,13 +16,13 @@ export class LandingPageComponent {
     en: {
       rotateText: 'I am',
       subtitle: 'Full-Stack Developer',
-      heroClaim: 'Shopware 6, Django REST, Angular and AI-assisted workflows',
+      heroClaim: 'Shopware 6, Django / DRF, Angular and AI-assisted workflows',
       buttonText: "Let's talk",
     },
     de: {
       rotateText: 'Ich bin',
       subtitle: 'Full-Stack-Entwickler',
-      heroClaim: 'Shopware 6, Django REST, Angular und KI-gestützte Workflows',
+      heroClaim: 'Shopware 6, Django / DRF, Angular und KI-gestützte Workflows',
       buttonText: 'Kontakt aufnehmen',
     },
   };
