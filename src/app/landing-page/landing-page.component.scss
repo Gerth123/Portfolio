@@ -83,6 +83,18 @@ h1 {
   }
 }
 
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8.5rem;
+  min-height: 2.9rem;
+  padding: 0.55rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+}
+
 .hero-footer {
   position: relative;
   z-index: 4;

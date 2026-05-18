@@ -63,14 +63,25 @@
 }
 
 .flag-en {
+  position: relative;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+    to bottom,
+    #b22234 0 7.7%,
+    #fff 7.7% 15.4%
+  );
+}
+
+.flag-en::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44%;
+  height: 54%;
   background:
-    linear-gradient(27deg, transparent 42%, #fff 42% 48%, #c8102e 48% 54%, #fff 54% 60%, transparent 60%),
-    linear-gradient(153deg, transparent 42%, #fff 42% 48%, #c8102e 48% 54%, #fff 54% 60%, transparent 60%),
-    linear-gradient(90deg, transparent 42%, #fff 42% 58%, transparent 58%),
-    linear-gradient(0deg, transparent 36%, #fff 36% 64%, transparent 64%),
-    linear-gradient(90deg, transparent 46%, #c8102e 46% 54%, transparent 54%),
-    linear-gradient(0deg, transparent 42%, #c8102e 42% 58%, transparent 58%),
-    #012169;
+    radial-gradient(circle, #fff 0 12%, transparent 13%) 12% 15% / 28% 24%,
+    #3c3b6e;
 }
 
 .flag-de {
