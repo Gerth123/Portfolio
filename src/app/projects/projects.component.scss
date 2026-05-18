@@ -67,6 +67,18 @@
   line-height: 1.35;
 }
 
+.project-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8.5rem;
+  min-height: 2.9rem;
+  padding: 0.55rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+}
+
 @media (max-width: 991.98px) {
   .projectText {
     align-items: center;

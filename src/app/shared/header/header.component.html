@@ -19,6 +19,7 @@
         (click)="changeLanguage('en')"
         [ngClass]="{ active: checkLanguage() === 'en' }"
       >
+        <span class="flag flag-en" aria-hidden="true"></span>
         en
       </button>
       <span aria-hidden="true">|</span>
@@ -29,6 +30,7 @@
         (click)="changeLanguage('de')"
         [ngClass]="{ active: checkLanguage() === 'de' }"
       >
+        <span class="flag flag-de" aria-hidden="true"></span>
         de
       </button>
     </div>
