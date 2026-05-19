@@ -54,7 +54,9 @@
 
 .project-media--el-pollo .el-pollo-loco-img {
   width: min(100%, 36rem);
-  max-height: 21rem;
+  height: 21rem;
+  max-height: none;
+  object-fit: cover;
   object-position: center;
 }
 
