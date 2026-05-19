@@ -1,8 +1,8 @@
 <section id="landingPage" class="hero-section section-shell">
   <div class="container-xxl">
-    <div class="row align-items-center g-5 hero-layout">
-      <div class="col-lg-5 order-lg-1">
-        <div class="hero-visual mx-auto">
+    <div class="row align-items-center g-4 g-lg-5 hero-layout">
+      <div class="col-lg-6 order-lg-1">
+        <div class="hero-visual-stage mx-auto">
           <img
             src="../../assets/img/29. photo shadows.svg"
             alt=""
@@ -17,58 +17,21 @@
         </div>
       </div>
 
-      <div class="col-lg-7 order-lg-2">
-        <div class="hero-content">
-          <span class="portfolio-eyebrow">{{ getCurrentText("rotateText") }}</span>
-          <h1>Robin Gerth</h1>
-          <p class="hero-role">{{ getCurrentText("subtitle") }}</p>
-          <p class="hero-claim">{{ getCurrentText("heroClaim") }}</p>
+      <div class="col-lg-6 order-lg-2">
+        <div class="hero-content d-flex align-items-center gap-3 gap-xl-4">
+          <span class="hero-intro">{{ getCurrentText("rotateText") }}</span>
+          <div class="hero-heading">
+            <h1>Robin Gerth</h1>
+            <p class="hero-role">{{ getCurrentText("subtitle") }}</p>
 
-          <div class="hero-tags d-flex flex-wrap gap-2 mt-4">
-            <span class="badge rounded-pill text-bg-dark">Shopware 6</span>
-            <span class="badge rounded-pill text-bg-dark">Django / DRF</span>
-            <span class="badge rounded-pill text-bg-dark">Angular</span>
-            <span class="badge rounded-pill text-bg-dark">AI-assisted Development</span>
-          </div>
-
-          <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3 mt-4">
-            <a
-              [routerLink]="['/']"
-              [fragment]="'contact'"
-              class="btn btn-portfolio hero-button"
-              (click)="handleScroll('contact')"
-              >{{ getCurrentText("buttonText") }}</a
-            >
-            <a
-              [routerLink]="['/']"
-              [fragment]="'projects'"
-              class="btn btn-outline-portfolio hero-button"
-              (click)="handleScroll('projects')"
-              >{{ getCurrentText("secondaryButtonText") }}</a
-            >
-            <a href="mailto:kontakt@robin-gerth.de" class="hero-mail">
-              kontakt&#64;robin-gerth.de
-            </a>
-          </div>
-
-          <div class="row g-3 mt-4 hero-metrics">
-            <div class="col-md-4">
-              <article class="metric-card portfolio-card portfolio-card--quiet h-100">
-                <strong>{{ getCurrentText("metricRole") }}</strong>
-                <span>{{ getCurrentText("metricRoleText") }}</span>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="metric-card portfolio-card portfolio-card--quiet h-100">
-                <strong>{{ getCurrentText("metricSystems") }}</strong>
-                <span>{{ getCurrentText("metricSystemsText") }}</span>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="metric-card portfolio-card portfolio-card--quiet h-100">
-                <strong>{{ getCurrentText("metricWorkflow") }}</strong>
-                <span>{{ getCurrentText("metricWorkflowText") }}</span>
-              </article>
+            <div class="hero-actions mt-3 mt-lg-4">
+              <a
+                [routerLink]="['/']"
+                [fragment]="'contact'"
+                class="btn btn-portfolio hero-button"
+                (click)="handleScroll('contact')"
+                >{{ getCurrentText("buttonText") }}</a
+              >
             </div>
           </div>
         </div>
@@ -94,6 +57,9 @@
             <img src="../../assets/icons/linkedin_small_button.svg" alt="" />
           </a>
         </div>
+        <a href="mailto:kontakt@robin-gerth.de" class="hero-footer-mail">
+          kontakt&#64;robin-gerth.de
+        </a>
       </div>
       <div class="scroll-hint d-none d-lg-flex align-items-center gap-2">
         <span>Scroll down</span>

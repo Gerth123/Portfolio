@@ -13,30 +13,14 @@ import { LanguageService } from '../services/language.service';
 export class LandingPageComponent {
   public translations: any = {
     en: {
-      rotateText: 'AI-augmented software development',
-      subtitle: 'Full-Stack Developer for E-Commerce and Business Systems',
-      heroClaim: 'I build maintainable web applications, Shopware 6 extensions and API-driven workflows with a pragmatic AI-first engineering approach.',
-      buttonText: "Let's talk",
-      secondaryButtonText: 'View case studies',
-      metricRole: 'Current role',
-      metricRoleText: 'Full-stack developer at ABC Design',
-      metricSystems: 'Production systems',
-      metricSystemsText: 'Shopware 6 webshops, plugins and Android updates',
-      metricWorkflow: 'AI workflows',
-      metricWorkflowText: 'Claude Code, Codex, RAG and automation patterns',
+      rotateText: 'I am',
+      subtitle: 'Fullstack Developer',
+      buttonText: "Let's talk!",
     },
     de: {
-      rotateText: 'AI-augmented Softwareentwicklung',
-      subtitle: 'Full-Stack-Entwickler für E-Commerce und Business-Systeme',
-      heroClaim: 'Ich entwickle wartbare Webanwendungen, Shopware-6-Erweiterungen und API-basierte Workflows mit einem praxisnahen AI-first Engineering-Ansatz.',
-      buttonText: 'Kontakt aufnehmen',
-      secondaryButtonText: 'Case Studies ansehen',
-      metricRole: 'Aktuelle Rolle',
-      metricRoleText: 'Full-Stack-Entwickler bei ABC Design',
-      metricSystems: 'Produktionssysteme',
-      metricSystemsText: 'Shopware-6-Webshops, Plugins und Android-Updates',
-      metricWorkflow: 'KI-Workflows',
-      metricWorkflowText: 'Claude Code, Codex, RAG und Automatisierungsmuster',
+      rotateText: 'Ich bin',
+      subtitle: 'Fullstack-Entwickler',
+      buttonText: 'Reden wir!',
     },
   };
 
