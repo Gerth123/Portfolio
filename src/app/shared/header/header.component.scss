@@ -162,6 +162,10 @@
     min-height: 72px;
   }
 
+  .navbar-collapse {
+    display: none !important;
+  }
+
   .navbar-toggler {
     display: inline-flex;
   }
