@@ -5,10 +5,10 @@
 .project-card {
   overflow: hidden;
   border-radius: 0.75rem;
-  min-height: clamp(26rem, 34vw, 30rem);
+  height: clamp(28rem, 34vw, 30rem);
 
   > .row {
-    min-height: inherit;
+    height: 100%;
   }
 
   [class*="col-"] {
@@ -19,7 +19,7 @@
 .project-media {
   display: grid;
   width: 100%;
-  min-height: inherit;
+  height: 100%;
   place-items: center;
   padding: clamp(1.25rem, 3vw, 2.5rem);
   background:
@@ -48,9 +48,22 @@
 .project-media--videoflix .videoflix-preview {
   width: 100%;
   height: 100%;
-  min-height: inherit;
   max-height: none;
   object-fit: cover;
+}
+
+.project-media--el-pollo .el-pollo-loco-img {
+  width: 112%;
+  height: 112%;
+  object-position: center;
+}
+
+.project-media--videoflix {
+  padding: clamp(0.75rem, 2vw, 1.75rem);
+}
+
+.project-media--videoflix .videoflix-preview {
+  object-fit: contain;
 }
 
 .projectText {
@@ -93,7 +106,7 @@
 
 @media (max-width: 991.98px) {
   .project-card {
-    min-height: auto;
+    height: auto;
   }
 
   .projectText {
