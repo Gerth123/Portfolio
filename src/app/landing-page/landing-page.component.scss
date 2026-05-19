@@ -127,7 +127,7 @@ h1 {
 .hero-wave {
   position: absolute;
   left: 50%;
-  top: clamp(13rem, 36vh, 17rem);
+  top: clamp(3rem, calc(36svh - 30vw + 24rem), 17rem);
   width: max(100vw, 80rem);
   max-width: none;
   transform: translateX(-50%);
