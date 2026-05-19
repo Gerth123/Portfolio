@@ -7,8 +7,8 @@ type Language = 'en' | 'de';
 interface Credential {
   title: string;
   issuer: string;
-  period: string;
-  type: string;
+  period: Record<Language, string>;
+  type: Record<Language, string>;
   description: Record<Language, string>;
   tags: string[];
   fileUrl?: string;
@@ -44,9 +44,9 @@ export class CredentialsComponent {
   public credentials: Credential[] = [
     {
       title: 'KI-Manager Weiterbildung',
-      issuer: 'Professional training',
-      period: 'Completed',
-      type: 'Certificate',
+      issuer: 'Everlast',
+      period: { en: 'Completed', de: 'Abgeschlossen' },
+      type: { en: 'Certificate', de: 'Zertifikat' },
       description: {
         en: 'Structured AI training with focus on practical use cases, process thinking and responsible integration of AI workflows into business contexts.',
         de: 'Strukturierte KI-Weiterbildung mit Fokus auf praktische Use Cases, Prozessdenken und verantwortungsvolle Integration von KI-Workflows in Business-Kontexte.',
@@ -55,9 +55,9 @@ export class CredentialsComponent {
     },
     {
       title: 'Claude Code Masterclass',
-      issuer: 'AI-assisted development',
-      period: 'Completed',
-      type: 'Certificate',
+      issuer: 'Everlast',
+      period: { en: 'Completed', de: 'Abgeschlossen' },
+      type: { en: 'Certificate', de: 'Zertifikat' },
       description: {
         en: 'Advanced workflow training for coding-agent usage, context preparation, prompt structure and reliable implementation loops.',
         de: 'Fortgeschrittenes Workflow-Training für Coding-Agent-Nutzung, Kontextvorbereitung, Prompt-Struktur und zuverlässige Implementierungszyklen.',
@@ -66,9 +66,9 @@ export class CredentialsComponent {
     },
     {
       title: 'Agentic Coding Masterclass',
-      issuer: 'AI engineering track',
-      period: 'In progress',
-      type: 'Training',
+      issuer: 'Everlast',
+      period: { en: 'In progress', de: 'In Arbeit' },
+      type: { en: 'Training', de: 'Weiterbildung' },
       description: {
         en: 'Current specialization in agentic coding workflows, task decomposition, review loops and AI-supported software delivery.',
         de: 'Aktuelle Spezialisierung auf Agentic-Coding-Workflows, Aufgabenzerlegung, Review-Schleifen und KI-gestützte Softwareauslieferung.',
@@ -76,15 +76,26 @@ export class CredentialsComponent {
       tags: ['Agentic coding', 'Codex', 'Delivery workflows'],
     },
     {
-      title: 'Frontend and Backend Training',
+      title: 'Frontend Development',
       issuer: 'Developer Akademie',
-      period: 'Completed',
-      type: 'Certificate',
+      period: { en: 'Completed', de: 'Abgeschlossen' },
+      type: { en: 'Certificate', de: 'Zertifikat' },
       description: {
-        en: 'Full-stack training foundation covering modern frontend development, backend APIs, application architecture and project-based implementation.',
-        de: 'Full-Stack-Grundlage mit moderner Frontend-Entwicklung, Backend-APIs, Anwendungsarchitektur und projektbasierter Umsetzung.',
+        en: 'Frontend training focused on responsive interfaces, Angular, TypeScript, reusable components and project-based UI implementation.',
+        de: 'Frontend-Weiterbildung mit Fokus auf responsive Interfaces, Angular, TypeScript, wiederverwendbare Komponenten und projektbasierte UI-Umsetzung.',
       },
-      tags: ['Angular', 'Django / DRF', 'REST APIs'],
+      tags: ['Angular', 'TypeScript', 'Responsive UI'],
+    },
+    {
+      title: 'Backend Development',
+      issuer: 'Developer Akademie',
+      period: { en: 'Completed', de: 'Abgeschlossen' },
+      type: { en: 'Certificate', de: 'Zertifikat' },
+      description: {
+        en: 'Backend training focused on Python, Django, Django REST Framework, API design, authentication and data-driven application logic.',
+        de: 'Backend-Weiterbildung mit Fokus auf Python, Django, Django REST Framework, API-Design, Authentifizierung und datengetriebene Anwendungslogik.',
+      },
+      tags: ['Python', 'Django / DRF', 'REST APIs'],
     },
   ];
 

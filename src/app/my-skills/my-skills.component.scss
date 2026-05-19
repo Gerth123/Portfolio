@@ -50,6 +50,17 @@
   text-align: left;
 }
 
+.skill-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.55rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+}
+
 .category-card {
   display: grid;
   gap: 0.85rem;
@@ -103,6 +114,10 @@
 }
 
 @media (min-width: 992px) {
+  .skills-grid {
+    padding-top: clamp(7.25rem, 10vw, 9rem);
+  }
+
   .skills-copy {
     text-align: right;
   }
