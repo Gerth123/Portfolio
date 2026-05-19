@@ -41,20 +41,20 @@
 .project-media--el-pollo,
 .project-media--videoflix {
   overflow: hidden;
-  padding: 0;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
 }
 
 .project-media--el-pollo .el-pollo-loco-img,
 .project-media--videoflix .videoflix-preview {
-  width: 100%;
-  height: 100%;
+  width: min(100%, 32rem);
+  height: auto;
   max-height: none;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project-media--el-pollo .el-pollo-loco-img {
-  width: 100%;
-  height: 100%;
+  width: min(100%, 36rem);
+  max-height: 21rem;
   object-position: center;
 }
 
@@ -63,7 +63,8 @@
 }
 
 .project-media--videoflix .videoflix-preview {
-  object-fit: contain;
+  width: min(100%, 36rem);
+  max-height: 21rem;
 }
 
 .projectText {
