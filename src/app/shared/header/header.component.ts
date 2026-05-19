@@ -20,12 +20,14 @@ export class HeaderComponent {
     en: {
       aboutMe: 'About me',
       skills: 'Skills',
+      credentials: 'Credentials',
       caseStudies: 'Case studies',
       contact: 'Contact',
     },
     de: {
       aboutMe: 'Über mich',
       skills: 'Fähigkeiten',
+      credentials: 'Nachweise',
       caseStudies: 'Case Studies',
       contact: 'Kontakt',
     },
