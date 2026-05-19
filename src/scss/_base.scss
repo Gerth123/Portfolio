@@ -1,0 +1,102 @@
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/poppins-v21-latin-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/poppins-v21-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/poppins-v21-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/poppins-v21-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/poppins-v21-latin-700.woff2") format("woff2");
+}
+
+:root {
+  --portfolio-bg: #141d2f;
+  --portfolio-bg-soft: #1b273d;
+  --portfolio-bg-elevated: #202d46;
+  --portfolio-card: rgba(255, 255, 255, 0.052);
+  --portfolio-card-border: rgba(255, 255, 255, 0.12);
+  --portfolio-text-muted: rgba(255, 255, 255, 0.76);
+  --portfolio-text-soft: rgba(255, 255, 255, 0.9);
+  --portfolio-purple: #9747ff;
+  --portfolio-green: #70e61c;
+  --portfolio-cyan: #62dff5;
+  --portfolio-header-height: 88px;
+  --portfolio-section-space: clamp(5rem, 9vw, 8rem);
+  --portfolio-section-space-sm: clamp(3.75rem, 7vw, 5.75rem);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-padding-top: var(--portfolio-header-height);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(151, 71, 255, 0.16), transparent 28rem),
+    radial-gradient(circle at 88% 36%, rgba(112, 230, 28, 0.09), transparent 24rem),
+    linear-gradient(180deg, #141d2f 0%, #101827 100%);
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(112, 230, 28, 0.32);
+  color: #fff;
+}
+
+@media (max-width: 767.98px) {
+  :root {
+    --portfolio-header-height: 72px;
+    --portfolio-section-space: clamp(4rem, 16vw, 5.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

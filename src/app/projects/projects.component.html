@@ -12,143 +12,71 @@
     </div>
 
     <div class="projectsContainer d-grid gap-4 gap-lg-5 mt-5">
-      <article class="project-card portfolio-card card" data-aos="fade-left">
+      <article
+        *ngFor="let project of caseStudies; let index = index"
+        class="project-card portfolio-card card"
+        [attr.data-aos]="project.reverse ? 'fade-right' : 'fade-left'"
+      >
         <div class="row g-0 align-items-stretch">
-          <div class="col-lg-6 order-lg-2">
-            <div class="project-media">
-              <img src="../../assets/img/imac_join.png" alt="Join task manager preview" />
-            </div>
-          </div>
-          <div class="col-lg-6 order-lg-1">
-            <div class="projectText card-body">
-              <h3>Join</h3>
-              <p class="project-stack">JavaScript | HTML | CSS | Firebase</p>
-              <p class="section-copy">{{ getCurrentText("joinText") }}</p>
-              <div class="d-flex flex-wrap gap-3">
-                <a
-                  href="https://robin-gerth.de/Join/login.html"
-                  class="btn btn-portfolio project-button"
-                  target="_blank"
-                  rel="noreferrer"
-                  >{{ getCurrentText("liveTest") }}</a
-                >
-                <a
-                  href="https://github.com/Gerth123/Join"
-                  class="btn btn-outline-portfolio project-button"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Github</a
-                >
+          <div class="col-lg-6" [ngClass]="{ 'order-lg-2': !project.reverse }">
+            <div class="project-media" [ngClass]="project.mediaClass">
+              <img
+                *ngIf="project.image"
+                [src]="project.image"
+                [alt]="project.imageAlt"
+                [ngClass]="project.imageClass"
+              />
+
+              <div *ngIf="project.visualType === 'ai'" class="ai-workflow-visual" aria-hidden="true">
+                <img src="../../assets/icons/ai_assisted_coding.svg" alt="" />
+                <img src="../../assets/icons/ki_workflows.svg" alt="" />
+                <img src="../../assets/icons/automations.svg" alt="" />
+                <span>RAG</span>
               </div>
             </div>
           </div>
-        </div>
-      </article>
 
-      <article class="project-card portfolio-card card" data-aos="fade-right">
-        <div class="row g-0 align-items-stretch">
-          <div class="col-lg-6">
-            <div class="project-media project-media--el-pollo">
-              <img
-                src="../../assets/img/el_pollo_loco_laptop.svg"
-                alt="El pollo loco browser game preview"
-                class="el-pollo-loco-img"
-              />
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="projectText card-body text-lg-end align-items-lg-end">
-              <h3>El pollo loco</h3>
-              <p class="project-stack">JavaScript | HTML | CSS</p>
-              <p class="section-copy">{{ getCurrentText("elPolloLocoText") }}</p>
-              <div class="d-flex flex-wrap justify-content-lg-end gap-3">
-                <a
-                  href="https://robin-gerth.de/el_pollo_loco/index.html"
-                  class="btn btn-portfolio project-button"
-                  target="_blank"
-                  rel="noreferrer"
-                  >{{ getCurrentText("liveTest") }}</a
-                >
-                <a
-                  href="https://github.com/Gerth123/El-Pollo-Loco"
-                  class="btn btn-outline-portfolio project-button"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Github</a
-                >
+          <div class="col-lg-6" [ngClass]="{ 'order-lg-1': !project.reverse }">
+            <div
+              class="projectText card-body"
+              [ngClass]="{
+                'text-lg-end align-items-lg-end': project.reverse,
+                'align-items-lg-start': !project.reverse
+              }"
+            >
+              <span class="portfolio-eyebrow">{{ getCurrentText("caseStudy") }} · {{ project.kicker[getCurrentLanguage()] }}</span>
+              <h3>{{ project.title }}</h3>
+
+              <div class="d-flex flex-wrap gap-2" [ngClass]="{ 'justify-content-lg-end': project.reverse }">
+                <span class="tech-pill" *ngFor="let tech of project.stack">{{ tech }}</span>
               </div>
-            </div>
-          </div>
-        </div>
-      </article>
 
-      <article class="project-card portfolio-card card" data-aos="fade-left">
-        <div class="row g-0 align-items-stretch">
-          <div class="col-lg-6 order-lg-2">
-            <div class="project-media">
-              <img
-                src="../../assets/img/iphone_6s_dabubble.png"
-                alt="DaBubble chat app preview"
-                class="phone-preview"
-              />
-            </div>
-          </div>
-          <div class="col-lg-6 order-lg-1">
-            <div class="projectText card-body">
-              <h3>DaBubble</h3>
-              <p class="project-stack">Angular | TypeScript | Firebase</p>
-              <p class="section-copy">{{ getCurrentText("dabubbleText") }}</p>
-              <div class="d-flex flex-wrap gap-3">
+              <p class="section-copy">{{ project.text[getCurrentLanguage()] }}</p>
+
+              <ul class="project-focus">
+                <li *ngFor="let item of project.focus[getCurrentLanguage()]">{{ item }}</li>
+              </ul>
+
+              <div
+                class="d-flex flex-wrap gap-3"
+                [ngClass]="{ 'justify-content-lg-end': project.reverse }"
+                *ngIf="project.liveHref || project.codeHref"
+              >
                 <a
-                  href="https://robin-gerth.de/DaBubble/"
+                  *ngIf="project.liveHref"
+                  [href]="project.liveHref"
                   class="btn btn-portfolio project-button"
                   target="_blank"
                   rel="noreferrer"
                   >{{ getCurrentText("liveTest") }}</a
                 >
                 <a
-                  href="https://github.com/Gerth123/DaBubble"
+                  *ngIf="project.codeHref"
+                  [href]="project.codeHref"
                   class="btn btn-outline-portfolio project-button"
                   target="_blank"
                   rel="noreferrer"
-                  >Github</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card portfolio-card card" data-aos="fade-right">
-        <div class="row g-0 align-items-stretch">
-          <div class="col-lg-6">
-            <div class="project-media project-media--videoflix">
-              <img
-                src="../../assets/img/videoflix_laptop.png"
-                alt="Videoflix streaming platform preview"
-                class="videoflix-preview"
-              />
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="projectText card-body text-lg-end align-items-lg-end">
-              <h3>Videoflix</h3>
-              <p class="project-stack">Python | Django / DRF | Angular</p>
-              <p class="section-copy">{{ getCurrentText("videoflixText") }}</p>
-              <div class="d-flex flex-wrap justify-content-lg-end gap-3">
-                <a
-                  href="https://robin-gerth.de/Videoflix/"
-                  class="btn btn-portfolio project-button"
-                  target="_blank"
-                  rel="noreferrer"
-                  >{{ getCurrentText("liveTest") }}</a
-                >
-                <a
-                  href="https://gitlab.com/videoflix-49808/videoflix"
-                  class="btn btn-outline-portfolio project-button"
-                  target="_blank"
-                  rel="noreferrer"
-                  >GitLab</a
+                  >{{ project.codeLabel }}</a
                 >
               </div>
             </div>

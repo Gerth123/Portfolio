@@ -19,7 +19,7 @@
 
       <div class="col-lg-7 order-lg-2">
         <div class="hero-content">
-          <span class="section-kicker">{{ getCurrentText("rotateText") }}</span>
+          <span class="portfolio-eyebrow">{{ getCurrentText("rotateText") }}</span>
           <h1>Robin Gerth</h1>
           <p class="hero-role">{{ getCurrentText("subtitle") }}</p>
           <p class="hero-claim">{{ getCurrentText("heroClaim") }}</p>
@@ -39,9 +39,37 @@
               (click)="handleScroll('contact')"
               >{{ getCurrentText("buttonText") }}</a
             >
+            <a
+              [routerLink]="['/']"
+              [fragment]="'projects'"
+              class="btn btn-outline-portfolio hero-button"
+              (click)="handleScroll('projects')"
+              >{{ getCurrentText("secondaryButtonText") }}</a
+            >
             <a href="mailto:kontakt@robin-gerth.de" class="hero-mail">
               kontakt&#64;robin-gerth.de
             </a>
+          </div>
+
+          <div class="row g-3 mt-4 hero-metrics">
+            <div class="col-md-4">
+              <article class="metric-card portfolio-card portfolio-card--quiet h-100">
+                <strong>{{ getCurrentText("metricRole") }}</strong>
+                <span>{{ getCurrentText("metricRoleText") }}</span>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="metric-card portfolio-card portfolio-card--quiet h-100">
+                <strong>{{ getCurrentText("metricSystems") }}</strong>
+                <span>{{ getCurrentText("metricSystemsText") }}</span>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="metric-card portfolio-card portfolio-card--quiet h-100">
+                <strong>{{ getCurrentText("metricWorkflow") }}</strong>
+                <span>{{ getCurrentText("metricWorkflowText") }}</span>
+              </article>
+            </div>
           </div>
         </div>
       </div>

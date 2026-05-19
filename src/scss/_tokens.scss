@@ -1,0 +1,16 @@
+$primary: #9747ff;
+$secondary: #70e61c;
+$dark: #141d2f;
+$body-bg: $dark;
+$body-color: #ffffff;
+$font-family-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+$border-radius: 0.625rem;
+$border-radius-lg: 0.75rem;
+$link-decoration: none;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);

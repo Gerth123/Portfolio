@@ -6,6 +6,15 @@
         <h2 class="section-title mt-2">{{ getCurrentText("headline") }}</h2>
         <p class="section-copy lead mt-4">{{ getCurrentText("shortDescription") }}</p>
 
+        <div class="row g-3 mt-4">
+          <div class="col-md-4" *ngFor="let signal of workSignals">
+            <article class="metric-card portfolio-card portfolio-card--quiet h-100">
+              <strong>{{ signal.value }}</strong>
+              <span>{{ getSignalLabel(signal) }}</span>
+            </article>
+          </div>
+        </div>
+
         <div class="row g-3 mt-3">
           <div class="col-md-6 col-xl-4">
             <article class="about-point portfolio-card card h-100">

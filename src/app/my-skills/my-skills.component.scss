@@ -1,7 +1,5 @@
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(0.9rem, 2vw, 1.4rem);
+  position: relative;
 }
 
 .skill {
@@ -52,6 +50,21 @@
   text-align: left;
 }
 
+.category-card {
+  display: grid;
+  gap: 0.85rem;
+  border-radius: 0.75rem;
+  padding: 1rem;
+
+  h3 {
+    margin: 0;
+    color: var(--portfolio-cyan);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
 .skillHighlights span {
   display: inline-flex;
   align-items: center;
@@ -95,14 +108,14 @@
   }
 }
 
-@media (max-width: 767.98px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .category-card {
+    height: 100%;
   }
 }
 
-@media (max-width: 380px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 991.98px) {
+  .skill-categories .d-flex {
+    justify-content: flex-start !important;
   }
 }

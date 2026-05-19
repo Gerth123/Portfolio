@@ -72,7 +72,7 @@
             [routerLink]="['/']"
             [fragment]="'projects'"
             (click)="handleScroll('projects')"
-            >Portfolio</a
+            >{{ getCurrentText("caseStudies") }}</a
           >
         </li>
         <li class="nav-item">
@@ -116,7 +116,7 @@
         [routerLink]="['/']"
         [fragment]="'projects'"
         (click)="closeMenu(); handleScroll('projects')"
-        >Portfolio</a
+        >{{ getCurrentText("caseStudies") }}</a
       >
       <a
         [routerLink]="['/']"

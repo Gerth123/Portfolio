@@ -5,7 +5,7 @@
 .project-card {
   overflow: hidden;
   border-radius: 0.75rem;
-  height: clamp(28rem, 34vw, 30rem);
+  min-height: clamp(29rem, 34vw, 33rem);
 
   > .row {
     height: 100%;
@@ -35,6 +35,32 @@
   .phone-preview {
     max-height: 24rem;
     width: auto;
+  }
+}
+
+.ai-workflow-visual {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(5rem, 8rem));
+  gap: 1rem;
+  place-items: center;
+
+  img,
+  span {
+    display: grid;
+    width: clamp(5rem, 10vw, 7.5rem);
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background: rgba(20, 29, 47, 0.68);
+  }
+
+  span {
+    color: var(--portfolio-cyan);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0;
   }
 }
 
@@ -87,6 +113,42 @@
   }
 }
 
+.project-focus {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 1.1rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.68em;
+      left: 0;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      background: var(--portfolio-green);
+    }
+  }
+}
+
+.text-lg-end .project-focus li {
+  padding-right: 1.1rem;
+  padding-left: 0;
+
+  &::before {
+    right: 0;
+    left: auto;
+  }
+}
+
 .project-stack {
   margin: 0;
   color: var(--portfolio-green);
@@ -109,13 +171,27 @@
 
 @media (max-width: 991.98px) {
   .project-card {
-    height: auto;
+    min-height: auto;
   }
 
   .projectText {
     align-items: center;
-    min-height: 23rem;
+    min-height: auto;
     text-align: center;
+  }
+
+  .project-focus {
+    text-align: left;
+  }
+
+  .text-lg-end .project-focus li {
+    padding-right: 0;
+    padding-left: 1.1rem;
+
+    &::before {
+      right: auto;
+      left: 0;
+    }
   }
 
   .project-media {

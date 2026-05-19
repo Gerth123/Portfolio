@@ -43,22 +43,23 @@
 }
 
 h1 {
-  margin: 0;
-  font-size: clamp(3.4rem, 8.5vw, 6.7rem);
+  margin: 0.75rem 0 0;
+  font-size: clamp(3.15rem, 7.7vw, 6.25rem);
   font-weight: 800;
   line-height: 0.96;
 }
 
 .hero-role {
-  margin: 0.25rem 0 0;
+  max-width: 48rem;
+  margin: 0.55rem 0 0;
   color: var(--portfolio-purple);
-  font-size: clamp(1.85rem, 4.6vw, 4rem);
-  font-weight: 500;
-  line-height: 1.05;
+  font-size: clamp(1.55rem, 3.4vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.08;
 }
 
 .hero-claim {
-  max-width: 42rem;
+  max-width: 45rem;
   margin: 1rem 0 0;
   color: rgba(255, 255, 255, 0.84);
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -93,6 +94,10 @@ h1 {
   font-size: 1rem;
   line-height: 1;
   text-align: center;
+}
+
+.hero-metrics {
+  max-width: 47rem;
 }
 
 .hero-footer {
@@ -147,6 +152,10 @@ h1 {
   .hero-tags,
   .hero-content .d-flex {
     justify-content: center;
+  }
+
+  .hero-metrics {
+    margin-inline: auto;
   }
 }
 
