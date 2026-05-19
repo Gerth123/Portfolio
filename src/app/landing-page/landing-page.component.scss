@@ -14,7 +14,10 @@
   z-index: 4;
 }
 
-.hero-layout,
+.hero-layout {
+  position: relative;
+}
+
 .hero-footer {
   position: relative;
   z-index: 4;
@@ -22,11 +25,12 @@
 
 .hero-wave {
   position: absolute;
-  right: -8vw;
-  bottom: -19vw;
+  left: 50%;
+  bottom: -33vw;
   z-index: 3;
-  width: max(100vw, 86rem);
+  width: max(118vw, 92rem);
   max-width: none;
+  transform: translateX(-50%);
   pointer-events: none;
 }
 
@@ -158,9 +162,10 @@ h1 {
   }
 
   .hero-wave {
-    right: -44vw;
-    bottom: -17rem;
+    left: 50%;
+    bottom: -25rem;
     width: 112rem;
+    transform: translateX(-50%);
   }
 
   .hero-content {
@@ -196,9 +201,10 @@ h1 {
   }
 
   .hero-wave {
-    right: -42rem;
-    bottom: -12rem;
+    left: 50%;
+    bottom: -17rem;
     width: 84rem;
+    transform: translateX(-50%);
   }
 
   .hero-visual-stage {
