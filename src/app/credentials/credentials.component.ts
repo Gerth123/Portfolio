@@ -1,5 +1,5 @@
-import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { NgClass, NgFor, NgIf } from '@angular/common';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 
 type Language = 'en' | 'de';
@@ -19,41 +19,41 @@ interface Credential {
 @Component({
   selector: 'app-credentials',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgClass, NgFor, NgIf],
   templateUrl: './credentials.component.html',
   styleUrl: './credentials.component.scss',
 })
 export class CredentialsComponent {
+  @ViewChild('credentialsTrack') credentialsTrack?: ElementRef<HTMLElement>;
+
+  public activeCredentialIndex = 0;
+
   public translations = {
     en: {
       kicker: 'Credentials',
       headline: 'Certificates and licenses',
-      intro: 'A curated overview of completed training, current learning tracks and credentials that support my work in AI-assisted engineering, full-stack development and modern delivery workflows.',
+      intro:
+        'A curated overview of completed training, current learning tracks and credentials that support my work in AI-assisted engineering, full-stack development and modern delivery workflows.',
       evidenceAvailable: 'Evidence available on request',
       openDocument: 'Open document',
+      previous: 'Previous credential',
+      next: 'Next credential',
+      goToCredential: 'Go to credential',
     },
     de: {
       kicker: 'Nachweise',
       headline: 'Zertifikate und Lizenzen',
-      intro: 'Eine kuratierte Übersicht abgeschlossener Weiterbildungen, aktueller Lernpfade und Nachweise, die meine Arbeit in AI-assisted Engineering, Full-Stack-Entwicklung und modernen Delivery-Workflows unterstützen.',
+      intro:
+        'Eine kuratierte Übersicht abgeschlossener Weiterbildungen, aktueller Lernpfade und Nachweise, die meine Arbeit in AI-assisted Engineering, Full-Stack-Entwicklung und modernen Delivery-Workflows unterstützen.',
       evidenceAvailable: 'Nachweis auf Anfrage',
       openDocument: 'Nachweis öffnen',
+      previous: 'Vorheriger Nachweis',
+      next: 'Nächster Nachweis',
+      goToCredential: 'Zu Nachweis wechseln',
     },
   };
 
   public credentials: Credential[] = [
-    {
-      title: 'KI-Manager Weiterbildung',
-      issuer: 'Everlast',
-      period: { en: 'Completed', de: 'Abgeschlossen' },
-      type: { en: 'Certificate', de: 'Zertifikat' },
-      fileUrl: 'https://zertifizierung.kiberatung.de/verify/b403695d-73c9-4473-a3f4-559cf4ceacd4',
-      description: {
-        en: 'Structured AI training with focus on practical use cases, process thinking and responsible integration of AI workflows into business contexts.',
-        de: 'Strukturierte KI-Weiterbildung mit Fokus auf praktische Use Cases, Prozessdenken und verantwortungsvolle Integration von KI-Workflows in Business-Kontexte.',
-      },
-      tags: ['AI strategy', 'Process design', 'Automation'],
-    },
     {
       title: 'Claude Code Masterclass',
       issuer: 'Everlast',
@@ -67,6 +67,18 @@ export class CredentialsComponent {
       tags: ['Claude Code', 'Agent workflows', 'Prompt engineering'],
     },
     {
+      title: 'KI-Manager Weiterbildung',
+      issuer: 'Everlast',
+      period: { en: 'Completed', de: 'Abgeschlossen' },
+      type: { en: 'Certificate', de: 'Zertifikat' },
+      fileUrl: 'https://zertifizierung.kiberatung.de/verify/b403695d-73c9-4473-a3f4-559cf4ceacd4',
+      description: {
+        en: 'Structured AI training with focus on practical use cases, process thinking and responsible integration of AI workflows into business contexts.',
+        de: 'Strukturierte KI-Weiterbildung mit Fokus auf praktische Use Cases, Prozessdenken und verantwortungsvolle Integration von KI-Workflows in Business-Kontexte.',
+      },
+      tags: ['AI strategy', 'Process design', 'Automation'],
+    },
+    {
       title: 'Agentic Coding Masterclass',
       issuer: 'Everlast',
       period: { en: 'In progress', de: 'In Arbeit' },
@@ -76,19 +88,6 @@ export class CredentialsComponent {
         de: 'Aktuelle Spezialisierung auf Agentic-Coding-Workflows, Aufgabenzerlegung, Review-Schleifen und KI-gestützte Softwareauslieferung.',
       },
       tags: ['Agentic coding', 'Codex', 'Delivery workflows'],
-    },
-    {
-      title: 'Frontend Development',
-      issuer: 'Developer Akademie',
-      period: { en: 'Completed', de: 'Abgeschlossen' },
-      type: { en: 'Certificate', de: 'Zertifikat' },
-      fileUrl: '../../assets/certificates/Frontend%20Zertifikat%20Robin%20Gerth.pdf',
-      fileType: 'PDF',
-      description: {
-        en: 'Frontend training focused on responsive interfaces, Angular, TypeScript, reusable components and project-based UI implementation.',
-        de: 'Frontend-Weiterbildung mit Fokus auf responsive Interfaces, Angular, TypeScript, wiederverwendbare Komponenten und projektbasierte UI-Umsetzung.',
-      },
-      tags: ['Angular', 'TypeScript', 'Responsive UI'],
     },
     {
       title: 'Backend Development',
@@ -103,6 +102,19 @@ export class CredentialsComponent {
       },
       tags: ['Python', 'Django / DRF', 'REST APIs'],
     },
+    {
+      title: 'Frontend Development',
+      issuer: 'Developer Akademie',
+      period: { en: 'Completed', de: 'Abgeschlossen' },
+      type: { en: 'Certificate', de: 'Zertifikat' },
+      fileUrl: '../../assets/certificates/Frontend%20Zertifikat%20Robin%20Gerth.pdf',
+      fileType: 'PDF',
+      description: {
+        en: 'Frontend training focused on responsive interfaces, Angular, TypeScript, reusable components and project-based UI implementation.',
+        de: 'Frontend-Weiterbildung mit Fokus auf responsive Interfaces, Angular, TypeScript, wiederverwendbare Komponenten und projektbasierte UI-Umsetzung.',
+      },
+      tags: ['Angular', 'TypeScript', 'Responsive UI'],
+    },
   ];
 
   constructor(private languageService: LanguageService) {}
@@ -114,5 +126,62 @@ export class CredentialsComponent {
 
   getCurrentLanguage(): Language {
     return this.languageService.currentLanguage as Language;
+  }
+
+  trackCredential(index: number): number {
+    return index;
+  }
+
+  scrollCredentials(direction: -1 | 1): void {
+    const track = this.credentialsTrack?.nativeElement;
+
+    if (!track) {
+      return;
+    }
+
+    const card = track.querySelector<HTMLElement>('.credential-slide');
+    const gap = this.getTrackGap(track);
+    const cardWidth = card?.offsetWidth ?? track.clientWidth;
+
+    track.scrollBy({
+      left: direction * (cardWidth + gap),
+      behavior: 'smooth',
+    });
+  }
+
+  goToCredential(index: number): void {
+    const track = this.credentialsTrack?.nativeElement;
+    const slide = track?.querySelectorAll<HTMLElement>('.credential-slide')[index];
+
+    slide?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start',
+    });
+
+    this.activeCredentialIndex = index;
+  }
+
+  updateActiveCredential(): void {
+    const track = this.credentialsTrack?.nativeElement;
+
+    if (!track) {
+      return;
+    }
+
+    const slides = Array.from(track.querySelectorAll<HTMLElement>('.credential-slide'));
+    const trackLeft = track.getBoundingClientRect().left;
+    const nextIndex = slides.reduce((closestIndex, slide, index) => {
+      const currentDistance = Math.abs(slide.getBoundingClientRect().left - trackLeft);
+      const closestDistance = Math.abs(slides[closestIndex].getBoundingClientRect().left - trackLeft);
+      return currentDistance < closestDistance ? index : closestIndex;
+    }, 0);
+
+    this.activeCredentialIndex = nextIndex;
+  }
+
+  private getTrackGap(track: HTMLElement): number {
+    const gap = window.getComputedStyle(track).columnGap;
+    return Number.parseFloat(gap) || 0;
   }
 }
