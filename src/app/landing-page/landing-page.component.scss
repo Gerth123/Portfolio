@@ -11,7 +11,6 @@
 .hero-section > .container-xxl {
   position: relative;
   min-height: calc(100svh - var(--portfolio-header-height) - clamp(2.5rem, 6vw, 5rem));
-  z-index: 4;
 }
 
 .hero-layout {
@@ -26,9 +25,9 @@
 .hero-wave {
   position: absolute;
   left: 50%;
-  bottom: -33vw;
+  bottom: clamp(-44rem, -37vw, -23rem);
   z-index: 3;
-  width: max(118vw, 92rem);
+  width: clamp(92rem, 118vw, 118rem);
   max-width: none;
   transform: translateX(-50%);
   pointer-events: none;
@@ -36,8 +35,9 @@
 
 .hero-visual-stage {
   position: relative;
-  width: min(100%, 42rem);
-  aspect-ratio: 1 / 0.92;
+  width: min(100%, 43rem);
+  aspect-ratio: 1 / 0.9;
+  margin-top: clamp(-2.5rem, -3vw, -1rem);
   z-index: 2;
 }
 
@@ -56,23 +56,43 @@
 
 .hero-profile {
   z-index: 2;
-  object-position: center bottom;
+  object-position: center 38%;
 }
 
 .hero-content {
+  --hero-title-gap: clamp(0.75rem, 1.5vw, 1.35rem);
+  display: grid;
+  grid-template-columns: auto minmax(0, max-content);
+  grid-template-areas:
+    "intro heading"
+    ". actions";
+  column-gap: var(--hero-title-gap);
+  row-gap: clamp(0.9rem, 1.5vw, 1.25rem);
+  align-items: stretch;
+  justify-content: start;
   max-width: 46rem;
-  align-items: flex-start !important;
+  position: relative;
+  z-index: 4;
 }
 
 .hero-intro {
+  grid-area: intro;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  min-width: clamp(2.35rem, 4.2vw, 4.25rem);
   color: #fff;
   font-size: clamp(2.35rem, 4.2vw, 4.25rem);
   font-weight: 400;
   line-height: 0.9;
-  margin-top: 0.25rem;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   white-space: nowrap;
+}
+
+.hero-heading {
+  grid-area: heading;
 }
 
 h1 {
@@ -109,8 +129,10 @@ h1 {
 }
 
 .hero-actions {
+  grid-area: actions;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .hero-footer {
@@ -158,18 +180,29 @@ h1 {
 
 @media (max-width: 991.98px) {
   .hero-section {
+    min-height: auto;
+    padding-top: calc(var(--portfolio-header-height) + 2rem);
+    padding-bottom: 4rem;
     text-align: center;
+  }
+
+  .hero-section > .container-xxl {
+    min-height: auto;
   }
 
   .hero-wave {
     left: 50%;
-    bottom: -25rem;
-    width: 112rem;
+    bottom: clamp(-28rem, -36vw, -19rem);
+    width: max(140vw, 88rem);
     transform: translateX(-50%);
   }
 
+  .hero-visual-stage {
+    width: min(100%, 33rem);
+    margin-top: 0;
+  }
+
   .hero-content {
-    align-items: center !important;
     justify-content: center;
     margin-inline: auto;
   }
@@ -202,8 +235,8 @@ h1 {
 
   .hero-wave {
     left: 50%;
-    bottom: -17rem;
-    width: 84rem;
+    bottom: -16.5rem;
+    width: 76rem;
     transform: translateX(-50%);
   }
 
@@ -213,11 +246,17 @@ h1 {
   }
 
   .hero-content {
-    flex-direction: column;
-    gap: 0.65rem !important;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "heading"
+      "actions";
+    justify-items: center;
+    row-gap: 0.65rem;
   }
 
   .hero-intro {
+    min-width: 0;
     font-size: 1.45rem;
     writing-mode: horizontal-tb;
     transform: none;

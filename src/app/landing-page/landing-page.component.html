@@ -18,21 +18,21 @@
       </div>
 
       <div class="col-lg-6 order-lg-2">
-        <div class="hero-content d-flex align-items-center gap-3 gap-xl-4">
+        <div class="hero-content">
           <span class="hero-intro">{{ getCurrentText("rotateText") }}</span>
           <div class="hero-heading">
             <h1>Robin Gerth</h1>
             <p class="hero-role">{{ getCurrentText("subtitle") }}</p>
+          </div>
 
-            <div class="hero-actions mt-3 mt-lg-4">
-              <a
-                [routerLink]="['/']"
-                [fragment]="'contact'"
-                class="btn btn-portfolio hero-button"
-                (click)="handleScroll('contact')"
-                >{{ getCurrentText("buttonText") }}</a
-              >
-            </div>
+          <div class="hero-actions">
+            <a
+              [routerLink]="['/']"
+              [fragment]="'contact'"
+              class="btn btn-portfolio hero-button"
+              (click)="handleScroll('contact')"
+              >{{ getCurrentText("buttonText") }}</a
+            >
           </div>
         </div>
       </div>

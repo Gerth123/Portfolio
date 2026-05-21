@@ -47,6 +47,7 @@ export class CredentialsComponent {
       issuer: 'Everlast',
       period: { en: 'Completed', de: 'Abgeschlossen' },
       type: { en: 'Certificate', de: 'Zertifikat' },
+      fileUrl: 'https://zertifizierung.kiberatung.de/verify/b403695d-73c9-4473-a3f4-559cf4ceacd4',
       description: {
         en: 'Structured AI training with focus on practical use cases, process thinking and responsible integration of AI workflows into business contexts.',
         de: 'Strukturierte KI-Weiterbildung mit Fokus auf praktische Use Cases, Prozessdenken und verantwortungsvolle Integration von KI-Workflows in Business-Kontexte.',
@@ -58,6 +59,7 @@ export class CredentialsComponent {
       issuer: 'Everlast',
       period: { en: 'Completed', de: 'Abgeschlossen' },
       type: { en: 'Certificate', de: 'Zertifikat' },
+      fileUrl: 'https://zertifizierung.kiberatung.de/verify/85b5f273-309f-42cc-9109-b645ea10a779',
       description: {
         en: 'Advanced workflow training for coding-agent usage, context preparation, prompt structure and reliable implementation loops.',
         de: 'Fortgeschrittenes Workflow-Training für Coding-Agent-Nutzung, Kontextvorbereitung, Prompt-Struktur und zuverlässige Implementierungszyklen.',
@@ -80,6 +82,8 @@ export class CredentialsComponent {
       issuer: 'Developer Akademie',
       period: { en: 'Completed', de: 'Abgeschlossen' },
       type: { en: 'Certificate', de: 'Zertifikat' },
+      fileUrl: '../../assets/certificates/Frontend%20Zertifikat%20Robin%20Gerth.pdf',
+      fileType: 'PDF',
       description: {
         en: 'Frontend training focused on responsive interfaces, Angular, TypeScript, reusable components and project-based UI implementation.',
         de: 'Frontend-Weiterbildung mit Fokus auf responsive Interfaces, Angular, TypeScript, wiederverwendbare Komponenten und projektbasierte UI-Umsetzung.',
@@ -91,6 +95,8 @@ export class CredentialsComponent {
       issuer: 'Developer Akademie',
       period: { en: 'Completed', de: 'Abgeschlossen' },
       type: { en: 'Certificate', de: 'Zertifikat' },
+      fileUrl: '../../assets/certificates/Backend%20Zertifikat%20Robin%20Gerth.pdf',
+      fileType: 'PDF',
       description: {
         en: 'Backend training focused on Python, Django, Django REST Framework, API design, authentication and data-driven application logic.',
         de: 'Backend-Weiterbildung mit Fokus auf Python, Django, Django REST Framework, API-Design, Authentifizierung und datengetriebene Anwendungslogik.',

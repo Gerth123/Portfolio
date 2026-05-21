@@ -15,7 +15,7 @@
       <article
         *ngFor="let project of caseStudies"
         class="project-card portfolio-card card"
-        [attr.data-aos]="project.reverse ? 'fade-right' : 'fade-left'"
+        data-aos="fade-up"
       >
         <div class="row g-0 align-items-stretch">
           <div class="col-lg-6" [ngClass]="{ 'order-lg-2': !project.reverse }">

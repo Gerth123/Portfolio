@@ -157,7 +157,7 @@
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .site-header {
     min-height: 72px;
   }
@@ -178,7 +178,15 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1040px) {
+@media (min-width: 992px) and (max-width: 1120px) {
+  .site-header .nav-link {
+    font-size: 0.94rem;
+  }
+
+  .navbar-nav {
+    gap: 0.55rem !important;
+  }
+
   .language-switch {
     font-size: 0.92rem;
   }
