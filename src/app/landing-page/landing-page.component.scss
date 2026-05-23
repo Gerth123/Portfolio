@@ -25,7 +25,7 @@
 .hero-wave {
   position: absolute;
   left: 50%;
-  bottom: clamp(-44rem, -37vw, -23rem);
+  bottom: clamp(-36rem, -29vw, -17rem);
   z-index: 3;
   width: clamp(92rem, 118vw, 118rem);
   max-width: none;
@@ -67,7 +67,7 @@
     "intro heading"
     ". actions";
   column-gap: var(--hero-title-gap);
-  row-gap: clamp(0.9rem, 1.5vw, 1.25rem);
+  row-gap: clamp(0.75rem, 1.2vw, 1rem);
   align-items: stretch;
   justify-content: start;
   max-width: 46rem;
@@ -85,14 +85,26 @@
   color: #fff;
   font-size: clamp(2.35rem, 4.2vw, 4.25rem);
   font-weight: 400;
-  line-height: 0.9;
+  line-height: 0.78;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   white-space: nowrap;
 }
 
+.hero-intro--en {
+  font-size: clamp(2.38rem, 4.12vw, 4.2rem);
+}
+
+.hero-intro--de {
+  font-size: clamp(1.68rem, 2.9vw, 2.95rem);
+}
+
 .hero-heading {
   grid-area: heading;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: clamp(0.05rem, 0.35vw, 0.25rem);
 }
 
 h1 {
@@ -105,7 +117,7 @@ h1 {
 }
 
 .hero-role {
-  margin: 0.5rem 0 0;
+  margin: 0;
   color: var(--portfolio-purple);
   font-size: clamp(2rem, 3.75vw, 3.25rem);
   font-weight: 400;
@@ -192,7 +204,7 @@ h1 {
 
   .hero-wave {
     left: 50%;
-    bottom: clamp(-28rem, -36vw, -19rem);
+    bottom: clamp(-24rem, -28vw, -15rem);
     width: max(140vw, 88rem);
     transform: translateX(-50%);
   }
@@ -235,7 +247,7 @@ h1 {
 
   .hero-wave {
     left: 50%;
-    bottom: -16.5rem;
+    bottom: -13.5rem;
     width: 76rem;
     transform: translateX(-50%);
   }
@@ -258,8 +270,14 @@ h1 {
   .hero-intro {
     min-width: 0;
     font-size: 1.45rem;
+    line-height: 1.1;
     writing-mode: horizontal-tb;
     transform: none;
+  }
+
+  .hero-intro--de,
+  .hero-intro--en {
+    font-size: 1.45rem;
   }
 
   h1 {

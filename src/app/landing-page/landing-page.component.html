@@ -19,7 +19,14 @@
 
       <div class="col-lg-6 order-lg-2">
         <div class="hero-content">
-          <span class="hero-intro">{{ getCurrentText("rotateText") }}</span>
+          <span
+            class="hero-intro"
+            [ngClass]="{
+              'hero-intro--en': getCurrentLanguage() === 'en',
+              'hero-intro--de': getCurrentLanguage() === 'de'
+            }"
+            >{{ getCurrentText("rotateText") }}</span
+          >
           <div class="hero-heading">
             <h1>Robin Gerth</h1>
             <p class="hero-role">{{ getCurrentText("subtitle") }}</p>
