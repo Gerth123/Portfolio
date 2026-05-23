@@ -25,7 +25,7 @@
 .hero-wave {
   position: absolute;
   left: 50%;
-  bottom: clamp(-36rem, -29vw, -17rem);
+  bottom: clamp(-40rem, -34vw, -21rem);
   z-index: 3;
   width: clamp(92rem, 118vw, 118rem);
   max-width: none;
@@ -72,7 +72,8 @@
   justify-content: start;
   max-width: 46rem;
   position: relative;
-  z-index: 4;
+  z-index: 5;
+  transform: translateY(clamp(-3.25rem, -4vw, -1.5rem));
 }
 
 .hero-intro {
@@ -204,7 +205,7 @@ h1 {
 
   .hero-wave {
     left: 50%;
-    bottom: clamp(-24rem, -28vw, -15rem);
+    bottom: clamp(-27rem, -33vw, -18rem);
     width: max(140vw, 88rem);
     transform: translateX(-50%);
   }
@@ -217,6 +218,7 @@ h1 {
   .hero-content {
     justify-content: center;
     margin-inline: auto;
+    transform: translateY(-1.25rem);
   }
 
   .hero-actions {
@@ -247,7 +249,7 @@ h1 {
 
   .hero-wave {
     left: 50%;
-    bottom: -13.5rem;
+    bottom: -15.5rem;
     width: 76rem;
     transform: translateX(-50%);
   }
@@ -265,6 +267,7 @@ h1 {
       "actions";
     justify-items: center;
     row-gap: 0.65rem;
+    transform: translateY(-0.5rem);
   }
 
   .hero-intro {
