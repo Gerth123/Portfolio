@@ -176,12 +176,8 @@ export class CredentialsComponent {
       fileType: 'PDF',
       links: [
         {
-          label: { en: 'PDF 1', de: 'PDF 1' },
+          label: { en: 'PDF', de: 'PDF' },
           url: '../../assets/certificates/Ern%C3%A4hrungsberater-Lizenz.pdf',
-        },
-        {
-          label: { en: 'PDF 2', de: 'PDF 2' },
-          url: '../../assets/certificates/Ern%C3%A4hrungsberater-Lizenz1.pdf',
         },
       ],
       description: {
