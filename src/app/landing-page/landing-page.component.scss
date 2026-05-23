@@ -61,7 +61,6 @@
 
 .hero-content {
   --hero-title-gap: clamp(0.75rem, 1.5vw, 1.35rem);
-  --hero-copy-safe-space: clamp(0.75rem, 1.4vw, 1.15rem);
   display: grid;
   grid-template-columns: auto minmax(0, max-content);
   grid-template-areas:
@@ -74,24 +73,10 @@
   max-width: 46rem;
   position: relative;
   z-index: 5;
-  isolation: isolate;
   transform: translate(
-    clamp(-5rem, -4.8vw, -2.75rem),
-    clamp(-6.75rem, -6.8vw, -3.75rem)
+    clamp(-10rem, -8vw, -5.25rem),
+    clamp(-14rem, -13vw, -9rem)
   );
-}
-
-.hero-content::before {
-  content: "";
-  position: absolute;
-  inset:
-    calc(var(--hero-copy-safe-space) * -1)
-    calc(var(--hero-copy-safe-space) * -1.45)
-    calc(var(--hero-copy-safe-space) * -1.1)
-    calc(var(--hero-copy-safe-space) * -1.1);
-  z-index: -1;
-  background: #141d2f;
-  pointer-events: none;
 }
 
 .hero-intro {
@@ -223,7 +208,7 @@ h1 {
 
   .hero-wave {
     left: 50%;
-    bottom: clamp(-27rem, -33vw, -18rem);
+    bottom: clamp(-34rem, -41vw, -22rem);
     width: max(140vw, 88rem);
     transform: translateX(-50%);
   }
@@ -234,10 +219,9 @@ h1 {
   }
 
   .hero-content {
-    --hero-copy-safe-space: 0.85rem;
     justify-content: center;
     margin-inline: auto;
-    transform: translateY(-3rem);
+    transform: translateY(-5.5rem);
   }
 
   .hero-actions {
@@ -268,7 +252,7 @@ h1 {
 
   .hero-wave {
     left: 50%;
-    bottom: -15.5rem;
+    bottom: -22rem;
     width: 76rem;
     transform: translateX(-50%);
   }
@@ -279,7 +263,6 @@ h1 {
   }
 
   .hero-content {
-    --hero-copy-safe-space: 0.55rem;
     grid-template-columns: 1fr;
     grid-template-areas:
       "intro"
@@ -287,7 +270,7 @@ h1 {
       "actions";
     justify-items: center;
     row-gap: 0.65rem;
-    transform: translateY(-1rem);
+    transform: translateY(-2.75rem);
   }
 
   .hero-intro {
@@ -320,5 +303,15 @@ h1 {
   .hero-footer-mail {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .hero-wave {
+    bottom: -36rem;
+  }
+
+  .hero-content {
+    transform: translateY(-7rem);
   }
 }
