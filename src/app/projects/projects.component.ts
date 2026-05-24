@@ -125,7 +125,6 @@ export class ProjectsComponent {
       imageAlt: 'Videoflix streaming platform preview',
       imageClass: 'videoflix-preview',
       mediaClass: 'project-media--videoflix',
-      liveHref: 'https://robin-gerth.de/angular-projects/videoflix/',
       codeLinks: [
         {
           href: 'https://github.com/Gerth123/Videoflix-Backend',
