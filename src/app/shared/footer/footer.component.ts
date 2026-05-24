@@ -20,4 +20,12 @@ export class FooterComponent {
   scrollToTop() {
     window.scrollTo(0, 0);
   }
+
+  /**
+   * Opens a link in a new tab.
+   * @param url - The URL to open.
+   */
+  openLink(url: string) {
+    window.open(url, '_blank');
+  }
 }
