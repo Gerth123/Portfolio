@@ -246,7 +246,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     const cardWidth = card?.offsetWidth ?? track.clientWidth;
 
     track.scrollBy({
-      left: direction * this.getStepDistance(track, cardWidth + gap),
+      left: direction * (cardWidth + gap),
       behavior: 'smooth',
     });
   }
@@ -441,10 +441,6 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
 
   private getMaxScroll(track: HTMLElement): number {
     return Math.max(0, track.scrollWidth - track.clientWidth);
-  }
-
-  private getStepDistance(track: HTMLElement, fallbackDistance: number): number {
-    return fallbackDistance * this.getVisibleSlideCount(track);
   }
 
   private getVisibleSlideCount(track: HTMLElement): number {
