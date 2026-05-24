@@ -32,8 +32,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('credentialsTrack') credentialsTrack?: ElementRef<HTMLElement>;
 
   public activeCredentialIndex = 0;
-  public activeProgressIndex = 0;
-  public progressSteps: number[] = [0];
+  public visibleCredentialIndexes: number[] = [0];
   public isDragging = false;
 
   private dragStartX = 0;
@@ -54,8 +53,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
       previous: 'Previous credential',
       next: 'Next credential',
       goToCredential: 'Go to credential',
-      goToProgress: 'Go to slider section',
-      sliderProgress: 'Slider progress',
+      sliderProgress: 'Shown credentials',
     },
     de: {
       kicker: 'Nachweise',
@@ -67,8 +65,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
       previous: 'Vorheriger Nachweis',
       next: 'Nächster Nachweis',
       goToCredential: 'Zu Nachweis wechseln',
-      goToProgress: 'Zu Slider-Abschnitt',
-      sliderProgress: 'Slider-Fortschritt',
+      sliderProgress: 'Angezeigte Nachweise',
     },
   };
 
@@ -237,10 +234,6 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     return index;
   }
 
-  trackProgressStep(index: number): number {
-    return index;
-  }
-
   scrollCredentials(direction: -1 | 1): void {
     const track = this.credentialsTrack?.nativeElement;
 
@@ -269,24 +262,11 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     });
 
     this.activeCredentialIndex = index;
+    this.updateVisibleCredentials();
   }
 
-  goToProgressStep(index: number): void {
-    const track = this.credentialsTrack?.nativeElement;
-
-    if (!track) {
-      return;
-    }
-
-    const maxScroll = this.getMaxScroll(track);
-    const nextScrollLeft = this.progressSteps.length <= 1 ? 0 : (maxScroll / (this.progressSteps.length - 1)) * index;
-
-    track.scrollTo({
-      left: nextScrollLeft,
-      behavior: 'smooth',
-    });
-
-    this.activeProgressIndex = index;
+  isCredentialVisible(index: number): boolean {
+    return this.visibleCredentialIndexes.includes(index);
   }
 
   updateActiveCredential(): void {
@@ -305,7 +285,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     }, 0);
 
     this.activeCredentialIndex = nextIndex;
-    this.activeProgressIndex = this.getCurrentProgressIndex(track);
+    this.updateVisibleCredentials();
   }
 
   onTrackPointerDown(event: PointerEvent): void {
@@ -438,20 +418,25 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         return;
       }
 
-      const pageCount = Math.max(1, Math.ceil(this.getMaxScroll(track) / Math.max(track.clientWidth, 1)) + 1);
-      this.progressSteps = Array.from({ length: pageCount }, (_, index) => index);
       this.updateActiveCredential();
     });
   }
 
-  private getCurrentProgressIndex(track: HTMLElement): number {
-    const maxScroll = this.getMaxScroll(track);
+  private updateVisibleCredentials(): void {
+    const track = this.credentialsTrack?.nativeElement;
 
-    if (maxScroll <= 0 || this.progressSteps.length <= 1) {
-      return 0;
+    if (!track) {
+      this.visibleCredentialIndexes = [this.activeCredentialIndex];
+      return;
     }
 
-    return Math.min(this.progressSteps.length - 1, Math.round((track.scrollLeft / maxScroll) * (this.progressSteps.length - 1)));
+    const visibleCount = this.getVisibleSlideCount(track);
+    const lastStartIndex = Math.max(0, this.credentials.length - visibleCount);
+    const startIndex = Math.min(this.activeCredentialIndex, lastStartIndex);
+
+    this.visibleCredentialIndexes = Array.from({ length: visibleCount }, (_, index) => startIndex + index).filter(
+      (index) => index < this.credentials.length,
+    );
   }
 
   private getMaxScroll(track: HTMLElement): number {
@@ -459,7 +444,15 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
   }
 
   private getStepDistance(track: HTMLElement, fallbackDistance: number): number {
-    const visibleSlides = Math.max(1, Math.round(track.clientWidth / Math.max(fallbackDistance, 1)));
-    return fallbackDistance * visibleSlides;
+    return fallbackDistance * this.getVisibleSlideCount(track);
+  }
+
+  private getVisibleSlideCount(track: HTMLElement): number {
+    const card = track.querySelector<HTMLElement>('.credential-slide');
+    const gap = this.getTrackGap(track);
+    const cardWidth = card?.offsetWidth ?? track.clientWidth;
+    const slideDistance = Math.max(cardWidth + gap, 1);
+
+    return Math.max(1, Math.min(this.credentials.length, Math.round(track.clientWidth / slideDistance)));
   }
 }
