@@ -33,6 +33,8 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
 
   public activeCredentialIndex = 0;
   public visibleCredentialIndexes: number[] = [0];
+  public canScrollPrevious = false;
+  public canScrollNext = true;
   public isDragging = false;
 
   private dragStartX = 0;
@@ -85,6 +87,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
           label: { en: 'Verify', de: 'Bestätigung' },
           url: 'https://zertifizierung.kiberatung.de/verify/85b5f273-309f-42cc-9109-b645ea10a779',
         },
+        {
+          label: { en: 'Website', de: 'Webseite' },
+          url: 'https://kilernen.de/',
+        },
       ],
       description: {
         en: 'Advanced workflow training for coding-agent usage, context preparation, prompt structure and reliable implementation loops.',
@@ -107,6 +113,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
           label: { en: 'Verify', de: 'Bestätigung' },
           url: 'https://zertifizierung.kiberatung.de/verify/b403695d-73c9-4473-a3f4-559cf4ceacd4',
         },
+        {
+          label: { en: 'Website', de: 'Webseite' },
+          url: 'https://kilernen.de/',
+        },
       ],
       description: {
         en: 'Structured AI training with focus on practical use cases, process thinking and responsible integration of AI workflows into business contexts.',
@@ -119,6 +129,12 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
       issuer: 'Everlast',
       period: { en: 'In progress', de: 'In Arbeit' },
       type: { en: 'Training', de: 'Weiterbildung' },
+      links: [
+        {
+          label: { en: 'Website', de: 'Webseite' },
+          url: 'https://kilernen.de/',
+        },
+      ],
       description: {
         en: 'Current specialization in agentic coding workflows, task decomposition, review loops and AI-supported software delivery.',
         de: 'Aktuelle Spezialisierung auf Agentic-Coding-Workflows, Aufgabenzerlegung, Review-Schleifen und KI-gestützte Softwareauslieferung.',
@@ -135,6 +151,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         {
           label: { en: 'PDF', de: 'PDF' },
           url: '../../assets/certificates/Backend%20Zertifikat%20Robin%20Gerth.pdf',
+        },
+        {
+          label: { en: 'Website', de: 'Webseite' },
+          url: 'https://developerakademie.com/',
         },
       ],
       description: {
@@ -154,6 +174,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
           label: { en: 'PDF', de: 'PDF' },
           url: '../../assets/certificates/Frontend%20Zertifikat%20Robin%20Gerth.pdf',
         },
+        {
+          label: { en: 'Website', de: 'Webseite' },
+          url: 'https://developerakademie.com/',
+        },
       ],
       description: {
         en: 'Frontend training focused on responsive interfaces, Angular, TypeScript, reusable components and project-based UI implementation.',
@@ -163,7 +187,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     },
     {
       title: 'Fitness-Trainer-B-Lizenz',
-      issuer: 'Academy of Sports',
+      issuer: 'Online-Trainer-Lizenz',
       period: { en: 'Completed', de: 'Abgeschlossen' },
       type: { en: 'License', de: 'Lizenz' },
       fileType: 'PDF',
@@ -171,6 +195,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         {
           label: { en: 'PDF', de: 'PDF' },
           url: '../../assets/certificates/Fitnesstrainer-B-Lizenz.pdf',
+        },
+        {
+          label: { en: 'Website', de: 'Webseite' },
+          url: 'https://www.online-trainer-lizenz.de/',
         },
       ],
       description: {
@@ -181,7 +209,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     },
     {
       title: 'Ernährungsberater-Lizenz',
-      issuer: 'Academy of Sports',
+      issuer: 'Online-Trainer-Lizenz',
       period: { en: 'Completed', de: 'Abgeschlossen' },
       type: { en: 'License', de: 'Lizenz' },
       fileType: 'PDF',
@@ -189,6 +217,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         {
           label: { en: 'PDF', de: 'PDF' },
           url: '../../assets/certificates/Ern%C3%A4hrungsberater-Lizenz.pdf',
+        },
+        {
+          label: { en: 'Website', de: 'Webseite' },
+          url: 'https://www.online-trainer-lizenz.de/',
         },
       ],
       description: {
@@ -286,6 +318,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
 
     this.activeCredentialIndex = nextIndex;
     this.updateVisibleCredentials();
+    this.updateControlVisibility(track);
   }
 
   onTrackPointerDown(event: PointerEvent): void {
@@ -437,6 +470,14 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     this.visibleCredentialIndexes = Array.from({ length: visibleCount }, (_, index) => startIndex + index).filter(
       (index) => index < this.credentials.length,
     );
+  }
+
+  private updateControlVisibility(track: HTMLElement): void {
+    const maxScroll = this.getMaxScroll(track);
+    const scrollTolerance = 2;
+
+    this.canScrollPrevious = track.scrollLeft > scrollTolerance;
+    this.canScrollNext = track.scrollLeft < maxScroll - scrollTolerance;
   }
 
   private getMaxScroll(track: HTMLElement): number {
