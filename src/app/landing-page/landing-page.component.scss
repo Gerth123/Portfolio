@@ -219,6 +219,9 @@ h1 {
     bottom: clamp(-23rem, -28vw, -14rem);
     z-index: 3;
     width: max(140vw, 88rem);
+    clip-path: inset(0 0 calc(100% - 20rem) 0);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0 18.5rem, transparent 20rem);
+    mask-image: linear-gradient(to bottom, #000 0 18.5rem, transparent 20rem);
     transform: translateX(-50%);
   }
 
@@ -268,6 +271,9 @@ h1 {
     left: 50%;
     bottom: -10.9rem;
     width: 70rem;
+    clip-path: inset(0 0 calc(100% - 16rem) 0);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0 14.5rem, transparent 16rem);
+    mask-image: linear-gradient(to bottom, #000 0 14.5rem, transparent 16rem);
     transform: translateX(-50%);
   }
 
@@ -371,6 +377,13 @@ h1 {
 }
 
 @media (min-width: 992px) {
+  .hero-wave {
+    bottom: calc(clamp(-40rem, -34vw, -21rem) - 1.5rem);
+    clip-path: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
   .hero-content {
     --hero-title-gap: clamp(0.55rem, 0.75vw, 0.85rem);
   }
@@ -418,6 +431,10 @@ h1 {
 @media (min-width: 1600px) {
   .hero-section {
     --hero-bottom-space: clamp(6rem, 8vw, 9rem);
+  }
+
+  .hero-wave {
+    bottom: -30rem;
   }
 
   .hero-layout {
