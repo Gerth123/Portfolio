@@ -72,7 +72,7 @@
     ". actions";
   column-gap: var(--hero-title-gap);
   row-gap: clamp(0.75rem, 1.2vw, 1rem);
-  align-items: stretch;
+  align-items: start;
   justify-content: start;
   max-width: 46rem;
   position: relative;
@@ -85,10 +85,8 @@
 
 .hero-intro {
   grid-area: intro;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
+  display: block;
+  align-self: start;
   min-width: clamp(2.35rem, 4.2vw, 4.25rem);
   color: #fff;
   font-size: clamp(2.35rem, 4.2vw, 4.25rem);
@@ -111,6 +109,7 @@
   grid-area: heading;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: clamp(0.05rem, 0.35vw, 0.25rem);
 }
@@ -315,7 +314,7 @@ h1 {
   .hero-heading {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 0;
     min-width: 0;
   }

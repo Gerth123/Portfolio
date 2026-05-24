@@ -126,11 +126,11 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
     }
 
     this.rafId = requestAnimationFrame(() => {
-      this.fitMobileHeroText();
+      this.fitHeroText();
     });
   };
 
-  private fitMobileHeroText(): void {
+  private fitHeroText(): void {
     const sideLabel = this.heroSideLabel?.nativeElement;
     const titleStack = this.heroTitleStack?.nativeElement;
     const name = this.heroName?.nativeElement;
@@ -140,27 +140,56 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    const isMobile = window.matchMedia('(max-width: 575.98px)').matches;
-
-    if (!isMobile) {
-      sideLabel.style.fontSize = '';
-      role.style.fontSize = '';
-      return;
-    }
+    const fitBounds = this.getHeroFitBounds();
 
     this.fitFontSizeToWidth({
       element: role,
       targetElement: name,
-      minPx: 18,
-      maxPx: 44,
+      minPx: 1,
+      maxPx: this.getMaxRoleFontSize(name),
     });
 
     this.fitFontSizeToHeight({
       element: sideLabel,
       targetElement: titleStack,
-      minPx: 12,
-      maxPx: 42,
+      minPx: fitBounds.sideLabelMinPx,
+      maxPx: fitBounds.sideLabelMaxPx,
     });
+  }
+
+  private getHeroFitBounds(): {
+    sideLabelMinPx: number;
+    sideLabelMaxPx: number;
+  } {
+    const width = window.innerWidth;
+
+    if (width <= 575.98) {
+      return { sideLabelMinPx: 12, sideLabelMaxPx: 42 };
+    }
+
+    if (width <= 991.98) {
+      return { sideLabelMinPx: 18, sideLabelMaxPx: 58 };
+    }
+
+    if (width <= 1199.98) {
+      return { sideLabelMinPx: 22, sideLabelMaxPx: 68 };
+    }
+
+    if (width <= 1599.98) {
+      return { sideLabelMinPx: 24, sideLabelMaxPx: 76 };
+    }
+
+    return { sideLabelMinPx: 28, sideLabelMaxPx: 86 };
+  }
+
+  private getMaxRoleFontSize(name: HTMLElement): number {
+    const nameFontSize = Number.parseFloat(getComputedStyle(name).fontSize);
+
+    if (!Number.isFinite(nameFontSize)) {
+      return 90;
+    }
+
+    return Math.max(48, nameFontSize * 1.15);
   }
 
   private fitFontSizeToWidth(options: {
@@ -171,10 +200,15 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   }): void {
     const { element, targetElement, minPx, maxPx } = options;
     const targetWidth = targetElement.getBoundingClientRect().width;
+
+    if (!targetWidth) {
+      return;
+    }
+
     let low = minPx;
     let high = maxPx;
 
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 20; i++) {
       const mid = (low + high) / 2;
       element.style.fontSize = `${mid}px`;
       const width = element.getBoundingClientRect().width;
@@ -187,6 +221,12 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
     }
 
     element.style.fontSize = `${low}px`;
+    const lowDiff = Math.abs(targetWidth - element.getBoundingClientRect().width);
+
+    element.style.fontSize = `${high}px`;
+    const highDiff = Math.abs(targetWidth - element.getBoundingClientRect().width);
+
+    element.style.fontSize = `${highDiff < lowDiff ? high : low}px`;
   }
 
   private fitFontSizeToHeight(options: {
@@ -197,6 +237,11 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   }): void {
     const { element, targetElement, minPx, maxPx } = options;
     const targetHeight = targetElement.getBoundingClientRect().height;
+
+    if (!targetHeight) {
+      return;
+    }
+
     let low = minPx;
     let high = maxPx;
 
