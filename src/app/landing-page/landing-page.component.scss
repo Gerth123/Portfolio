@@ -201,7 +201,7 @@ h1 {
 @media (max-width: 991.98px) {
   .hero-section {
     --hero-top-space: 2rem;
-    --hero-bottom-space: 4.5rem;
+    --hero-bottom-space: 5.25rem;
     min-height: auto;
     text-align: center;
   }
@@ -213,25 +213,30 @@ h1 {
   .hero-layout {
     min-height: auto;
     padding-bottom: 0;
+    row-gap: 0;
   }
 
   .hero-wave {
     left: 50%;
-    bottom: clamp(-34rem, -41vw, -22rem);
+    bottom: clamp(-25rem, -31vw, -16rem);
+    z-index: 3;
     width: max(140vw, 88rem);
     transform: translateX(-50%);
   }
 
   .hero-visual-stage {
+    z-index: 2;
     width: min(100%, 32rem);
     margin-top: 0;
-    margin-bottom: clamp(-2.25rem, -5vw, -1rem);
+    margin-bottom: clamp(-5rem, -9vw, -3rem);
   }
 
   .hero-content {
+    z-index: 5;
     justify-content: center;
     margin-inline: auto;
-    transform: translateY(-4.65rem);
+    padding-top: clamp(1.25rem, 4vw, 2.5rem);
+    transform: none;
   }
 
   .hero-actions {
@@ -256,21 +261,21 @@ h1 {
 @media (max-width: 575.98px) {
   .hero-section {
     --hero-top-space: 1.75rem;
-    --hero-bottom-space: 5.25rem;
+    --hero-bottom-space: 5.75rem;
     min-height: auto;
     padding-top: calc(72px + var(--hero-top-space));
   }
 
   .hero-wave {
     left: 50%;
-    bottom: -24rem;
-    width: 74rem;
+    bottom: -12.75rem;
+    width: 70rem;
     transform: translateX(-50%);
   }
 
   .hero-visual-stage {
     width: min(100%, 24rem);
-    margin-bottom: -0.75rem;
+    margin-bottom: -4.6rem;
   }
 
   .hero-content {
@@ -281,7 +286,8 @@ h1 {
       "actions";
     justify-items: center;
     row-gap: 0.65rem;
-    transform: translateY(-1.5rem);
+    padding-top: 1.85rem;
+    transform: none;
   }
 
   .hero-intro {
@@ -319,11 +325,12 @@ h1 {
 
 @media (min-width: 576px) and (max-width: 991.98px) {
   .hero-wave {
-    bottom: -36rem;
+    bottom: -23.5rem;
   }
 
   .hero-content {
-    transform: translateY(-4.75rem);
+    padding-top: 1.75rem;
+    transform: none;
   }
 }
 
@@ -386,7 +393,8 @@ h1 {
   }
 
   .hero-content {
-    transform: translateY(-1.1rem);
+    padding-top: 1.6rem;
+    transform: none;
   }
 
   h1 {
