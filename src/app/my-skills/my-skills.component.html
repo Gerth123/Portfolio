@@ -1,7 +1,7 @@
 <section class="skills-section section-shell">
   <div class="container-xxl">
     <div class="row align-items-start g-5">
-      <div class="col-lg-6 order-lg-2" data-aos="fade-up">
+      <div class="col-lg-5 order-lg-2" data-aos="fade-up">
         <div class="skills-copy ms-lg-auto">
           <div id="mySkills" class="skills-anchor d-flex align-items-center justify-content-lg-end gap-3 mb-4">
             <h2 class="section-title">{{ getCurrentText("headline") }}</h2>
@@ -10,24 +10,6 @@
           <p class="section-copy text-lg-end">
             {{ getCurrentText("shortDescription") }}
           </p>
-
-          <div class="row g-3 my-4 skill-categories">
-            <div class="col-md-4 col-lg-12" *ngFor="let category of skillCategories">
-              <article class="portfolio-card portfolio-card--quiet category-card">
-                <h3>{{ getCategoryTitle(category) }}</h3>
-                <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
-                  <span class="tech-pill" *ngFor="let item of category.items">{{ item }}</span>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div class="skillHighlights d-flex justify-content-lg-end flex-wrap gap-2 my-4">
-            <span *ngFor="let highlight of getCurrentSkillHighlights()">
-              <img src="{{ highlight.icon }}" alt="{{ highlight.alt }}" />
-              {{ getCurrentSkillLabel(highlight) }}
-            </span>
-          </div>
 
           <h3 class="growth-heading">
             {{ getCurrentText("secondHeadline") }}
@@ -46,39 +28,28 @@
         </div>
       </div>
 
-      <div class="col-lg-6 order-lg-1" data-aos="fade-up">
-        <div class="row g-3 skills-grid">
-          <div *ngFor="let skill of skills" class="col-6 col-sm-4">
-            <div class="skill portfolio-card h-100">
-              <img src="{{ skill.src }}" alt="{{ skill.alt }}" />
-              <p>{{ skill.name }}</p>
-            </div>
-          </div>
-          <div
-            class="col-6 col-sm-4"
-            (mouseover)="showSpecialInterest()"
-            (mouseout)="hideSpecialInterest()"
+      <div class="col-lg-7 order-lg-1" data-aos="fade-up">
+        <div class="skills-stack">
+          <article
+            class="portfolio-card skill-focus-card"
+            *ngFor="let category of skillCategories"
           >
-            <div class="skill continuallyLearning portfolio-card h-100">
-              <img
-                *ngIf="isHovered"
-                src="../../assets/icons/special_interest.svg"
-                alt=""
-                id="special_interest"
-                aria-hidden="true"
-              />
-              <img
-                src="../../assets/icons/continually_learning.svg"
-                alt="continually learning"
-                [src]="
-                  isHovered
-                    ? '../../assets/icons/continually_learning_white.svg'
-                    : '../../assets/icons/continually_learning.svg'
-                "
-              />
-              <p id="continually" [style.color]="isHovered ? 'white' : '#9747FF'">
-                {{ getCurrentText("continuallyLearning") }}
-              </p>
+            <div class="skill-focus-icon" aria-hidden="true">
+              <img [src]="category.icon" [alt]="getCategoryTitle(category)" />
+            </div>
+            <div class="skill-focus-body">
+              <h3>{{ getCategoryTitle(category) }}</h3>
+              <p>{{ getCategoryText(category) }}</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-pill" *ngFor="let item of category.items">{{ item }}</span>
+              </div>
+            </div>
+          </article>
+
+          <div class="supporting-tools portfolio-card portfolio-card--quiet">
+            <span class="supporting-tools-label">{{ getCurrentText("supportingTools") }}</span>
+            <div class="d-flex flex-wrap gap-2">
+              <span *ngFor="let tool of supportingTools">{{ tool }}</span>
             </div>
           </div>
         </div>

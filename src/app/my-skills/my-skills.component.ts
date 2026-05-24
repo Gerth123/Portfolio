@@ -1,134 +1,107 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { LanguageService } from '../services/language.service';
 
+type Language = 'en' | 'de';
+
+type SkillCategory = {
+  icon: string;
+  title: Record<Language, string>;
+  text: Record<Language, string>;
+  items: string[];
+};
+
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, RouterLink],
+  imports: [NgFor, RouterLink],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss',
 })
 export class MySkillsComponent {
-  skills: { src: string; alt: string; name: string }[] = [
-    { src: '../../assets/icons/typescript.svg', alt: 'TypeScript', name: 'TypeScript' },
-    { src: '../../assets/icons/angular.svg', alt: 'Angular', name: 'Angular' },
-    { src: '../../assets/icons/shopware_6.svg', alt: 'Shopware 6', name: 'Shopware 6' },
-    { src: '../../assets/icons/rest_api.svg', alt: 'REST API', name: 'REST APIs' },
-    { src: '../../assets/icons/git.svg', alt: 'Git', name: 'Git' },
-    { src: '../../assets/icons/linux.svg', alt: 'Linux', name: 'Linux' },
-    { src: '../../assets/icons/kotlin.svg', alt: 'Kotlin', name: 'Kotlin' },
-    { src: '../../assets/icons/redis.svg', alt: 'Redis', name: 'Redis / RQ' },
-    { src: '../../assets/icons/javascript.svg', alt: 'JavaScript', name: 'JavaScript' },
-  ];
-
-  public translations: any = {
+  public translations: Record<Language, Record<string, string>> = {
     en: {
       headline: 'Engineering stack',
-      shortDescription: 'My profile combines full-stack web development, productive e-commerce work and AI-supported engineering workflows. I focus on maintainable implementation, clear APIs, reliable production changes and fast technical learning when a product needs it.',
+      shortDescription:
+        'My profile combines full-stack web development, productive e-commerce work and AI-supported engineering workflows. I focus on maintainable implementation, clear APIs and reliable production changes.',
       secondHeadline: 'Useful in teams that value',
       secondHeadlineSpan: 'structured delivery',
-      secondText: 'I am especially interested in modern web platforms, e-commerce systems and AI-first products where clean processes, code quality and business context matter.',
+      secondText:
+        'I work best where code quality, pragmatic delivery and business context matter.',
       getInTouch: 'Get in touch',
-      continuallyLearning: 'Continually learning',
+      supportingTools: 'Supporting tools',
     },
     de: {
       headline: 'Engineering Stack',
-      shortDescription: 'Mein Profil verbindet Full-Stack-Webentwicklung, produktive E-Commerce-Arbeit und KI-gestützte Entwicklungsworkflows. Mein Fokus liegt auf wartbarer Umsetzung, klaren APIs, zuverlässigen Produktionsänderungen und schnellem technischen Lernen, wenn ein Produkt es braucht.',
+      shortDescription:
+        'Mein Profil verbindet Full-Stack-Webentwicklung, produktive E-Commerce-Arbeit und KI-gestützte Entwicklungsworkflows. Mein Fokus liegt auf wartbarer Umsetzung, klaren APIs und zuverlässigen Produktionsänderungen.',
       secondHeadline: 'Stark in Teams mit',
       secondHeadlineSpan: 'strukturierter Umsetzung',
-      secondText: 'Besonders spannend sind für mich moderne Webplattformen, E-Commerce-Systeme und AI-first Produkte, bei denen klare Prozesse, Codequalität und Business-Kontext zählen.',
+      secondText:
+        'Ich arbeite besonders stark dort, wo Codequalität, pragmatische Umsetzung und Business-Kontext zusammenkommen.',
       getInTouch: 'Kontakt aufnehmen',
-      continuallyLearning: 'Kontinuierliche Weiterbildung',
+      supportingTools: 'Ergänzende Tools',
     },
   };
 
-  public skillCategories = [
+  public skillCategories: SkillCategory[] = [
     {
-      title: { en: 'Productive e-commerce', de: 'Produktiver E-Commerce' },
+      icon: '../../assets/icons/angular.svg',
+      title: {
+        en: 'Full-stack web development',
+        de: 'Full-Stack Webentwicklung',
+      },
+      text: {
+        en: 'Modern application development with structured frontend logic, clear APIs and maintainable backend services.',
+        de: 'Moderne Anwendungsentwicklung mit strukturierter Frontend-Logik, klaren APIs und wartbaren Backend-Services.',
+      },
+      items: ['Angular', 'TypeScript', 'Python', 'Django / DRF', 'REST APIs'],
+    },
+    {
+      icon: '../../assets/icons/shopware_6.svg',
+      title: {
+        en: 'Productive e-commerce systems',
+        de: 'Produktive E-Commerce-Systeme',
+      },
+      text: {
+        en: 'Work on real Shopware 6 environments, plugin adjustments and technical improvements close to business needs.',
+        de: 'Arbeit an realen Shopware-6-Umgebungen, Plugin-Anpassungen und technischen Verbesserungen nah am Business.',
+      },
       items: ['Shopware 6', 'PHP / Symfony', 'Plugin development', 'Technical SEO'],
     },
     {
-      title: { en: 'Full-stack delivery', de: 'Full-Stack Delivery' },
-      items: ['Python', 'Django / DRF', 'Angular', 'TypeScript', 'REST APIs'],
-    },
-    {
-      title: { en: 'AI-assisted workflows', de: 'KI-gestützte Workflows' },
-      items: ['Claude Code', 'Codex', 'Agentic Coding', 'RAG pipelines', 'LLM APIs'],
-    },
-  ];
-
-  public skillHighlights: {
-    icon: string;
-    alt: string;
-    label: { en: string; de: string };
-  }[] = [
-    {
       icon: '../../assets/icons/ai_assisted_coding.svg',
-      alt: 'AI-assisted coding',
-      label: { en: 'AI-assisted coding', de: 'KI-gestütztes Coding' },
-    },
-    {
-      icon: '../../assets/icons/claude_code.svg',
-      alt: 'Claude Code',
-      label: { en: 'Claude Code', de: 'Claude Code' },
-    },
-    {
-      icon: '../../assets/icons/codex.svg',
-      alt: 'Codex',
-      label: { en: 'Codex', de: 'Codex' },
-    },
-    {
-      icon: '../../assets/icons/agentic_coding.svg',
-      alt: 'Agentic Coding',
-      label: { en: 'Agentic coding', de: 'Agentic Coding' },
-    },
-    {
-      icon: '../../assets/icons/ki_workflows.svg',
-      alt: 'AI workflows',
-      label: { en: 'AI workflows', de: 'KI-Workflows' },
-    },
-    {
-      icon: '../../assets/icons/prompt_engineering.svg',
-      alt: 'Prompt engineering',
-      label: { en: 'Prompt engineering', de: 'Prompt Engineering' },
-    },
-    {
-      icon: '../../assets/icons/automations.svg',
-      alt: 'Automations',
-      label: { en: 'Automations', de: 'Automatisierungen' },
+      title: {
+        en: 'AI-augmented engineering',
+        de: 'AI-Augmented Engineering',
+      },
+      text: {
+        en: 'Daily use of coding agents, structured prompting and AI-supported workflows for faster technical execution.',
+        de: 'Täglicher Einsatz von Coding Agents, strukturiertem Prompting und KI-gestützten Workflows für schnellere technische Umsetzung.',
+      },
+      items: ['Claude Code', 'Codex', 'Agentic Coding', 'RAG workflows', 'LLM APIs'],
     },
   ];
 
-  public currentLanguage: 'en' | 'de' = 'en';
-  isHovered: boolean = false;
+  public supportingTools = ['Git', 'Linux', 'Redis / RQ', 'Kotlin', 'Bootstrap 5', 'SCSS'];
 
   constructor(private languageService: LanguageService, private router: Router) {}
 
   getCurrentText(field: string): string {
-    return this.translations[this.languageService.currentLanguage][field];
+    return this.translations[this.getCurrentLanguage()][field];
   }
 
-  getCategoryTitle(category: { title: { en: string; de: string } }): string {
-    return category.title[this.languageService.currentLanguage as 'en' | 'de'];
+  getCategoryTitle(category: SkillCategory): string {
+    return category.title[this.getCurrentLanguage()];
   }
 
-  getCurrentSkillHighlights() {
-    return this.skillHighlights;
+  getCategoryText(category: SkillCategory): string {
+    return category.text[this.getCurrentLanguage()];
   }
 
-  getCurrentSkillLabel(skill: { label: { en: string; de: string } }): string {
-    const language = this.languageService.currentLanguage as 'en' | 'de';
-    return skill.label[language];
-  }
-
-  showSpecialInterest() {
-    this.isHovered = true;
-  }
-
-  hideSpecialInterest() {
-    this.isHovered = false;
+  getCurrentLanguage(): Language {
+    return this.languageService.currentLanguage as Language;
   }
 
   async handleScroll(fragment: string) {

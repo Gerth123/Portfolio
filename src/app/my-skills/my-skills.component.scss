@@ -1,57 +1,105 @@
-.skills-grid {
-  position: relative;
-}
-
-.skill {
-  position: relative;
-  display: flex;
-  min-height: 8.8rem;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.85rem;
-  border-radius: 0.75rem;
-  padding: 1.2rem 0.75rem;
-  text-align: center;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-
-  img:not(#special_interest) {
-    width: 3.6rem;
-    height: 3.6rem;
-    object-fit: contain;
-  }
-
-  p {
-    margin: 0;
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
-  &:hover {
-    border-color: rgba(112, 230, 28, 0.62);
-    transform: translateY(-0.25rem);
-  }
-}
-
-.continuallyLearning {
-  overflow: visible;
-}
-
-#special_interest {
-  position: absolute;
-  top: -3.25rem;
-  right: -2rem;
-  width: 10rem;
-  max-width: none;
-}
-
 .skills-copy {
-  max-width: 39rem;
+  max-width: 38rem;
   text-align: left;
 }
 
 .skills-anchor {
   scroll-margin-top: calc(var(--portfolio-header-height) + 1.25rem);
+}
+
+.skills-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.skill-focus-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: flex-start;
+  border-radius: 0.75rem;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    border-color: rgba(112, 230, 28, 0.55);
+    background-color: rgba(255, 255, 255, 0.045);
+    transform: translateY(-0.15rem);
+  }
+}
+
+.skill-focus-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 1px solid rgba(112, 230, 28, 0.26);
+  border-radius: 0.7rem;
+  background-color: rgba(112, 230, 28, 0.08);
+
+  img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+  }
+}
+
+.skill-focus-body {
+  min-width: 0;
+
+  h3 {
+    margin: 0 0 0.45rem;
+    color: #fff;
+    font-size: clamp(1.1rem, 1.55vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  p {
+    margin: 0 0 0.85rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+}
+
+.supporting-tools {
+  display: grid;
+  gap: 0.8rem;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.supporting-tools-label {
+  color: var(--portfolio-cyan);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.supporting-tools span:not(.supporting-tools-label) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.32rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.84rem;
+  line-height: 1.2;
+}
+
+.growth-heading {
+  margin: clamp(1.65rem, 3vw, 2.25rem) 0 1rem;
+  font-size: clamp(1.55rem, 2.7vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.15;
+
+  span {
+    color: var(--portfolio-purple);
+  }
 }
 
 .skill-contact-button {
@@ -65,76 +113,23 @@
   text-align: center;
 }
 
-.category-card {
-  display: grid;
-  gap: 0.85rem;
-  border-radius: 0.75rem;
-  padding: 1rem;
-
-  h3 {
-    margin: 0;
-    color: var(--portfolio-cyan);
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-
-.skillHighlights span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 2.25rem;
-  padding: 0.4rem 0.7rem;
-  border: 1px solid rgba(112, 230, 28, 0.58);
-  border-radius: 999px;
-  background-color: rgba(112, 230, 28, 0.08);
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.88rem;
-  line-height: 1.2;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-
-  &:hover {
-    border-color: var(--portfolio-purple);
-    background-color: rgba(151, 71, 255, 0.18);
-  }
-
-  img {
-    width: 1.25rem;
-    height: 1.25rem;
-    object-fit: contain;
-  }
-}
-
-.growth-heading {
-  margin: 0 0 1rem;
-  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-
-  span {
-    color: var(--portfolio-purple);
-  }
-}
-
 @media (min-width: 992px) {
-  .skills-grid {
-    padding-top: clamp(7.25rem, 10vw, 9rem);
-  }
-
   .skills-copy {
     text-align: right;
   }
-}
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .category-card {
-    height: 100%;
+  .skills-stack {
+    padding-top: clamp(2.75rem, 5vw, 4.5rem);
   }
 }
 
-@media (max-width: 991.98px) {
-  .skill-categories .d-flex {
-    justify-content: flex-start !important;
+@media (max-width: 767.98px) {
+  .skill-focus-card {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-focus-icon {
+    width: 3rem;
+    height: 3rem;
   }
 }
