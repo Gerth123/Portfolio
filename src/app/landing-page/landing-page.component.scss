@@ -30,7 +30,7 @@
   position: absolute;
   left: 50%;
   bottom: clamp(-40rem, -34vw, -21rem);
-  z-index: 3;
+  z-index: 4;
   width: max(calc(100vw + 2rem), clamp(92rem, 118vw, 118rem));
   max-width: none;
   transform: translateX(-50%);
@@ -42,7 +42,7 @@
   width: clamp(28rem, 45vw, 43rem);
   aspect-ratio: 1 / 0.9;
   margin-top: clamp(-2.5rem, -3vw, -1rem);
-  z-index: 4;
+  z-index: 3;
 }
 
 .hero-shadow,
@@ -217,13 +217,13 @@ h1 {
   .hero-wave {
     left: 50%;
     bottom: clamp(-23rem, -28vw, -14rem);
-    z-index: 3;
+    z-index: 4;
     width: max(140vw, 88rem);
     transform: translateX(-50%);
   }
 
   .hero-visual-stage {
-    z-index: 4;
+    z-index: 3;
     width: min(100%, 32rem);
     margin-top: 0;
     margin-bottom: clamp(-6.25rem, -11vw, -4rem);
@@ -372,7 +372,7 @@ h1 {
 
 @media (min-width: 992px) {
   .hero-wave {
-    bottom: 0.5rem;
+    bottom: clamp(-28rem, -23vw, -19rem);
   }
 
   .hero-content {
@@ -425,7 +425,7 @@ h1 {
   }
 
   .hero-wave {
-    bottom: 5.5rem;
+    bottom: clamp(-30rem, -23vw, -22rem);
   }
 
   .hero-layout {
