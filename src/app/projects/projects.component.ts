@@ -19,6 +19,7 @@ interface CaseStudy {
   liveHref?: string;
   codeHref?: string;
   codeLabel?: string;
+  codeLinks?: { href: string; label: string }[];
   reverse?: boolean;
 }
 
@@ -125,8 +126,16 @@ export class ProjectsComponent {
       imageClass: 'videoflix-preview',
       mediaClass: 'project-media--videoflix',
       liveHref: 'https://robin-gerth.de/Videoflix/',
-      codeHref: 'https://gitlab.com/videoflix-49808/videoflix',
-      codeLabel: 'GitLab',
+      codeLinks: [
+        {
+          href: 'https://github.com/Gerth123/Videoflix-Backend',
+          label: 'GitHub Backend',
+        },
+        {
+          href: 'https://github.com/Gerth123/Videoflix-Frontend',
+          label: 'GitHub Frontend',
+        },
+      ],
       reverse: true,
     },
     {

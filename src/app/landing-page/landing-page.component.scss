@@ -266,7 +266,7 @@ h1 {
 
   .hero-wave {
     left: 50%;
-    bottom: -10.9rem;
+    bottom: -9rem;
     width: 70rem;
     transform: translateX(-50%);
   }
@@ -361,7 +361,7 @@ h1 {
 
 @media (min-width: 576px) and (max-width: 991.98px) {
   .hero-wave {
-    bottom: -23.5rem;
+    bottom: -16rem;
   }
 
   .hero-content {
@@ -372,7 +372,7 @@ h1 {
 
 @media (min-width: 992px) {
   .hero-wave {
-    bottom: calc(clamp(-40rem, -34vw, -21rem) - 1.5rem);
+    bottom: 0.5rem;
   }
 
   .hero-content {
@@ -425,7 +425,7 @@ h1 {
   }
 
   .hero-wave {
-    bottom: -30rem;
+    bottom: 5.5rem;
   }
 
   .hero-layout {

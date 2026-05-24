@@ -60,7 +60,7 @@
               <div
                 class="d-flex flex-wrap gap-3"
                 [ngClass]="{ 'justify-content-lg-end': project.reverse }"
-                *ngIf="project.liveHref || project.codeHref"
+                *ngIf="project.liveHref || project.codeHref || project.codeLinks?.length"
               >
                 <a
                   *ngIf="project.liveHref"
@@ -77,6 +77,14 @@
                   target="_blank"
                   rel="noreferrer"
                   >{{ project.codeLabel }}</a
+                >
+                <a
+                  *ngFor="let codeLink of project.codeLinks"
+                  [href]="codeLink.href"
+                  class="btn btn-outline-portfolio project-button"
+                  target="_blank"
+                  rel="noreferrer"
+                  >{{ codeLink.label }}</a
                 >
               </div>
             </div>
