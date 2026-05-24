@@ -367,7 +367,10 @@ h1 {
 
 @media (min-width: 576px) and (max-width: 991.98px) {
   .hero-wave {
-    bottom: -21.5rem;
+    bottom: -23.5rem;
+    clip-path: inset(0 0 calc(100% - 19rem) 0);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0 17.25rem, transparent 19rem);
+    mask-image: linear-gradient(to bottom, #000 0 17.25rem, transparent 19rem);
   }
 
   .hero-content {
