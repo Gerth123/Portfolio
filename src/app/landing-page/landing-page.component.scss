@@ -218,7 +218,7 @@ h1 {
 
   .hero-wave {
     left: 50%;
-    bottom: clamp(-25rem, -31vw, -16rem);
+    bottom: clamp(-23rem, -28vw, -14rem);
     z-index: 3;
     width: max(140vw, 88rem);
     transform: translateX(-50%);
@@ -228,7 +228,7 @@ h1 {
     z-index: 2;
     width: min(100%, 32rem);
     margin-top: 0;
-    margin-bottom: clamp(-5rem, -9vw, -3rem);
+    margin-bottom: clamp(-6.25rem, -11vw, -4rem);
   }
 
   .hero-content {
@@ -268,49 +268,63 @@ h1 {
 
   .hero-wave {
     left: 50%;
-    bottom: -12.75rem;
+    bottom: -10.9rem;
     width: 70rem;
     transform: translateX(-50%);
   }
 
   .hero-visual-stage {
-    width: min(100%, 24rem);
-    margin-bottom: -4.6rem;
+    width: min(100%, 25.25rem);
+    margin-bottom: -5.9rem;
   }
 
   .hero-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto minmax(0, max-content);
     grid-template-areas:
-      "intro"
-      "heading"
-      "actions";
-    justify-items: center;
-    row-gap: 0.65rem;
-    padding-top: 1.85rem;
+      "intro heading"
+      ". actions";
+    column-gap: clamp(0.4rem, 1.8vw, 0.65rem);
+    justify-content: center;
+    justify-items: start;
+    row-gap: 0.72rem;
+    padding-top: 2.65rem;
     transform: none;
   }
 
   .hero-intro {
-    min-width: 0;
-    font-size: 1.45rem;
-    line-height: 1.1;
-    writing-mode: horizontal-tb;
-    transform: none;
+    align-self: stretch;
+    min-width: 1.35rem;
+    font-size: clamp(1.34rem, 5.45vw, 1.58rem);
+    line-height: 0.78;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
   }
 
   .hero-intro--de,
   .hero-intro--en {
-    font-size: 1.45rem;
+    font-size: clamp(1.34rem, 5.45vw, 1.58rem);
+  }
+
+  .hero-heading {
+    align-items: stretch;
+    gap: 0.12rem;
   }
 
   h1 {
-    font-size: clamp(2.8rem, 15vw, 4.15rem);
-    white-space: normal;
+    font-size: clamp(2.26rem, 10.9vw, 3.1rem);
+    line-height: 0.94;
+    white-space: nowrap;
   }
 
   .hero-role {
-    font-size: clamp(1.8rem, 10vw, 2.85rem);
-    white-space: normal;
+    font-size: clamp(1.45rem, 7.35vw, 2.08rem);
+    line-height: 0.98;
+    white-space: nowrap;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    justify-self: center;
   }
 
   .hero-footer > .d-flex {
@@ -325,11 +339,11 @@ h1 {
 
 @media (min-width: 576px) and (max-width: 991.98px) {
   .hero-wave {
-    bottom: -23.5rem;
+    bottom: -21.5rem;
   }
 
   .hero-content {
-    padding-top: 1.75rem;
+    padding-top: 2.5rem;
     transform: none;
   }
 }
@@ -389,20 +403,20 @@ h1 {
 
 @media (max-width: 379.98px) {
   .hero-visual-stage {
-    width: min(100%, 21rem);
+    width: min(100%, 22rem);
   }
 
   .hero-content {
-    padding-top: 1.6rem;
+    padding-top: 2.35rem;
     transform: none;
   }
 
   h1 {
-    font-size: clamp(2.45rem, 14vw, 3.35rem);
+    font-size: clamp(2.02rem, 10.6vw, 2.55rem);
   }
 
   .hero-role {
-    font-size: clamp(1.55rem, 9vw, 2.25rem);
+    font-size: clamp(1.28rem, 7.1vw, 1.7rem);
   }
 
   .hero-button {
