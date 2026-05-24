@@ -291,7 +291,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
   onTrackPointerDown(event: PointerEvent): void {
     const track = this.credentialsTrack?.nativeElement;
 
-    if (!track || event.button !== 0) {
+    if (!track || event.button !== 0 || this.isInteractiveTarget(event.target)) {
       return;
     }
 
@@ -454,5 +454,9 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     const slideDistance = Math.max(cardWidth + gap, 1);
 
     return Math.max(1, Math.min(this.credentials.length, Math.round(track.clientWidth / slideDistance)));
+  }
+
+  private isInteractiveTarget(target: EventTarget | null): boolean {
+    return target instanceof HTMLElement && !!target.closest('a, button, input, textarea, select, [role="button"]');
   }
 }
