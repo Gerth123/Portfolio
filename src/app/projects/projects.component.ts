@@ -84,7 +84,7 @@ export class ProjectsComponent {
       image: '../../assets/img/iphone_6s_dabubble.png',
       imageAlt: 'DaBubble chat app preview',
       imageClass: 'phone-preview',
-      liveHref: 'https://robin-gerth.de/DaBubble/',
+      liveHref: 'https://robin-gerth.de/angular-projects/dabubble/',
       codeHref: 'https://github.com/Gerth123/DaBubble',
       codeLabel: 'GitHub',
       reverse: true,
@@ -125,7 +125,7 @@ export class ProjectsComponent {
       imageAlt: 'Videoflix streaming platform preview',
       imageClass: 'videoflix-preview',
       mediaClass: 'project-media--videoflix',
-      liveHref: 'https://robin-gerth.de/Videoflix/',
+      liveHref: 'https://robin-gerth.de/angular-projects/videoflix/',
       codeLinks: [
         {
           href: 'https://github.com/Gerth123/Videoflix-Backend',
