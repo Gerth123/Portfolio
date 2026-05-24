@@ -18,18 +18,19 @@
       </div>
 
       <div class="col-lg-6 order-lg-2">
-        <div class="hero-content">
+        <div class="hero-content" #heroTextGroup>
           <span
             class="hero-intro"
+            #heroSideLabel
             [ngClass]="{
               'hero-intro--en': getCurrentLanguage() === 'en',
               'hero-intro--de': getCurrentLanguage() === 'de'
             }"
             >{{ getCurrentText("rotateText") }}</span
           >
-          <div class="hero-heading">
-            <h1>Robin Gerth</h1>
-            <p class="hero-role">{{ getCurrentText("subtitle") }}</p>
+          <div class="hero-heading" #heroTitleStack>
+            <h1 #heroName>Robin Gerth</h1>
+            <p class="hero-role" #heroRole>{{ getCurrentText("subtitle") }}</p>
           </div>
 
           <div class="hero-actions">

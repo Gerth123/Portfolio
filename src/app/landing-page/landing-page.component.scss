@@ -283,59 +283,67 @@ h1 {
     grid-template-areas:
       "intro heading"
       ". actions";
-    column-gap: clamp(0.32rem, 1.45vw, 0.52rem);
+    column-gap: 0.42rem;
     justify-content: center;
     justify-items: start;
-    row-gap: 0.82rem;
+    width: max-content;
+    max-width: calc(100vw - 1.5rem);
+    margin-inline: auto;
+    overflow: visible;
+    row-gap: 0.72rem;
     padding-top: 2.55rem;
     transform: none;
   }
 
   .hero-intro {
-    align-self: stretch;
-    height: 100%;
-    min-width: clamp(1.05rem, 4.3vw, 1.28rem);
-    font-size: clamp(1.15rem, 4.75vw, 1.38rem);
-    line-height: 0.68;
+    display: block;
+    align-self: start;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 0.9;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
   }
 
   .hero-intro--de,
   .hero-intro--en {
-    font-size: clamp(1.15rem, 4.75vw, 1.38rem);
+    font-size: 1rem;
   }
 
   .hero-heading {
+    display: flex;
+    flex-direction: column;
     align-items: stretch;
     gap: 0;
+    min-width: 0;
   }
 
   h1 {
-    font-size: clamp(2.34rem, 10.9vw, 3.08rem);
-    line-height: 0.9;
+    margin: 0;
+    padding: 0;
+    font-size: 2.72rem;
+    line-height: 0.86;
+    letter-spacing: 0;
     white-space: nowrap;
   }
 
   .hero-role {
-    font-size: clamp(1.58rem, 7.45vw, 2.08rem);
-    line-height: 0.9;
+    margin: 0.18rem 0 0;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 0.88;
+    letter-spacing: 0;
     white-space: nowrap;
   }
 
-  .hero-content:has(.hero-intro--en) .hero-role {
-    font-size: clamp(1.68rem, 7.85vw, 2.2rem);
-  }
-
-  .hero-content:has(.hero-intro--de) .hero-role {
-    font-size: clamp(1.58rem, 7.45vw, 2.08rem);
-  }
-
   .hero-button {
-    min-width: 10.1rem;
-    min-height: 3.28rem;
-    padding: 0.55rem 1.15rem;
-    font-size: clamp(1rem, 4.15vw, 1.12rem);
+    min-width: 8.8rem;
+    min-height: 3rem;
+    padding: 0.68rem 1.18rem;
+    font-size: 1rem;
+    line-height: 1;
   }
 
   .hero-actions {
@@ -428,18 +436,14 @@ h1 {
   }
 
   h1 {
-    font-size: clamp(1.95rem, 10.05vw, 2.38rem);
+    font-size: 2.45rem;
   }
 
   .hero-role {
-    font-size: clamp(1.2rem, 6.65vw, 1.56rem);
-  }
-
-  .hero-content:has(.hero-intro--en) .hero-role {
-    font-size: clamp(1.3rem, 7vw, 1.68rem);
+    font-size: 1.35rem;
   }
 
   .hero-button {
-    min-width: 9.15rem;
+    min-width: 8.4rem;
   }
 }
