@@ -7,6 +7,7 @@ type Language = 'en' | 'de';
 interface CredentialLink {
   label: Record<Language, string>;
   url: string;
+  hideOnMobile?: boolean;
 }
 
 interface Credential {
@@ -86,6 +87,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         {
           label: { en: 'Verify', de: 'Bestätigung' },
           url: 'https://zertifizierung.kiberatung.de/verify/85b5f273-309f-42cc-9109-b645ea10a779',
+          hideOnMobile: true,
         },
         {
           label: { en: 'Website', de: 'Webseite' },
@@ -112,6 +114,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         {
           label: { en: 'Verify', de: 'Bestätigung' },
           url: 'https://zertifizierung.kiberatung.de/verify/b403695d-73c9-4473-a3f4-559cf4ceacd4',
+          hideOnMobile: true,
         },
         {
           label: { en: 'Website', de: 'Webseite' },
