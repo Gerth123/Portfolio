@@ -1,89 +1,58 @@
-<section id="mySkills">
-  <div class="container">
-    <div class="skillsContainer" data-aos="zoom-in-right">
-      <div class="imageContainer">
-        <div *ngFor="let skill of skills" class="skill">
-          <img src="{{ skill.src }}" alt="{{ skill.alt }}" />
-          <p>{{ skill.name }}</p>
-        </div>
-        <div
-          class="continuallyLearning"
-          (mouseover)="showSpecialInterest()"
-          (mouseout)="hideSpecialInterest()"
-        >
-          <img
-            *ngIf="isHovered"
-            src="../../assets/icons/special_interest.svg"
-            alt="special_interest"
-            id="special_interest"
-          />
-          <img
-            src="../../assets/icons/continually_learning.svg"
-            alt="continually learning"
-            [src]="
-              isHovered
-                ? '../../assets/icons/continually_learning_white.svg'
-                : '../../assets/icons/continually_learning.svg'
-            "
-          />
-          <p id="continually" [style.color]="isHovered ? 'white' : '#9747FF'">
-            {{ getCurrentText("continuallyLearning") }}
+<section class="skills-section section-shell">
+  <div class="container-xxl">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-5 order-lg-2" data-aos="fade-up">
+        <div class="skills-copy ms-lg-auto">
+          <div id="mySkills" class="skills-anchor d-flex align-items-center justify-content-lg-end gap-3 mb-4">
+            <h2 class="section-title">{{ getCurrentText("headline") }}</h2>
+            <span class="accent-line accent-line--to-right"></span>
+          </div>
+          <p class="section-copy text-lg-end">
+            {{ getCurrentText("shortDescription") }}
           </p>
+
+          <h3 class="growth-heading">
+            {{ getCurrentText("secondHeadline") }}
+            <span>{{ getCurrentText("secondHeadlineSpan") }}</span>?
+          </h3>
+          <p class="section-copy text-lg-end">
+            {{ getCurrentText("secondText") }}
+          </p>
+          <a
+            [routerLink]="['/']"
+            [fragment]="'contact'"
+            class="btn btn-portfolio skill-contact-button mt-3"
+            (click)="handleScroll('contact')"
+            >{{ getCurrentText("getInTouch") }}</a
+          >
         </div>
       </div>
-    </div>
-    <div class="textContainer" data-aos="fade-left">
-      <div class="heading">
-        <h2>{{ getCurrentText("headline") }}</h2>
-        <div class="line"></div>
-      </div>
-      <div class="text">
-        <p>
-          {{ getCurrentText("shortDescription") }}
-        </p>
-        <div class="skillsContainer2" data-aos="zoom-in-right">
-          <div class="imageContainer">
-            <div *ngFor="let skill of skills" class="skill">
-              <img src="{{ skill.src }}" alt="{{ skill.alt }}" />
-              <p>{{ skill.name }}</p>
+
+      <div class="col-lg-7 order-lg-1" data-aos="fade-up">
+        <div class="skills-stack">
+          <article
+            class="portfolio-card skill-focus-card"
+            *ngFor="let category of skillCategories"
+          >
+            <div class="skill-focus-icon" aria-hidden="true">
+              <img [src]="category.icon" [alt]="getCategoryTitle(category)" />
             </div>
-            <div
-              class="continuallyLearning"
-              (mouseover)="showSpecialInterest()"
-              (mouseout)="hideSpecialInterest()"
-            >
-              <img
-                *ngIf="isHovered"
-                src="../../assets/icons/special_interest.svg"
-                alt="special_interest"
-                id="special_interest"
-              />
-              <img
-                src="../../assets/icons/continually_learning.svg"
-                alt="continually learning"
-                [src]="
-                  isHovered
-                    ? '../../assets/icons/continually_learning_white.svg'
-                    : '../../assets/icons/continually_learning.svg'
-                "
-              />
-              <p
-                id="continually"
-                [style.color]="isHovered ? 'white' : '#9747FF'"
-              >
-                {{ getCurrentText("continuallyLearning") }}
-              </p>
+            <div class="skill-focus-body">
+              <h3>{{ getCategoryTitle(category) }}</h3>
+              <p>{{ getCategoryText(category) }}</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-pill" *ngFor="let item of category.items">{{ item }}</span>
+              </div>
+            </div>
+          </article>
+
+          <div class="supporting-tools portfolio-card portfolio-card--quiet">
+            <span class="supporting-tools-label">{{ getCurrentText("supportingTools") }}</span>
+            <div class="d-flex flex-wrap gap-2">
+              <span *ngFor="let tool of supportingTools">{{ tool }}</span>
             </div>
           </div>
         </div>
-        <h4>
-          {{ getCurrentText("secondHeadline") }}
-          <span>{{ getCurrentText("secondHeadlineSpan") }}</span>?
-        </h4>
-        <p class="lastP">
-          {{ getCurrentText("secondText") }}
-        </p>
-        <a [routerLink]="['/']" [fragment]="'contact'" class="linkPage" (click)="handleScroll('contact')">{{ getCurrentText("getInTouch") }}</a>
       </div>
     </div>
   </div>

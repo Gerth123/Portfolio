@@ -1,10 +1,11 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss',
 })
@@ -12,37 +13,53 @@ export class AboutMeComponent {
   public translations: any = {
     en: {
       headline: 'About me',
-      shortDescription:
-        "Hi, I'm a German-speaking Fullstack Developer based near Basel. Fascinated by the endless possibilities of the IT world, I enjoy designing and developing visually appealing and intuitive web applications from frontend to backend.",
-      location:
-        'I am flexible when it comes to work environments – I can work both on-site in Bad Säckingen and remotely. I am also open to relocating if required.',
-      interest:
-        "Technology is more than a profession for me – it's a passion. I'm always looking for opportunities to grow, learn new tools, and take on exciting challenges.",
-      puzzle:
-        "For me, programming is not just about code – it's about solving problems creatively. I take pride in turning complex technical requirements into elegant, user-friendly solutions. This way, I help you achieve your goals and bring your ideas to life.",
+      shortDescription: 'I am Robin, a full-stack developer working on productive e-commerce systems at ABC Design. My daily work connects Shopware 6, plugin customization, REST-based features, selected Kotlin app updates and AI-assisted delivery workflows.',
+      location: 'Production-oriented development with clear ownership, traceable decisions and a practical eye for maintainability.',
+      interest: 'AI-assisted engineering is part of my normal workflow: I use coding agents, prompt structure and automation to move faster without losing technical control.',
+      puzzle: 'I translate business requirements into concrete technical steps, from Shopware plugin changes and API integrations to frontend features and technical SEO improvements.',
     },
     de: {
       headline: 'Über mich',
-      shortDescription:
-        'Hallo, ich bin ein deutschsprachiger Fullstack-Entwickler aus der Nähe von Basel. Begeistert von den unendlichen Möglichkeiten der IT-Welt, entwickle ich gerne moderne und intuitive Webanwendungen – vom Frontend bis zum Backend.',
-      location:
-        'Ich bin flexibel in Bezug auf den Arbeitsort – sowohl vor Ort in Bad Säckingen als auch remote einsetzbar. Ein Umzug an einen anderen Standort ist für mich ebenfalls denkbar.',
-      interest:
-        'Technologie ist für mich mehr als nur ein Beruf – sie ist meine Leidenschaft. Ich suche ständig nach Möglichkeiten, mich weiterzuentwickeln, neue Werkzeuge zu erlernen und spannende Herausforderungen anzunehmen.',
-      puzzle:
-        'Programmieren bedeutet für mich nicht nur Code zu schreiben – es ist kreative Problemlösung. Ich bin stolz darauf, komplexe Anforderungen in benutzerfreundliche und effektive Lösungen umzusetzen. So helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Ideen Wirklichkeit werden zu lassen.',
+      shortDescription: 'Ich bin Robin, Full-Stack-Entwickler mit Praxiserfahrung in produktiven E-Commerce-Systemen bei ABC Design. Meine tägliche Arbeit verbindet Shopware 6, Plugin-Anpassungen, REST-basierte Features, ausgewählte Kotlin-App-Updates und KI-gestützte Delivery-Workflows.',
+      location: 'Produktionsnahe Entwicklung mit klarer Verantwortung, nachvollziehbaren Entscheidungen und Blick für Wartbarkeit.',
+      interest: 'AI-assisted Engineering ist Teil meines normalen Workflows: Ich nutze Coding Agents, Prompt-Struktur und Automatisierung, um schneller zu liefern, ohne technische Kontrolle zu verlieren.',
+      puzzle: 'Ich übersetze Business-Anforderungen in konkrete technische Schritte, von Shopware-Plugin-Änderungen und API-Integrationen bis zu Frontend-Features und Technical SEO.',
     },
   };
+
+  public workSignals = [
+    {
+      value: 'Shopware 6',
+      label: {
+        en: 'Productive e-commerce systems and plugin work',
+        de: 'Produktive E-Commerce-Systeme und Plugin-Arbeit',
+      },
+    },
+    {
+      value: 'AI-first',
+      label: {
+        en: 'Claude Code, Codex, agentic coding and automation',
+        de: 'Claude Code, Codex, Agentic Coding und Automatisierung',
+      },
+    },
+    {
+      value: 'Full stack',
+      label: {
+        en: 'Django / DRF, Angular, APIs, Kotlin and Linux workflows',
+        de: 'Django / DRF, Angular, APIs, Kotlin und Linux-Workflows',
+      },
+    },
+  ];
 
   public currentLanguage: 'en' | 'de' = 'en';
 
   constructor(private languageService: LanguageService) {}
-  /**
-   * Gets the translation for the given field based on the current language.
-   * @param field The field to get the translation for.
-   * @returns The translated text.
-   */
+
   getCurrentText(field: string): string {
     return this.translations[this.languageService.currentLanguage][field];
+  }
+
+  getSignalLabel(signal: { label: { en: string; de: string } }): string {
+    return signal.label[this.languageService.currentLanguage as 'en' | 'de'];
   }
 }

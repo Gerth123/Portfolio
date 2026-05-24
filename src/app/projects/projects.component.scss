@@ -1,311 +1,211 @@
-section {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  padding-top: 10svh;
-  width: 100%;
-  background-color: rgb(20, 29, 47);
-  color: white;
-  justify-content: center;
-  align-items: center;
+.projects-section {
+  overflow: hidden;
 }
 
-.heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-  z-index: 9;
-  position: relative;
+.project-card {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  min-height: clamp(29rem, 34vw, 33rem);
 
-  > span {
-    font-size: 20px;
-    height: 50px;
+  > .row {
+    height: 100%;
+  }
+
+  [class*="col-"] {
     display: flex;
-    justify-content: flex-start;
-    width: 80%;
-    line-height: 1.5;
-    align-items: center;
   }
 }
 
-.container {
+.project-media {
+  display: grid;
   width: 100%;
-  max-width: 1600px;
-  z-index: 9;
+  height: 100%;
+  place-items: center;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background:
+    linear-gradient(135deg, rgba(151, 71, 255, 0.14), rgba(112, 230, 28, 0.06)),
+    rgba(255, 255, 255, 0.025);
+
+  img {
+    width: min(100%, 32rem);
+    max-height: 21rem;
+    object-fit: contain;
+  }
+
+  .phone-preview {
+    max-height: 24rem;
+    width: auto;
+  }
 }
 
-.headline {
-  display: flex;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+.ai-workflow-visual {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(5rem, 8rem));
+  gap: 1rem;
+  place-items: center;
+
+  img,
+  span {
+    display: grid;
+    width: clamp(5rem, 10vw, 7.5rem);
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background: rgba(20, 29, 47, 0.68);
+  }
+
+  span {
+    color: var(--portfolio-cyan);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0;
+  }
 }
 
-h2 {
-  font-size: 80px;
-  margin-block: 0;
-  font-weight: bold;
+.project-media--el-pollo,
+.project-media--videoflix {
+  overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
 }
 
-.lineOne {
-  height: 5px;
-  width: 220px;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  background-color: #9747ff;
-}
-
-.lineTwo {
-  height: 5px;
-  width: 100%;
-  background-color: #9747ff;
-}
-
-.projectsContainer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
+.project-media--el-pollo .el-pollo-loco-img,
+.project-media--videoflix .videoflix-preview {
+  width: min(100%, 32rem);
   height: auto;
-  z-index: 2;
-  gap: 50px;
-  margin-top: 30px;
+  max-height: none;
+  object-fit: contain;
 }
 
-.project {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  flex-direction: row-reverse;
+.project-media--el-pollo .el-pollo-loco-img {
+  width: min(100%, 36rem);
+  height: 21rem;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
 
-  > img {
-    max-width: 500px;
-    max-height: 300px;
-  }
+.project-media--videoflix {
+  padding: clamp(0.75rem, 2vw, 1.75rem);
+}
+
+.project-media--videoflix .videoflix-preview {
+  width: min(100%, 36rem);
+  max-height: 21rem;
 }
 
 .projectText {
   display: flex;
+  min-height: 100%;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
-  gap: 5px;
-  width: 500px;
-  height: 300px;
-}
-
-h4 {
-  font-size: 40px;
-  margin-block: 0;
-  font-weight: bold;
-  color: #9747ff;
-}
-
-h5 {
-  font-size: 30px;
-  margin-block: 0;
-  color: #70e61c;
-}
-
-.projectEven {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-
-  > img {
-    width: 500px;
-    height: 350px;
-  }
-
-  > img:last-of-type {
-    width: auto !important;
-    max-width: fit-content !important;
-    margin-bottom: -30px !important;
-  }
-}
-
-.projectTextEven {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-evenly;
-  gap: 5px;
-  width: 500px;
-  height: 300px;
-
-  > p {
-    text-align: right;
-  }
-}
-
-.buttonContainer {
-  display: flex;
-  gap: 50px;
-}
-
-.liveTest {
-  background-color: #9747ff;
-  color: white;
-  width: 165px;
-  height: 58px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 23px;
-  box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.5s ease;
+  gap: 1rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
 
-  &:hover {
-    background-color: #70e61c;
-  }
-}
-
-.github {
-  color: white;
-  width: 150px;
-  height: 54px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 23px;
-  box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.3);
-  border: #70e61c 2px solid;
-  transition: background-color 0.5s ease;
-
-  &:hover {
-    background-color: #70e61c;
-  }
-}
-
-.pokedex {
-  padding-left: 15%;
-}
-
-@media (min-width: 1600px) {
-  .lineTwo {
-    width: 1500px;
-    margin-right: -800px;
-  }
-
-  .projectsContainer {
-    padding-top: 100px;
+  h3 {
     margin: 0;
-    gap: 100px;
+    color: var(--portfolio-purple);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
   }
 }
 
-@media (min-width: 3000px) {
-  .lineTwo {
-    width: 3000px;
-    margin-right: -1500px;
-  }
-}
+.project-focus {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+  list-style: none;
 
-@media (max-width: 1100px) {
-  section {
-    padding-top: 12svh;
-  }
+  li {
+    position: relative;
+    padding-left: 1.1rem;
 
-  .heading {
-    gap: 20px;
-    > span {
-      margin-right: 5vw;
-      width: 75%;
-      height: auto;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.68em;
+      left: 0;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      background: var(--portfolio-green);
     }
   }
+}
 
-  h5 {
+.text-lg-end .project-focus li {
+  padding-right: 1.1rem;
+  padding-left: 0;
+
+  &::before {
+    right: 0;
+    left: auto;
+  }
+}
+
+.project-stack {
+  margin: 0;
+  color: var(--portfolio-green);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.project-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8.5rem;
+  min-height: 2.9rem;
+  padding: 0.55rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .project-card {
+    min-height: auto;
+  }
+
+  .projectText {
+    align-items: center;
+    min-height: auto;
     text-align: center;
   }
 
-  .project, .projectEven {
-    flex-direction: column-reverse;
-    align-items: center;
+  .project-focus {
+    text-align: left;
   }
 
-  .projectText, .projectTextEven {
-    align-items: center;
+  .text-lg-end .project-focus li {
+    padding-right: 0;
+    padding-left: 1.1rem;
 
-    > p {
-      text-align: center;
-      width: 90%;
+    &::before {
+      right: auto;
+      left: 0;
     }
   }
 
-  .project {
-    > img {
-      margin-bottom: 20px;
-    }
+  .project-media {
+    min-height: 18rem;
   }
 
-  .projectEven {  
-    > img {
-      margin-bottom: -50px;
-    }
-  }
-
-  .pokedex {
-    padding-left: 0;
+  .project-media--el-pollo,
+  .project-media--videoflix {
+    min-height: 18rem;
   }
 }
 
-@media (max-width: 850px) {
-  h2 {
-    font-size: 70px;
+@media (max-width: 575.98px) {
+  .projects-section .accent-line {
+    width: 2.5rem;
   }
 }
-
-@media (max-width: 500px) {
-  .headline {
-    width: 90%;
-    gap: 5px;
-  }
-
-  .projectText, .projectTextEven {
-    width: 95vw;
-    height: auto;
-  }
-
-  .project, .projectEven {
-    > img {
-      max-width: 400px;
-      max-height: 250px;
-    }
-  }
-
-  .buttonContainer {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 400px) {
-  h2 {
-    font-size: 50px;
-  }
-
-  .project, .projectEven {
-    > img {
-      max-width: 350px;
-      max-height: 200px;
-    }
-  }
-}
-
-@media (max-width: 350px) {
-  .buttonContainer {
-    a {
-      font-size: 18px;
-      width: 130px;
-      height: 48px;
-    }
-  }
-}
-
-

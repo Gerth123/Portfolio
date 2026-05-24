@@ -1,136 +1,129 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { LanguageService } from '../services/language.service';
 import { Router, RouterLink } from '@angular/router';
+import { LanguageService } from '../services/language.service';
+
+type Language = 'en' | 'de';
+
+type SkillCategory = {
+  icon: string;
+  title: Record<Language, string>;
+  text: Record<Language, string>;
+  items: string[];
+};
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink],
+  imports: [NgFor, RouterLink],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss',
 })
 export class MySkillsComponent {
-  skills: { src: string; alt: string; name: string }[] = [
-    { src: '../../assets/icons/html.svg', alt: 'HTML', name: 'HTML' },
-    { src: '../../assets/icons/css.svg', alt: 'CSS', name: 'CSS' },
-    {
-      src: '../../assets/icons/javascript.svg',
-      alt: 'JavaScript',
-      name: 'JavaScript',
-    },
-    {
-      src: '../../assets/icons/typescript.svg',
-      alt: 'TypeScript',
-      name: 'TypeScript',
-    },
-    { src: '../../assets/icons/angular.svg', alt: 'Angular', name: 'Angular' },
-    {
-      src: '../../assets/icons/firebase.svg',
-      alt: 'Firebase',
-      name: 'Firebase',
-    },
-    { src: '../../assets/icons/git.svg', alt: 'Git', name: 'Git' },
-    {
-      src: '../../assets/icons/rest_api.svg',
-      alt: 'Rest Api',
-      name: 'Rest Api',
-    },
-    { src: '../../assets/icons/scrum.svg', alt: 'Scrum', name: 'Scrum' },
-    {
-      src: '../../assets/icons/material_design.svg',
-      alt: 'Material Design',
-      name: 'Material Design',
-    },
-  ];
-
-  public translations: any = {
+  public translations: Record<Language, Record<string, string>> = {
     en: {
-      headline: 'My Skills',
+      headline: 'Engineering stack',
       shortDescription:
-        'I have hands-on experience developing applications using a variety of frontend and backend technologies. My focus is on creating scalable, maintainable, and user-friendly solutions.',
-      secondHeadline: 'Looking for',
-      secondHeadlineSpan: 'another skill',
+        'My profile combines full-stack web development, productive e-commerce work and AI-supported engineering workflows. I focus on maintainable implementation, clear APIs and reliable production changes.',
+      secondHeadline: 'Useful in teams that value',
+      secondHeadlineSpan: 'structured delivery',
       secondText:
-        'Feel free to reach out. I am always eager to expand my knowledge and take on new challenges in different tech stacks.',
+        'I work best where code quality, pragmatic delivery and business context matter.',
       getInTouch: 'Get in touch',
-      continuallyLearning: 'Continually learning',
-      materialDesign: 'Material Design',
+      supportingTools: 'Supporting tools',
     },
     de: {
-      headline: 'Fähigkeiten',
+      headline: 'Engineering Stack',
       shortDescription:
-        'Ich habe praktische Erfahrung in der Entwicklung von Anwendungen mit verschiedenen Frontend- und Backend-Technologien. Mein Fokus liegt auf skalierbaren, wartbaren und benutzerfreundlichen Lösungen.',
-      secondHeadline: 'Suchen Sie nach',
-      secondHeadlineSpan: 'einer anderen Fähigkeit',
+        'Mein Profil verbindet Full-Stack-Webentwicklung, produktive E-Commerce-Arbeit und KI-gestützte Entwicklungsworkflows. Mein Fokus liegt auf wartbarer Umsetzung, klaren APIs und zuverlässigen Produktionsänderungen.',
+      secondHeadline: 'Stark in Teams mit',
+      secondHeadlineSpan: 'strukturierter Umsetzung',
       secondText:
-        'Kontaktieren Sie mich gerne. Ich bin stets offen dafür, mein Wissen zu erweitern und neue Herausforderungen mit unterschiedlichen Technologien anzunehmen.',
+        'Ich arbeite besonders stark dort, wo Codequalität, pragmatische Umsetzung und Business-Kontext zusammenkommen.',
       getInTouch: 'Kontakt aufnehmen',
-      continuallyLearning: 'Kontinuierliche Weiterbildung',
-      materialDesign: 'Material Design',
+      supportingTools: 'Ergänzende Tools',
     },
   };
 
-  public currentLanguage: 'en' | 'de' = 'en';
+  public skillCategories: SkillCategory[] = [
+    {
+      icon: '../../assets/icons/angular.svg',
+      title: {
+        en: 'Full-stack web development',
+        de: 'Full-Stack Webentwicklung',
+      },
+      text: {
+        en: 'Modern application development with structured frontend logic, clear APIs and maintainable backend services.',
+        de: 'Moderne Anwendungsentwicklung mit strukturierter Frontend-Logik, klaren APIs und wartbaren Backend-Services.',
+      },
+      items: ['Angular', 'TypeScript', 'Python', 'Django / DRF', 'REST APIs'],
+    },
+    {
+      icon: '../../assets/icons/shopware_6.svg',
+      title: {
+        en: 'Productive e-commerce systems',
+        de: 'Produktive E-Commerce-Systeme',
+      },
+      text: {
+        en: 'Work on real Shopware 6 environments, plugin adjustments and technical improvements close to business needs.',
+        de: 'Arbeit an realen Shopware-6-Umgebungen, Plugin-Anpassungen und technischen Verbesserungen nah am Business.',
+      },
+      items: ['Shopware 6', 'PHP / Symfony', 'Plugin development', 'Technical SEO'],
+    },
+    {
+      icon: '../../assets/icons/ai_assisted_coding.svg',
+      title: {
+        en: 'AI-augmented engineering',
+        de: 'AI-Augmented Engineering',
+      },
+      text: {
+        en: 'Daily use of coding agents, structured prompting and AI-supported workflows for faster technical execution.',
+        de: 'Täglicher Einsatz von Coding Agents, strukturiertem Prompting und KI-gestützten Workflows für schnellere technische Umsetzung.',
+      },
+      items: ['Claude Code', 'Codex', 'Agentic Coding', 'RAG workflows', 'LLM APIs'],
+    },
+  ];
 
-  constructor(
-    private languageService: LanguageService,
-    private router: Router
-  ) {}
-  /**
-   * Retrieves the translation for the given field based on the current language.
-   *
-   * @param {string} field - The key of the translation to retrieve.
-   * @returns {string} The translation for the given field.
-   */
+  public supportingTools = ['Git', 'Linux', 'Redis / RQ', 'Kotlin', 'Bootstrap 5', 'SCSS'];
+
+  constructor(private languageService: LanguageService, private router: Router) {}
+
   getCurrentText(field: string): string {
-    return this.translations[this.languageService.currentLanguage][field];
+    return this.translations[this.getCurrentLanguage()][field];
   }
 
-  isHovered: boolean = false;
-
-  /**
-   * Sets the isHovered flag to true, in order to show the text
-   * "I'm continually learning" and change the image of the
-   * "continually learning" skill to a different one.
-   */
-  showSpecialInterest() {
-    this.isHovered = true;
+  getCategoryTitle(category: SkillCategory): string {
+    return category.title[this.getCurrentLanguage()];
   }
 
-  /**
-   * Sets the isHovered flag to false, in order to hide the text
-   * "I'm continually learning" and change the image of the
-   * "continually learning" skill to the default one.
-   */
-  hideSpecialInterest() {
-    this.isHovered = false;
+  getCategoryText(category: SkillCategory): string {
+    return category.text[this.getCurrentLanguage()];
+  }
+
+  getCurrentLanguage(): Language {
+    return this.languageService.currentLanguage as Language;
   }
 
   async handleScroll(fragment: string) {
     const element = document.getElementById(fragment);
-    const scrollHeightPixels = this.getElementHeightById(fragment); // Das wird in Pixeln zurückgegeben
+    const scrollHeightPixels = this.getElementHeightById(fragment);
     const currentUrl = this.router.url;
 
-    // Prüfen, ob das Fragment bereits in der URL vorhanden ist
     if (currentUrl.includes(`#${fragment}`) && scrollHeightPixels !== null) {
-      // Scrollen zu der berechneten Höhe
       window.scrollTo({ top: scrollHeightPixels, behavior: 'smooth' });
     } else if (element) {
-      // Wenn das Fragment nicht in der URL ist, scrolle zu dem Element
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
-  // Höhe eines Elements ermitteln
   getElementHeightById(elementId: string): number | null {
     const element = document.getElementById(elementId);
 
     if (element) {
       const elementRect = element.getBoundingClientRect();
-      return elementRect.top + window.pageYOffset; // Höhe des Elements relativ zum Dokument
+      return elementRect.top + window.pageYOffset;
     }
 
-    return null; // Wenn das Element nicht gefunden wird
+    return null;
   }
 }
