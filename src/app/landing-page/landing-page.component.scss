@@ -293,16 +293,17 @@ h1 {
 
   .hero-intro {
     align-self: stretch;
-    min-width: 1.35rem;
-    font-size: clamp(1.34rem, 5.45vw, 1.58rem);
-    line-height: 0.78;
+    height: 100%;
+    min-width: 1.28rem;
+    font-size: clamp(1.28rem, 5.2vw, 1.5rem);
+    line-height: 0.74;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
   }
 
   .hero-intro--de,
   .hero-intro--en {
-    font-size: clamp(1.34rem, 5.45vw, 1.58rem);
+    font-size: clamp(1.28rem, 5.2vw, 1.5rem);
   }
 
   .hero-heading {
@@ -311,15 +312,30 @@ h1 {
   }
 
   h1 {
-    font-size: clamp(2.26rem, 10.9vw, 3.1rem);
+    font-size: clamp(2.16rem, 10.25vw, 2.95rem);
     line-height: 0.94;
     white-space: nowrap;
   }
 
   .hero-role {
-    font-size: clamp(1.45rem, 7.35vw, 2.08rem);
+    font-size: clamp(1.36rem, 6.85vw, 1.93rem);
     line-height: 0.98;
     white-space: nowrap;
+  }
+
+  .hero-content:has(.hero-intro--en) .hero-role {
+    font-size: clamp(1.44rem, 7.25vw, 2.03rem);
+  }
+
+  .hero-content:has(.hero-intro--de) .hero-role {
+    font-size: clamp(1.36rem, 6.85vw, 1.93rem);
+  }
+
+  .hero-button {
+    min-width: 9.65rem;
+    min-height: 3.05rem;
+    padding: 0.55rem 1.2rem;
+    font-size: clamp(0.95rem, 3.9vw, 1.05rem);
   }
 
   .hero-actions {
@@ -412,14 +428,18 @@ h1 {
   }
 
   h1 {
-    font-size: clamp(2.02rem, 10.6vw, 2.55rem);
+    font-size: clamp(1.95rem, 10.05vw, 2.38rem);
   }
 
   .hero-role {
-    font-size: clamp(1.28rem, 7.1vw, 1.7rem);
+    font-size: clamp(1.2rem, 6.65vw, 1.56rem);
+  }
+
+  .hero-content:has(.hero-intro--en) .hero-role {
+    font-size: clamp(1.3rem, 7vw, 1.68rem);
   }
 
   .hero-button {
-    min-width: 9.75rem;
+    min-width: 9.15rem;
   }
 }
