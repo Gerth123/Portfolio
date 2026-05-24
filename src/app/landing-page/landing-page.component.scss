@@ -75,7 +75,7 @@
   z-index: 5;
   transform: translate(
     clamp(-10rem, -8vw, -5.25rem),
-    clamp(-14rem, -13vw, -9rem)
+    clamp(-11.5rem, -10.5vw, -7.75rem)
   );
 }
 
@@ -221,7 +221,7 @@ h1 {
   .hero-content {
     justify-content: center;
     margin-inline: auto;
-    transform: translateY(-5.5rem);
+    transform: translateY(-4.65rem);
   }
 
   .hero-actions {
@@ -270,7 +270,7 @@ h1 {
       "actions";
     justify-items: center;
     row-gap: 0.65rem;
-    transform: translateY(-2.75rem);
+    transform: translateY(-2.25rem);
   }
 
   .hero-intro {
@@ -312,6 +312,6 @@ h1 {
   }
 
   .hero-content {
-    transform: translateY(-7rem);
+    transform: translateY(-5.85rem);
   }
 }
