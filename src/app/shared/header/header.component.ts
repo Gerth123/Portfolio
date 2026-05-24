@@ -50,14 +50,12 @@ export class HeaderComponent {
    * @returns none
    */
   toggleMenu() {
-    let responsiveLogo: any = document.getElementById('logoResponsive');
     let responsiveMenu: any = document.getElementById('responsiveMenu');
     if (responsiveMenu.classList.contains('d-none')) {
       this.fixClasses(responsiveMenu);
       this.changeCloseButton();
       setTimeout(() => {
         responsiveMenu.style.zIndex = 99;
-        responsiveLogo.classList.add('d-none');
       }, 490);
       this.responsiveMenuOpen = true;
     } else {
@@ -86,7 +84,7 @@ export class HeaderComponent {
     let responsiveMenu: any = document.getElementById('responsiveMenu');
     if (responsiveMenu) {
       responsiveMenu.classList.add('slideOutResponsive');
-      responsiveLogo.classList.remove('d-none');
+      responsiveLogo?.classList.remove('d-none');
       responsiveMenu.style.zIndex = 101;
       document.body.style.overflowY = 'auto';
       this.changeCloseButton();
@@ -175,12 +173,10 @@ export class HeaderComponent {
 
   changeLanguage(language: string) {
     if (language === 'de') {
-      this.languageService.currentLanguage = 'de';
       this.languageService.setLanguage('de');
       document.getElementById('languageEn')?.classList.remove('active');
       document.getElementById('languageDe')?.classList.add('active');
     } else {
-      this.languageService.currentLanguage = 'en';
       this.languageService.setLanguage('en');
       document.getElementById('languageEn')?.classList.add('active');
       document.getElementById('languageDe')?.classList.remove('active');

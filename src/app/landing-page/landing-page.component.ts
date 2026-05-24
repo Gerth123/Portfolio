@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { LanguageService } from '../services/language.service';
 
 @Component({
@@ -34,6 +35,7 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
 
   private resizeObserver?: ResizeObserver;
   private mutationObserver?: MutationObserver;
+  private languageChangeSubscription?: Subscription;
   private rafId = 0;
 
   constructor(private languageService: LanguageService, private router: Router, private readonly zone: NgZone) {}
@@ -70,12 +72,17 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
 
       this.scheduleHeroFit();
     });
+
+    this.languageChangeSubscription = this.languageService.languageChanges.subscribe(() => {
+      this.zone.runOutsideAngular(() => this.scheduleHeroFit());
+    });
   }
 
   ngOnDestroy(): void {
     window.removeEventListener('resize', this.scheduleHeroFit);
     this.resizeObserver?.disconnect();
     this.mutationObserver?.disconnect();
+    this.languageChangeSubscription?.unsubscribe();
 
     if (this.rafId) {
       cancelAnimationFrame(this.rafId);
