@@ -17,6 +17,8 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   @ViewChild('heroTitleStack') heroTitleStack?: ElementRef<HTMLElement>;
   @ViewChild('heroName') heroName?: ElementRef<HTMLElement>;
   @ViewChild('heroRole') heroRole?: ElementRef<HTMLElement>;
+  @ViewChild('heroProfile') heroProfile?: ElementRef<HTMLElement>;
+  @ViewChild('heroWave') heroWave?: ElementRef<HTMLElement>;
 
   public translations: any = {
     en: {
@@ -48,6 +50,8 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
         this.heroTextGroup?.nativeElement,
         this.heroTitleStack?.nativeElement,
         this.heroName?.nativeElement,
+        this.heroProfile?.nativeElement,
+        this.heroWave?.nativeElement,
       ]
         .filter(Boolean)
         .forEach((element) => this.resizeObserver?.observe(element as HTMLElement));
@@ -155,6 +159,120 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
       minPx: fitBounds.sideLabelMinPx,
       maxPx: fitBounds.sideLabelMaxPx,
     });
+
+    this.fitMobileHeroWave();
+  }
+
+  private fitMobileHeroWave(): void {
+    const wave = this.heroWave?.nativeElement;
+    const textGroup = this.heroTextGroup?.nativeElement;
+
+    if (!wave || !textGroup) {
+      return;
+    }
+
+    const isMobile = window.matchMedia('(max-width: 575.98px)').matches;
+
+    if (!isMobile) {
+      wave.style.top = '';
+      wave.style.bottom = '';
+      return;
+    }
+
+    const waveRect = wave.getBoundingClientRect();
+    const textRect = textGroup.getBoundingClientRect();
+
+    if (!waveRect.width || !waveRect.height || !textRect.width || !textRect.height) {
+      return;
+    }
+
+    const scale = waveRect.width / 1442;
+    const sampleXs = [textRect.left, textRect.left + textRect.width * 0.5, textRect.right];
+    const lowestCurveY = Math.max(
+      ...sampleXs.map((screenX) => {
+        const svgX = this.clamp((screenX - waveRect.left) / scale, 0, 1442);
+        return this.getWaveCurveY(svgX) * scale;
+      })
+    );
+    const targetCurveScreenY = textRect.top - this.getMobileWaveTextClearance();
+    const desiredTop = targetCurveScreenY - lowestCurveY;
+
+    wave.style.top = `${Math.round(desiredTop)}px`;
+    wave.style.bottom = 'auto';
+  }
+
+  private getMobileWaveTextClearance(): number {
+    const width = window.innerWidth;
+
+    if (width <= 340) {
+      return 12;
+    }
+
+    if (width <= 390) {
+      return 14;
+    }
+
+    return 16;
+  }
+
+  private getWaveCurveY(x: number): number {
+    if (x <= 569.5) {
+      return this.getCubicBezierYAtX(
+        x,
+        { x: 0, y: 421.5 },
+        { x: 236, y: 441.5 },
+        { x: 353.4, y: 434.372 },
+        { x: 569.5, y: 385 }
+      );
+    }
+
+    return this.getCubicBezierYAtX(
+      x,
+      { x: 569.5, y: 385 },
+      { x: 984, y: 290.3 },
+      { x: 1281.7, y: 152.1 },
+      { x: 1442, y: 0 }
+    );
+  }
+
+  private getCubicBezierYAtX(
+    targetX: number,
+    p0: { x: number; y: number },
+    p1: { x: number; y: number },
+    p2: { x: number; y: number },
+    p3: { x: number; y: number }
+  ): number {
+    let low = 0;
+    let high = 1;
+
+    for (let i = 0; i < 22; i++) {
+      const mid = (low + high) / 2;
+      const x = this.getCubicBezierValue(mid, p0.x, p1.x, p2.x, p3.x);
+
+      if (x < targetX) {
+        low = mid;
+      } else {
+        high = mid;
+      }
+    }
+
+    const t = (low + high) / 2;
+    return this.getCubicBezierValue(t, p0.y, p1.y, p2.y, p3.y);
+  }
+
+  private getCubicBezierValue(t: number, p0: number, p1: number, p2: number, p3: number): number {
+    const oneMinusT = 1 - t;
+
+    return (
+      oneMinusT ** 3 * p0 +
+      3 * oneMinusT ** 2 * t * p1 +
+      3 * oneMinusT * t ** 2 * p2 +
+      t ** 3 * p3
+    );
+  }
+
+  private clamp(value: number, min: number, max: number): number {
+    return Math.min(Math.max(value, min), max);
   }
 
   private getHeroFitBounds(): {
