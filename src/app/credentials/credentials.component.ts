@@ -301,6 +301,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     return this.visibleCredentialIndexes.includes(index);
   }
 
+  isCredentialInProgress(credential: Credential): boolean {
+    return credential.period.en === 'In progress';
+  }
+
   updateActiveCredential(): void {
     const track = this.credentialsTrack?.nativeElement;
 
