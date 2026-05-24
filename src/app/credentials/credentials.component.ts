@@ -1,5 +1,5 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 
 type Language = 'en' | 'de';
@@ -28,10 +28,20 @@ interface Credential {
   templateUrl: './credentials.component.html',
   styleUrl: './credentials.component.scss',
 })
-export class CredentialsComponent {
+export class CredentialsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('credentialsTrack') credentialsTrack?: ElementRef<HTMLElement>;
 
   public activeCredentialIndex = 0;
+  public activeProgressIndex = 0;
+  public progressSteps: number[] = [0];
+  public isDragging = false;
+
+  private dragStartX = 0;
+  private dragStartScrollLeft = 0;
+  private dragPointerId: number | null = null;
+  private dragMoved = false;
+  private suppressClick = false;
+  private resizeObserver?: ResizeObserver;
 
   public translations = {
     en: {
@@ -44,6 +54,8 @@ export class CredentialsComponent {
       previous: 'Previous credential',
       next: 'Next credential',
       goToCredential: 'Go to credential',
+      goToProgress: 'Go to slider section',
+      sliderProgress: 'Slider progress',
     },
     de: {
       kicker: 'Nachweise',
@@ -55,6 +67,8 @@ export class CredentialsComponent {
       previous: 'Vorheriger Nachweis',
       next: 'Nächster Nachweis',
       goToCredential: 'Zu Nachweis wechseln',
+      goToProgress: 'Zu Slider-Abschnitt',
+      sliderProgress: 'Slider-Fortschritt',
     },
   };
 
@@ -190,6 +204,26 @@ export class CredentialsComponent {
 
   constructor(private languageService: LanguageService) {}
 
+  ngAfterViewInit(): void {
+    this.refreshSliderState();
+
+    const track = this.credentialsTrack?.nativeElement;
+
+    if (track && 'ResizeObserver' in window) {
+      this.resizeObserver = new ResizeObserver(() => this.refreshSliderState());
+      this.resizeObserver.observe(track);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.resizeObserver?.disconnect();
+  }
+
+  @HostListener('window:resize')
+  onWindowResize(): void {
+    this.refreshSliderState();
+  }
+
   getCurrentText(field: keyof typeof this.translations.en): string {
     const language = this.languageService.currentLanguage as Language;
     return this.translations[language][field];
@@ -200,6 +234,10 @@ export class CredentialsComponent {
   }
 
   trackCredential(index: number): number {
+    return index;
+  }
+
+  trackProgressStep(index: number): number {
     return index;
   }
 
@@ -215,7 +253,7 @@ export class CredentialsComponent {
     const cardWidth = card?.offsetWidth ?? track.clientWidth;
 
     track.scrollBy({
-      left: direction * (cardWidth + gap),
+      left: direction * this.getStepDistance(track, cardWidth + gap),
       behavior: 'smooth',
     });
   }
@@ -231,6 +269,24 @@ export class CredentialsComponent {
     });
 
     this.activeCredentialIndex = index;
+  }
+
+  goToProgressStep(index: number): void {
+    const track = this.credentialsTrack?.nativeElement;
+
+    if (!track) {
+      return;
+    }
+
+    const maxScroll = this.getMaxScroll(track);
+    const nextScrollLeft = this.progressSteps.length <= 1 ? 0 : (maxScroll / (this.progressSteps.length - 1)) * index;
+
+    track.scrollTo({
+      left: nextScrollLeft,
+      behavior: 'smooth',
+    });
+
+    this.activeProgressIndex = index;
   }
 
   updateActiveCredential(): void {
@@ -249,10 +305,161 @@ export class CredentialsComponent {
     }, 0);
 
     this.activeCredentialIndex = nextIndex;
+    this.activeProgressIndex = this.getCurrentProgressIndex(track);
+  }
+
+  onTrackPointerDown(event: PointerEvent): void {
+    const track = this.credentialsTrack?.nativeElement;
+
+    if (!track || event.button !== 0) {
+      return;
+    }
+
+    this.dragPointerId = event.pointerId;
+    this.dragStartX = event.clientX;
+    this.dragStartScrollLeft = track.scrollLeft;
+    this.dragMoved = false;
+    this.isDragging = true;
+    track.setPointerCapture(event.pointerId);
+  }
+
+  onTrackPointerMove(event: PointerEvent): void {
+    const track = this.credentialsTrack?.nativeElement;
+
+    if (!track || this.dragPointerId !== event.pointerId) {
+      return;
+    }
+
+    const deltaX = event.clientX - this.dragStartX;
+
+    if (Math.abs(deltaX) > 4) {
+      this.dragMoved = true;
+      this.suppressClick = true;
+    }
+
+    track.scrollLeft = this.dragStartScrollLeft - deltaX;
+  }
+
+  onTrackPointerUp(event: PointerEvent): void {
+    this.finishDragging(event);
+  }
+
+  onTrackPointerCancel(event: PointerEvent): void {
+    this.finishDragging(event, false);
+  }
+
+  onTrackPointerLeave(event: PointerEvent): void {
+    if (this.dragPointerId === event.pointerId && event.buttons === 0) {
+      this.finishDragging(event);
+    }
+  }
+
+  handleTrackClick(event: MouseEvent): void {
+    if (!this.suppressClick) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    this.suppressClick = false;
+  }
+
+  onTrackKeydown(event: KeyboardEvent): void {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      this.scrollCredentials(-1);
+    }
+
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      this.scrollCredentials(1);
+    }
   }
 
   private getTrackGap(track: HTMLElement): number {
     const gap = window.getComputedStyle(track).columnGap;
     return Number.parseFloat(gap) || 0;
+  }
+
+  private finishDragging(event: PointerEvent, snap = true): void {
+    const track = this.credentialsTrack?.nativeElement;
+
+    if (!track || this.dragPointerId !== event.pointerId) {
+      return;
+    }
+
+    if (track.hasPointerCapture(event.pointerId)) {
+      track.releasePointerCapture(event.pointerId);
+    }
+
+    this.dragPointerId = null;
+    this.isDragging = false;
+
+    if (snap && this.dragMoved) {
+      this.snapToNearestSlide();
+    }
+
+    window.setTimeout(() => {
+      this.suppressClick = false;
+    }, 0);
+  }
+
+  private snapToNearestSlide(): void {
+    const track = this.credentialsTrack?.nativeElement;
+
+    if (!track) {
+      return;
+    }
+
+    const slides = Array.from(track.querySelectorAll<HTMLElement>('.credential-slide'));
+
+    if (!slides.length) {
+      return;
+    }
+
+    const closestSlide = slides.reduce((closest, slide) => {
+      const currentDistance = Math.abs(slide.offsetLeft - track.scrollLeft);
+      const closestDistance = Math.abs(closest.offsetLeft - track.scrollLeft);
+      return currentDistance < closestDistance ? slide : closest;
+    }, slides[0]);
+
+    closestSlide.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start',
+    });
+  }
+
+  private refreshSliderState(): void {
+    window.requestAnimationFrame(() => {
+      const track = this.credentialsTrack?.nativeElement;
+
+      if (!track) {
+        return;
+      }
+
+      const pageCount = Math.max(1, Math.ceil(this.getMaxScroll(track) / Math.max(track.clientWidth, 1)) + 1);
+      this.progressSteps = Array.from({ length: pageCount }, (_, index) => index);
+      this.updateActiveCredential();
+    });
+  }
+
+  private getCurrentProgressIndex(track: HTMLElement): number {
+    const maxScroll = this.getMaxScroll(track);
+
+    if (maxScroll <= 0 || this.progressSteps.length <= 1) {
+      return 0;
+    }
+
+    return Math.min(this.progressSteps.length - 1, Math.round((track.scrollLeft / maxScroll) * (this.progressSteps.length - 1)));
+  }
+
+  private getMaxScroll(track: HTMLElement): number {
+    return Math.max(0, track.scrollWidth - track.clientWidth);
+  }
+
+  private getStepDistance(track: HTMLElement, fallbackDistance: number): number {
+    const visibleSlides = Math.max(1, Math.round(track.clientWidth / Math.max(fallbackDistance, 1)));
+    return fallbackDistance * visibleSlides;
   }
 }
