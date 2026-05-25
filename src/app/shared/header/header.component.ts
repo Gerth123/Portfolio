@@ -28,7 +28,7 @@ export class HeaderComponent {
       aboutMe: 'Über mich',
       skills: 'Fähigkeiten',
       credentials: 'Qualifikationen',
-      caseStudies: 'Case Studies',
+      caseStudies: 'Projekte',
       contact: 'Kontakt',
     },
   };

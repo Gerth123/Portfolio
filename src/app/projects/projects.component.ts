@@ -39,8 +39,8 @@ export class ProjectsComponent {
       caseStudy: 'Case study',
     },
     de: {
-      headline: 'Case Studies',
-      firstSpan: 'Ausgewählte Case Studies, die zeigen, wie ich Interfaces strukturiere, Daten verarbeite, technische Einschränkungen löse und Anforderungen in nutzbare Software übersetze.',
+      headline: 'Projekte',
+      firstSpan: 'Ausgewählte Projekte, die zeigen, wie ich Interfaces strukturiere, Daten verarbeite, technische Einschränkungen löse und Anforderungen in nutzbare Software übersetze.',
       liveTest: 'Projekt öffnen',
       caseStudy: 'Case Study',
     },
