@@ -37,21 +37,21 @@ export class AboutMeComponent {
 
   public workSignals = [
     {
-      value: 'Shopware 6',
+      value: { en: 'Shopware 6', de: 'Shopware 6' },
       label: {
         en: 'Productive e-commerce systems and technical extensions',
         de: 'Produktive E-Commerce-Systeme und technische Erweiterungen',
       },
     },
     {
-      value: 'Structured',
+      value: { en: 'Structured', de: 'Strukturiert' },
       label: {
         en: 'Clear requirements, traceable decisions and maintainable delivery',
         de: 'Klare Anforderungen, nachvollziehbare Entscheidungen und wartbare Umsetzung',
       },
     },
     {
-      value: 'Full stack',
+      value: { en: 'Full stack', de: 'Full Stack' },
       label: {
         en: 'Django / DRF, Angular, APIs, Kotlin and Linux workflows',
         de: 'Django / DRF, Angular, APIs, Kotlin und Linux-Workflows',
@@ -69,5 +69,9 @@ export class AboutMeComponent {
 
   getSignalLabel(signal: { label: { en: string; de: string } }): string {
     return signal.label[this.languageService.currentLanguage as 'en' | 'de'];
+  }
+
+  getSignalValue(signal: { value: { en: string; de: string } }): string {
+    return signal.value[this.languageService.currentLanguage as 'en' | 'de'];
   }
 }

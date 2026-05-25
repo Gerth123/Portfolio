@@ -11,7 +11,7 @@
         <div class="row g-3 mt-4">
           <div class="col-md-4" *ngFor="let signal of workSignals">
             <article class="metric-card portfolio-card portfolio-card--quiet h-100">
-              <strong>{{ signal.value }}</strong>
+              <strong>{{ getSignalValue(signal) }}</strong>
               <span>{{ getSignalLabel(signal) }}</span>
             </article>
           </div>

@@ -49,7 +49,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     en: {
       headline: 'Credentials',
       intro:
-        'A curated overview of completed training, current learning tracks and credentials that support my work in AI-assisted engineering, full-stack development and modern delivery workflows.',
+        'An overview of completed training, current learning tracks and credentials that support my work in full-stack development, business systems and maintainable software delivery.',
       evidenceAvailable: 'Evidence available on request',
       openDocument: 'Open document',
       previous: 'Previous credential',
@@ -60,7 +60,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     de: {
       headline: 'Qualifikationen',
       intro:
-        'Eine kuratierte Übersicht abgeschlossener Weiterbildungen, aktueller Lernpfade und Qualifikationen, die meine Arbeit in AI-assisted Engineering, Full-Stack-Entwicklung und modernen Delivery-Workflows unterstützen.',
+        'Eine Übersicht abgeschlossener Weiterbildungen, aktueller Lernpfade und Qualifikationen, die meine Arbeit in Full-Stack-Entwicklung, Unternehmenssystemen und wartbarer Softwareumsetzung unterstützen.',
       evidenceAvailable: 'Nachweis auf Anfrage',
       openDocument: 'Nachweis öffnen',
       previous: 'Vorheriger Nachweis',
@@ -93,10 +93,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         },
       ],
       description: {
-        en: 'Advanced workflow training for coding-agent usage, context preparation, prompt structure and reliable implementation loops.',
-        de: 'Fortgeschrittenes Workflow-Training für Coding-Agent-Nutzung, Kontextvorbereitung, Prompt-Struktur und zuverlässige Implementierungszyklen.',
+        en: 'Training focused on structured use of coding tools, context preparation and controlled implementation workflows.',
+        de: 'Weiterbildung mit Fokus auf strukturierten Einsatz von Entwicklungswerkzeugen, Kontextvorbereitung und kontrollierte Umsetzung.',
       },
-      tags: ['Claude Code', 'Agent workflows', 'Prompt engineering'],
+      tags: ['Claude Code', 'Tool-assisted development', 'Prompt structure'],
     },
     {
       title: 'KI-Manager Weiterbildung',
@@ -120,10 +120,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         },
       ],
       description: {
-        en: 'Structured AI training with focus on practical use cases, process thinking and responsible integration of AI workflows into business contexts.',
-        de: 'Strukturierte KI-Weiterbildung mit Fokus auf praktische Use Cases, Prozessdenken und verantwortungsvolle Integration von KI-Workflows in Business-Kontexte.',
+        en: 'Training on practical AI use cases, process thinking and responsible integration of supporting tools into business contexts.',
+        de: 'Weiterbildung zu praktischen KI-Anwendungsfällen, Prozessdenken und verantwortungsvoller Integration unterstützender Werkzeuge in Unternehmenskontexte.',
       },
-      tags: ['AI strategy', 'Process design', 'Automation'],
+      tags: ['Process design', 'Use cases', 'Automation'],
     },
     {
       title: 'Agentic Coding Masterclass',
@@ -137,10 +137,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         },
       ],
       description: {
-        en: 'Current specialization in agentic coding workflows, task decomposition, review loops and AI-supported software delivery.',
-        de: 'Aktuelle Spezialisierung auf Agentic-Coding-Workflows, Aufgabenzerlegung, Review-Schleifen und KI-gestützte Softwareauslieferung.',
+        en: 'Current training on task decomposition, review loops and structured use of coding assistants in software development.',
+        de: 'Aktuelle Weiterbildung zu Aufgabenzerlegung, Review-Schleifen und strukturiertem Einsatz von Coding Assistants in der Softwareentwicklung.',
       },
-      tags: ['Agentic coding', 'Codex', 'Delivery workflows'],
+      tags: ['Task decomposition', 'Codex', 'Review loops'],
     },
     {
       title: 'Backend Development',
