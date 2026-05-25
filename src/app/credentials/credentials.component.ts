@@ -58,9 +58,9 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
       sliderProgress: 'Shown credentials',
     },
     de: {
-      headline: 'Nachweise',
+      headline: 'Qualifikationen',
       intro:
-        'Eine kuratierte Übersicht abgeschlossener Weiterbildungen, aktueller Lernpfade und Nachweise, die meine Arbeit in AI-assisted Engineering, Full-Stack-Entwicklung und modernen Delivery-Workflows unterstützen.',
+        'Eine kuratierte Übersicht abgeschlossener Weiterbildungen, aktueller Lernpfade und Qualifikationen, die meine Arbeit in AI-assisted Engineering, Full-Stack-Entwicklung und modernen Delivery-Workflows unterstützen.',
       evidenceAvailable: 'Nachweis auf Anfrage',
       openDocument: 'Nachweis öffnen',
       previous: 'Vorheriger Nachweis',
