@@ -22,7 +22,7 @@ type SkillCategory = {
 export class MySkillsComponent {
   public translations: Record<Language, Record<string, string>> = {
     en: {
-      headline: 'Engineering stack',
+      headline: 'Skills',
       shortDescription:
         'My profile combines full-stack web development, productive e-commerce work and AI-supported engineering workflows. I focus on maintainable implementation, clear APIs and reliable production changes.',
       secondHeadline: 'Useful in teams that value',
@@ -33,7 +33,7 @@ export class MySkillsComponent {
       supportingTools: 'Supporting tools',
     },
     de: {
-      headline: 'Engineering Stack',
+      headline: 'FÃ¤higkeiten',
       shortDescription:
         'Mein Profil verbindet Full-Stack-Webentwicklung, produktive E-Commerce-Arbeit und KI-gestützte Entwicklungsworkflows. Mein Fokus liegt auf wartbarer Umsetzung, klaren APIs und zuverlässigen Produktionsänderungen.',
       secondHeadline: 'Stark in Teams mit',

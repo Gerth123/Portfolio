@@ -33,11 +33,13 @@ interface CaseStudy {
 export class ProjectsComponent {
   public translations: any = {
     en: {
+      headline: 'Case studies',
       firstSpan: 'Selected case studies that show how I structure interfaces, handle data, solve technical constraints and translate requirements into usable software.',
       liveTest: 'Open project',
       caseStudy: 'Case study',
     },
     de: {
+      headline: 'Case Studies',
       firstSpan: 'Ausgewählte Case Studies, die zeigen, wie ich Interfaces strukturiere, Daten verarbeite, technische Einschränkungen löse und Anforderungen in nutzbare Software übersetze.',
       liveTest: 'Projekt öffnen',
       caseStudy: 'Case Study',
