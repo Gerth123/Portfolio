@@ -69,6 +69,7 @@
   grid-template-columns: auto minmax(0, max-content);
   grid-template-areas:
     "intro heading"
+    ". positioning"
     ". actions";
   column-gap: var(--hero-title-gap);
   row-gap: clamp(0.75rem, 1.2vw, 1rem);
@@ -151,6 +152,15 @@ h1 {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.hero-positioning {
+  grid-area: positioning;
+  max-width: min(100%, 38rem);
+  margin: 0.15rem 0 0.35rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(0.98rem, 1.25vw, 1.15rem);
+  line-height: 1.6;
 }
 
 .hero-footer {
@@ -282,6 +292,7 @@ h1 {
     grid-template-columns: auto minmax(0, max-content);
     grid-template-areas:
       "intro heading"
+      ". positioning"
       ". actions";
     column-gap: var(--hero-title-gap);
     justify-content: center;
@@ -348,6 +359,13 @@ h1 {
   .hero-actions {
     justify-content: center;
     justify-self: center;
+  }
+
+  .hero-positioning {
+    max-width: 22rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    text-align: left;
   }
 
   .hero-footer > .d-flex {

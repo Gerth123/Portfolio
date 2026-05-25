@@ -23,13 +23,17 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   public translations: any = {
     en: {
       rotateText: 'I am',
-      subtitle: 'Fullstack Developer',
-      buttonText: "Let's talk!",
+      subtitle: 'Full-Stack Developer',
+      positioning:
+        'I build and maintain web applications, APIs and e-commerce systems with a focus on reliable implementation and long-term maintainability.',
+      buttonText: 'Contact',
     },
     de: {
       rotateText: 'Ich bin',
-      subtitle: 'Fullstack-Entwickler',
-      buttonText: 'Reden wir!',
+      subtitle: 'Full-Stack-Entwickler',
+      positioning:
+        'Ich entwickle und betreue Webanwendungen, Schnittstellen und E-Commerce-Systeme mit Fokus auf zuverlässige Umsetzung und langfristige Wartbarkeit.',
+      buttonText: 'Kontakt',
     },
   };
 

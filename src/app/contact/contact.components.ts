@@ -18,10 +18,11 @@ export class ContactComponent {
   public translations: any = {
     en: {
       headline: 'Contact',
-      secondHeadline: 'Let us talk about modern software',
-      firstText: 'I enjoy building practical, maintainable solutions for digital products, e-commerce platforms and AI-supported development workflows. If my profile fits your technical environment, I look forward to a focused conversation.',
-      secondText: 'Need a pragmatic developer with Shopware, Angular, Python and AI workflow experience?',
-      thirdText: 'Let us connect.',
+      secondHeadline: 'Professional exchange',
+      firstText:
+        'If my profile fits your technical environment, I am open to a short conversation about requirements, existing systems or possible areas of work in software development.',
+      secondText: 'Relevant topics can include web applications, APIs, Shopware 6 systems or maintainable frontend and backend implementation.',
+      thirdText: 'I look forward to hearing from you.',
       inputPlaceholderName: 'Your name',
       errorName: 'Correct name required.',
       inputPlaceholderEmail: 'Your email',
@@ -36,10 +37,12 @@ export class ContactComponent {
     },
     de: {
       headline: 'Kontakt',
-      secondHeadline: 'Sprechen wir über moderne Software',
-      firstText: 'Ich entwickle gerne praxisnahe, wartbare Lösungen für digitale Produkte, E-Commerce-Plattformen und KI-gestützte Entwicklungsworkflows. Wenn mein Profil zu Ihrem technischen Umfeld passt, freue ich mich über ein fokussiertes Gespräch.',
-      secondText: 'Gesucht wird ein pragmatischer Entwickler mit Shopware-, Angular-, Python- und KI-Workflow-Erfahrung?',
-      thirdText: 'Dann lassen Sie uns sprechen.',
+      secondHeadline: 'Professioneller Austausch',
+      firstText:
+        'Wenn mein Profil zu Ihrem technischen Umfeld passt, freue ich mich über einen kurzen Austausch zu Anforderungen, bestehenden Systemen oder möglichen Einsatzbereichen in der Softwareentwicklung.',
+      secondText:
+        'Mögliche Themen sind Webanwendungen, Schnittstellen, Shopware-6-Systeme oder wartbare Frontend- und Backend-Umsetzung.',
+      thirdText: 'Ich freue mich auf Ihre Nachricht.',
       inputPlaceholderName: 'Ihr Name',
       errorName: 'Richtiger Name erforderlich.',
       inputPlaceholderEmail: 'Ihre E-Mail-Adresse',

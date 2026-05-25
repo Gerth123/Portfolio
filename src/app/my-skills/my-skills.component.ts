@@ -24,24 +24,24 @@ export class MySkillsComponent {
     en: {
       headline: 'Skills',
       shortDescription:
-        'My profile combines full-stack web development, productive e-commerce work and AI-supported engineering workflows. I focus on maintainable implementation, clear APIs and reliable production changes.',
-      secondHeadline: 'Useful in teams that value',
-      secondHeadlineSpan: 'structured delivery',
+        'My technical profile combines backend development, Angular frontends, Shopware 6 systems and selected Android components. I prefer clear interfaces, maintainable code and changes that can be operated reliably.',
+      secondHeadline: 'Working style for',
+      secondHeadlineSpan: 'business software',
       secondText:
-        'I work best where code quality, pragmatic delivery and business context matter.',
-      getInTouch: 'Get in touch',
+        'I work well in teams that value clear structure, pragmatic decisions and software that remains understandable over time.',
+      getInTouch: 'Contact',
       supportingTools: 'Supporting tools',
     },
     de: {
       headline: 'Fähigkeiten',
       shortDescription:
-        'Mein Profil verbindet Full-Stack-Webentwicklung, produktive E-Commerce-Arbeit und KI-gestützte Entwicklungsworkflows. Mein Fokus liegt auf wartbarer Umsetzung, klaren APIs und zuverlässigen Produktionsänderungen.',
-      secondHeadline: 'Stark in Teams mit',
-      secondHeadlineSpan: 'strukturierter Umsetzung',
+        'Mein technisches Profil verbindet Backend-Entwicklung, Angular-Frontends, Shopware-6-Systeme und ausgewählte Android-Komponenten. Wichtig sind mir klare Schnittstellen, wartbarer Code und Änderungen, die zuverlässig betrieben werden können.',
+      secondHeadline: 'Arbeitsweise für',
+      secondHeadlineSpan: 'Unternehmenssoftware',
       secondText:
-        'Ich arbeite besonders stark dort, wo Codequalität, pragmatische Umsetzung und Business-Kontext zusammenkommen.',
-      getInTouch: 'Kontakt aufnehmen',
-      supportingTools: 'Ergänzende Tools',
+        'Ich arbeite gut in Teams, in denen klare Strukturen, pragmatische Entscheidungen und langfristig verständliche Software wichtig sind.',
+      getInTouch: 'Kontakt',
+      supportingTools: 'Weitere Werkzeuge',
     },
   };
 
@@ -49,42 +49,42 @@ export class MySkillsComponent {
     {
       icon: '../../assets/icons/angular.svg',
       title: {
-        en: 'Full-stack web development',
-        de: 'Full-Stack Webentwicklung',
+        en: 'Backend and frontend',
+        de: 'Backend und Frontend',
       },
       text: {
-        en: 'Modern application development with structured frontend logic, clear APIs and maintainable backend services.',
-        de: 'Moderne Anwendungsentwicklung mit strukturierter Frontend-Logik, klaren APIs und wartbaren Backend-Services.',
+        en: 'Application development with structured frontend logic, REST APIs and maintainable backend services.',
+        de: 'Anwendungsentwicklung mit strukturierter Frontend-Logik, REST-Schnittstellen und wartbaren Backend-Services.',
       },
-      items: ['Angular', 'TypeScript', 'Python', 'Django / DRF', 'REST APIs'],
+      items: ['Python', 'Django', 'Django REST Framework', 'Angular', 'TypeScript'],
     },
     {
       icon: '../../assets/icons/shopware_6.svg',
       title: {
-        en: 'Productive e-commerce systems',
-        de: 'Produktive E-Commerce-Systeme',
+        en: 'E-commerce and business systems',
+        de: 'E-Commerce und Unternehmenssysteme',
       },
       text: {
-        en: 'Work on real Shopware 6 environments, plugin adjustments and technical improvements close to business needs.',
-        de: 'Arbeit an realen Shopware-6-Umgebungen, Plugin-Anpassungen und technischen Verbesserungen nah am Business.',
+        en: 'Work on productive Shopware 6 environments, PHP / Symfony-based extensions and technical improvements close to operational needs.',
+        de: 'Arbeit an produktiven Shopware-6-Umgebungen, PHP-/Symfony-basierten Erweiterungen und technischen Verbesserungen nah am Betrieb.',
       },
-      items: ['Shopware 6', 'PHP / Symfony', 'Plugin development', 'Technical SEO'],
+      items: ['Shopware 6', 'PHP', 'Symfony', 'Plugin adjustments', 'Technical SEO'],
     },
     {
       icon: '../../assets/icons/ai_assisted_coding.svg',
       title: {
-        en: 'AI-augmented engineering',
-        de: 'AI-Augmented Engineering',
+        en: 'Tools and delivery',
+        de: 'Werkzeuge und Umsetzung',
       },
       text: {
-        en: 'Daily use of coding agents, structured prompting and AI-supported workflows for faster technical execution.',
-        de: 'Täglicher Einsatz von Coding Agents, strukturiertem Prompting und KI-gestützten Workflows für schnellere technische Umsetzung.',
+        en: 'Use of Linux, Git and AI-assisted development tools for research, code analysis, refactoring and structured implementation.',
+        de: 'Einsatz von Linux, Git und KI-gestützten Entwicklungswerkzeugen für Recherche, Codeanalyse, Refactoring und strukturierte Umsetzung.',
       },
-      items: ['Claude Code', 'Codex', 'Agentic Coding', 'RAG workflows', 'LLM APIs'],
+      items: ['REST APIs', 'Linux', 'Git', 'Kotlin', 'Redis / RQ', 'AI-assisted development'],
     },
   ];
 
-  public supportingTools = ['Git', 'Linux', 'Redis / RQ', 'Kotlin', 'Bootstrap 5', 'SCSS'];
+  public supportingTools = ['Bootstrap 5', 'SCSS', 'JavaScript', 'HTML', 'Firebase', 'Android'];
 
   constructor(private languageService: LanguageService, private router: Router) {}
 
