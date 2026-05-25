@@ -33,7 +33,7 @@ export class MySkillsComponent {
       supportingTools: 'Supporting tools',
     },
     de: {
-      headline: 'FÃ¤higkeiten',
+      headline: 'Fähigkeiten',
       shortDescription:
         'Mein Profil verbindet Full-Stack-Webentwicklung, produktive E-Commerce-Arbeit und KI-gestützte Entwicklungsworkflows. Mein Fokus liegt auf wartbarer Umsetzung, klaren APIs und zuverlässigen Produktionsänderungen.',
       secondHeadline: 'Stark in Teams mit',

@@ -47,7 +47,6 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
 
   public translations = {
     en: {
-      kicker: 'Credentials',
       headline: 'Credentials',
       intro:
         'A curated overview of completed training, current learning tracks and credentials that support my work in AI-assisted engineering, full-stack development and modern delivery workflows.',
@@ -59,7 +58,6 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
       sliderProgress: 'Shown credentials',
     },
     de: {
-      kicker: 'Nachweise',
       headline: 'Nachweise',
       intro:
         'Eine kuratierte Übersicht abgeschlossener Weiterbildungen, aktueller Lernpfade und Nachweise, die meine Arbeit in AI-assisted Engineering, Full-Stack-Entwicklung und modernen Delivery-Workflows unterstützen.',
