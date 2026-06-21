@@ -23,13 +23,13 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   public translations: any = {
     en: {
       rotateText: 'I am',
-      subtitle: 'Fullstack Developer',
-      buttonText: "Let's talk!",
+      subtitle: 'Full-Stack Developer',
+      buttonText: 'Contact',
     },
     de: {
       rotateText: 'Ich bin',
-      subtitle: 'Fullstack-Entwickler',
-      buttonText: 'Reden wir!',
+      subtitle: 'Full-Stack-Entwickler',
+      buttonText: 'Kontakt',
     },
   };
 

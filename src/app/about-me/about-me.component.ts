@@ -13,37 +13,45 @@ export class AboutMeComponent {
   public translations: any = {
     en: {
       headline: 'About me',
-      shortDescription: 'I am Robin, a full-stack developer working on productive e-commerce systems at ABC Design. My daily work connects Shopware 6, plugin customization, REST-based features, selected Kotlin app updates and AI-assisted delivery workflows.',
-      location: 'Production-oriented development with clear ownership, traceable decisions and a practical eye for maintainability.',
-      interest: 'AI-assisted engineering is part of my normal workflow: I use coding agents, prompt structure and automation to move faster without losing technical control.',
-      puzzle: 'I translate business requirements into concrete technical steps, from Shopware plugin changes and API integrations to frontend features and technical SEO improvements.',
+      shortDescription:
+        'I am a full-stack developer with hands-on experience in productive business systems. My current work includes Shopware 6, backend logic, REST APIs, Angular frontends and selected Kotlin adjustments for Android.',
+      location:
+        'I focus on clear, maintainable implementation and technical decisions that remain understandable during ongoing operation.',
+      interest:
+        'I work in a structured way, clarify requirements carefully and keep effort, value and risk visible throughout implementation.',
+      puzzle:
+        'AI-assisted development tools support research, code analysis and refactoring, but the work remains driven by engineering judgement and technical control.',
     },
     de: {
       headline: 'Über mich',
-      shortDescription: 'Ich bin Robin, Full-Stack-Entwickler mit Praxiserfahrung in produktiven E-Commerce-Systemen bei ABC Design. Meine tägliche Arbeit verbindet Shopware 6, Plugin-Anpassungen, REST-basierte Features, ausgewählte Kotlin-App-Updates und KI-gestützte Delivery-Workflows.',
-      location: 'Produktionsnahe Entwicklung mit klarer Verantwortung, nachvollziehbaren Entscheidungen und Blick für Wartbarkeit.',
-      interest: 'AI-assisted Engineering ist Teil meines normalen Workflows: Ich nutze Coding Agents, Prompt-Struktur und Automatisierung, um schneller zu liefern, ohne technische Kontrolle zu verlieren.',
-      puzzle: 'Ich übersetze Business-Anforderungen in konkrete technische Schritte, von Shopware-Plugin-Änderungen und API-Integrationen bis zu Frontend-Features und Technical SEO.',
+      shortDescription:
+        'Ich bin Full-Stack-Entwickler mit praktischer Erfahrung in produktiven Unternehmenssystemen. In meiner aktuellen Arbeit beschäftige ich mich unter anderem mit Shopware 6, Backend-Logik, REST-Schnittstellen, Angular-Frontends und ausgewählten Kotlin-Anpassungen für Android.',
+      location:
+        'Mein Schwerpunkt liegt auf klarer, wartbarer Umsetzung und technischen Entscheidungen, die im laufenden Betrieb nachvollziehbar bleiben.',
+      interest:
+        'Ich arbeite strukturiert, kläre Anforderungen sorgfältig und behalte Aufwand, Nutzen und Risiken während der Umsetzung im Blick.',
+      puzzle:
+        'KI-gestützte Entwicklungswerkzeuge nutze ich unterstützend für Recherche, Codeanalyse und Refactoring. Die technische Verantwortung bleibt dabei klar beim Entwickler.',
     },
   };
 
   public workSignals = [
     {
-      value: 'Shopware 6',
+      value: { en: 'Shopware 6', de: 'Shopware 6' },
       label: {
-        en: 'Productive e-commerce systems and plugin work',
-        de: 'Produktive E-Commerce-Systeme und Plugin-Arbeit',
+        en: 'Productive e-commerce systems and technical extensions',
+        de: 'Produktive E-Commerce-Systeme und technische Erweiterungen',
       },
     },
     {
-      value: 'AI-first',
+      value: { en: 'Structured', de: 'Strukturiert' },
       label: {
-        en: 'Claude Code, Codex, agentic coding and automation',
-        de: 'Claude Code, Codex, Agentic Coding und Automatisierung',
+        en: 'Clear requirements, traceable decisions and maintainable delivery',
+        de: 'Klare Anforderungen, nachvollziehbare Entscheidungen und wartbare Umsetzung',
       },
     },
     {
-      value: 'Full stack',
+      value: { en: 'Full stack', de: 'Full Stack' },
       label: {
         en: 'Django / DRF, Angular, APIs, Kotlin and Linux workflows',
         de: 'Django / DRF, Angular, APIs, Kotlin und Linux-Workflows',
@@ -61,5 +69,9 @@ export class AboutMeComponent {
 
   getSignalLabel(signal: { label: { en: string; de: string } }): string {
     return signal.label[this.languageService.currentLanguage as 'en' | 'de'];
+  }
+
+  getSignalValue(signal: { value: { en: string; de: string } }): string {
+    return signal.value[this.languageService.currentLanguage as 'en' | 'de'];
   }
 }

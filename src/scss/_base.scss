@@ -50,8 +50,8 @@
   --portfolio-green: #70e61c;
   --portfolio-cyan: #62dff5;
   --portfolio-header-height: 88px;
-  --portfolio-section-space: clamp(5rem, 9vw, 8rem);
-  --portfolio-section-space-sm: clamp(3.75rem, 7vw, 5.75rem);
+  --portfolio-section-space: clamp(3.75rem, 6.5vw, 6rem);
+  --portfolio-section-space-sm: clamp(3rem, 5.5vw, 4.75rem);
 }
 
 html {
@@ -86,7 +86,7 @@ img {
 @media (max-width: 767.98px) {
   :root {
     --portfolio-header-height: 72px;
-    --portfolio-section-space: clamp(4rem, 16vw, 5.5rem);
+    --portfolio-section-space: clamp(3.25rem, 12vw, 4.5rem);
   }
 }
 
