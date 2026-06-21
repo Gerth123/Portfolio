@@ -154,6 +154,11 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
           url: '../../assets/certificates/Backend%20Zertifikat%20Robin%20Gerth.pdf',
         },
         {
+          label: { en: 'Verify', de: 'Bestätigung' },
+          url: 'https://developerakademie.com/certificate/75960093535851/',
+          hideOnMobile: true,
+        },
+        {
           label: { en: 'Website', de: 'Webseite' },
           url: 'https://developerakademie.com/',
         },
@@ -174,6 +179,11 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         {
           label: { en: 'PDF', de: 'PDF' },
           url: '../../assets/certificates/Frontend%20Zertifikat%20Robin%20Gerth.pdf',
+        },
+        {
+          label: { en: 'Verify', de: 'Bestätigung' },
+          url: 'https://developerakademie.com/certificate/85973462034596/',
+          hideOnMobile: true,
         },
         {
           label: { en: 'Website', de: 'Webseite' },
