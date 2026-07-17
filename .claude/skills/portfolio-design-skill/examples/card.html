@@ -1,0 +1,55 @@
+<article class="portfolio-card portfolio-example-card">
+  <div class="portfolio-example-card__body">
+    <span class="portfolio-eyebrow">Case study</span>
+    <h3>Project title</h3>
+    <p class="section-copy">
+      Compact description with muted text and enough line-height for scanning.
+    </p>
+    <div class="portfolio-example-card__tags">
+      <span class="tech-pill">Angular</span>
+      <span class="tech-pill">SCSS</span>
+      <span class="tech-pill">REST API</span>
+    </div>
+  </div>
+</article>
+
+<style>
+  .portfolio-example-card {
+    border: 1px solid var(--portfolio-card-border);
+    border-radius: var(--portfolio-radius-card);
+    background: var(--portfolio-card);
+    box-shadow: var(--portfolio-shadow-card);
+    overflow: hidden;
+    transition:
+      border-color var(--portfolio-motion-card),
+      box-shadow var(--portfolio-motion-card),
+      transform var(--portfolio-motion-card);
+  }
+
+  .portfolio-example-card:hover {
+    border-color: rgba(112, 230, 28, 0.28);
+    box-shadow: var(--portfolio-shadow-card-hover);
+    transform: translateY(-0.18rem);
+  }
+
+  .portfolio-example-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: clamp(1.15rem, 2.4vw, 1.5rem);
+  }
+
+  .portfolio-example-card__body h3 {
+    margin: 0;
+    color: var(--portfolio-text);
+    font-size: var(--portfolio-type-card-title);
+    font-weight: var(--portfolio-font-weight-bold);
+    line-height: 1.18;
+  }
+
+  .portfolio-example-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>
