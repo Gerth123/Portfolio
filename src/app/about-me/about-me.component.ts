@@ -15,6 +15,8 @@ export class AboutMeComponent {
       headline: 'About me',
       shortDescription:
         'I am a full-stack developer with hands-on experience in productive business systems. My current work includes Shopware 6, backend logic, REST APIs, Angular frontends and selected Kotlin adjustments for Android.',
+      consultingNote:
+        'Alongside this work, I additionally support small and medium-sized businesses with AI feasibility workshops, AI-assisted automation, Shopware consulting and SEO/GEO audits.',
       location:
         'I focus on clear, maintainable implementation and technical decisions that remain understandable during ongoing operation.',
       interest:
@@ -26,6 +28,8 @@ export class AboutMeComponent {
       headline: 'Über mich',
       shortDescription:
         'Ich bin Full-Stack-Entwickler mit praktischer Erfahrung in produktiven Unternehmenssystemen. In meiner aktuellen Arbeit beschäftige ich mich unter anderem mit Shopware 6, Backend-Logik, REST-Schnittstellen, Angular-Frontends und ausgewählten Kotlin-Anpassungen für Android.',
+      consultingNote:
+        'Neben dieser Tätigkeit unterstütze ich zusätzlich kleine und mittlere Unternehmen mit KI-Machbarkeits-Workshops, KI-gestützter Automatisierung, Shopware-Beratung und SEO/GEO-Audits.',
       location:
         'Mein Schwerpunkt liegt auf klarer, wartbarer Umsetzung und technischen Entscheidungen, die im laufenden Betrieb nachvollziehbar bleiben.',
       interest:
