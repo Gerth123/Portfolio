@@ -1,0 +1,35 @@
+# Robin Gerth
+
+> Full-stack developer (Angular, Django REST Framework, Shopware 6, REST APIs). Also offers AI feasibility workshops, AI-assisted automation, Shopware consulting and SEO/GEO audits for small and medium-sized businesses. Site available in English and German (language toggle in the header, no separate URLs yet).
+
+## Role & focus
+- Full-stack developer with hands-on experience in productive business systems: Shopware 6, backend logic, REST APIs, Angular frontends, selected Kotlin adjustments for Android.
+- Works in a structured way: clear requirements, traceable decisions, maintainable delivery.
+- Uses AI-assisted development tools for research, code analysis and refactoring; engineering judgement and technical control stay with the developer.
+
+## Consulting & automation offers
+- **AI feasibility workshops** – structured workshops for SMEs to clarify where AI/automation projects are realistic and what effort they involve.
+- **AI-assisted automation** – implementation of automations such as n8n-based RAG chatbots and workflow automation for recurring tasks.
+- **Shopware consulting** – conversion optimization and technical development for Shopware 6 operators.
+- **SEO/GEO audits** – Search Engine + Generative Engine Optimization audits for online shops and SMEs, with prioritized optimization potential.
+
+## Tech stack
+Python, Django, Django REST Framework, Angular, TypeScript, Shopware 6, PHP, Symfony, Kotlin, REST APIs, Linux, Git.
+
+## Case studies
+- ABC Design – Shopware 6 / PHP / Symfony / REST APIs / Kotlin Android app work on a productive e-commerce system.
+- Join – Kanban task tool (JavaScript, Firebase).
+- DaBubble – Messenger application (Angular, TypeScript, Firebase).
+- Videoflix – Full-stack streaming platform (Python, Django REST Framework, Angular).
+- El Pollo Loco – Browser game (JavaScript, Canvas, OOP).
+
+## Contact
+- Website: https://robin-gerth.de/
+- Email: kontakt@robin-gerth.de
+- GitHub: https://github.com/Gerth123
+- LinkedIn: https://linkedin.com/in/robin-gerth-47100031b/
+
+## Pages
+- Homepage (About, Skills, Consulting, Credentials, Case studies, Contact): https://robin-gerth.de/
+- Privacy Policy: https://robin-gerth.de/#/privacy-policy
+- Legal Notice / Impressum: https://robin-gerth.de/#/legal-notice
