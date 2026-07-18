@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
@@ -21,14 +21,7 @@ declare var AOS: any;
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
-
-  private scrollableRoutes: string[] = [
-    'privacyPolicy',
-    'legalNotice',
-    'privacyPolicyGerman',
-    'legalNoticeGerman',
-  ];
+  private scrollableRoutes: string[] = ['privacyPolicy', 'legalNotice'];
   constructor(private router: Router) {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
@@ -44,22 +37,7 @@ export class AppComponent implements AfterViewInit {
         }
       });
   }
-  /**
-   * Toggles overflow on <body> and <html> elements depending on the visibility of the responsive menu.
-   * This is done to prevent the user from scrolling while the responsive menu is open.
-   * The function runs every second via setInterval.
-   */
   ngAfterViewInit() {
-    setInterval(() => {
-      if (this.headerComponent.responsiveMenuOpen) {
-        document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
-      }
-    }, 400);
-
     AOS.init();
   }
 }

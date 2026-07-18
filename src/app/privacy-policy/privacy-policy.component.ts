@@ -15,18 +15,11 @@ import { RouterLink } from '@angular/router';
 export class PrivacyPolicyComponent {
   language: string = 'en';
 
-
-  /**
-   * Checks the current language and sets the `language` property accordingly.
-   * Then, every 100ms, it checks if the language has changed and updates the
-   * `language` property if it has.
-   * @param languageService The service that holds the current language.
-   */
   constructor(private languageService: LanguageService) {
     this.checkLanguage();
-    setInterval(() => {
-      this.language = this.languageService.currentLanguage;
-    }, 100);
+    this.languageService.languageChanges.subscribe((language) => {
+      this.language = language;
+    });
   }
 
   /**

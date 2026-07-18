@@ -15,18 +15,11 @@ import { RouterLink } from '@angular/router';
 export class LegalNoticeComponent {
   language: string = 'en';
 
-  /**
-   * The constructor for the component.
-   * It first checks the language from the languageService and stores it in the
-   * language variable. Then it sets an interval that checks every 100ms if the
-   * language in the languageService has changed and updates the language variable
-   * if it has.
-   */
   constructor(private languageService: LanguageService) {
     this.checkLanguage();
-    setInterval(() => {
-      this.language = this.languageService.currentLanguage;
-    }, 100);
+    this.languageService.languageChanges.subscribe((language) => {
+      this.language = language;
+    });
   }
 
   /**
