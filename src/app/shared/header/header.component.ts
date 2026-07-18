@@ -20,6 +20,7 @@ export class HeaderComponent {
     en: {
       aboutMe: 'About me',
       skills: 'Skills',
+      consulting: 'Consulting',
       credentials: 'Credentials',
       caseStudies: 'Case studies',
       contact: 'Contact',
@@ -27,6 +28,7 @@ export class HeaderComponent {
     de: {
       aboutMe: 'Über mich',
       skills: 'Fähigkeiten',
+      consulting: 'Beratung',
       credentials: 'Qualifikationen',
       caseStudies: 'Projekte',
       contact: 'Kontakt',
@@ -58,9 +60,18 @@ export class HeaderComponent {
         responsiveMenu.style.zIndex = 99;
       }, 490);
       this.responsiveMenuOpen = true;
+      this.setBodyScrollLock(true);
     } else {
       this.closeMenu();
     }
+  }
+
+  /**
+   * Locks or unlocks page scrolling on <body> and <html> while the responsive menu is open.
+   */
+  setBodyScrollLock(locked: boolean) {
+    document.body.style.overflow = locked ? 'hidden' : '';
+    document.documentElement.style.overflow = locked ? 'hidden' : '';
   }
 
   /**
@@ -86,10 +97,10 @@ export class HeaderComponent {
       responsiveMenu.classList.add('slideOutResponsive');
       responsiveLogo?.classList.remove('d-none');
       responsiveMenu.style.zIndex = 101;
-      document.body.style.overflowY = 'auto';
       this.changeCloseButton();
       this.timeoutCloseMenu(responsiveMenu);
       this.responsiveMenuOpen = false;
+      this.setBodyScrollLock(false);
     }
   }
 

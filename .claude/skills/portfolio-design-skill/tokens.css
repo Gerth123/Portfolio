@@ -1,0 +1,82 @@
+:root {
+  --portfolio-bg: #141d2f;
+  --portfolio-bg-soft: #1b273d;
+  --portfolio-bg-elevated: #202d46;
+  --portfolio-bg-end: #101827;
+
+  --portfolio-text: #ffffff;
+  --portfolio-text-soft: rgba(255, 255, 255, 0.9);
+  --portfolio-text-nav: rgba(255, 255, 255, 0.86);
+  --portfolio-text-subtle: rgba(255, 255, 255, 0.82);
+  --portfolio-text-body-muted: rgba(255, 255, 255, 0.78);
+  --portfolio-text-muted: rgba(255, 255, 255, 0.76);
+  --portfolio-text-dim: rgba(255, 255, 255, 0.72);
+  --portfolio-text-quiet: rgba(255, 255, 255, 0.68);
+  --portfolio-text-low: rgba(255, 255, 255, 0.58);
+
+  --portfolio-purple: #9747ff;
+  --portfolio-green: #70e61c;
+  --portfolio-cyan: #62dff5;
+  --portfolio-danger-border: #ff5b6e;
+  --portfolio-danger-text: #ff6b7a;
+  --portfolio-disabled: #6c757d;
+
+  --portfolio-card: rgba(255, 255, 255, 0.052);
+  --portfolio-card-quiet: rgba(255, 255, 255, 0.035);
+  --portfolio-card-soft: rgba(255, 255, 255, 0.045);
+  --portfolio-card-wash: rgba(255, 255, 255, 0.025);
+  --portfolio-card-border: rgba(255, 255, 255, 0.12);
+  --portfolio-border-soft: rgba(255, 255, 255, 0.08);
+  --portfolio-border-strong: rgba(255, 255, 255, 0.14);
+
+  --portfolio-green-border: rgba(112, 230, 28, 0.32);
+  --portfolio-green-border-hover: rgba(112, 230, 28, 0.55);
+  --portfolio-green-wash: rgba(112, 230, 28, 0.08);
+  --portfolio-green-wash-hover: rgba(112, 230, 28, 0.13);
+  --portfolio-focus-ring: rgba(112, 230, 28, 0.12);
+  --portfolio-focus-ring-strong: rgba(112, 230, 28, 0.14);
+  --portfolio-focus-outline: rgba(112, 230, 28, 0.45);
+
+  --portfolio-font-family-sans: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --portfolio-font-weight-light: 300;
+  --portfolio-font-weight-regular: 400;
+  --portfolio-font-weight-medium: 500;
+  --portfolio-font-weight-semibold: 600;
+  --portfolio-font-weight-bold: 700;
+  --portfolio-font-weight-extrabold: 800;
+
+  --portfolio-type-section-kicker: 0.82rem;
+  --portfolio-type-section-title: clamp(2.35rem, 6vw, 4.75rem);
+  --portfolio-type-hero-title: clamp(3.4rem, 6.1vw, 5.35rem);
+  --portfolio-type-hero-role: clamp(2rem, 3.75vw, 3.25rem);
+  --portfolio-type-button: clamp(1rem, 1.4vw, 1.12rem);
+  --portfolio-type-card-title: clamp(1.22rem, 1.5vw, 1.45rem);
+  --portfolio-type-project-title: clamp(2rem, 4vw, 3rem);
+
+  --portfolio-header-height: 88px;
+  --portfolio-section-space: clamp(3.75rem, 6.5vw, 6rem);
+  --portfolio-section-space-sm: clamp(3rem, 5.5vw, 4.75rem);
+
+  --portfolio-radius-base: 0.625rem;
+  --portfolio-radius-card: 0.75rem;
+  --portfolio-radius-icon: 0.7rem;
+  --portfolio-radius-pill: 999px;
+  --portfolio-radius-round: 50%;
+
+  --portfolio-shadow-card: 0 1rem 3rem rgba(0, 0, 0, 0.16);
+  --portfolio-shadow-button: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.18);
+  --portfolio-shadow-control: 0 0.75rem 1.8rem rgba(0, 0, 0, 0.22);
+  --portfolio-shadow-control-hover: 0 1rem 2.3rem rgba(0, 0, 0, 0.28);
+  --portfolio-shadow-card-hover: 0 1.1rem 2.6rem rgba(0, 0, 0, 0.24);
+
+  --portfolio-motion-fast: 0.2s ease;
+  --portfolio-motion-card: 0.22s ease;
+  --portfolio-motion-menu: 0.35s ease forwards;
+}
+
+@media (max-width: 767.98px) {
+  :root {
+    --portfolio-header-height: 72px;
+    --portfolio-section-space: clamp(3.25rem, 12vw, 4.5rem);
+  }
+}

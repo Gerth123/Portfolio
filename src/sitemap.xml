@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The app currently uses Angular's hash-based routing (HashLocationStrategy),
+  so /privacy-policy and /legal-notice are not distinct, directly fetchable
+  server URLs yet (the browser never sends the #fragment to the server).
+  Only the homepage is listed until path-based routing / prerendering ships.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://robin-gerth.de/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

@@ -70,6 +70,15 @@
           <a
             class="nav-link"
             [routerLink]="['/']"
+            [fragment]="'consulting'"
+            (click)="handleScroll('consulting')"
+            >{{ getCurrentText("consulting") }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/']"
             [fragment]="'credentials'"
             (click)="handleScroll('credentials')"
             >{{ getCurrentText("credentials") }}</a
@@ -120,6 +129,12 @@
         [fragment]="'mySkills'"
         (click)="closeMenu(); handleScroll('mySkills')"
         >{{ getCurrentText("skills") }}</a
+      >
+      <a
+        [routerLink]="['/']"
+        [fragment]="'consulting'"
+        (click)="closeMenu(); handleScroll('consulting')"
+        >{{ getCurrentText("consulting") }}</a
       >
       <a
         [routerLink]="['/']"

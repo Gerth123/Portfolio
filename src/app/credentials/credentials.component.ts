@@ -128,17 +128,27 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     {
       title: 'Agentic Coding Masterclass',
       issuer: 'Everlast',
-      period: { en: 'In progress', de: 'In Arbeit' },
-      type: { en: 'Training', de: 'Weiterbildung' },
+      period: { en: 'Completed', de: 'Abgeschlossen' },
+      type: { en: 'Certificate', de: 'Zertifikat' },
+      fileType: 'PDF',
       links: [
+        {
+          label: { en: 'PDF', de: 'PDF' },
+          url: '../../assets/certificates/Zertifikat_Agentic_Coding_Masterclass.pdf',
+        },
+        {
+          label: { en: 'Verify', de: 'Bestätigung' },
+          url: 'https://zertifizierung.kiberatung.de/verify/ef04f14c-3162-486f-9cee-1b40c74e510a',
+          hideOnMobile: true,
+        },
         {
           label: { en: 'Website', de: 'Webseite' },
           url: 'https://kilernen.de/',
         },
       ],
       description: {
-        en: 'Current training on task decomposition, review loops and structured use of coding assistants in software development.',
-        de: 'Aktuelle Weiterbildung zu Aufgabenzerlegung, Review-Schleifen und strukturiertem Einsatz von Coding Assistants in der Softwareentwicklung.',
+        en: 'Training on task decomposition, review loops and structured use of coding assistants in software development.',
+        de: 'Weiterbildung zu Aufgabenzerlegung, Review-Schleifen und strukturiertem Einsatz von Coding Assistants in der Softwareentwicklung.',
       },
       tags: ['Task decomposition', 'Codex', 'Review loops'],
     },

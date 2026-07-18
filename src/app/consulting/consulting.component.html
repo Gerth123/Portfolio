@@ -1,0 +1,33 @@
+<section id="consulting" class="consulting-section section-shell">
+  <div class="container-xxl">
+    <div class="d-flex align-items-center gap-3 mb-4" data-aos="fade-up">
+      <span class="accent-line accent-line--to-left"></span>
+      <h2 class="section-title">{{ getCurrentText("headline") }}</h2>
+    </div>
+    <p class="section-copy lead mt-4 consulting-intro" data-aos="fade-up">
+      {{ getCurrentText("shortDescription") }}
+    </p>
+
+    <div class="row g-3 mt-2">
+      <div class="col-md-6" *ngFor="let offer of offers" data-aos="fade-up">
+        <article class="portfolio-card consulting-card h-100">
+          <div class="consulting-card-icon" aria-hidden="true">
+            <img [src]="offer.icon" [alt]="getOfferTitle(offer)" />
+          </div>
+          <div class="consulting-card-body">
+            <h3>{{ getOfferTitle(offer) }}</h3>
+            <p>{{ getOfferText(offer) }}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <a
+      [routerLink]="['/']"
+      [fragment]="'contact'"
+      class="btn btn-portfolio consulting-cta mt-4"
+      (click)="handleScroll('contact')"
+      >{{ getCurrentText("ctaText") }}</a
+    >
+  </div>
+</section>

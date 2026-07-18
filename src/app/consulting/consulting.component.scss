@@ -1,0 +1,76 @@
+.consulting-section {
+  scroll-margin-top: calc(var(--portfolio-header-height) + 1.25rem);
+}
+
+.consulting-intro {
+  max-width: 46rem;
+}
+
+.consulting-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: flex-start;
+  border-radius: 0.75rem;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    border-color: rgba(112, 230, 28, 0.55);
+    background-color: rgba(255, 255, 255, 0.045);
+    transform: translateY(-0.15rem);
+  }
+}
+
+.consulting-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 1px solid rgba(112, 230, 28, 0.26);
+  border-radius: 0.7rem;
+  background-color: rgba(112, 230, 28, 0.08);
+
+  img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+  }
+}
+
+.consulting-card-body {
+  min-width: 0;
+
+  h3 {
+    margin: 0 0 0.45rem;
+    color: #fff;
+    font-size: clamp(1.1rem, 1.55vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+}
+
+.consulting-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 767.98px) {
+  .consulting-card {
+    grid-template-columns: 1fr;
+  }
+
+  .consulting-card-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}

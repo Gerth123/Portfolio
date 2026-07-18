@@ -4,6 +4,21 @@ import { PrivacyPolicyGermanComponent } from '../privacy-policy-german/privacy-p
 import { LanguageService } from '../services/language.service';
 import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { SeoService } from '../services/seo.service';
+import { Locale } from '../services/structured-data';
+
+const PAGE_URL = 'https://robin-gerth.de/#/privacy-policy';
+
+const META: Record<Locale, { title: string; description: string }> = {
+  en: {
+    title: 'Privacy Policy – Robin Gerth',
+    description: 'Privacy policy for robin-gerth.de, covering data collection, cookies and contact form processing.',
+  },
+  de: {
+    title: 'Datenschutzerklärung – Robin Gerth',
+    description: 'Datenschutzerklärung für robin-gerth.de zu Datenerhebung, Cookies und der Verarbeitung von Kontaktformular-Anfragen.',
+  },
+};
 
 @Component({
   selector: 'app-privacy-policy',
@@ -15,18 +30,24 @@ import { RouterLink } from '@angular/router';
 export class PrivacyPolicyComponent {
   language: string = 'en';
 
-
-  /**
-   * Checks the current language and sets the `language` property accordingly.
-   * Then, every 100ms, it checks if the language has changed and updates the
-   * `language` property if it has.
-   * @param languageService The service that holds the current language.
-   */
-  constructor(private languageService: LanguageService) {
+  constructor(private languageService: LanguageService, private seoService: SeoService) {
     this.checkLanguage();
-    setInterval(() => {
-      this.language = this.languageService.currentLanguage;
-    }, 100);
+    this.applySeo();
+    this.languageService.languageChanges.subscribe((language) => {
+      this.language = language;
+      this.applySeo();
+    });
+  }
+
+  private applySeo(): void {
+    const locale = this.languageService.currentLanguage as Locale;
+
+    this.seoService.updateTags({
+      title: META[locale].title,
+      description: META[locale].description,
+      url: PAGE_URL,
+      locale,
+    });
   }
 
   /**
