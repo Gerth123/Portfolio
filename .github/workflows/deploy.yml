@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -24,15 +25,22 @@ jobs:
       - name: Build (production)
         run: npm run build
 
-      # Uploads dist/portfolio/browser to the server via FTPS.
+      # Uploads dist/portfolio/browser to the server via FTPS using lftp.
+      # Switched from a Node-based FTP action after it failed the TLS handshake
+      # (SSL alert 50 / decode_error) against the KasServer FTPS endpoint.
       # See the repo README / PR description for which GitHub secrets need to be set.
-      - name: Deploy via FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: dist/portfolio/browser/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          dangerous-clean-slate: false
+      - name: Deploy via lftp (FTPS)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y lftp
+          lftp <<EOF
+          set ftp:ssl-force true
+          set ftp:ssl-protect-data true
+          open -u "$FTP_USERNAME","$FTP_PASSWORD" ftp://$FTP_SERVER
+          mirror -R --delete --verbose dist/portfolio/browser/ "$FTP_SERVER_DIR"
+          bye
+          EOF
