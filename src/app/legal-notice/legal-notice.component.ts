@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 import { SeoService } from '../services/seo.service';
 import { Locale } from '../services/structured-data';
 
-const PAGE_URL = 'https://robin-gerth.de/#/legal-notice';
+const PAGE_URL = 'https://robin-gerth.de/legal-notice';
 
 const META: Record<Locale, { title: string; description: string }> = {
   en: {

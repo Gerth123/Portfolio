@@ -31,5 +31,5 @@ Python, Django, Django REST Framework, Angular, TypeScript, Shopware 6, PHP, Sym
 
 ## Pages
 - Homepage (About, Skills, Consulting, Credentials, Case studies, Contact): https://robin-gerth.de/
-- Privacy Policy: https://robin-gerth.de/#/privacy-policy
-- Legal Notice / Impressum: https://robin-gerth.de/#/legal-notice
+- Privacy Policy: https://robin-gerth.de/privacy-policy
+- Legal Notice / Impressum: https://robin-gerth.de/legal-notice
