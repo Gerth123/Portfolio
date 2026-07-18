@@ -85,6 +85,10 @@ export class ContactComponent {
     return this.translations[this.languageService.currentLanguage][field];
   }
 
+  getCurrentLanguage(): 'en' | 'de' {
+    return this.languageService.currentLanguage as 'en' | 'de';
+  }
+
   onSubmit(ngForm: NgForm): void {
     if (!ngForm.submitted || !ngForm.form.valid) return;
     this.http

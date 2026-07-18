@@ -13,6 +13,7 @@ import { NgClass } from '@angular/common';
 export class HeaderComponent {
   public responsiveMenuOpen: boolean = false;
   languageService;
+
   constructor(public languageServiceComponent: LanguageService, private router: Router) {
     this.languageService = languageServiceComponent;
   }
@@ -174,24 +175,25 @@ export class HeaderComponent {
   }
 
   checkLanguage() {
-    const storedLanguage = localStorage.getItem('currentLanguage');
-    if (storedLanguage) {
-      return storedLanguage;
-    } else {
-      return 'en';
-    }
+    return this.languageService.currentLanguage;
   }
 
-  changeLanguage(language: string) {
-    if (language === 'de') {
-      this.languageService.setLanguage('de');
-      document.getElementById('languageEn')?.classList.remove('active');
-      document.getElementById('languageDe')?.classList.add('active');
-    } else {
-      this.languageService.setLanguage('en');
-      document.getElementById('languageEn')?.classList.add('active');
-      document.getElementById('languageDe')?.classList.remove('active');
+  /**
+   * Navigates to the same route/fragment under the other language prefix
+   * (the URL is the source of truth for the active language; the lang
+   * route resolver picks it up and syncs LanguageService from there).
+   */
+  changeLanguage(language: 'de' | 'en') {
+    if (this.languageService.currentLanguage === language) {
+      return;
     }
+
+    const urlTree = this.router.parseUrl(this.router.url);
+    const segments = urlTree.root.children['primary']?.segments ?? [];
+    const pathAfterLang = segments.slice(1).map((segment) => segment.path);
+    const fragment = urlTree.fragment ?? undefined;
+
+    this.router.navigate(['/', language, ...pathAfterLang], { fragment });
   }
 
   async handleScroll(fragment: string) {

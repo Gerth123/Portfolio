@@ -1,5 +1,21 @@
 export type Locale = 'en' | 'de';
 
+const BASE_URL = 'https://robin-gerth.de';
+
+/** Builds a language-prefixed absolute URL, e.g. buildLocalizedUrl('de', 'legal-notice') -> https://robin-gerth.de/de/legal-notice */
+export function buildLocalizedUrl(locale: Locale, path = ''): string {
+  return path ? `${BASE_URL}/${locale}/${path}` : `${BASE_URL}/${locale}`;
+}
+
+/** hreflang alternates for a given path, including an x-default pointing at the English version. */
+export function buildHreflangAlternates(path = ''): { hreflang: string; href: string }[] {
+  return [
+    { hreflang: 'en', href: buildLocalizedUrl('en', path) },
+    { hreflang: 'de', href: buildLocalizedUrl('de', path) },
+    { hreflang: 'x-default', href: buildLocalizedUrl('en', path) },
+  ];
+}
+
 const JOB_TITLE: Record<Locale, string> = {
   en: 'Full-Stack Developer',
   de: 'Full-Stack-Entwickler',
@@ -88,7 +104,7 @@ export function buildPersonSchema(locale: Locale) {
   const person = {
     '@type': 'Person',
     name: 'Robin Gerth',
-    url: 'https://robin-gerth.de/',
+    url: buildLocalizedUrl(locale),
     email: 'mailto:kontakt@robin-gerth.de',
     jobTitle: JOB_TITLE[locale],
     description: DESCRIPTION[locale],

@@ -1,6 +1,6 @@
 # Robin Gerth
 
-> Full-stack developer (Angular, Django REST Framework, Shopware 6, REST APIs). Also offers AI feasibility workshops, AI-assisted automation, Shopware consulting and SEO/GEO audits for small and medium-sized businesses. Site available in English and German (language toggle in the header, no separate URLs yet).
+> Full-stack developer (Angular, Django REST Framework, Shopware 6, REST APIs). Also offers AI feasibility workshops, AI-assisted automation, Shopware consulting and SEO/GEO audits for small and medium-sized businesses. Site available in English (/en) and German (/de).
 
 ## Role & focus
 - Full-stack developer with hands-on experience in productive business systems: Shopware 6, backend logic, REST APIs, Angular frontends, selected Kotlin adjustments for Android.
@@ -24,12 +24,15 @@ Python, Django, Django REST Framework, Angular, TypeScript, Shopware 6, PHP, Sym
 - El Pollo Loco – Browser game (JavaScript, Canvas, OOP).
 
 ## Contact
-- Website: https://robin-gerth.de/
+- Website: https://robin-gerth.de/en
 - Email: kontakt@robin-gerth.de
 - GitHub: https://github.com/Gerth123
 - LinkedIn: https://linkedin.com/in/robin-gerth-47100031b/
 
 ## Pages
-- Homepage (About, Skills, Consulting, Credentials, Case studies, Contact): https://robin-gerth.de/
-- Privacy Policy: https://robin-gerth.de/#/privacy-policy
-- Legal Notice / Impressum: https://robin-gerth.de/#/legal-notice
+- Homepage EN (About, Skills, Consulting, Credentials, Case studies, Contact): https://robin-gerth.de/en
+- Homepage DE: https://robin-gerth.de/de
+- Privacy Policy EN: https://robin-gerth.de/en/privacy-policy
+- Privacy Policy DE: https://robin-gerth.de/de/privacy-policy
+- Legal Notice / Impressum EN: https://robin-gerth.de/en/legal-notice
+- Legal Notice / Impressum DE: https://robin-gerth.de/de/legal-notice

@@ -1,5 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -22,10 +22,18 @@ declare var AOS: any;
 })
 export class AppComponent implements AfterViewInit {
   private scrollableRoutes: string[] = ['privacyPolicy', 'legalNotice'];
-  constructor(private router: Router) {
+  private readonly isBrowser: boolean;
+
+  constructor(private router: Router, @Inject(PLATFORM_ID) platformId: object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
+        if (!this.isBrowser) {
+          return;
+        }
+
         const fragment = this.router.routerState.snapshot.root.fragment;
         if (fragment && this.scrollableRoutes.includes(fragment)) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -38,6 +46,8 @@ export class AppComponent implements AfterViewInit {
       });
   }
   ngAfterViewInit() {
-    AOS.init();
+    if (this.isBrowser) {
+      AOS.init();
+    }
   }
 }

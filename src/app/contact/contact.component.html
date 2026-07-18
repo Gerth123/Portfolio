@@ -145,7 +145,7 @@
               />
               <label class="form-check-label" for="checkbox">
                 {{ getCurrentText("privacyFirstText") }}
-                <a [routerLink]="['/privacy-policy']">
+                <a [routerLink]="['/', getCurrentLanguage(), 'privacy-policy']">
                   {{ getCurrentText("privacySecondText") }}</a
                 >
                 {{ getCurrentText("privacyThirdText") }}
@@ -181,7 +181,7 @@
 
         <div class="arrowUp">
           <a
-            [routerLink]="['/']"
+            [routerLink]="['/', getCurrentLanguage()]"
             [fragment]="'landingPage'"
             (click)="handleScroll('landingPage')"
             aria-label="Back to top"

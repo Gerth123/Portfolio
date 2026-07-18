@@ -9,9 +9,14 @@ import { ProjectsComponent } from '../projects/projects.component';
 import { ContactComponent } from '../contact/contact.components';
 import { LanguageService } from '../services/language.service';
 import { SeoService } from '../services/seo.service';
-import { buildPersonSchema, getPageDescription, getPageTitle, Locale } from '../services/structured-data';
-
-const HOME_URL = 'https://robin-gerth.de/';
+import {
+  buildHreflangAlternates,
+  buildLocalizedUrl,
+  buildPersonSchema,
+  getPageDescription,
+  getPageTitle,
+  Locale,
+} from '../services/structured-data';
 
 @Component({
   selector: 'app-main-content',
@@ -41,11 +46,12 @@ export class MainContentComponent implements OnInit, OnDestroy {
     this.seoService.updateTags({
       title: getPageTitle(locale),
       description: getPageDescription(locale),
-      url: HOME_URL,
+      url: buildLocalizedUrl(locale),
       locale,
       type: 'profile',
     });
 
+    this.seoService.setHreflangAlternates(buildHreflangAlternates());
     this.seoService.setJsonLd('person-schema', buildPersonSchema(locale));
   }
 }
