@@ -47,6 +47,8 @@ jobs:
           set ftp:ssl-force true
           set ftp:ssl-protect-data true
           open -u "$FTP_USERNAME","$FTP_PASSWORD" ftp://$FTP_SERVER
-          mirror -R --delete --verbose dist/portfolio/browser/ "$FTP_SERVER_DIR"
+          mirror -R --verbose dist/portfolio/browser/ "$FTP_SERVER_DIR"
+          # Deliberately no --delete: other live projects (Join, DaBubble, El Pollo Loco)
+          # share this server directory and are not part of the Angular build output.
           bye
           EOF
