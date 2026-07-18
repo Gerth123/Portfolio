@@ -1,0 +1,6 @@
+/en
+/de
+/en/privacy-policy
+/de/privacy-policy
+/en/legal-notice
+/de/legal-notice

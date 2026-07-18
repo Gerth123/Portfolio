@@ -19,7 +19,7 @@
             {{ getCurrentText("secondText") }}
           </p>
           <a
-            [routerLink]="['/']"
+            [routerLink]="['/', getCurrentLanguage()]"
             [fragment]="'contact'"
             class="btn btn-portfolio skill-contact-button mt-3"
             (click)="handleScroll('contact')"

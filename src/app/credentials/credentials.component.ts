@@ -1,5 +1,5 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
+import { isPlatformBrowser, NgClass, NgFor, NgIf } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, HostListener, Inject, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 
 type Language = 'en' | 'de';
@@ -252,9 +252,17 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     },
   ];
 
-  constructor(private languageService: LanguageService) {}
+  private readonly isBrowser: boolean;
+
+  constructor(private languageService: LanguageService, @Inject(PLATFORM_ID) platformId: object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngAfterViewInit(): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     this.refreshSliderState();
 
     const track = this.credentialsTrack?.nativeElement;

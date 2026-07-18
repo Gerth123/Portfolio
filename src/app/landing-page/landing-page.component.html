@@ -36,7 +36,7 @@
 
           <div class="hero-actions">
             <a
-              [routerLink]="['/']"
+              [routerLink]="['/', getCurrentLanguage()]"
               [fragment]="'contact'"
               class="btn btn-portfolio hero-button"
               (click)="handleScroll('contact')"

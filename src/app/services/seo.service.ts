@@ -62,6 +62,22 @@ export class SeoService {
   }
 
   /**
+   * Replaces all `<link rel="alternate" hreflang>` tags with the given set,
+   * e.g. [{ hreflang: 'en', href: '.../en' }, { hreflang: 'de', href: '.../de' }, { hreflang: 'x-default', href: '.../en' }].
+   */
+  setHreflangAlternates(alternates: { hreflang: string; href: string }[]): void {
+    this.document.querySelectorAll("link[rel='alternate'][hreflang]").forEach((el) => el.remove());
+
+    alternates.forEach(({ hreflang, href }) => {
+      const link = this.document.createElement('link');
+      link.setAttribute('rel', 'alternate');
+      link.setAttribute('hreflang', hreflang);
+      link.setAttribute('href', href);
+      this.document.head.appendChild(link);
+    });
+  }
+
+  /**
    * Injects or replaces a JSON-LD script tag identified by `id`.
    */
   setJsonLd(id: string, data: unknown): void {

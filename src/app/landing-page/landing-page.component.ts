@@ -1,5 +1,5 @@
-import { NgClass } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from '@angular/core';
+import { isPlatformBrowser, NgClass } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, Inject, NgZone, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LanguageService } from '../services/language.service';
@@ -39,10 +39,22 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   private mutationObserver?: MutationObserver;
   private languageChangeSubscription?: Subscription;
   private rafId = 0;
+  private readonly isBrowser: boolean;
 
-  constructor(private languageService: LanguageService, private router: Router, private readonly zone: NgZone) {}
+  constructor(
+    private languageService: LanguageService,
+    private router: Router,
+    private readonly zone: NgZone,
+    @Inject(PLATFORM_ID) platformId: object
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngAfterViewInit(): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     this.zone.runOutsideAngular(() => {
       this.resizeObserver = new ResizeObserver(() => this.scheduleHeroFit());
 
@@ -83,7 +95,10 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener('resize', this.scheduleHeroFit);
+    if (this.isBrowser) {
+      window.removeEventListener('resize', this.scheduleHeroFit);
+    }
+
     this.resizeObserver?.disconnect();
     this.mutationObserver?.disconnect();
     this.languageChangeSubscription?.unsubscribe();

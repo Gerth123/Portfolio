@@ -2,7 +2,7 @@
   <div class="container-xxl">
     <div class="row align-items-center gy-4">
       <div class="col-md-4 text-center text-md-start">
-        <a [routerLink]="['/']" [fragment]="'landingPage'" aria-label="Robin Gerth home">
+        <a [routerLink]="languageService.link()" [fragment]="'landingPage'" aria-label="Robin Gerth home">
           <img
             src="../../../assets/logo/robin_semicolon.png"
             alt="Robin Gerth"
@@ -11,7 +11,7 @@
         </a>
         <a
           class="legal-link d-none d-md-inline-flex"
-          [routerLink]="['/legal-notice']"
+          [routerLink]="languageService.link('legal-notice')"
           (click)="scrollToTop()"
         >
           Impressum
@@ -42,7 +42,7 @@
       </div>
 
       <div class="col-12 text-center d-md-none">
-        <a class="legal-link" [routerLink]="['/legal-notice']" (click)="scrollToTop()">Impressum</a>
+        <a class="legal-link" [routerLink]="languageService.link('legal-notice')" (click)="scrollToTop()">Impressum</a>
       </div>
     </div>
   </div>

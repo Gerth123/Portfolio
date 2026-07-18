@@ -5,9 +5,9 @@ import { LanguageService } from '../services/language.service';
 import { CommonModule, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SeoService } from '../services/seo.service';
-import { Locale } from '../services/structured-data';
+import { buildHreflangAlternates, buildLocalizedUrl, Locale } from '../services/structured-data';
 
-const PAGE_URL = 'https://robin-gerth.de/legal-notice';
+const PAGE_PATH = 'legal-notice';
 
 const META: Record<Locale, { title: string; description: string }> = {
   en: {
@@ -45,21 +45,18 @@ export class LegalNoticeComponent {
     this.seoService.updateTags({
       title: META[locale].title,
       description: META[locale].description,
-      url: PAGE_URL,
+      url: buildLocalizedUrl(locale, PAGE_PATH),
       locale,
     });
+
+    this.seoService.setHreflangAlternates(buildHreflangAlternates(PAGE_PATH));
   }
 
   /**
-   * Checks the current language in localStorage and sets the `language` property
-   * of the component accordingly. If no language is stored, it defaults to 'en'.
+   * Syncs the `language` property with the LanguageService's current value
+   * (which already resolves the browser's stored preference, falling back to 'en').
    */
   checkLanguage() {
-    const storedLanguage = localStorage.getItem('currentLanguage');
-    if (storedLanguage) {
-        this.language = this.languageService.currentLanguage;
-    } else {
-        this.language = 'en';
-    }
+    this.language = this.languageService.currentLanguage;
   }
 }

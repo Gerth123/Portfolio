@@ -1,24 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Routes are served via a server-side rewrite to index.html (see server/.htaccess),
-  so each URL below already returns HTTP 200 with real, distinct meta tags after
-  Angular bootstraps. Until prerendering ships, the initial (pre-JS) HTML is
-  identical for all routes, so non-JS crawlers cannot yet distinguish content here.
+  Routes are prerendered at build time (@angular/ssr, static prerender mode),
+  so each URL below returns real, distinct HTML (title, description, content)
+  without requiring JavaScript execution. Language is part of the path
+  (/en/..., /de/...); hreflang alternates are declared per URL.
 -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://robin-gerth.de/</loc>
+    <loc>https://robin-gerth.de/en</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robin-gerth.de/en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robin-gerth.de/de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robin-gerth.de/en" />
   </url>
   <url>
-    <loc>https://robin-gerth.de/privacy-policy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://robin-gerth.de/de</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robin-gerth.de/en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robin-gerth.de/de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robin-gerth.de/en" />
   </url>
   <url>
-    <loc>https://robin-gerth.de/legal-notice</loc>
+    <loc>https://robin-gerth.de/en/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robin-gerth.de/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robin-gerth.de/de/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robin-gerth.de/en/privacy-policy" />
+  </url>
+  <url>
+    <loc>https://robin-gerth.de/de/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robin-gerth.de/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robin-gerth.de/de/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robin-gerth.de/en/privacy-policy" />
+  </url>
+  <url>
+    <loc>https://robin-gerth.de/en/legal-notice</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robin-gerth.de/en/legal-notice" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robin-gerth.de/de/legal-notice" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robin-gerth.de/en/legal-notice" />
+  </url>
+  <url>
+    <loc>https://robin-gerth.de/de/legal-notice</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://robin-gerth.de/en/legal-notice" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://robin-gerth.de/de/legal-notice" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://robin-gerth.de/en/legal-notice" />
   </url>
 </urlset>
