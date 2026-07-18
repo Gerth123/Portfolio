@@ -30,6 +30,7 @@ jobs:
       # (SSL alert 50 / decode_error) against the KasServer FTPS endpoint.
       # See the repo README / PR description for which GitHub secrets need to be set.
       - name: Deploy via lftp (FTPS)
+        timeout-minutes: 5
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
@@ -38,6 +39,11 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
           lftp <<EOF
+          set dns:order "inet"
+          set net:timeout 10
+          set net:max-retries 2
+          set net:reconnect-interval-base 5
+          set ftp:passive-mode true
           set ftp:ssl-force true
           set ftp:ssl-protect-data true
           open -u "$FTP_USERNAME","$FTP_PASSWORD" ftp://$FTP_SERVER
