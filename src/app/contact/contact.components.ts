@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { LanguageService } from '../services/language.service';
 
 @Component({
@@ -79,7 +79,7 @@ export class ContactComponent {
     },
   };
 
-  constructor(private languageService: LanguageService, private router: Router) {}
+  constructor(private languageService: LanguageService) {}
 
   getCurrentText(field: string): string {
     return this.translations[this.languageService.currentLanguage][field];
@@ -155,26 +155,7 @@ export class ContactComponent {
     return this.getCurrentText(fields[id] ?? 'inputPlaceholderMessage');
   }
 
-  async handleScroll(fragment: string) {
-    const element = document.getElementById(fragment);
-    const scrollHeightPixels = this.getElementHeightById(fragment);
-    const currentUrl = this.router.url;
-
-    if (currentUrl.includes(`#${fragment}`) && scrollHeightPixels !== null) {
-      window.scrollTo({ top: scrollHeightPixels, behavior: 'smooth' });
-    } else if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  getElementHeightById(elementId: string): number | null {
-    const element = document.getElementById(elementId);
-
-    if (element) {
-      const elementRect = element.getBoundingClientRect();
-      return elementRect.top + window.pageYOffset;
-    }
-
-    return null;
+  handleScroll(fragment: string): void {
+    document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
   }
 }

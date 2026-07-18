@@ -1,6 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { LanguageService } from '../services/language.service';
 
 type Language = 'en' | 'de';
@@ -81,7 +81,7 @@ export class ConsultingComponent {
     },
   ];
 
-  constructor(private languageService: LanguageService, private router: Router) {}
+  constructor(private languageService: LanguageService) {}
 
   getCurrentText(field: string): string {
     return this.translations[this.getCurrentLanguage()][field];
@@ -99,26 +99,7 @@ export class ConsultingComponent {
     return this.languageService.currentLanguage as Language;
   }
 
-  async handleScroll(fragment: string) {
-    const element = document.getElementById(fragment);
-    const scrollHeightPixels = this.getElementHeightById(fragment);
-    const currentUrl = this.router.url;
-
-    if (currentUrl.includes(`#${fragment}`) && scrollHeightPixels !== null) {
-      window.scrollTo({ top: scrollHeightPixels, behavior: 'smooth' });
-    } else if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  getElementHeightById(elementId: string): number | null {
-    const element = document.getElementById(elementId);
-
-    if (element) {
-      const elementRect = element.getBoundingClientRect();
-      return elementRect.top + window.pageYOffset;
-    }
-
-    return null;
+  handleScroll(fragment: string): void {
+    document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
   }
 }

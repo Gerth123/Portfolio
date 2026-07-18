@@ -1,6 +1,6 @@
 import { isPlatformBrowser, NgClass } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Inject, NgZone, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
-import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LanguageService } from '../services/language.service';
 
@@ -43,7 +43,6 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
 
   constructor(
     private languageService: LanguageService,
-    private router: Router,
     private readonly zone: NgZone,
     @Inject(PLATFORM_ID) platformId: object
   ) {
@@ -116,27 +115,8 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
     return this.languageService.currentLanguage;
   }
 
-  async handleScroll(fragment: string) {
-    const element = document.getElementById(fragment);
-    const scrollHeightPixels = this.getElementHeightById(fragment);
-    const currentUrl = this.router.url;
-
-    if (currentUrl.includes(`#${fragment}`) && scrollHeightPixels !== null) {
-      window.scrollTo({ top: scrollHeightPixels, behavior: 'smooth' });
-    } else if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  getElementHeightById(elementId: string): number | null {
-    const element = document.getElementById(elementId);
-
-    if (element) {
-      const elementRect = element.getBoundingClientRect();
-      return elementRect.top + window.pageYOffset;
-    }
-
-    return null;
+  handleScroll(fragment: string): void {
+    document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
   }
 
   private readonly scheduleHeroFit = (): void => {

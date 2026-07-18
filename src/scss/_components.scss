@@ -3,10 +3,17 @@
   padding-block: var(--portfolio-section-space);
   background-color: transparent;
   color: #fff;
+  // Anchor-scroll targets (header nav links) land on this element's top edge.
+  // Without this, scroll-padding-top only clears the fixed header, leaving
+  // this section's own padding-top as a second, empty-looking gap above the
+  // heading. Pulling the scroll landing point down by that same padding
+  // makes the visible gap just the header height, matching normal scrolling.
+  scroll-margin-top: calc(-1 * var(--portfolio-section-space));
 }
 
 .section-shell--compact {
   padding-block: var(--portfolio-section-space-sm);
+  scroll-margin-top: calc(-1 * var(--portfolio-section-space-sm));
 }
 
 .section-kicker {
