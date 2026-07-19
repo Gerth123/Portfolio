@@ -181,6 +181,9 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
+    const containingBlock = wave.offsetParent as HTMLElement | null;
+    const containingBlockTop = containingBlock?.getBoundingClientRect().top ?? 0;
+
     const scale = waveRect.width / 1442;
     const sampleXs = [textRect.left, textRect.left + textRect.width * 0.5, textRect.right];
     const lowestCurveY = Math.max(
@@ -190,7 +193,7 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
       })
     );
     const targetCurveScreenY = textRect.top - this.getMobileWaveTextClearance();
-    const desiredTop = targetCurveScreenY - lowestCurveY;
+    const desiredTop = targetCurveScreenY - lowestCurveY - containingBlockTop;
 
     wave.style.top = `${Math.round(desiredTop)}px`;
     wave.style.bottom = 'auto';

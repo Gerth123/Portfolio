@@ -28,10 +28,10 @@
 
 .hero-wave {
   position: absolute;
-  left: 50%;
-  bottom: clamp(-40rem, -34vw, -21rem);
+  left: 94.2%;
+  bottom: -108%;
   z-index: 4;
-  width: max(calc(100vw + 2rem), clamp(92rem, 118vw, 118rem));
+  width: 274.5%;
   max-width: none;
   transform: translateX(-50%);
   pointer-events: none;
@@ -214,14 +214,6 @@ h1 {
     row-gap: 0;
   }
 
-  .hero-wave {
-    left: 50%;
-    bottom: clamp(-23rem, -28vw, -14rem);
-    z-index: 4;
-    width: max(140vw, 88rem);
-    transform: translateX(-50%);
-  }
-
   .hero-visual-stage {
     z-index: 3;
     width: min(100%, 32rem);
@@ -262,14 +254,6 @@ h1 {
     --hero-bottom-space: 5.75rem;
     min-height: auto;
     padding-top: calc(72px + var(--hero-top-space));
-  }
-
-  .hero-wave {
-    left: 50%;
-    top: auto;
-    bottom: 7.5rem;
-    width: 100vw;
-    transform: translateX(-50%);
   }
 
   .hero-visual-stage {
@@ -362,10 +346,6 @@ h1 {
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-  .hero-wave {
-    bottom: -16rem;
-  }
-
   .hero-content {
     padding-top: 2.5rem;
     transform: none;
@@ -373,10 +353,6 @@ h1 {
 }
 
 @media (min-width: 992px) {
-  .hero-wave {
-    bottom: clamp(-36rem, -29vw, -24rem);
-  }
-
   .hero-content {
     --hero-title-gap: clamp(0.55rem, 0.75vw, 0.85rem);
   }
@@ -424,10 +400,6 @@ h1 {
 @media (min-width: 1600px) {
   .hero-section {
     --hero-bottom-space: clamp(6rem, 8vw, 9rem);
-  }
-
-  .hero-wave {
-    bottom: clamp(-38rem, -29vw, -27rem);
   }
 
   .hero-layout {
