@@ -45,7 +45,7 @@
               }"
             >
               <span class="portfolio-eyebrow">{{ getCurrentText("caseStudy") }} · {{ project.kicker[getCurrentLanguage()] }}</span>
-              <h3>{{ project.title }}</h3>
+              <h3>{{ getTitle(project) }}</h3>
 
               <div class="d-flex flex-wrap gap-2" [ngClass]="{ 'justify-content-lg-end': project.reverse }">
                 <span class="tech-pill" *ngFor="let tech of project.stack">{{ tech }}</span>

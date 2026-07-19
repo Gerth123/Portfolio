@@ -17,7 +17,7 @@
 Python, Django, Django REST Framework, Angular, TypeScript, Shopware 6, PHP, Symfony, Kotlin, REST APIs, Linux, Git.
 
 ## Case studies
-- ABC Design – Shopware 6 / PHP / Symfony / REST APIs / Kotlin Android app work on a productive e-commerce system.
+- Internal knowledge management & RAG chatbot – n8n / Qdrant / Microsoft Teams / Entra ID RAG-based chatbot for internal knowledge search with hybrid search and reranking.
 - Join – Kanban task tool (JavaScript, Firebase).
 - DaBubble – Messenger application (Angular, TypeScript, Firebase).
 - Videoflix – Full-stack streaming platform (Python, Django REST Framework, Angular).
