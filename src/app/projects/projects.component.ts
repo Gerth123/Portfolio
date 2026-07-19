@@ -6,7 +6,7 @@ import { LanguageService } from '../services/language.service';
 type Language = 'en' | 'de';
 
 interface CaseStudy {
-  title: string;
+  title: string | Record<Language, string>;
   kicker: Record<Language, string>;
   stack: string[];
   text: Record<Language, string>;
@@ -50,22 +50,24 @@ export class ProjectsComponent {
 
   public caseStudies: CaseStudy[] = [
     {
-      title: 'ABC Design / Shopware / Android App',
-      kicker: {
-        en: 'Productive business systems',
-        de: 'Produktive Unternehmenssysteme',
+      title: {
+        en: 'Internal knowledge management & RAG chatbot',
+        de: 'Internes Wissensmanagement & RAG-Chatbot',
       },
-      stack: ['Shopware 6', 'PHP / Symfony', 'REST APIs', 'Kotlin', 'Android'],
+      kicker: {
+        en: 'Internal AI automation',
+        de: 'Interne KI-Automatisierung',
+      },
+      stack: ['n8n', 'Qdrant', 'Microsoft Teams', 'Entra ID', 'RAG'],
       text: {
-        en: 'Work on productive e-commerce systems, technical adjustments, interfaces and selected Android app components. The focus is on stable implementation, traceable changes and maintenance during ongoing operation.',
-        de: 'Arbeit an produktiven E-Commerce-Systemen, technischen Anpassungen, Schnittstellen und ausgewählten Android-App-Komponenten. Im Mittelpunkt stehen stabile Umsetzung, nachvollziehbare Änderungen und technische Pflege im laufenden Betrieb.',
+        en: 'Built an internal RAG-based chatbot for Microsoft Teams to make distributed company knowledge accessible. The focus is on hybrid search, reranking and a clean indexing pipeline, so employees find answers directly in their usual work context instead of searching scattered documents and emails.',
+        de: 'Aufbau eines internen RAG-basierten Chatbots für Microsoft Teams zur Erschließung verteilten Unternehmenswissens. Der Fokus liegt auf Hybrid Search, Reranking und einer sauberen Indexierungs-Pipeline, damit Mitarbeiter Antworten direkt im gewohnten Arbeitskontext finden statt in verstreuten Dokumenten und E-Mails zu suchen.',
       },
       focus: {
-        en: ['Shopware 6 system work', 'API-related implementation', 'Selected Android app adjustments'],
-        de: ['Arbeit an Shopware-6-Systemen', 'Schnittstellennahe Umsetzung', 'Ausgewählte Android-App-Anpassungen'],
+        en: ['Hybrid search (semantic + lexical) with reranking', 'Microsoft Teams integration incl. Entra ID permissions', 'n8n-based indexing pipeline for company documents'],
+        de: ['Hybrid Search (semantisch + lexikalisch) mit Reranking', 'Anbindung an Microsoft Teams inkl. Entra-ID-Berechtigungen', 'n8n-basierte Indexierungs-Pipeline für Unternehmensdokumente'],
       },
-      image: '../../assets/icons/shopware_6.svg',
-      imageAlt: 'Shopware 6 system work',
+      visualType: 'ai',
     },
     {
       title: 'Join',
@@ -175,5 +177,9 @@ export class ProjectsComponent {
 
   getCurrentLanguage(): Language {
     return this.languageService.currentLanguage as Language;
+  }
+
+  getTitle(project: CaseStudy): string {
+    return typeof project.title === 'string' ? project.title : project.title[this.getCurrentLanguage()];
   }
 }
