@@ -382,6 +382,15 @@ h1 {
   .hero-wave {
     width: 550%;
     left: 150%;
+    // Start position before hydration only; the JS overrides it with top/bottom.
+    bottom: -277%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero-wave {
+    // Start position before hydration only; the JS overrides it with top/bottom.
+    bottom: -127%;
   }
 }
 
