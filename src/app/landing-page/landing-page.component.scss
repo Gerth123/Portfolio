@@ -375,6 +375,16 @@ h1 {
   }
 }
 
+// Below 1400px the button sits too close to the bottom of the profile image for
+// the wave to clear the button and still cross the image. Shifting the wave right
+// puts that span on the flatter left part of the curve, which buys the room.
+@media (min-width: 992px) and (max-width: 1399.98px) {
+  .hero-wave {
+    width: 550%;
+    left: 150%;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .hero-section {
     --hero-top-space: clamp(2.25rem, 4vw, 3.5rem);
