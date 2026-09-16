@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { LegalNoticeGermanComponent } from './legal-notice-german.component';
 
@@ -8,7 +9,8 @@ describe('LegalNoticeGermanComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LegalNoticeGermanComponent]
+      imports: [LegalNoticeGermanComponent],
+      providers: [provideRouter([])],
     })
     .compileComponents();
     

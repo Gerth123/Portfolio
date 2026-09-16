@@ -4,6 +4,51 @@
   <meta charset="utf-8">
   <title>Robin Gerth</title>
   <base href="/">
+  <script>
+    // Sends un-prefixed URLs to the visitor's language before Angular boots, so German
+    // visitors don't see the prerendered English page first. Mirrors preferredLangGuard /
+    // LanguageService.resolvePreferredLanguage() — keep the two lists below in sync with them.
+    (function () {
+      var SUPPORTED = ['de', 'en'];
+      var PREFIXABLE = ['/', '/privacy-policy', '/legal-notice'];
+      var path = location.pathname.replace(/\/+$/, '') || '/';
+
+      // Already language-prefixed, or a path that has no un-prefixed equivalent.
+      if (SUPPORTED.indexOf(path.split('/')[1]) !== -1 || PREFIXABLE.indexOf(path) === -1) {
+        return;
+      }
+
+      var language;
+
+      try {
+        var stored = localStorage.getItem('currentLanguage');
+        if (stored && SUPPORTED.indexOf(stored) !== -1) {
+          language = stored;
+        }
+      } catch (e) {
+        // localStorage can throw with site data blocked; fall through to the browser preference.
+      }
+
+      if (!language) {
+        var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+        for (var i = 0; i < tags.length && !language; i++) {
+          var tag = (tags[i] || '').slice(0, 2).toLowerCase();
+          if (SUPPORTED.indexOf(tag) !== -1) {
+            language = tag;
+          }
+        }
+      }
+
+      language = language || 'en';
+
+      // The prerendered document already matches; let Angular normalize the URL without a reload.
+      if (language === document.documentElement.lang) {
+        return;
+      }
+
+      location.replace('/' + language + (path === '/' ? '' : path) + location.search + location.hash);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="32x32"> 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
