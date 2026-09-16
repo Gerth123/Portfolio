@@ -25,12 +25,24 @@ export class ConsultingComponent {
       shortDescription:
         'Alongside my main role as a full-stack developer, I additionally support small and medium-sized businesses with the introduction of AI and automation, as well as the technical development of their online shops.',
       ctaText: 'Send an inquiry',
+      quickCheckKicker: 'Free quick check',
+      quickCheckHeadline: 'Where can your business save the most time?',
+      quickCheckText:
+        'In a short conversation we look at your recurring processes together, and I tell you honestly where AI and automation pay off for your business — and where they do not.',
+      quickCheckNote: 'About 30 minutes · no obligation · free of charge',
+      quickCheckCta: 'Request a free quick check',
     },
     de: {
       headline: 'Beratung & Automatisierung',
       shortDescription:
         'Neben meiner Haupttätigkeit als Full-Stack-Entwickler unterstütze ich zusätzlich kleine und mittlere Unternehmen bei der Einführung von KI und Automatisierung sowie bei der technischen Weiterentwicklung ihrer Onlineshops.',
       ctaText: 'Anfrage stellen',
+      quickCheckKicker: 'Kostenloser Kurz-Check',
+      quickCheckHeadline: 'Wo lässt sich in Ihrem Betrieb am schnellsten Zeit sparen?',
+      quickCheckText:
+        'In einem kurzen Gespräch schauen wir gemeinsam auf Ihre wiederkehrenden Abläufe, und ich sage Ihnen ehrlich, wo sich KI und Automatisierung für Ihren Betrieb lohnen — und wo nicht.',
+      quickCheckNote: 'Ca. 30 Minuten · unverbindlich · kostenlos',
+      quickCheckCta: 'Kostenlosen Kurz-Check anfragen',
     },
   };
 

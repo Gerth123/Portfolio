@@ -8,6 +8,23 @@
       {{ getCurrentText("shortDescription") }}
     </p>
 
+    <aside class="portfolio-card consulting-quickcheck mt-4" data-aos="fade-up">
+      <div class="consulting-quickcheck-body">
+        <span class="portfolio-eyebrow">{{ getCurrentText("quickCheckKicker") }}</span>
+        <h3>{{ getCurrentText("quickCheckHeadline") }}</h3>
+        <p>{{ getCurrentText("quickCheckText") }}</p>
+        <p class="consulting-quickcheck-note mb-0">{{ getCurrentText("quickCheckNote") }}</p>
+      </div>
+      <a
+        [routerLink]="['/', getCurrentLanguage()]"
+        [queryParams]="{ inquiry: 'quick-check' }"
+        [fragment]="'contact'"
+        class="btn btn-portfolio consulting-quickcheck-cta"
+        (click)="handleScroll('contact')"
+        >{{ getCurrentText("quickCheckCta") }}</a
+      >
+    </aside>
+
     <div class="row g-3 mt-2">
       <div class="col-md-6" *ngFor="let offer of offers" data-aos="fade-up">
         <article class="portfolio-card consulting-card h-100">

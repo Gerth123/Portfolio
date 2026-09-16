@@ -56,6 +56,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
       next: 'Next credential',
       goToCredential: 'Go to credential',
       sliderProgress: 'Shown credentials',
+      additionalHeadline: 'Further licenses',
+      additionalIntro: 'Qualifications outside my technical work.',
+      showAdditional: 'Show further licenses',
+      hideAdditional: 'Hide further licenses',
     },
     de: {
       headline: 'Qualifikationen',
@@ -67,6 +71,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
       next: 'Nächster Nachweis',
       goToCredential: 'Zu Nachweis wechseln',
       sliderProgress: 'Angezeigte Nachweise',
+      additionalHeadline: 'Weitere Lizenzen',
+      additionalIntro: 'Qualifikationen außerhalb meiner technischen Tätigkeit.',
+      showAdditional: 'Weitere Lizenzen anzeigen',
+      hideAdditional: 'Weitere Lizenzen ausblenden',
     },
   };
 
@@ -206,6 +214,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
       },
       tags: ['Angular', 'TypeScript', 'Responsive UI'],
     },
+  ];
+
+  // Kept out of the carousel so the tech certificates stay the focus for business visitors.
+  public secondaryCredentials: Credential[] = [
     {
       title: 'Fitness-Trainer-B-Lizenz',
       issuer: 'Online-Trainer-Lizenz',
@@ -252,6 +264,8 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     },
   ];
 
+  public showSecondaryCredentials = false;
+
   private readonly isBrowser: boolean;
 
   constructor(private languageService: LanguageService, @Inject(PLATFORM_ID) platformId: object) {
@@ -293,6 +307,10 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
 
   trackCredential(index: number): number {
     return index;
+  }
+
+  toggleSecondaryCredentials(): void {
+    this.showSecondaryCredentials = !this.showSecondaryCredentials;
   }
 
   scrollCredentials(direction: -1 | 1): void {

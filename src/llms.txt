@@ -4,6 +4,8 @@
 
 ## Role & focus
 - Full-stack developer with hands-on experience in productive business systems: Shopware 6, backend logic, REST APIs, Angular frontends, selected Kotlin adjustments for Android.
+- Helps small and medium-sized businesses save time with AI automation, as a part-time side business alongside the employed role.
+- Based in the Waldshut district in the German-Swiss border region; available on site for businesses nearby and remotely elsewhere.
 - Works in a structured way: clear requirements, traceable decisions, maintainable delivery.
 - Uses AI-assisted development tools for research, code analysis and refactoring; engineering judgement and technical control stay with the developer.
 
@@ -12,12 +14,13 @@
 - **AI-assisted automation** – implementation of automations such as n8n-based RAG chatbots and workflow automation for recurring tasks.
 - **Shopware consulting** – conversion optimization and technical development for Shopware 6 operators.
 - **SEO/GEO audits** – Search Engine + Generative Engine Optimization audits for online shops and SMEs, with prioritized optimization potential.
+- **Free quick check** – short, no-obligation conversation about where AI and automation pay off in a given business.
 
 ## Tech stack
 Python, Django, Django REST Framework, Angular, TypeScript, Shopware 6, PHP, Symfony, Kotlin, REST APIs, Linux, Git.
 
 ## Case studies
-- Internal knowledge management & RAG chatbot – n8n / Qdrant / Microsoft Teams / Entra ID RAG-based chatbot for internal knowledge search with hybrid search and reranking.
+- Internal knowledge management & RAG chatbot – n8n / Qdrant / Microsoft Teams / Entra ID RAG-based chatbot for internal knowledge search with hybrid search and reranking. Internal project built in the employed full-stack developer role at ABC Design, not a client project of the side business.
 - Join – Kanban task tool (JavaScript, Firebase).
 - DaBubble – Messenger application (Angular, TypeScript, Firebase).
 - Videoflix – Full-stack streaming platform (Python, Django REST Framework, Angular).

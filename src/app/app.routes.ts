@@ -3,6 +3,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 import { langMatchGuard } from './guards/lang-match.guard';
+import { preferredLangGuard } from './guards/preferred-lang.guard';
 import { langResolver } from './resolvers/lang.resolver';
 
 export const routes: Routes = [
@@ -16,9 +17,9 @@ export const routes: Routes = [
       { path: 'legal-notice', component: LegalNoticeComponent },
     ],
   },
-  // Legacy un-prefixed URLs (from before language-prefixed routing) redirect to the English version.
-  { path: 'privacy-policy', redirectTo: 'en/privacy-policy', pathMatch: 'full' },
-  { path: 'legal-notice', redirectTo: 'en/legal-notice', pathMatch: 'full' },
-  { path: '', redirectTo: 'en', pathMatch: 'full' },
-  { path: '**', redirectTo: 'en' },
+  // Un-prefixed URLs (incl. legacy ones from before language-prefixed routing) pick up the visitor's language.
+  { path: '', pathMatch: 'full', canActivate: [preferredLangGuard], component: MainContentComponent },
+  { path: 'privacy-policy', pathMatch: 'full', canActivate: [preferredLangGuard], component: PrivacyPolicyComponent },
+  { path: 'legal-notice', pathMatch: 'full', canActivate: [preferredLangGuard], component: LegalNoticeComponent },
+  { path: '**', canActivate: [preferredLangGuard], component: MainContentComponent },
 ];

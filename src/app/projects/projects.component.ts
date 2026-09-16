@@ -8,6 +8,8 @@ type Language = 'en' | 'de';
 interface CaseStudy {
   title: string | Record<Language, string>;
   kicker: Record<Language, string>;
+  // Marks work done as an employee, so it is not read as a client project of the side business.
+  contextNote?: Record<Language, string>;
   stack: string[];
   text: Record<Language, string>;
   focus: Record<Language, string[]>;
@@ -57,6 +59,10 @@ export class ProjectsComponent {
       kicker: {
         en: 'Internal AI automation',
         de: 'Interne KI-Automatisierung',
+      },
+      contextNote: {
+        en: 'Internal project built in my employed role as a full-stack developer at ABC Design.',
+        de: 'Internes Projekt aus meiner Festanstellung als Full-Stack-Entwickler bei ABC Design.',
       },
       stack: ['n8n', 'Qdrant', 'Microsoft Teams', 'Entra ID', 'RAG'],
       text: {

@@ -24,12 +24,16 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
     en: {
       rotateText: 'I am',
       subtitle: 'Full-Stack Developer',
+      smePitch: 'I help small and medium-sized businesses save time with AI automation.',
       buttonText: 'Contact',
+      scrollHint: 'Scroll down',
     },
     de: {
       rotateText: 'Ich bin',
       subtitle: 'Full-Stack-Entwickler',
+      smePitch: 'Ich helfe kleinen und mittleren Unternehmen, mit KI-Automatisierung Zeit zu sparen.',
       buttonText: 'Kontakt',
+      scrollHint: 'Nach unten scrollen',
     },
   };
 

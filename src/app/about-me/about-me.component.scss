@@ -31,6 +31,24 @@
   }
 }
 
+.about-region {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  img {
+    flex: none;
+    width: 1.35rem;
+    height: 1.35rem;
+    margin-top: 0.1rem;
+    object-fit: contain;
+  }
+}
+
 .metric-card {
   border-color: rgba(98, 223, 245, 0.22);
 }

@@ -69,6 +69,7 @@
   grid-template-columns: auto minmax(0, max-content);
   grid-template-areas:
     "intro heading"
+    ". pitch"
     ". actions";
   column-gap: var(--hero-title-gap);
   row-gap: clamp(0.75rem, 1.2vw, 1rem);
@@ -129,6 +130,16 @@ h1 {
   font-weight: 400;
   line-height: 0.92;
   white-space: nowrap;
+}
+
+.hero-pitch {
+  grid-area: pitch;
+  max-width: min(100%, 30rem);
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(0.95rem, 1.15vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .hero-button {
@@ -229,6 +240,11 @@ h1 {
     transform: none;
   }
 
+  .hero-pitch {
+    margin-inline: auto;
+    text-align: center;
+  }
+
   .hero-actions {
     display: flex;
     justify-content: center;
@@ -266,6 +282,7 @@ h1 {
     grid-template-columns: auto minmax(0, max-content);
     grid-template-areas:
       "intro heading"
+      ". pitch"
       ". actions";
     column-gap: var(--hero-title-gap);
     justify-content: center;

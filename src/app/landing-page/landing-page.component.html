@@ -41,6 +41,8 @@
             <p class="hero-role" #heroRole>{{ getCurrentText("subtitle") }}</p>
           </div>
 
+          <p class="hero-pitch">{{ getCurrentText("smePitch") }}</p>
+
           <div class="hero-actions">
             <a
               [routerLink]="['/', getCurrentLanguage()]"
@@ -78,7 +80,7 @@
         </a>
       </div>
       <div class="scroll-hint d-none d-lg-flex align-items-center gap-2">
-        <span>Scroll down</span>
+        <span>{{ getCurrentText("scrollHint") }}</span>
         <img src="../../assets/icons/right-arrow.png" alt="" />
       </div>
     </div>
