@@ -48,6 +48,7 @@
               [routerLink]="['/', getCurrentLanguage()]"
               [fragment]="'contact'"
               class="btn btn-portfolio hero-button"
+              #heroButton
               (click)="handleScroll('contact')"
               >{{ getCurrentText("buttonText") }}</a
             >

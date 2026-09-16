@@ -4,6 +4,9 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LanguageService } from '../services/language.service';
 
+// Gap kept between the wave's edge and the contact button on desktop.
+const DESKTOP_WAVE_BUTTON_CLEARANCE = 16;
+
 @Component({
   selector: 'app-landing-page',
   standalone: true,
@@ -19,6 +22,7 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   @ViewChild('heroRole') heroRole?: ElementRef<HTMLElement>;
   @ViewChild('heroProfile') heroProfile?: ElementRef<HTMLElement>;
   @ViewChild('heroWave') heroWave?: ElementRef<HTMLElement>;
+  @ViewChild('heroButton') heroButton?: ElementRef<HTMLElement>;
 
   public translations: any = {
     en: {
@@ -159,22 +163,37 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
       maxPx: fitBounds.sideLabelMaxPx,
     });
 
-    this.fitMobileHeroWave();
+    this.fitHeroWave();
   }
 
-  private fitMobileHeroWave(): void {
+  private fitHeroWave(): void {
+    const wave = this.heroWave?.nativeElement;
+
+    if (!wave) {
+      return;
+    }
+
+    if (window.matchMedia('(max-width: 575.98px)').matches) {
+      this.alignWaveAboveHeroText();
+      return;
+    }
+
+    if (window.matchMedia('(min-width: 992px)').matches) {
+      this.alignWaveBelowContactButton();
+      return;
+    }
+
+    // Tablet widths keep the position from the stylesheet.
+    wave.style.top = '';
+    wave.style.bottom = '';
+  }
+
+  /** Mobile: the wave sits just above the stacked hero text. */
+  private alignWaveAboveHeroText(): void {
     const wave = this.heroWave?.nativeElement;
     const textGroup = this.heroTextGroup?.nativeElement;
 
     if (!wave || !textGroup) {
-      return;
-    }
-
-    const isMobile = window.matchMedia('(max-width: 575.98px)').matches;
-
-    if (!isMobile) {
-      wave.style.top = '';
-      wave.style.bottom = '';
       return;
     }
 
@@ -185,21 +204,54 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
+    // The edge drops towards the left, so its lowest point over the text is the worst case.
+    const lowestCurveOffset = Math.max(
+      ...this.getWaveCurveOffsets(waveRect, [textRect.left, textRect.left + textRect.width * 0.5, textRect.right])
+    );
+
+    this.placeWaveCurveAt(wave, textRect.top - this.getMobileWaveTextClearance(), lowestCurveOffset);
+  }
+
+  /** Desktop: the wave's edge clears the contact button instead of cutting through it. */
+  private alignWaveBelowContactButton(): void {
+    const wave = this.heroWave?.nativeElement;
+    const button = this.heroButton?.nativeElement;
+
+    if (!wave || !button) {
+      return;
+    }
+
+    const waveRect = wave.getBoundingClientRect();
+    const buttonRect = button.getBoundingClientRect();
+
+    if (!waveRect.width || !waveRect.height || !buttonRect.width || !buttonRect.height) {
+      return;
+    }
+
+    // The edge rises towards the right, so its highest point over the button is the worst case.
+    const highestCurveOffset = Math.min(
+      ...this.getWaveCurveOffsets(waveRect, [buttonRect.left, buttonRect.left + buttonRect.width * 0.5, buttonRect.right])
+    );
+
+    this.placeWaveCurveAt(wave, buttonRect.bottom + DESKTOP_WAVE_BUTTON_CLEARANCE, highestCurveOffset);
+  }
+
+  /** Curve offsets from the wave's own top edge, for the given screen x positions. */
+  private getWaveCurveOffsets(waveRect: DOMRect, screenXs: number[]): number[] {
+    const scale = waveRect.width / 1442;
+
+    return screenXs.map((screenX) => {
+      const svgX = this.clamp((screenX - waveRect.left) / scale, 0, 1442);
+      return this.getWaveCurveY(svgX) * scale;
+    });
+  }
+
+  /** Moves the wave so the given point on its curve lands at a target screen y. */
+  private placeWaveCurveAt(wave: HTMLElement, targetScreenY: number, curveOffset: number): void {
     const containingBlock = wave.offsetParent as HTMLElement | null;
     const containingBlockTop = containingBlock?.getBoundingClientRect().top ?? 0;
 
-    const scale = waveRect.width / 1442;
-    const sampleXs = [textRect.left, textRect.left + textRect.width * 0.5, textRect.right];
-    const lowestCurveY = Math.max(
-      ...sampleXs.map((screenX) => {
-        const svgX = this.clamp((screenX - waveRect.left) / scale, 0, 1442);
-        return this.getWaveCurveY(svgX) * scale;
-      })
-    );
-    const targetCurveScreenY = textRect.top - this.getMobileWaveTextClearance();
-    const desiredTop = targetCurveScreenY - lowestCurveY - containingBlockTop;
-
-    wave.style.top = `${Math.round(desiredTop)}px`;
+    wave.style.top = `${Math.round(targetScreenY - curveOffset - containingBlockTop)}px`;
     wave.style.bottom = 'auto';
   }
 
