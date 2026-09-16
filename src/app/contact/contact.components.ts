@@ -1,9 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { LanguageService } from '../services/language.service';
+
+// Opening line prefilled when a visitor arrives from the consulting quick-check CTA.
+const QUICK_CHECK_MESSAGE: Record<'en' | 'de', string> = {
+  en: 'Hello, I am interested in the free quick check. A bit about my business: ',
+  de: 'Guten Tag, ich interessiere mich für den kostenlosen Kurz-Check. Kurz zu meinem Betrieb: ',
+};
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +19,7 @@ import { LanguageService } from '../services/language.service';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit, OnDestroy {
   http = inject(HttpClient);
 
   public translations: any = {
@@ -68,6 +75,7 @@ export class ContactComponent {
 
   successMessage = '';
   errorMessage = '';
+  isQuickCheckInquiry = false;
 
   post = {
     endPoint: 'https://robin-gerth.de/sendMail.php',
@@ -79,7 +87,38 @@ export class ContactComponent {
     },
   };
 
-  constructor(private languageService: LanguageService) {}
+  private subscriptions = new Subscription();
+
+  constructor(private languageService: LanguageService, private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.subscriptions.add(
+      this.route.queryParamMap.subscribe((params) => {
+        this.isQuickCheckInquiry = params.get('inquiry') === 'quick-check';
+        this.applyQuickCheckMessage();
+      }),
+    );
+
+    // Keep the prefilled text in the language the visitor switches to.
+    this.subscriptions.add(this.languageService.languageChanges.subscribe(() => this.applyQuickCheckMessage()));
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+
+  /** Prefills the message field for quick-check visitors, without overwriting anything they typed. */
+  private applyQuickCheckMessage(): void {
+    if (!this.isQuickCheckInquiry) {
+      return;
+    }
+
+    const isUntouched = !this.contactData.message || Object.values(QUICK_CHECK_MESSAGE).includes(this.contactData.message);
+
+    if (isUntouched) {
+      this.contactData.message = QUICK_CHECK_MESSAGE[this.getCurrentLanguage()];
+    }
+  }
 
   getCurrentText(field: string): string {
     return this.translations[this.languageService.currentLanguage][field];

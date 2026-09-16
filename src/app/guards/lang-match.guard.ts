@@ -1,6 +1,5 @@
 import { CanMatchFn, Route, UrlSegment } from '@angular/router';
-
-const SUPPORTED_LANGUAGES = ['de', 'en'];
+import { SUPPORTED_LANGUAGES } from '../services/language.service';
 
 /**
  * Restricts the `:lang` parent route to actual supported language segments,

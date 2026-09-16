@@ -2,6 +2,51 @@
   max-width: 46rem;
 }
 
+.consulting-quickcheck {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: center;
+  border-color: rgba(112, 230, 28, 0.38);
+  border-radius: 0.75rem;
+  background-color: rgba(112, 230, 28, 0.06);
+  padding: clamp(1.35rem, 2.6vw, 2rem);
+}
+
+.consulting-quickcheck-body {
+  min-width: 0;
+
+  h3 {
+    margin: 0.55rem 0 0.6rem;
+    color: #fff;
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 0;
+    max-width: 44rem;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+}
+
+.consulting-quickcheck-note {
+  margin-top: 0.75rem !important;
+  color: rgba(112, 230, 28, 0.85) !important;
+  font-size: 0.86rem !important;
+  font-weight: 600;
+}
+
+.consulting-quickcheck-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: normal;
+}
+
 .consulting-card {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -58,6 +103,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 991.98px) {
+  .consulting-quickcheck {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .consulting-quickcheck-cta {
+    width: 100%;
+  }
 }
 
 @media (max-width: 767.98px) {

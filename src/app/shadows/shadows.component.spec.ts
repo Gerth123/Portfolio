@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { ShadowsComponent } from './shadows.component';
 
@@ -8,7 +9,8 @@ describe('ShadowsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ShadowsComponent]
+      imports: [ShadowsComponent],
+      providers: [provideRouter([])],
     })
     .compileComponents();
     

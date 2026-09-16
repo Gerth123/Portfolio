@@ -10,7 +10,16 @@ import { LanguageService } from '../../services/language.service';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  public translations: Record<'en' | 'de', Record<string, string>> = {
+    en: { legalNotice: 'Legal notice' },
+    de: { legalNotice: 'Impressum' },
+  };
+
   constructor(public languageService: LanguageService) {}
+
+  getCurrentText(field: string): string {
+    return this.translations[this.languageService.currentLanguage as 'en' | 'de'][field];
+  }
 
   currentLanguage = this.languageService.currentLanguage;
 
