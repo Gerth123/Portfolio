@@ -23,7 +23,7 @@ export class ConsultingComponent {
     en: {
       headline: 'Consulting & Automation',
       shortDescription:
-        'Alongside my main role as a full-stack developer, I additionally support small and medium-sized businesses with the introduction of AI and automation, as well as the technical development of their online shops.',
+        'Alongside my main role as a full-stack developer, I additionally support small and medium-sized businesses with automation, custom software development and the controlled use of AI.',
       ctaText: 'Send an inquiry',
       quickCheckKicker: 'Free quick check',
       quickCheckHeadline: 'Where can your business save the most time?',
@@ -35,7 +35,7 @@ export class ConsultingComponent {
     de: {
       headline: 'Beratung & Automatisierung',
       shortDescription:
-        'Neben meiner Haupttätigkeit als Full-Stack-Entwickler unterstütze ich zusätzlich kleine und mittlere Unternehmen bei der Einführung von KI und Automatisierung sowie bei der technischen Weiterentwicklung ihrer Onlineshops.',
+        'Neben meiner Haupttätigkeit als Full-Stack-Entwickler unterstütze ich zusätzlich kleine und mittlere Unternehmen bei Automatisierung, individueller Softwareentwicklung und dem kontrollierten Einsatz von KI.',
       ctaText: 'Anfrage stellen',
       quickCheckKicker: 'Kostenloser Kurz-Check',
       quickCheckHeadline: 'Wo lässt sich in Ihrem Betrieb am schnellsten Zeit sparen?',
@@ -48,47 +48,58 @@ export class ConsultingComponent {
 
   public offers: ConsultingOffer[] = [
     {
-      icon: '../../assets/icons/prompt_engineering.svg',
-      title: {
-        en: 'AI feasibility workshops',
-        de: 'KI-Machbarkeits-Workshops',
-      },
-      text: {
-        en: 'Structured feasibility workshops for small and medium-sized businesses that clarify where AI and automation projects are realistic and what effort they involve.',
-        de: 'Strukturierte Machbarkeits-Workshops für kleine und mittlere Unternehmen, die klären, wo sich KI- und Automatisierungsprojekte realistisch umsetzen lassen und welcher Aufwand damit verbunden ist.',
-      },
-    },
-    {
       icon: '../../assets/icons/ki_workflows.svg',
       title: {
-        en: 'AI-assisted automation',
-        de: 'KI-gestützte Automatisierung',
+        en: 'Service as a Software',
+        de: 'Service-as-a-Software',
       },
       text: {
-        en: 'Implementation of AI-assisted automations such as n8n-based RAG chatbots and workflow automation that reliably take over recurring tasks.',
-        de: 'Umsetzung KI-gestützter Automatisierungen wie n8n-basierter RAG-Chatbots und Workflow-Automatisierungen, die wiederkehrende Aufgaben zuverlässig übernehmen.',
+        en: 'Recurring work such as reporting, content maintenance or customer enquiries is taken over as an automated, predictable service instead of being billed as a one-off project.',
+        de: 'Laufende Aufgaben wie Reporting, Content-Pflege oder Kundenanfragen werden als automatisierter, planbarer Service übernommen, statt als einmaliges Projekt abgerechnet.',
       },
     },
     {
-      icon: '../../assets/icons/shopware_6.svg',
+      icon: '../../assets/icons/ai_assisted_coding.svg',
       title: {
-        en: 'Shopware consulting',
-        de: 'Shopware-Beratung',
+        en: 'Web app implementation',
+        de: 'Web-App-Implementierung',
       },
       text: {
-        en: 'Support for Shopware 6 operators with conversion optimization and technical development of their shop.',
-        de: 'Unterstützung für Shopware-6-Betreiber bei Conversion-Optimierung und technischer Weiterentwicklung ihres Shops.',
+        en: 'Custom web applications and internal tools are implemented in a structured way, from the initial requirement through to productive operation.',
+        de: 'Individuelle Web-Anwendungen und interne Tools werden von der Anforderung bis zum produktiven Betrieb strukturiert umgesetzt.',
+      },
+    },
+    {
+      icon: '../../assets/icons/agentic_coding.svg',
+      title: {
+        en: 'Agentic coding workshops',
+        de: 'Agentic Coding Workshops',
+      },
+      text: {
+        en: 'Hands-on workshops show development teams how to integrate AI coding agents into existing workflows in a controlled and productive way.',
+        de: 'Praxisnahe Workshops zeigen Entwicklerteams, wie sie KI-Coding-Agenten kontrolliert und produktiv in bestehende Workflows einbinden.',
+      },
+    },
+    {
+      icon: '../../assets/icons/rest_api.svg',
+      title: {
+        en: 'Software & API audits',
+        de: 'Software- & API-Audits',
+      },
+      text: {
+        en: 'Existing systems, interfaces and automations are reviewed for weaknesses, risks and unused potential.',
+        de: 'Bestehende Systeme, Schnittstellen und Automatisierungen werden auf Schwachstellen, Risiken und ungenutztes Potenzial geprüft.',
       },
     },
     {
       icon: '../../assets/icons/automations.svg',
       title: {
-        en: 'SEO/GEO audits',
-        de: 'SEO/GEO-Audits',
+        en: 'MVP development',
+        de: 'MVP-Entwicklung',
       },
       text: {
-        en: 'SEO and GEO audits (Search Engine + Generative Engine Optimization) for online shops and SMEs, with concrete, prioritized optimization potential.',
-        de: 'SEO- und GEO-Audits (Search Engine + Generative Engine Optimization) für Onlineshops und KMUs mit konkreten, priorisierten Optimierungspotenzialen.',
+        en: 'Business ideas are built as a lean, working prototype so assumptions can be tested quickly and at manageable effort.',
+        de: 'Geschäftsideen werden als schlanker, funktionsfähiger Prototyp umgesetzt, um Annahmen schnell und mit überschaubarem Aufwand zu testen.',
       },
     },
   ];

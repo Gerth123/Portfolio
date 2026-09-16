@@ -22,8 +22,8 @@ const JOB_TITLE: Record<Locale, string> = {
 };
 
 const DESCRIPTION: Record<Locale, string> = {
-  en: 'Full-stack developer specializing in Angular, Django REST Framework, Shopware 6 and REST APIs. Also offers AI feasibility workshops, AI-assisted automation, Shopware consulting and SEO/GEO audits for small and medium-sized businesses.',
-  de: 'Full-Stack-Entwickler mit Fokus auf Angular, Django REST Framework, Shopware 6 und REST-APIs. Bietet zusätzlich KI-Machbarkeits-Workshops, KI-gestützte Automatisierung, Shopware-Beratung und SEO/GEO-Audits für kleine und mittlere Unternehmen an.',
+  en: 'Full-stack developer specializing in Angular, Django REST Framework, Shopware 6 and REST APIs. Also offers service as a software, web app implementation, agentic coding workshops, software & API audits and MVP development for small and medium-sized businesses.',
+  de: 'Full-Stack-Entwickler mit Fokus auf Angular, Django REST Framework, Shopware 6 und REST-APIs. Bietet zusätzlich Service-as-a-Software, Web-App-Implementierung, Agentic Coding Workshops, Software- & API-Audits und MVP-Entwicklung für kleine und mittlere Unternehmen an.',
 };
 
 const SKILLS = [
@@ -45,44 +45,54 @@ const SKILLS = [
 const OFFERS: Record<Locale, { name: string; description: string }[]> = {
   en: [
     {
-      name: 'AI feasibility workshops',
+      name: 'Service as a Software',
       description:
-        'Structured feasibility workshops for small and medium-sized businesses that clarify where AI and automation projects are realistic and what effort they involve.',
+        'Recurring work such as reporting, content maintenance or customer enquiries is taken over as an automated, predictable service instead of being billed as a one-off project.',
     },
     {
-      name: 'AI-assisted automation',
+      name: 'Web app implementation',
       description:
-        'Implementation of AI-assisted automations such as n8n-based RAG chatbots and workflow automation that reliably take over recurring tasks.',
+        'Custom web applications and internal tools are implemented in a structured way, from the initial requirement through to productive operation.',
     },
     {
-      name: 'Shopware consulting',
-      description: 'Support for Shopware 6 operators with conversion optimization and technical development of their shop.',
+      name: 'Agentic coding workshops',
+      description:
+        'Hands-on workshops show development teams how to integrate AI coding agents into existing workflows in a controlled and productive way.',
     },
     {
-      name: 'SEO/GEO audits',
+      name: 'Software & API audits',
+      description: 'Existing systems, interfaces and automations are reviewed for weaknesses, risks and unused potential.',
+    },
+    {
+      name: 'MVP development',
       description:
-        'SEO and GEO audits (Search Engine + Generative Engine Optimization) for online shops and SMEs, with concrete, prioritized optimization potential.',
+        'Business ideas are built as a lean, working prototype so assumptions can be tested quickly and at manageable effort.',
     },
   ],
   de: [
     {
-      name: 'KI-Machbarkeits-Workshops',
+      name: 'Service-as-a-Software',
       description:
-        'Strukturierte Machbarkeits-Workshops für kleine und mittlere Unternehmen, die klären, wo sich KI- und Automatisierungsprojekte realistisch umsetzen lassen und welcher Aufwand damit verbunden ist.',
+        'Laufende Aufgaben wie Reporting, Content-Pflege oder Kundenanfragen werden als automatisierter, planbarer Service übernommen, statt als einmaliges Projekt abgerechnet.',
     },
     {
-      name: 'KI-gestützte Automatisierung',
+      name: 'Web-App-Implementierung',
       description:
-        'Umsetzung KI-gestützter Automatisierungen wie n8n-basierter RAG-Chatbots und Workflow-Automatisierungen, die wiederkehrende Aufgaben zuverlässig übernehmen.',
+        'Individuelle Web-Anwendungen und interne Tools werden von der Anforderung bis zum produktiven Betrieb strukturiert umgesetzt.',
     },
     {
-      name: 'Shopware-Beratung',
-      description: 'Unterstützung für Shopware-6-Betreiber bei Conversion-Optimierung und technischer Weiterentwicklung ihres Shops.',
+      name: 'Agentic Coding Workshops',
+      description:
+        'Praxisnahe Workshops zeigen Entwicklerteams, wie sie KI-Coding-Agenten kontrolliert und produktiv in bestehende Workflows einbinden.',
     },
     {
-      name: 'SEO/GEO-Audits',
+      name: 'Software- & API-Audits',
+      description: 'Bestehende Systeme, Schnittstellen und Automatisierungen werden auf Schwachstellen, Risiken und ungenutztes Potenzial geprüft.',
+    },
+    {
+      name: 'MVP-Entwicklung',
       description:
-        'SEO- und GEO-Audits (Search Engine + Generative Engine Optimization) für Onlineshops und KMUs mit konkreten, priorisierten Optimierungspotenzialen.',
+        'Geschäftsideen werden als schlanker, funktionsfähiger Prototyp umgesetzt, um Annahmen schnell und mit überschaubarem Aufwand zu testen.',
     },
   ],
 };

@@ -16,7 +16,7 @@ export class AboutMeComponent {
       shortDescription:
         'I am a full-stack developer with hands-on experience in productive business systems. My current work includes Shopware 6, backend logic, REST APIs, Angular frontends and selected Kotlin adjustments for Android.',
       consultingNote:
-        'Alongside this work, I additionally support small and medium-sized businesses with AI feasibility workshops, AI-assisted automation, Shopware consulting and SEO/GEO audits.',
+        'Alongside this work, I additionally support small and medium-sized businesses with service as a software, web app implementation, agentic coding workshops, software & API audits and MVP development.',
       region:
         'Based in the Waldshut district in the German–Swiss border region — available on site for businesses nearby, and remotely for everyone else.',
       location:
@@ -31,7 +31,7 @@ export class AboutMeComponent {
       shortDescription:
         'Ich bin Full-Stack-Entwickler mit praktischer Erfahrung in produktiven Unternehmenssystemen. In meiner aktuellen Arbeit beschäftige ich mich unter anderem mit Shopware 6, Backend-Logik, REST-Schnittstellen, Angular-Frontends und ausgewählten Kotlin-Anpassungen für Android.',
       consultingNote:
-        'Neben dieser Tätigkeit unterstütze ich zusätzlich kleine und mittlere Unternehmen mit KI-Machbarkeits-Workshops, KI-gestützter Automatisierung, Shopware-Beratung und SEO/GEO-Audits.',
+        'Neben dieser Tätigkeit unterstütze ich zusätzlich kleine und mittlere Unternehmen mit Service-as-a-Software, Web-App-Implementierung, Agentic Coding Workshops, Software- & API-Audits und MVP-Entwicklung.',
       region:
         'Ansässig im Landkreis Waldshut in der Grenzregion Deutschland–Schweiz — für Betriebe aus der Region gerne vor Ort, ansonsten remote.',
       location:
