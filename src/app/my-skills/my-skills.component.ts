@@ -24,22 +24,22 @@ export class MySkillsComponent {
     en: {
       headline: 'Skills',
       shortDescription:
-        'My technical profile combines backend development, Angular frontends, Shopware 6 systems and selected Android components. I prefer clear interfaces, maintainable code and changes that can be operated reliably.',
-      secondHeadline: 'Working style for',
-      secondHeadlineSpan: 'business software',
+        'My technical profile combines backend development, Angular frontends, Shopware 6 systems and selected Android components. I prefer dependable interfaces and changes that can be operated reliably.',
+      secondHeadline: 'My',
+      secondHeadlineSpan: 'working style',
       secondText:
-        'I work well in teams that value clear structure, pragmatic decisions and software that remains understandable over time.',
+        'I work well in teams that value pragmatic decisions and software that remains understandable over time.',
       getInTouch: 'Contact',
       supportingTools: 'Supporting tools',
     },
     de: {
       headline: 'Fähigkeiten',
       shortDescription:
-        'Mein technisches Profil verbindet Backend-Entwicklung, Angular-Frontends, Shopware-6-Systeme und ausgewählte Android-Komponenten. Wichtig sind mir klare Schnittstellen, wartbarer Code und Änderungen, die zuverlässig betrieben werden können.',
-      secondHeadline: 'Arbeitsweise für',
-      secondHeadlineSpan: 'Unternehmenssoftware',
+        'Mein technisches Profil verbindet Backend-Entwicklung, Angular-Frontends, Shopware-6-Systeme und ausgewählte Android-Komponenten. Wichtig sind mir belastbare Schnittstellen und Änderungen, die zuverlässig betrieben werden können.',
+      secondHeadline: 'Meine',
+      secondHeadlineSpan: 'Arbeitsweise',
       secondText:
-        'Ich arbeite gut in Teams, in denen klare Strukturen, pragmatische Entscheidungen und langfristig verständliche Software wichtig sind.',
+        'Ich arbeite gut in Teams, in denen pragmatische Entscheidungen und langfristig verständliche Software wichtig sind.',
       getInTouch: 'Kontakt',
       supportingTools: 'Weitere Werkzeuge',
     },
@@ -53,8 +53,8 @@ export class MySkillsComponent {
         de: 'Backend und Frontend',
       },
       text: {
-        en: 'Application development with structured frontend logic, REST APIs and maintainable backend services.',
-        de: 'Anwendungsentwicklung mit strukturierter Frontend-Logik, REST-Schnittstellen und wartbaren Backend-Services.',
+        en: 'Application development with frontend logic, REST APIs and backend services.',
+        de: 'Anwendungsentwicklung mit Frontend-Logik, REST-Schnittstellen und Backend-Services.',
       },
       items: ['Python', 'Django', 'Django REST Framework', 'Angular', 'TypeScript'],
     },
@@ -77,8 +77,8 @@ export class MySkillsComponent {
         de: 'Werkzeuge und Umsetzung',
       },
       text: {
-        en: 'Use of Linux, Git and AI-assisted development tools for research, code analysis, refactoring and structured implementation.',
-        de: 'Einsatz von Linux, Git und KI-gestützten Entwicklungswerkzeugen für Recherche, Codeanalyse, Refactoring und strukturierte Umsetzung.',
+        en: 'Use of Linux, Git and AI-assisted development tools for research, code analysis and refactoring.',
+        de: 'Einsatz von Linux, Git und KI-gestützten Entwicklungswerkzeugen für Recherche, Codeanalyse und Refactoring.',
       },
       items: ['REST APIs', 'Linux', 'Git', 'Kotlin', 'Redis / RQ', 'AI-assisted development'],
     },
