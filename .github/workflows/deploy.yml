@@ -22,6 +22,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Runs before the build so a failing test stops the job before the upload.
+      # karma.conf.js picks Chrome's sandbox flags itself when CI is set.
+      - name: Test
+        run: |
+          CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium-browser || command -v chromium || true)"
+          if [ -z "$CHROME_BIN" ]; then
+            echo "No Chrome binary found on the runner; cannot run the test suite." >&2
+            exit 1
+          fi
+          echo "Using $CHROME_BIN"
+          export CHROME_BIN
+          npm test -- --watch=false
+
       - name: Build (production)
         run: npm run build
 
