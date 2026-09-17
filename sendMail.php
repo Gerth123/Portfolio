@@ -1,4 +1,7 @@
 <?php
+// Endpoint behind the contact form (https://robin-gerth.de/sendMail.php).
+// Not part of the Angular build, so the deploy workflow does not upload it:
+// it lives in the web root and is copied there by hand when it changes.
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case ("OPTIONS"):
