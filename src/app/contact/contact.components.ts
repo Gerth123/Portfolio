@@ -25,11 +25,10 @@ export class ContactComponent implements OnInit, OnDestroy {
   public translations: any = {
     en: {
       headline: 'Contact',
-      secondHeadline: 'Professional exchange',
+      secondHeadline: 'Get in touch',
       firstText:
-        'If my profile fits your technical environment, I am open to a short conversation about requirements, existing systems or possible areas of work in software development.',
-      secondText: 'Relevant topics can include web applications, APIs, Shopware 6 systems or maintainable frontend and backend implementation.',
-      thirdText: 'I look forward to hearing from you.',
+        'Whether it is an automation project, a web application or a question about an existing system: tell me briefly what it is about.',
+      thirdText: 'I will get back to you shortly.',
       inputPlaceholderName: 'Your name',
       errorName: 'Correct name required.',
       inputPlaceholderEmail: 'Your email',
@@ -44,12 +43,10 @@ export class ContactComponent implements OnInit, OnDestroy {
     },
     de: {
       headline: 'Kontakt',
-      secondHeadline: 'Professioneller Austausch',
+      secondHeadline: 'Kontakt aufnehmen',
       firstText:
-        'Wenn mein Profil zu Ihrem technischen Umfeld passt, freue ich mich über einen kurzen Austausch zu Anforderungen, bestehenden Systemen oder möglichen Einsatzbereichen in der Softwareentwicklung.',
-      secondText:
-        'Mögliche Themen sind Webanwendungen, Schnittstellen, Shopware-6-Systeme oder wartbare Frontend- und Backend-Umsetzung.',
-      thirdText: 'Ich freue mich auf Ihre Nachricht.',
+        'Ob Automatisierungsprojekt, Web-Anwendung oder eine Frage zu einem bestehenden System: Schreiben Sie mir kurz, worum es geht.',
+      thirdText: 'Ich melde mich zeitnah zurück.',
       inputPlaceholderName: 'Ihr Name',
       errorName: 'Richtiger Name erforderlich.',
       inputPlaceholderEmail: 'Ihre E-Mail-Adresse',

@@ -22,8 +22,8 @@ const JOB_TITLE: Record<Locale, string> = {
 };
 
 const DESCRIPTION: Record<Locale, string> = {
-  en: 'Full-stack developer specializing in Angular, Django REST Framework, Shopware 6 and REST APIs. Also offers service as a software, web app implementation, agentic coding workshops, software & API audits and MVP development for small and medium-sized businesses.',
-  de: 'Full-Stack-Entwickler mit Fokus auf Angular, Django REST Framework, Shopware 6 und REST-APIs. Bietet zusätzlich Service-as-a-Software, Web-App-Implementierung, Agentic Coding Workshops, Software- & API-Audits und MVP-Entwicklung für kleine und mittlere Unternehmen an.',
+  en: 'Full-stack developer (Angular, Django, Shopware 6). I help small and medium-sized businesses save time with AI automation.',
+  de: 'Full-Stack-Entwickler (Angular, Django, Shopware 6). Ich helfe kleinen und mittleren Unternehmen, mit KI-Automatisierung Zeit zu sparen.',
 };
 
 const SKILLS = [
@@ -47,52 +47,52 @@ const OFFERS: Record<Locale, { name: string; description: string }[]> = {
     {
       name: 'Service as a Software',
       description:
-        'Recurring work such as reporting, content maintenance or customer enquiries is taken over as an automated, predictable service instead of being billed as a one-off project.',
+        'I take on recurring work such as reporting, content maintenance or customer enquiries as an ongoing, automated service.',
     },
     {
       name: 'Web app implementation',
       description:
-        'Custom web applications and internal tools are implemented in a structured way, from the initial requirement through to productive operation.',
+        'I build custom web applications and internal tools, from the initial requirement through to productive operation.',
     },
     {
       name: 'Agentic coding workshops',
       description:
-        'Hands-on workshops show development teams how to integrate AI coding agents into existing workflows in a controlled and productive way.',
+        'I show development teams how to integrate AI coding agents into existing workflows in a controlled way.',
     },
     {
       name: 'Software & API audits',
-      description: 'Existing systems, interfaces and automations are reviewed for weaknesses, risks and unused potential.',
+      description: 'I review existing systems, interfaces and automations for weaknesses and unused potential.',
     },
     {
       name: 'MVP development',
       description:
-        'Business ideas are built as a lean, working prototype so assumptions can be tested quickly and at manageable effort.',
+        'I turn a business idea into a lean prototype that lets you test your assumptions quickly.',
     },
   ],
   de: [
     {
       name: 'Service-as-a-Software',
       description:
-        'Laufende Aufgaben wie Reporting, Content-Pflege oder Kundenanfragen werden als automatisierter, planbarer Service übernommen, statt als einmaliges Projekt abgerechnet.',
+        'Ich übernehme wiederkehrende Aufgaben wie Reporting, Content-Pflege oder Kundenanfragen als laufenden, automatisierten Service.',
     },
     {
       name: 'Web-App-Implementierung',
       description:
-        'Individuelle Web-Anwendungen und interne Tools werden von der Anforderung bis zum produktiven Betrieb strukturiert umgesetzt.',
+        'Ich setze individuelle Web-Anwendungen und interne Tools um, von der Anforderung bis zum produktiven Betrieb.',
     },
     {
       name: 'Agentic Coding Workshops',
       description:
-        'Praxisnahe Workshops zeigen Entwicklerteams, wie sie KI-Coding-Agenten kontrolliert und produktiv in bestehende Workflows einbinden.',
+        'Ich zeige Entwicklerteams, wie sie KI-Coding-Agenten kontrolliert in bestehende Workflows einbinden.',
     },
     {
       name: 'Software- & API-Audits',
-      description: 'Bestehende Systeme, Schnittstellen und Automatisierungen werden auf Schwachstellen, Risiken und ungenutztes Potenzial geprüft.',
+      description: 'Ich prüfe bestehende Systeme, Schnittstellen und Automatisierungen auf Schwachstellen und ungenutztes Potenzial.',
     },
     {
       name: 'MVP-Entwicklung',
       description:
-        'Geschäftsideen werden als schlanker, funktionsfähiger Prototyp umgesetzt, um Annahmen schnell und mit überschaubarem Aufwand zu testen.',
+        'Ich baue aus einer Geschäftsidee einen schlanken Prototyp, mit dem sich Annahmen schnell testen lassen.',
     },
   ],
 };

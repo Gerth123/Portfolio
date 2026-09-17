@@ -17,7 +17,7 @@
   min-width: 0;
 
   h3 {
-    margin: 0.55rem 0 0.6rem;
+    margin: 0 0 0.6rem;
     color: #fff;
     font-size: clamp(1.25rem, 2vw, 1.65rem);
     font-weight: 700;
@@ -97,12 +97,6 @@
     font-size: 0.95rem;
     line-height: 1.55;
   }
-}
-
-.consulting-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 @media (max-width: 991.98px) {

@@ -18,13 +18,11 @@ export class AboutMeComponent {
       consultingNote:
         'Alongside this work, I additionally support small and medium-sized businesses with service as a software, web app implementation, agentic coding workshops, software & API audits and MVP development.',
       region:
-        'Based in the Waldshut district in the German–Swiss border region — available on site for businesses nearby, and remotely for everyone else.',
-      location:
-        'I focus on clear, maintainable implementation and technical decisions that remain understandable during ongoing operation.',
-      interest:
-        'I work in a structured way, clarify requirements carefully and keep effort, value and risk visible throughout implementation.',
-      puzzle:
-        'AI-assisted development tools support research, code analysis and refactoring, but the work remains driven by engineering judgement and technical control.',
+        'Based in the Waldshut district in the German-Swiss border region, available on site for businesses nearby and remotely for everyone else.',
+      approach:
+        'I clarify requirements carefully, keep effort, value and risk visible, and deliver software that stays understandable in day to day operation.',
+      aiTools:
+        'I use AI-assisted development tools for research, code analysis and refactoring. The technical responsibility stays with the developer.',
     },
     de: {
       headline: 'Über mich',
@@ -33,13 +31,11 @@ export class AboutMeComponent {
       consultingNote:
         'Neben dieser Tätigkeit unterstütze ich zusätzlich kleine und mittlere Unternehmen mit Service-as-a-Software, Web-App-Implementierung, Agentic Coding Workshops, Software- & API-Audits und MVP-Entwicklung.',
       region:
-        'Ansässig im Landkreis Waldshut in der Grenzregion Deutschland–Schweiz — für Betriebe aus der Region gerne vor Ort, ansonsten remote.',
-      location:
-        'Mein Schwerpunkt liegt auf klarer, wartbarer Umsetzung und technischen Entscheidungen, die im laufenden Betrieb nachvollziehbar bleiben.',
-      interest:
-        'Ich arbeite strukturiert, kläre Anforderungen sorgfältig und behalte Aufwand, Nutzen und Risiken während der Umsetzung im Blick.',
-      puzzle:
-        'KI-gestützte Entwicklungswerkzeuge nutze ich unterstützend für Recherche, Codeanalyse und Refactoring. Die technische Verantwortung bleibt dabei klar beim Entwickler.',
+        'Ansässig im Landkreis Waldshut in der Grenzregion Deutschland-Schweiz, für Betriebe aus der Region gerne vor Ort, ansonsten remote.',
+      approach:
+        'Ich kläre Anforderungen sorgfältig, halte Aufwand, Nutzen und Risiko sichtbar und liefere Software, die im laufenden Betrieb nachvollziehbar bleibt.',
+      aiTools:
+        'KI-gestützte Entwicklungswerkzeuge nutze ich für Recherche, Codeanalyse und Refactoring. Die technische Verantwortung bleibt beim Entwickler.',
     },
   };
 
@@ -54,8 +50,8 @@ export class AboutMeComponent {
     {
       value: { en: 'Structured', de: 'Strukturiert' },
       label: {
-        en: 'Clear requirements, traceable decisions and maintainable delivery',
-        de: 'Klare Anforderungen, nachvollziehbare Entscheidungen und wartbare Umsetzung',
+        en: 'Requirements clarified up front, decisions kept traceable',
+        de: 'Anforderungen vorab geklärt, Entscheidungen nachvollziehbar',
       },
     },
     {

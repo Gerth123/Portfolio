@@ -10,7 +10,6 @@
 
     <aside class="portfolio-card consulting-quickcheck mt-4" data-aos="fade-up">
       <div class="consulting-quickcheck-body">
-        <span class="portfolio-eyebrow">{{ getCurrentText("quickCheckKicker") }}</span>
         <h3>{{ getCurrentText("quickCheckHeadline") }}</h3>
         <p>{{ getCurrentText("quickCheckText") }}</p>
         <p class="consulting-quickcheck-note mb-0">{{ getCurrentText("quickCheckNote") }}</p>
@@ -38,13 +37,5 @@
         </article>
       </div>
     </div>
-
-    <a
-      [routerLink]="['/', getCurrentLanguage()]"
-      [fragment]="'contact'"
-      class="btn btn-portfolio consulting-cta mt-4"
-      (click)="handleScroll('contact')"
-      >{{ getCurrentText("ctaText") }}</a
-    >
   </div>
 </section>

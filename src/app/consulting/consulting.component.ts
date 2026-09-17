@@ -24,25 +24,21 @@ export class ConsultingComponent {
       headline: 'Consulting & Automation',
       shortDescription:
         'Alongside my main role as a full-stack developer, I additionally support small and medium-sized businesses with automation, custom software development and the controlled use of AI.',
-      ctaText: 'Send an inquiry',
-      quickCheckKicker: 'Free quick check',
-      quickCheckHeadline: 'Where can your business save the most time?',
+      quickCheckHeadline: 'Where can your business save time?',
       quickCheckText:
-        'In a short conversation we look at your recurring processes together, and I tell you honestly where AI and automation pay off for your business — and where they do not.',
-      quickCheckNote: 'About 30 minutes · no obligation · free of charge',
-      quickCheckCta: 'Request a free quick check',
+        'In a short conversation we look at your recurring processes and work out where automation pays off.',
+      quickCheckNote: 'about 30 minutes, free of charge',
+      quickCheckCta: 'Request a quick check',
     },
     de: {
       headline: 'Beratung & Automatisierung',
       shortDescription:
         'Neben meiner Haupttätigkeit als Full-Stack-Entwickler unterstütze ich zusätzlich kleine und mittlere Unternehmen bei Automatisierung, individueller Softwareentwicklung und dem kontrollierten Einsatz von KI.',
-      ctaText: 'Anfrage stellen',
-      quickCheckKicker: 'Kostenloser Kurz-Check',
-      quickCheckHeadline: 'Wo lässt sich in Ihrem Betrieb am schnellsten Zeit sparen?',
+      quickCheckHeadline: 'Wo lässt sich in Ihrem Betrieb Zeit sparen?',
       quickCheckText:
-        'In einem kurzen Gespräch schauen wir gemeinsam auf Ihre wiederkehrenden Abläufe, und ich sage Ihnen ehrlich, wo sich KI und Automatisierung für Ihren Betrieb lohnen — und wo nicht.',
-      quickCheckNote: 'Ca. 30 Minuten · unverbindlich · kostenlos',
-      quickCheckCta: 'Kostenlosen Kurz-Check anfragen',
+        'In einem kurzen Gespräch schauen wir uns Ihre wiederkehrenden Prozesse an und klären, wo sich Automatisierung lohnt.',
+      quickCheckNote: 'ca. 30 Minuten, kostenlos',
+      quickCheckCta: 'Kurz-Check anfragen',
     },
   };
 
@@ -54,8 +50,8 @@ export class ConsultingComponent {
         de: 'Service-as-a-Software',
       },
       text: {
-        en: 'Recurring work such as reporting, content maintenance or customer enquiries is taken over as an automated, predictable service instead of being billed as a one-off project.',
-        de: 'Laufende Aufgaben wie Reporting, Content-Pflege oder Kundenanfragen werden als automatisierter, planbarer Service übernommen, statt als einmaliges Projekt abgerechnet.',
+        en: 'I take on recurring work such as reporting, content maintenance or customer enquiries as an ongoing, automated service.',
+        de: 'Ich übernehme wiederkehrende Aufgaben wie Reporting, Content-Pflege oder Kundenanfragen als laufenden, automatisierten Service.',
       },
     },
     {
@@ -65,8 +61,8 @@ export class ConsultingComponent {
         de: 'Web-App-Implementierung',
       },
       text: {
-        en: 'Custom web applications and internal tools are implemented in a structured way, from the initial requirement through to productive operation.',
-        de: 'Individuelle Web-Anwendungen und interne Tools werden von der Anforderung bis zum produktiven Betrieb strukturiert umgesetzt.',
+        en: 'I build custom web applications and internal tools, from the initial requirement through to productive operation.',
+        de: 'Ich setze individuelle Web-Anwendungen und interne Tools um, von der Anforderung bis zum produktiven Betrieb.',
       },
     },
     {
@@ -76,8 +72,8 @@ export class ConsultingComponent {
         de: 'Agentic Coding Workshops',
       },
       text: {
-        en: 'Hands-on workshops show development teams how to integrate AI coding agents into existing workflows in a controlled and productive way.',
-        de: 'Praxisnahe Workshops zeigen Entwicklerteams, wie sie KI-Coding-Agenten kontrolliert und produktiv in bestehende Workflows einbinden.',
+        en: 'I show development teams how to integrate AI coding agents into existing workflows in a controlled way.',
+        de: 'Ich zeige Entwicklerteams, wie sie KI-Coding-Agenten kontrolliert in bestehende Workflows einbinden.',
       },
     },
     {
@@ -87,8 +83,8 @@ export class ConsultingComponent {
         de: 'Software- & API-Audits',
       },
       text: {
-        en: 'Existing systems, interfaces and automations are reviewed for weaknesses, risks and unused potential.',
-        de: 'Bestehende Systeme, Schnittstellen und Automatisierungen werden auf Schwachstellen, Risiken und ungenutztes Potenzial geprüft.',
+        en: 'I review existing systems, interfaces and automations for weaknesses and unused potential.',
+        de: 'Ich prüfe bestehende Systeme, Schnittstellen und Automatisierungen auf Schwachstellen und ungenutztes Potenzial.',
       },
     },
     {
@@ -98,8 +94,8 @@ export class ConsultingComponent {
         de: 'MVP-Entwicklung',
       },
       text: {
-        en: 'Business ideas are built as a lean, working prototype so assumptions can be tested quickly and at manageable effort.',
-        de: 'Geschäftsideen werden als schlanker, funktionsfähiger Prototyp umgesetzt, um Annahmen schnell und mit überschaubarem Aufwand zu testen.',
+        en: 'I turn a business idea into a lean prototype that lets you test your assumptions quickly.',
+        de: 'Ich baue aus einer Geschäftsidee einen schlanken Prototyp, mit dem sich Annahmen schnell testen lassen.',
       },
     },
   ];

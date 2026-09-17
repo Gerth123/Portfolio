@@ -37,14 +37,14 @@ export class ProjectsComponent {
     en: {
       headline: 'Case studies',
       firstSpan:
-        'Selected work with a focus on practical implementation, clear application logic and maintainable technical structures.',
+        'Selected work with a focus on practical implementation and traceable application logic.',
       liveTest: 'Open project',
       caseStudy: 'Project',
     },
     de: {
       headline: 'Projekte',
       firstSpan:
-        'Ausgewählte Arbeiten mit Fokus auf praktische Umsetzung, nachvollziehbare Anwendungslogik und wartbare technische Strukturen.',
+        'Ausgewählte Arbeiten mit Fokus auf praktische Umsetzung und nachvollziehbare Anwendungslogik.',
       liveTest: 'Projekt öffnen',
       caseStudy: 'Projekt',
     },
@@ -83,8 +83,8 @@ export class ProjectsComponent {
       },
       stack: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
       text: {
-        en: 'Kanban-style task tool with user management, task states, drag-and-drop logic and structured data handling. The focus is on clear UI structure and understandable application logic.',
-        de: 'Kanban-orientiertes Task-Tool mit Benutzerverwaltung, Aufgabenstatus, Drag-and-Drop-Logik und strukturierter Datenhaltung. Der Fokus liegt auf klarer UI-Struktur und nachvollziehbarer Anwendungslogik.',
+        en: 'Kanban-style task tool with user management, task states, drag-and-drop logic and structured data handling.',
+        de: 'Kanban-orientiertes Task-Tool mit Benutzerverwaltung, Aufgabenstatus, Drag-and-Drop-Logik und strukturierter Datenhaltung.',
       },
       focus: {
         en: ['Task states and workflow logic', 'User and task data handling', 'Reusable UI structures'],
@@ -158,8 +158,8 @@ export class ProjectsComponent {
       },
       stack: ['JavaScript', 'Canvas', 'OOP'],
       text: {
-        en: 'Browser game built with object-oriented JavaScript, canvas rendering, keyboard input and collision logic. The technical focus is clean game logic and structured state handling.',
-        de: 'Browsergame mit objektorientiertem JavaScript, Canvas-Rendering, Tastatursteuerung und Kollisionslogik. Der technische Fokus liegt auf sauberer Spiellogik und strukturierter Zustandsverwaltung.',
+        en: 'Browser game built with object-oriented JavaScript, canvas rendering, keyboard input and collision logic. The technical focus is clean game logic and state handling.',
+        de: 'Browsergame mit objektorientiertem JavaScript, Canvas-Rendering, Tastatursteuerung und Kollisionslogik. Der technische Fokus liegt auf sauberer Spiellogik und Zustandsverwaltung.',
       },
       focus: {
         en: ['Game loop and rendering model', 'Collision and input logic', 'Responsibility-oriented JavaScript'],

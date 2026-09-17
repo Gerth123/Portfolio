@@ -49,7 +49,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     en: {
       headline: 'Credentials',
       intro:
-        'An overview of completed training, current learning tracks and credentials that support my work in full-stack development, business systems and maintainable software delivery.',
+        'An overview of completed training, current learning tracks and credentials that support my work in full-stack development and business systems.',
       evidenceAvailable: 'Evidence available on request',
       openDocument: 'Open document',
       previous: 'Previous credential',
@@ -64,7 +64,7 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
     de: {
       headline: 'Qualifikationen',
       intro:
-        'Eine Übersicht abgeschlossener Weiterbildungen, aktueller Lernpfade und Qualifikationen, die meine Arbeit in Full-Stack-Entwicklung, Unternehmenssystemen und wartbarer Softwareumsetzung unterstützen.',
+        'Eine Übersicht abgeschlossener Weiterbildungen, aktueller Lernpfade und Qualifikationen, die meine Arbeit in Full-Stack-Entwicklung und Unternehmenssystemen unterstützen.',
       evidenceAvailable: 'Nachweis auf Anfrage',
       openDocument: 'Nachweis öffnen',
       previous: 'Vorheriger Nachweis',
@@ -79,6 +79,60 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
   };
 
   public credentials: Credential[] = [
+    {
+      title: 'Backend Development',
+      issuer: 'Developer Akademie',
+      period: { en: 'Completed', de: 'Abgeschlossen' },
+      type: { en: 'Certificate', de: 'Zertifikat' },
+      fileType: 'PDF',
+      links: [
+        {
+          label: { en: 'PDF', de: 'PDF' },
+          url: '../../assets/certificates/Backend%20Zertifikat%20Robin%20Gerth.pdf',
+        },
+        {
+          label: { en: 'Verify', de: 'Bestätigung' },
+          url: 'https://developerakademie.com/certificate/75960093535851/',
+          hideOnMobile: true,
+        },
+        {
+          label: { en: 'Website', de: 'Webseite' },
+          url: 'https://developerakademie.com/',
+        },
+      ],
+      description: {
+        en: 'Backend training focused on Python, Django, Django REST Framework, API design, authentication and data-driven application logic.',
+        de: 'Backend-Weiterbildung mit Fokus auf Python, Django, Django REST Framework, API-Design, Authentifizierung und datengetriebene Anwendungslogik.',
+      },
+      tags: ['Python', 'Django / DRF', 'REST APIs'],
+    },
+    {
+      title: 'Frontend Development',
+      issuer: 'Developer Akademie',
+      period: { en: 'Completed', de: 'Abgeschlossen' },
+      type: { en: 'Certificate', de: 'Zertifikat' },
+      fileType: 'PDF',
+      links: [
+        {
+          label: { en: 'PDF', de: 'PDF' },
+          url: '../../assets/certificates/Frontend%20Zertifikat%20Robin%20Gerth.pdf',
+        },
+        {
+          label: { en: 'Verify', de: 'Bestätigung' },
+          url: 'https://developerakademie.com/certificate/85973462034596/',
+          hideOnMobile: true,
+        },
+        {
+          label: { en: 'Website', de: 'Webseite' },
+          url: 'https://developerakademie.com/',
+        },
+      ],
+      description: {
+        en: 'Frontend training focused on responsive interfaces, Angular, TypeScript, reusable components and project-based UI implementation.',
+        de: 'Frontend-Weiterbildung mit Fokus auf responsive Interfaces, Angular, TypeScript, wiederverwendbare Komponenten und projektbasierte UI-Umsetzung.',
+      },
+      tags: ['Angular', 'TypeScript', 'Responsive UI'],
+    },
     {
       title: 'Claude Code Masterclass',
       issuer: 'Everlast',
@@ -155,66 +209,12 @@ export class CredentialsComponent implements AfterViewInit, OnDestroy {
         },
       ],
       description: {
-        en: 'Training on task decomposition, review loops and structured use of coding assistants in software development.',
-        de: 'Weiterbildung zu Aufgabenzerlegung, Review-Schleifen und strukturiertem Einsatz von Coding Assistants in der Softwareentwicklung.',
+        en: 'Training on task decomposition, review loops and disciplined use of coding assistants in software development.',
+        de: 'Weiterbildung zu Aufgabenzerlegung, Review-Schleifen und diszipliniertem Einsatz von Coding Assistants in der Softwareentwicklung.',
       },
       tags: ['Task decomposition', 'Codex', 'Review loops'],
     },
-    {
-      title: 'Backend Development',
-      issuer: 'Developer Akademie',
-      period: { en: 'Completed', de: 'Abgeschlossen' },
-      type: { en: 'Certificate', de: 'Zertifikat' },
-      fileType: 'PDF',
-      links: [
-        {
-          label: { en: 'PDF', de: 'PDF' },
-          url: '../../assets/certificates/Backend%20Zertifikat%20Robin%20Gerth.pdf',
-        },
-        {
-          label: { en: 'Verify', de: 'Bestätigung' },
-          url: 'https://developerakademie.com/certificate/75960093535851/',
-          hideOnMobile: true,
-        },
-        {
-          label: { en: 'Website', de: 'Webseite' },
-          url: 'https://developerakademie.com/',
-        },
-      ],
-      description: {
-        en: 'Backend training focused on Python, Django, Django REST Framework, API design, authentication and data-driven application logic.',
-        de: 'Backend-Weiterbildung mit Fokus auf Python, Django, Django REST Framework, API-Design, Authentifizierung und datengetriebene Anwendungslogik.',
-      },
-      tags: ['Python', 'Django / DRF', 'REST APIs'],
-    },
-    {
-      title: 'Frontend Development',
-      issuer: 'Developer Akademie',
-      period: { en: 'Completed', de: 'Abgeschlossen' },
-      type: { en: 'Certificate', de: 'Zertifikat' },
-      fileType: 'PDF',
-      links: [
-        {
-          label: { en: 'PDF', de: 'PDF' },
-          url: '../../assets/certificates/Frontend%20Zertifikat%20Robin%20Gerth.pdf',
-        },
-        {
-          label: { en: 'Verify', de: 'Bestätigung' },
-          url: 'https://developerakademie.com/certificate/85973462034596/',
-          hideOnMobile: true,
-        },
-        {
-          label: { en: 'Website', de: 'Webseite' },
-          url: 'https://developerakademie.com/',
-        },
-      ],
-      description: {
-        en: 'Frontend training focused on responsive interfaces, Angular, TypeScript, reusable components and project-based UI implementation.',
-        de: 'Frontend-Weiterbildung mit Fokus auf responsive Interfaces, Angular, TypeScript, wiederverwendbare Komponenten und projektbasierte UI-Umsetzung.',
-      },
-      tags: ['Angular', 'TypeScript', 'Responsive UI'],
-    },
-  ];
+    ];
 
   // Kept out of the carousel so the tech certificates stay the focus for business visitors.
   public secondaryCredentials: Credential[] = [
