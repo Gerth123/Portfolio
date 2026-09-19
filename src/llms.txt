@@ -1,9 +1,9 @@
 # Robin Gerth
 
-> Full-stack developer (Angular, Django, Shopware 6). Helps small and medium-sized businesses save time with AI automation. Site available in English (/en) and German (/de).
+> Full-stack developer (Vue, Angular, Django, Shopware 6). Helps small and medium-sized businesses save time with AI automation. Site available in English (/en) and German (/de).
 
 ## Role & focus
-- Full-stack developer with hands-on experience in productive business systems: Shopware 6, backend logic, REST APIs, Angular frontends, selected Kotlin adjustments for Android.
+- Full-stack developer with hands-on experience in productive business systems: Shopware 6, backend logic, REST APIs, Vue and Angular frontends, selected Kotlin adjustments for Android.
 - Helps small and medium-sized businesses save time with AI automation, as a part-time side business alongside the employed role.
 - Based in the Waldshut district in the German-Swiss border region; available on site for businesses nearby and remotely elsewhere.
 - Clarifies requirements carefully, keeps effort, value and risk visible, and delivers software that stays understandable in day to day operation.
@@ -18,7 +18,7 @@
 - **Quick check** – short conversation about where automation pays off in a given business, about 30 minutes, free of charge.
 
 ## Tech stack
-Python, Django, Django REST Framework, Angular, TypeScript, Shopware 6, PHP, Symfony, Kotlin, REST APIs, Linux, Git.
+Python, Django, Django REST Framework, Vue, Angular, TypeScript, Shopware 6, PHP, Symfony, Kotlin, REST APIs, Linux, Git.
 
 ## Case studies
 - Internal knowledge management & RAG chatbot – n8n / Qdrant / Microsoft Teams / Entra ID RAG-based chatbot for internal knowledge search with hybrid search and reranking. Internal project built in the employed full-stack developer role at ABC Design, not a client project of the side business.

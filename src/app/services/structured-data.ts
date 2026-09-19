@@ -22,14 +22,15 @@ const JOB_TITLE: Record<Locale, string> = {
 };
 
 const DESCRIPTION: Record<Locale, string> = {
-  en: 'Full-stack developer (Angular, Django, Shopware 6). I help small and medium-sized businesses save time with AI automation.',
-  de: 'Full-Stack-Entwickler (Angular, Django, Shopware 6). Ich helfe kleinen und mittleren Unternehmen, mit KI-Automatisierung Zeit zu sparen.',
+  en: 'Full-stack developer (Vue, Angular, Django, Shopware 6). I help small and medium-sized businesses save time with AI automation.',
+  de: 'Full-Stack-Entwickler (Vue, Angular, Django, Shopware 6). Ich helfe kleinen und mittleren Unternehmen, mit KI-Automatisierung Zeit zu sparen.',
 };
 
 const SKILLS = [
   'Python',
   'Django',
   'Django REST Framework',
+  'Vue',
   'Angular',
   'TypeScript',
   'Shopware 6',
@@ -98,7 +99,7 @@ const OFFERS: Record<Locale, { name: string; description: string }[]> = {
 };
 
 export function getPageTitle(locale: Locale): string {
-  return `Robin Gerth – ${JOB_TITLE[locale]} (Angular, Django, Shopware 6)`;
+  return `Robin Gerth – ${JOB_TITLE[locale]} (Vue, Angular, Django, Shopware 6)`;
 }
 
 export function getPageDescription(locale: Locale): string {
