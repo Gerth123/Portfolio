@@ -14,7 +14,7 @@ export class AboutMeComponent {
     en: {
       headline: 'About me',
       shortDescription:
-        'I am a full-stack developer with hands-on experience in productive business systems. My current work includes Shopware 6, backend logic, REST APIs, Angular frontends and selected Kotlin adjustments for Android.',
+        'I am a full-stack developer with hands-on experience in productive business systems. My current work includes Shopware 6, backend logic, REST APIs, Vue and Angular frontends and selected Kotlin adjustments for Android.',
       consultingNote:
         'Alongside this work, I additionally support small and medium-sized businesses with service as a software, web app implementation, agentic coding workshops, software & API audits and MVP development.',
       region:
@@ -27,7 +27,7 @@ export class AboutMeComponent {
     de: {
       headline: 'Über mich',
       shortDescription:
-        'Ich bin Full-Stack-Entwickler mit praktischer Erfahrung in produktiven Unternehmenssystemen. In meiner aktuellen Arbeit beschäftige ich mich unter anderem mit Shopware 6, Backend-Logik, REST-Schnittstellen, Angular-Frontends und ausgewählten Kotlin-Anpassungen für Android.',
+        'Ich bin Full-Stack-Entwickler mit praktischer Erfahrung in produktiven Unternehmenssystemen. In meiner aktuellen Arbeit beschäftige ich mich unter anderem mit Shopware 6, Backend-Logik, REST-Schnittstellen, Vue- und Angular-Frontends und ausgewählten Kotlin-Anpassungen für Android.',
       consultingNote:
         'Neben dieser Tätigkeit unterstütze ich zusätzlich kleine und mittlere Unternehmen mit Service-as-a-Software, Web-App-Implementierung, Agentic Coding Workshops, Software- & API-Audits und MVP-Entwicklung.',
       region:
@@ -57,8 +57,8 @@ export class AboutMeComponent {
     {
       value: { en: 'Full stack', de: 'Full Stack' },
       label: {
-        en: 'Django / DRF, Angular, APIs, Kotlin and Linux workflows',
-        de: 'Django / DRF, Angular, APIs, Kotlin und Linux-Workflows',
+        en: 'Django / DRF, Vue, Angular, APIs, Kotlin and Linux workflows',
+        de: 'Django / DRF, Vue, Angular, APIs, Kotlin und Linux-Workflows',
       },
     },
   ];

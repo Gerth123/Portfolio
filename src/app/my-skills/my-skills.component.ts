@@ -24,7 +24,7 @@ export class MySkillsComponent {
     en: {
       headline: 'Skills',
       shortDescription:
-        'My technical profile combines backend development, Angular frontends, Shopware 6 systems and selected Android components. I prefer dependable interfaces and changes that can be operated reliably.',
+        'My technical profile combines backend development, Vue and Angular frontends, Shopware 6 systems and selected Android components. I prefer dependable interfaces and changes that can be operated reliably.',
       secondHeadline: 'My',
       secondHeadlineSpan: 'working style',
       secondText:
@@ -35,7 +35,7 @@ export class MySkillsComponent {
     de: {
       headline: 'Fähigkeiten',
       shortDescription:
-        'Mein technisches Profil verbindet Backend-Entwicklung, Angular-Frontends, Shopware-6-Systeme und ausgewählte Android-Komponenten. Wichtig sind mir belastbare Schnittstellen und Änderungen, die zuverlässig betrieben werden können.',
+        'Mein technisches Profil verbindet Backend-Entwicklung, Vue- und Angular-Frontends, Shopware-6-Systeme und ausgewählte Android-Komponenten. Wichtig sind mir belastbare Schnittstellen und Änderungen, die zuverlässig betrieben werden können.',
       secondHeadline: 'Meine',
       secondHeadlineSpan: 'Arbeitsweise',
       secondText:
@@ -56,7 +56,7 @@ export class MySkillsComponent {
         en: 'Application development with frontend logic, REST APIs and backend services.',
         de: 'Anwendungsentwicklung mit Frontend-Logik, REST-Schnittstellen und Backend-Services.',
       },
-      items: ['Python', 'Django', 'Django REST Framework', 'Angular', 'TypeScript'],
+      items: ['Python', 'Django', 'Django REST Framework', 'Vue', 'Angular', 'TypeScript'],
     },
     {
       icon: '../../assets/icons/shopware_6.svg',
