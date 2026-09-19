@@ -240,6 +240,13 @@ h1 {
     transform: none;
   }
 
+  // Name and subtitle share the centred axis of the pitch line and the button
+  // instead of hanging on the left edge of their column.
+  .hero-heading {
+    justify-self: center;
+    align-items: center;
+  }
+
   .hero-pitch {
     margin-inline: auto;
     text-align: center;
@@ -315,7 +322,7 @@ h1 {
   .hero-heading {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--hero-title-gap);
     min-width: 0;
   }
